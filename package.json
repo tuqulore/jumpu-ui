@@ -1,0 +1,33 @@
+{
+  "name": "tailwindcss-tuqulore",
+  "description": "A Tailwind CSS plugin which serve basic components designed by tuqulore inc.",
+  "version": "1.0.0",
+  "author": "tuqulore inc.",
+  "bugs": {
+    "url": "https://github.com/tuqulore/tailwindcss-tuqulore/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "clean-css": "^4.2.3",
+    "eslint": "^7.10.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.0.0",
+    "tailwindcss": "^1.8.11"
+  },
+  "homepage": "https://github.com/tuqulore/tailwindcss-tuqulore#readme",
+  "keywords": [
+    "tailwindcss"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "git@github.com:tuqulore/tailwindcss-tuqulore.git",
+  "scripts": {
+    "build:style": "postcss node_modules/tailwindcss/tailwind.css --config demo --output demo/style.css",
+    "prepare": "node scripts/build.js"
+  }
+}
