@@ -1,31 +1,22 @@
 {
-  "name": "tuqulore-ui",
-  "description": "A basic ui components designed by tuqulore inc.",
+  "name": "@tuqulore-ui/tailwindcss",
+  "description": "A Tailwind CSS plugin which serve basic components designed by tuqulore inc.",
   "version": "1.0.0",
   "author": "tuqulore inc.",
   "bugs": {
     "url": "https://github.com/tuqulore/tuqulore-ui/issues"
   },
-  "devDependencies": {
-    "eslint": "^7.20.0",
-    "eslint-config-prettier": "^7.2.0",
-    "prettier": "^2.2.1"
-  },
-  "engines": {
-    "node": ">=14.15"
-  },
   "homepage": "https://github.com/tuqulore/tuqulore-ui#readme",
   "keywords": [
-    "ui"
+    "tailwindcss"
   ],
   "license": "MIT",
+  "main": "index.js",
   "peerDependencies": {
     "tailwindcss": "^2.0.0"
   },
-  "private": true,
   "repository": "git@github.com:tuqulore/tuqulore-ui.git",
-  "workspaces": [
-    "packages/*",
-    "website"
-  ]
+  "scripts": {
+    "prepublishOnly": "node scripts/build.js"
+  }
 }
