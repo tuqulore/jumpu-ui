@@ -1,0 +1,11 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "yaml",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "javascript"
+  ],
+  "javascript.suggestionActions.enabled": false
+}
