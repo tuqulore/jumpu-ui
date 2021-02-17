@@ -19,15 +19,21 @@
     "postcss-cli": "^8.0.0",
     "tailwindcss": "^2.0.3"
   },
+  "engines": {
+    "node": ">=14.15"
+  },
   "homepage": "https://github.com/tuqulore/tailwindcss-tuqulore#readme",
   "keywords": [
     "tailwindcss"
   ],
   "license": "MIT",
   "main": "index.js",
+  "peerDependencies": {
+    "tailwindcss": "^2.0.0"
+  },
   "repository": "git@github.com:tuqulore/tailwindcss-tuqulore.git",
   "scripts": {
-    "build:style": "postcss node_modules/tailwindcss/tailwind.css --config demo --output demo/style.css",
-    "prepare": "node scripts/build.js"
+    "build:demo": "postcss node_modules/tailwindcss/tailwind.css --config demo --output demo/style.css",
+    "prepublishOnly": "node scripts/build.js"
   }
 }
