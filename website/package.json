@@ -6,24 +6,39 @@
   "bugs": {
     "url": "https://github.com/tuqulore/tuqulore-ui/issues"
   },
+  "dependencies": {
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
+    "@types/node": "^14.14.28",
+    "@types/react": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
     "autoprefixer": "^10.2.4",
     "clean-css": "^4.2.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.2.6",
-    "postcss-cli": "^8.0.0",
-    "tailwindcss": "^2.0.3"
+    "sass": "^1.32.7",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.1.5"
   },
   "homepage": "https://github.com/tuqulore/tuqulore-ui#readme",
   "keywords": [
     "ui"
   ],
   "license": "MIT",
-  "peerDependencies": {
-    "tailwindcss": "^2.0.0"
-  },
   "private": true,
   "repository": "git@github.com:tuqulore/tuqulore-ui.git",
   "scripts": {
-    "build:style": "postcss ../node_modules/tailwindcss/tailwind.css --config postcss.config.js --output style.css"
+    "build": "next build",
+    "dev": "next dev",
+    "format": "prettier -w .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "start": "next start"
   }
 }
