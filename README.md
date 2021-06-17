@@ -2,9 +2,9 @@
 
 導入方法
 
-`yarn`
+`$ yarn`
 
 開発方法
 
-`cd website`
-`yarn dev`
+`$ cd website`  
+`$ yarn dev`
