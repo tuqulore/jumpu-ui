@@ -9,6 +9,7 @@
   "devDependencies": {
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
+    "lerna": "^4.0.0",
     "prettier": "^2.2.1"
   },
   "engines": {
@@ -24,6 +25,10 @@
   },
   "private": true,
   "repository": "git@github.com:tuqulore/tuqulore-ui.git",
+  "scripts": {
+    "release": "lerna publish from-package",
+    "versionup": "lerna version --conventional-commits"
+  },
   "workspaces": [
     "packages/*",
     "website"

@@ -1,5 +1,5 @@
 {
-  "name": "@tuqulore-ui/tailwindcss",
+  "name": "@tuqulore/tailwindcss",
   "description": "A Tailwind CSS plugin which serve basic components designed by tuqulore inc.",
   "version": "1.0.0",
   "author": "tuqulore inc.",
@@ -14,6 +14,10 @@
   "main": "index.js",
   "peerDependencies": {
     "tailwindcss": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": "git@github.com:tuqulore/tuqulore-ui.git",
   "scripts": {
