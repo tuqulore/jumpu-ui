@@ -13,7 +13,7 @@
   "license": "MIT",
   "main": "index.js",
   "peerDependencies": {
-    "tailwindcss": "^2.0.0"
+    "tailwindcss": "^2"
   },
   "publishConfig": {
     "access": "restricted",
@@ -30,8 +30,12 @@
     "@storybook/addon-actions": "^6.3.2",
     "@storybook/addon-essentials": "^6.3.2",
     "@storybook/addon-links": "^6.3.2",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/html": "^6.3.2",
+    "autoprefixer": "^10.3.2",
     "babel-loader": "^8.2.2",
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
   }
 }

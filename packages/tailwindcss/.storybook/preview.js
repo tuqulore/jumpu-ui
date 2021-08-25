@@ -1,4 +1,4 @@
-import "../dist/tuqulore.css";
+import "./tailwindcss.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
