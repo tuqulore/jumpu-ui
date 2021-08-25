@@ -30,7 +30,6 @@
     "versionup": "lerna version --conventional-commits"
   },
   "workspaces": [
-    "packages/*",
-    "website"
+    "packages/*"
   ]
 }
