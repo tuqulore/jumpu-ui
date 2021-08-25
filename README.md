@@ -1,10 +1,18 @@
-# tuqulore-ui
+# tuqulore ui
 
-導入方法
+tuqulore ui は tuqulore がデザインした UI コンポーネントです。
+
+以下のバリエーションで提供しています。
+
+- tailwindcss (plugin)
+
+## 導入方法
 
 `$ yarn`
 
-開発方法
+## 開発方法
 
-`$ cd website`  
-`$ yarn dev`
+```
+$ cd packages/tailwindcss
+$ yarn storybook
+```
