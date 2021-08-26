@@ -7,9 +7,9 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".btn": {
+          ".button": {
             backgroundColor: theme("colors.primary.500"),
-            borderRadius: theme("tuqulore.btn.radius"),
+            borderRadius: theme("borderRadius.md"),
             color: "#fff",
             display: "inline-block",
             fontWeight: 700,

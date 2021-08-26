@@ -1,4 +1,4 @@
-const btn = require("./btn");
+const btn = require("./button");
 const form = require("./form");
 const typography = require("./typography");
 
