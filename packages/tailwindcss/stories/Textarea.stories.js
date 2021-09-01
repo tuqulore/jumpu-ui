@@ -1,12 +1,8 @@
 export default {
-  title: "Forms/Textarea",
-  argTypes: {
-    label: { control: "text" },
-  },
+  title: 'Forms/Textarea',
 };
 
-const TextareaTemplate = ({ label }) => {
-  return `<textarea placeholder="名前"></textarea>`;
+const TextareaTemplate = () => {
+  return `<textarea placeholder="お問い合わせ内容..."></textarea>`;
 };
-
 export const Default = TextareaTemplate.bind({});
