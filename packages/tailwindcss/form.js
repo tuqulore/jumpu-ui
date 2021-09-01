@@ -15,12 +15,14 @@ module.exports = plugin.withOptions(
           },
         },
         {
-          ".input": {
-            border: `1px solid ${theme("colors.gray.600")}`,
-            borderRadius: theme("tuqulore.input.radius"),
-            padding: "14px 24px",
+          "[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select": {
+            borderRadius: theme("borderRadius.md"),
+            borderWidth: theme("borderWidth.DEFAULT"),
+            color: theme("colors.gray.900"),
+            borderColor: theme("colors.gray.300"),
+            padding: "0.5em 0.75em",
             "&::placeholder": {
-              color: theme("colors.gray.600"),
+              color: theme("colors.gray.300"),
             },
             "&:focus": {
               borderColor: theme("colors.primary.600"),
@@ -32,3 +34,5 @@ module.exports = plugin.withOptions(
   },
   () => ({ theme })
 );
+
+
