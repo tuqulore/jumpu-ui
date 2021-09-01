@@ -1,17 +1,13 @@
-import clsx from "clsx";
 
 export default {
-    title: "Card",
+    title: "Cards/Card",
     argTypes: {
-        shadow: { control: 'boolean' },
+        label: { control: 'text' },
     },
 };
 
-const Template = ({ label, shadow, ...args }) => {
-    return `<div class="${clsx(
-        "card",
-        { "card-shadow": shadow },
-    )}">${label}</div>`;
+const Template = ({ label }) => {
+    return `<div class="card">${label}</div>`;
 };
 
 export const Default = Template.bind({});
