@@ -3,7 +3,6 @@ const theme = require("./theme");
 const buttonStyle = require("./lib/buttonStyle");
 
 module.exports = plugin.withOptions(
-  // NOTE: couldn't merge plugin-side theme when wrote the plugin without withOptions
   () => {
     return ({ addComponents, theme }) => {
       const { base, disabled } = buttonStyle(theme);
