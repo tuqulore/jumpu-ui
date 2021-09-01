@@ -1,4 +1,3 @@
-
 export default {
   title: "Forms/Input",
 };
@@ -14,13 +13,11 @@ const NumberTemplate = () => {
 export const Number = NumberTemplate.bind({});
 
 const EmailTemplate = () => {
-    return `<input type="email" placeholder="example@hoge.com" />`;
+  return `<input type="email" placeholder="example@hoge.com" />`;
 };
 export const Email = EmailTemplate.bind({});
 
 const DateTemplate = () => {
-    return `<input type="date" />`;
+  return `<input type="date" />`;
 };
 export const Date = DateTemplate.bind({});
-
-  

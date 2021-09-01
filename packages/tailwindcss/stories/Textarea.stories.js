@@ -1,8 +1,7 @@
-
 export default {
   title: "Forms/Textarea",
   argTypes: {
-    label: { control: 'text' }
+    label: { control: "text" },
   },
 };
 

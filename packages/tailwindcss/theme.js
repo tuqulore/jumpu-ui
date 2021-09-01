@@ -1,5 +1,4 @@
-
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   tuqulore: {
@@ -38,7 +37,7 @@ module.exports = {
       success: "#00A93E",
       emphasis: "#FF002E",
       warning: "#FACC15",
-      danger: "#B80000"
-    }
+      danger: "#B80000",
+    },
   },
 };

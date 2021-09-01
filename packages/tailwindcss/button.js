@@ -2,7 +2,6 @@ const plugin = require("tailwindcss/plugin");
 const theme = require("./theme");
 const buttonStyle = require("./lib/buttonStyle");
 
-
 module.exports = plugin.withOptions(
   // NOTE: couldn't merge plugin-side theme when wrote the plugin without withOptions
   () => {

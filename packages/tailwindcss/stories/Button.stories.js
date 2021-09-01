@@ -1,8 +1,7 @@
-
 export default {
   title: "Buttons/Button",
   argTypes: {
-    label: { control: 'text' }
+    label: { control: "text" },
   },
 };
 
@@ -24,4 +23,4 @@ const disabledTemplate = ({ label }) => {
 export const Disabled = disabledTemplate.bind({});
 Disabled.args = {
   ...Default.args,
-}
+};
