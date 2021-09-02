@@ -2,7 +2,6 @@ const plugin = require("tailwindcss/plugin");
 const theme = require("./theme");
 
 module.exports = plugin.withOptions(
-  // NOTE: couldn't merge plugin-side theme when wrote the plugin without withOptions
   () => {
     return ({ addComponents, theme }) => {
       addComponents([
