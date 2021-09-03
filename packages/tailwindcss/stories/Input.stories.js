@@ -1,3 +1,5 @@
+import { useEffect } from "@storybook/client-api";
+
 export default {
   title: "Forms/Input",
 };
@@ -53,14 +55,15 @@ const RadioTemplate = () => {
 export const Radio = RadioTemplate.bind({});
 
 const CheckboxTemplate = () => {
+  useEffect(() => {
+    document.querySelector("#checkbox input:nth-child(3)").indeterminate = true;
+  });
   return `
+    <div id="checkbox">
       <input type="checkbox" value="checkbox-1" class="mr-4" checked />
       <input type="checkbox" value="checkbox-2" class="mr-4" />
-      <input type="checkbox" value="checkbox-3" class="is-indeterminate" />
-
-      <script>
-        document.querySelector(".is-indeterminate").indeterminate = true;
-      </script>
+      <input type="checkbox" value="checkbox-3" />
+    </div>
   `;
 };
 export const Checkbox = CheckboxTemplate.bind({});
