@@ -7,6 +7,28 @@ const TextTemplate = () => {
 };
 export const Text = TextTemplate.bind({});
 
+const TextIconTemplate = () => {
+  return `
+  <div class="prose">
+  <p>
+    Font Awesome 5を使った例です
+  </p>
+  <h3>Search &#xf002;</h3>
+  <input type="text" class="input-icon" placeholder="&#xf002; Search" />
+
+  <h3>Mail &#xf002;</h3>
+  <input type="email" class="input-icon" placeholder="&#xf0e0; Search" />
+
+  <h3>Search &#xf002;</h3>
+  <input type="text" class="input-icon" placeholder="&#xf002; Search" />
+
+  <h3>Search &#xf002;</h3>
+  <input type="text" class="input-icon" placeholder="&#xf002; Search" />
+  </div>
+  `;
+};
+export const TextIcon = TextIconTemplate.bind({});
+
 const NumberTemplate = () => {
   return `<input type="number" placeholder="0" />`;
 };
