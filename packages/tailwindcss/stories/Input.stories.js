@@ -91,3 +91,14 @@ const SelectMultipleTemplate = () => {
     `;
 };
 export const SelectMultiple = SelectMultipleTemplate.bind({});
+
+const SwitchTemplate = () => {
+  return `
+    <div class="switch">
+      <input id="toggle" class="switch-input" type='checkbox' />
+      <label for="toggle" class="switch-label"/>
+        <span></span>
+    </div> 
+    `;
+};
+export const Switch = SwitchTemplate.bind({});
