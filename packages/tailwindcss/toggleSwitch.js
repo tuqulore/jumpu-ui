@@ -6,16 +6,15 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".switch": {
+          ".toggle-switch": {
             position: "relative",
-            width: theme("spacing.16"),
-            height: theme("spacing.8"),
+
             input: {
               position: "absolute",
               left: 0,
               top: 0,
-              width: "100%",
-              height: "100%",
+              width: theme("width.full"),
+              height: theme("height.full"),
               "z-index": 5,
               opacity: 0,
               cursor: "pointer",
@@ -30,12 +29,10 @@ module.exports = plugin.withOptions(
               "border-radius": theme("borderRadius.full"),
               transition: "0.2s",
               "box-sizing": "border-box",
+
               span: {
-                content: "",
                 position: "absolute",
-                width: theme("spacing.8"),
-                height: theme("height.full"),
-                "border-radius": "100%",
+                "border-radius": theme("borderRadius.full"),
                 left: 0,
                 top: 0,
                 "z-index": 2,
