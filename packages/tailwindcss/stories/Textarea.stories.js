@@ -1,5 +1,5 @@
 export default {
-  title: 'Forms/Textarea',
+  title: "Forms/Textarea",
 };
 
 const TextareaTemplate = () => {

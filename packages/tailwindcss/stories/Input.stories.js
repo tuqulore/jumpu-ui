@@ -1,5 +1,5 @@
 export default {
-  title: 'Forms/Input',
+  title: "Forms/Input",
 };
 
 const TextTemplate = () => {
