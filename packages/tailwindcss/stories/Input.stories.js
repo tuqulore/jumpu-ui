@@ -69,36 +69,3 @@ const FileTemplate = () => {
   return `<input type="file" />`;
 };
 export const File = FileTemplate.bind({});
-
-const SelectTemplate = () => {
-  return `
-      <select>
-        <option value="option-1">option-1</option>
-        <option value="option-2">option-2</option>
-        <option value="option-3">option-3</option>
-      </select>
-    `;
-};
-export const Select = SelectTemplate.bind({});
-
-const SelectMultipleTemplate = () => {
-  return `
-      <select multiple>
-        <option value="option-1">option-1</option>
-        <option value="option-2">option-2</option>
-        <option value="option-3">option-3</option>
-      </select>
-    `;
-};
-export const SelectMultiple = SelectMultipleTemplate.bind({});
-
-const SwitchTemplate = () => {
-  return `
-    <div class="switch">
-      <input id="toggle" class="switch-input" type='checkbox' />
-      <label for="toggle" class="switch-label"/>
-        <span></span>
-    </div> 
-    `;
-};
-export const Switch = SwitchTemplate.bind({});

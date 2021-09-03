@@ -7,14 +7,6 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".label": {
-            color: theme("colors.gray.600"),
-            fontSize: "12px",
-            lineHeight: 1,
-            marginBottom: "1em",
-          },
-        },
-        {
           "[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select": {
             appearance: "none",
             borderRadius: theme("borderRadius.md"),
@@ -115,76 +107,6 @@ module.exports = plugin.withOptions(
             "&:focus": {
               outline: `1px solid ButtonText`,
               outline: `1px auto -webkit-focus-ring-color`,
-            },
-          },
-          select: {
-            "background-image": `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="${theme(
-                "colors.gray.500"
-              )}" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>`
-            )}")`,
-            "background-position": `right ${theme("spacing.2")} center`,
-            "background-repeat": `no-repeat`,
-            "background-size": `1.5em 1.5em`,
-            "padding-right": theme("spacing.10"),
-            "color-adjust": `exact`,
-          },
-          "[multiple]": {
-            "background-image": "initial",
-            "background-position": "initial",
-            "background-repeat": "unset",
-            "background-size": "initial",
-            "padding-right": theme("spacing.3"),
-            "color-adjust": "unset",
-          },
-        },
-        {
-          ".switch": {
-            position: "relative",
-            width: theme("spacing.16"),
-            height: theme("spacing.8"),
-            input: {
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              height: "100%",
-              "z-index": 5,
-              opacity: 0,
-              cursor: "pointer",
-            },
-
-            label: {
-              width: theme("width.full"),
-              height: theme("height.full"),
-              background: theme("colors.gray.300"),
-              position: "relative",
-              display: "inline-block",
-              "border-radius": theme("borderRadius.full"),
-              transition: "0.2s",
-              "box-sizing": "border-box",
-              span: {
-                content: "",
-                position: "absolute",
-                width: theme("spacing.8"),
-                height: theme("height.full"),
-                "border-radius": "100%",
-                left: 0,
-                top: 0,
-                "z-index": 2,
-                background: theme("colors.white"),
-                "box-shadow": "0 0 5px rgba(0, 0, 0, 0.2)",
-                transition: "0.2s",
-              },
-            },
-
-            "input:checked": {
-              "+label": {
-                "background-color": theme("colors.primary.500"),
-                span: {
-                  transform: "translateX(100%)",
-                },
-              },
             },
           },
         },
