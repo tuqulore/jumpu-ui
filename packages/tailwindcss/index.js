@@ -10,6 +10,7 @@ const Accordion = require("./Accordion");
 const Tag = require("./Tag");
 const Tab = require("./Tab");
 const Chat = require("./Chat");
+const IconButton = require("./IconButton");
 
 module.exports = [
   button,
@@ -24,4 +25,5 @@ module.exports = [
   Tag,
   Tab,
   Chat,
+  IconButton,
 ];
