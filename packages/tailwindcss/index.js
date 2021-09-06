@@ -11,6 +11,7 @@ const Tag = require("./Tag");
 const Tab = require("./Tab");
 const Chat = require("./Chat");
 const IconButton = require("./IconButton");
+const LikeButton = require("./LikeButton");
 
 module.exports = [
   button,
@@ -26,4 +27,5 @@ module.exports = [
   Tab,
   Chat,
   IconButton,
+  LikeButton,
 ];
