@@ -9,6 +9,7 @@ const Avatar = require("./Avatar");
 const Accordion = require("./Accordion");
 const Tag = require("./Tag");
 const Tab = require("./Tab");
+const Chat = require("./Chat");
 
 module.exports = [
   button,
@@ -22,4 +23,5 @@ module.exports = [
   Accordion,
   Tag,
   Tab,
+  Chat,
 ];
