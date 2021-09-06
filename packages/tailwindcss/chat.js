@@ -13,6 +13,9 @@ module.exports = plugin.withOptions(
               backgroundColor: `${theme("colors.gray.100")}`,
               borderRadius: `${theme("borderRadius.2xl")}`,
               maxWidth: "80%",
+              a: {
+                textDecoration: "underline",
+              },
             },
             "&.align-right": {
               display: "flex",

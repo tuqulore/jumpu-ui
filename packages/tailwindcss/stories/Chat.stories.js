@@ -50,6 +50,25 @@ const PhotoTemplate = () => {
     <div class="chat mb-4">
         <img src="${require("./assets/chat-photo-2.jpg")}" alt="photo" class="message-image" />
     </div>
+
+    <div class="chat mb-4">
+        <div class="message-content">
+            こちらの写真を使わせていただいています    
+        </div>
+    </div>
+
+    <div class="chat mb-4">
+        <div class="message-content">
+            <a href="https://unsplash.com/photos/Z86w5TY2ccY">https://unsplash.com/photos/Z86w5TY2ccY</a>
+        </div>
+    </div>
+
+    <div class="chat mb-4">
+        <div class="message-content">
+            <a href="https://unsplash.com/photos/j5z0DZMWViU">https://unsplash.com/photos/j5z0DZMWViU</a>
+        </div>
+    </div>
+    
     `;
 };
 export const Photo = PhotoTemplate.bind({});
