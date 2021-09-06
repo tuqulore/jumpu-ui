@@ -7,6 +7,7 @@ const select = require("./select");
 const toggleSwitch = require("./toggleSwitch");
 const Avatar = require("./Avatar");
 const Accordion = require("./Accordion");
+const Tag = require("./Tag");
 
 module.exports = [
   button,
@@ -18,4 +19,5 @@ module.exports = [
   toggleSwitch,
   Avatar,
   Accordion,
+  Tag,
 ];
