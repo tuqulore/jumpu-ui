@@ -5,6 +5,7 @@ const card = require("./card");
 const input = require("./input");
 const select = require("./select");
 const toggleSwitch = require("./toggleSwitch");
+const Avatar = require("./Avatar");
 
 module.exports = [
   button,
@@ -14,4 +15,5 @@ module.exports = [
   input,
   select,
   toggleSwitch,
+  Avatar,
 ];
