@@ -1,5 +1,5 @@
 export default {
-  title: "Tab/Default",
+  title: "Menus/Tab",
 };
 
 const Template = () => {
