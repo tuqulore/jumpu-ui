@@ -1,5 +1,5 @@
 export default {
-  title: "LikeButton",
+  title: "Buttons/LikeButton",
 };
 
 const Template = () => {

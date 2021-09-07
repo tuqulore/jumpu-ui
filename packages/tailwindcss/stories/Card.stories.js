@@ -1,5 +1,5 @@
 export default {
-  title: "Cards/Card",
+  title: "Card/Card",
   argTypes: {
     label: { control: "text" },
   },

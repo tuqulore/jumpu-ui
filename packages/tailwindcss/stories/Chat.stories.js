@@ -1,5 +1,5 @@
 export default {
-  title: "Chat",
+  title: "Communications/Chat",
 };
 
 const Template = () => {

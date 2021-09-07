@@ -1,5 +1,5 @@
 export default {
-  title: "Avatar/Avatar",
+  title: "Communications/Avatar",
 };
 
 const avatarImage = require("./assets/avatar_photo.jpg");

@@ -1,5 +1,5 @@
 export default {
-  title: "IconButton",
+  title: "Buttons/IconButton",
 };
 
 const Template = () => {
