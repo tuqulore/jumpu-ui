@@ -5,13 +5,13 @@ const card = require("./card");
 const input = require("./input");
 const select = require("./select");
 const toggleSwitch = require("./toggleSwitch");
-const Avatar = require("./Avatar");
-const Accordion = require("./Accordion");
-const Tag = require("./Tag");
-const Tab = require("./Tab");
-const Chat = require("./Chat");
-const IconButton = require("./IconButton");
-const LikeButton = require("./LikeButton");
+const avatar = require("./avatar");
+const accordion = require("./accordion");
+const tag = require("./tag");
+const tab = require("./tab");
+const chat = require("./chat");
+const iconButton = require("./iconButton");
+const likeButton = require("./likeButton");
 
 module.exports = [
   button,
