@@ -41,3 +41,12 @@ const ShareTemplate = () => {
       `;
 };
 export const Share = ShareTemplate.bind({});
+
+const DateTemplate = () => {
+  return `
+      <div class="chat-date">
+          3日前
+      </div>
+      `;
+};
+export const Date = DateTemplate.bind({});
