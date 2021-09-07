@@ -12,6 +12,7 @@ const tab = require("./tab");
 const chat = require("./chat");
 const iconButton = require("./iconButton");
 const likeButton = require("./likeButton");
+const badge = require("./badge");
 
 module.exports = [
   button,
@@ -28,4 +29,5 @@ module.exports = [
   chat,
   iconButton,
   likeButton,
+  badge,
 ];

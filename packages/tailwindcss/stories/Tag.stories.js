@@ -1,5 +1,5 @@
 export default {
-  title: "Tag/Default",
+  title: "Status/Tag",
 };
 
 const Template = () => {
