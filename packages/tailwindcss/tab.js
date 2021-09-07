@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".tabs": {
+          ".tab": {
             "-webkit-overflow-scrolling": "touch",
             whitespace: "nowrap",
             overflow: "hidden",

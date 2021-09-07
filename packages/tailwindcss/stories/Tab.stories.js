@@ -4,7 +4,7 @@ export default {
 
 const Template = () => {
   return `
-  <div class="tabs">
+  <div class="tab">
     <ul>
         <li class=""><a>ホーム</a></li>
         <li class=""><a>タスク</a></li>
@@ -18,7 +18,7 @@ export const Default = Template.bind({});
 
 const BoxedTemplate = () => {
   return `
-  <div class="tabs tabs-boxed">
+  <div class="tab tab-boxed">
     <ul>
         <li class="is-active"><a>ホーム</a></li>
         <li><a>タスク</a></li>
