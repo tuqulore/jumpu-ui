@@ -11,21 +11,18 @@ export const Text = TextTemplate.bind({});
 
 const TextIconTemplate = () => {
   return `
-  <div class="prose">
-  <p>
+  <p class="mb-4">
     Font Awesome 5を使った例です
   </p>
-  <h3>Search &#xf002;</h3>
-  <input type="text" class="input-icon" placeholder="&#xf002; Search" />
 
-  <h3>Mail &#xf002;</h3>
-  <input type="email" class="input-icon" placeholder="&#xf0e0; Search" />
+  <div class="mt-4">
+   <h3 class="mb-1"><i class="fas fa-search"></i> 検索</h3>
+   <input type="text" class="input-icon" placeholder="&#xf002; 検索" />
+  </div>
 
-  <h3>Search &#xf002;</h3>
-  <input type="text" class="input-icon" placeholder="&#xf002; Search" />
-
-  <h3>Search &#xf002;</h3>
-  <input type="text" class="input-icon" placeholder="&#xf002; Search" />
+  <div class="mt-4">
+    <h3 class="mb-1"><i class="fas fa-envelope"></i> メール</h3>
+    <input type="email" class="input-icon" placeholder="&#xf0e0; メール" />
   </div>
   `;
 };

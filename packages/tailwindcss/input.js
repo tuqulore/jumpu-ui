@@ -24,8 +24,11 @@ module.exports = plugin.withOptions(
         },
         {
           ".input-icon": {
-            "font-family": "'Font Awesome 5 Free'",
-            fontWeight: 900,
+            "&::placeholder": {
+              "font-family": "'Font Awesome 5 Free'",
+              fontWeight: 900,
+              fontSize: theme("fontSize.sm"),
+            },
           },
         },
         {

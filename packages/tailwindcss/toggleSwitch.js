@@ -27,7 +27,7 @@ module.exports = plugin.withOptions(
               position: "relative",
               display: "inline-block",
               "border-radius": theme("borderRadius.full"),
-              transition: "0.2s",
+              transition: "0.1s",
               "box-sizing": "border-box",
 
               span: {
@@ -38,7 +38,7 @@ module.exports = plugin.withOptions(
                 "z-index": 2,
                 background: theme("colors.white"),
                 "box-shadow": "0 0 5px rgba(0, 0, 0, 0.2)",
-                transition: "0.2s",
+                transition: "0.1s",
               },
             },
 

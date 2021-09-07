@@ -15,7 +15,6 @@ module.exports = plugin.withOptions(
             "justify-content": "flex-start",
             "align-items": "center",
             ul: {
-              color: `${theme("colors.gray.600")}`,
               margin: 0,
               padding: 0,
               display: "flex",
@@ -40,14 +39,13 @@ module.exports = plugin.withOptions(
                 },
               },
               a: {
-                color: `${theme("colors.primary.700")}`,
                 textDecoration: "none",
                 "border-bottom": `1px solid ${theme("colors.gray.300")}`,
                 display: "flex",
                 "justify-content": "space-between",
                 "align-items": "center",
                 "margin-bottom": "-1px",
-                padding: `${theme("spacing.3")} ${theme("spacing.4")}`,
+                padding: "0.6em 0.8em",
                 "vertical-align": "top",
               },
             },
@@ -56,8 +54,8 @@ module.exports = plugin.withOptions(
                 cursor: "pointer",
                 "&:hover": {
                   "border-bottom": `1px solid ${theme("colors.gray.400")}`,
-                  color: `${theme("colors.primary.800")}`,
-                  backgroundColor: `${theme("colors.gray.50")}`,
+                  /* color: `${theme("colors.primary.800")}`, */
+                  /* backgroundColor: `${theme("colors.gray.50")}`, */
                 },
                 "&:active": {
                   backgroundColor: `${theme("colors.gray.100")}`,
@@ -71,6 +69,7 @@ module.exports = plugin.withOptions(
                   "border-radius": `${theme("borderRadius.md")} ${theme(
                     "borderRadius.md"
                   )} 0 0`,
+                  padding: "0.6em 1.2em",
                 },
                 "&.is-active": {
                   a: {
@@ -83,11 +82,11 @@ module.exports = plugin.withOptions(
             },
             "&-boxed li:not(.is-active)": {
               a: {
-                "&:hover": {
+                /* "&:hover": {
                   "background-color": `${theme("colors.gray.50")}`,
                   border: `1px solid ${theme("colors.gray.300")}`,
                   borderBottom: `1px solid ${theme("colors.white")}`,
-                },
+                }, */
                 "&:active": {
                   backgroundColor: `${theme("colors.gray.100")}`,
                 },
