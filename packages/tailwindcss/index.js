@@ -13,6 +13,7 @@ const chat = require("./chat");
 const iconButton = require("./iconButton");
 const likeButton = require("./likeButton");
 const badge = require("./badge");
+const spinner = require("./spinner");
 
 module.exports = [
   button,
@@ -30,4 +31,5 @@ module.exports = [
   iconButton,
   likeButton,
   badge,
+  spinner,
 ];
