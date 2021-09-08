@@ -8,6 +8,7 @@ const toggleSwitch = require("./toggleSwitch");
 const avatar = require("./avatar");
 const accordion = require("./accordion");
 const tag = require("./tag");
+const filledTag = require("./filledTag");
 const tab = require("./tab");
 const chat = require("./chat");
 const iconButton = require("./iconButton");
@@ -26,6 +27,7 @@ module.exports = [
   avatar,
   accordion,
   tag,
+  filledTag,
   tab,
   chat,
   iconButton,
