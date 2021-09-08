@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".tabs": {
+          ".boxed-tabs": {
             "-webkit-overflow-scrolling": "touch",
             "white-space": "nowrap",
             overflow: "hidden",
@@ -25,29 +25,25 @@ module.exports = plugin.withOptions(
               "border-bottom": `1px solid ${theme("colors.gray.300")}`,
             },
             "[role=tab]": {
-              margin: 0,
+              display: "block",
               marginRight: `${theme("spacing.2")}`,
               textDecoration: "none",
-              "border-bottom": `1px solid ${theme("colors.gray.300")}`,
-              display: "flex",
               "justify-content": "space-between",
               "align-items": "center",
               "margin-bottom": "-1px",
-              padding: "0.6em 0.8em",
               "vertical-align": "top",
-              "&:hover": {
-                "border-bottom": `1px solid ${theme("colors.gray.400")}`,
-              },
+              border: "1px solid transparent",
+              "border-radius": `${theme("borderRadius.md")} ${theme(
+                "borderRadius.md"
+              )} 0 0`,
+              padding: "0.4em 1.2em",
               "&[aria-selected=true]": {
-                "border-bottom": `1px solid ${theme("colors.primary.500")}`,
-                color: `${theme("colors.primary.500")}`,
-                cursor: "pointer",
-                "&:hover": {
-                  "border-bottom": `1px solid ${theme("colors.primary.600")}`,
-                },
-                "&:active": {
-                  backgroundColor: `${theme("colors.gray.50")}`,
-                },
+                border: `1px solid ${theme("colors.gray.300")}`,
+                "background-color": `${theme("colors.white")}`,
+                "border-bottom-color": "transparent",
+                position: "relative",
+                paddingTop: "0.5em",
+                paddingBottom: "0.4em",
               },
             },
           },
