@@ -15,6 +15,9 @@ module.exports = plugin.withOptions(
               width: theme("width.full"),
               height: theme("height.full"),
             },
+            "a&": {
+              display: "block",
+            },
           },
         },
       ]);
