@@ -11,11 +11,11 @@ const tag = require("./tag");
 const filledTag = require("./filledTag");
 const tab = require("./tab");
 const BoxedTab = require("./BoxedTab");
-const chat = require("./chat");
 const iconButton = require("./iconButton");
 const likeButton = require("./likeButton");
 const badge = require("./badge");
 const spinner = require("./spinner");
+const balloon = require("./balloon");
 
 module.exports = [
   button,
@@ -31,9 +31,9 @@ module.exports = [
   filledTag,
   tab,
   BoxedTab,
-  chat,
   iconButton,
   likeButton,
   badge,
   spinner,
+  balloon,
 ];
