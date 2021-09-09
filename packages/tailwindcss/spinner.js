@@ -8,19 +8,19 @@ module.exports = plugin.withOptions(
         {
           ".spinner": {
             "text-align": "center",
-            position: "absolute",
-            ".circular": {
+            svg: {
               height: "42px",
               width: "42px",
               animation: "loading-rotate 2s linear infinite",
+              stroke: "currentColor",
             },
-            ".path": {
+            circle: {
               animation: "loading-dash 1.5s ease-in-out infinite",
               "stroke-dasharray": "90,150",
               "stroke-dashoffset": 0,
               "stroke-width": 2,
-              stroke: theme("colors.primary.500"),
               "stroke-linecap": "round",
+              fill: "none",
             },
           },
           "@keyframes loading-rotate": {
