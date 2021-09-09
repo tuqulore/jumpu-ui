@@ -16,6 +16,7 @@ const likeButton = require("./likeButton");
 const badge = require("./badge");
 const spinner = require("./spinner");
 const balloon = require("./balloon");
+const galleries = require("./galleries");
 
 module.exports = [
   button,
@@ -36,4 +37,5 @@ module.exports = [
   badge,
   spinner,
   balloon,
+  galleries,
 ];
