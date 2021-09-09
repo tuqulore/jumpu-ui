@@ -3,7 +3,7 @@ const theme = require("./theme");
 
 module.exports = plugin.withOptions(
   () => {
-    return ({ addComponents, theme }) => {
+    return ({ addComponents }) => {
       addComponents([
         {
           ".spinner": {
