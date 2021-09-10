@@ -1,15 +1,12 @@
 export default {
-  title: "Buttons/Button",
+  title: "Buttons/OutlinedButton",
   argTypes: {
     label: { control: "text" },
-    disabled: { control: "boolean" },
   },
 };
 
-const Template = ({ label, disabled }) => {
-  return `<button type="button" class="button" ${
-    disabled && "disabled"
-  }>${label}</button>`;
+const Template = ({ label }) => {
+  return `<button type="button" class="outlined-button">${label}</button>`;
 };
 
 export const Default = Template.bind({});
@@ -19,7 +16,7 @@ Default.args = {
 
 const DisabledTemplate = ({ label }) => {
   return `
-    <button type="button" disabled class="button">${label}</button>
+    <button type="button" disabled class="outlined-button">${label}</button>
     `;
 };
 

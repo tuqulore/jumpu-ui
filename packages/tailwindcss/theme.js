@@ -1,36 +1,43 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   tuqulore: {
-    btn: {
-      radius: "3px",
-    },
     input: {
       radius: "8px",
     },
   },
-  colors: {
-    gray: {
-      50: "#fcfcfc",
-      100: "#f6f6f6",
-      200: "#ececec",
-      300: "#e3e3e3",
-      400: "#d9d9d9",
-      500: "#d0d0d0",
-      600: "#929292",
-      700: "#2c2c2c",
-      800: "#151515",
-      900: "#0c0c0c",
-    },
-    primary: {
-      50: "#f8e9e9",
-      100: "#f1d2d3",
-      200: "#e3a4a7",
-      300: "#d4777a",
-      400: "#c6494e",
-      500: "#b81c22",
-      600: "#8a151a",
-      700: "#5c0e11",
-      800: "#2e0709",
-      900: "#120303",
+  extend: {
+    colors: {
+      primary: {
+        50: "#E9F1F9",
+        100: "#C7DAEF",
+        200: "#91B6E1",
+        300: "#5990D1",
+        400: "#60A5FA",
+        500: "#0950C3",
+        600: "#2563EB",
+        700: "#113661",
+        800: "#081B30",
+        900: "#030B13",
+      },
+      tq: {
+        50: "#FFE6EB",
+        100: "#FFCCD5",
+        200: "#FF99AB",
+        300: "#FF6682",
+        400: "#FF3358",
+        500: "#FF002E",
+        600: "#BF0023",
+        700: "#800017",
+        800: "#40000C",
+        900: "#1A0005",
+      },
+      white: colors.white,
+      black: colors.black,
+      success: "#00A93E",
+      emphasis: "#FF002E",
+      warning: "#FACC15",
+      danger: "#B80000",
     },
   },
 };
