@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 jobs:
-  lint:
+  ci:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
