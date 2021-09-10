@@ -9,6 +9,7 @@
   "devDependencies": {
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-formatter-rdjson": "^1.0.5",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1"
   },
@@ -26,6 +27,9 @@
   "private": true,
   "repository": "git@github.com:tuqulore/tuqulore-ui.git",
   "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:rdjson": "eslint --format rdjson .",
     "release": "lerna publish from-package",
     "versionup": "lerna version --conventional-commits"
   },
