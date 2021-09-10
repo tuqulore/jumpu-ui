@@ -17,19 +17,8 @@ module.exports = plugin.withOptions(
             width: theme("width.8"),
             height: theme("height.8"),
             position: "relative",
-            ".icon-button-inner": {
-              width: "100%",
-              height: "100%",
-              borderRadius: theme("borderRadius.full"),
-              display: "inline-flex",
-              justifyContent: "center",
-              alignItems: "center",
-            },
             "&:focus": {
               outline: "none",
-            },
-            "&:active": {
-              backgroundColor: theme("colors.gray.200"),
             },
             "&:hover": {
               backgroundColor: theme("colors.gray.100"),
@@ -50,6 +39,9 @@ module.exports = plugin.withOptions(
                 color: theme("colors.gray.500"),
                 lineHeight: 1.2,
               },
+            },
+            "&:active": {
+              backgroundColor: theme("colors.gray.200"),
             },
           },
         },
