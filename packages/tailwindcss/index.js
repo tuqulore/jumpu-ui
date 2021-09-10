@@ -10,7 +10,7 @@ const accordion = require("./accordion");
 const tag = require("./tag");
 const filledTag = require("./filledTag");
 const tab = require("./tab");
-const BoxedTab = require("./BoxedTab");
+const boxedTab = require("./boxedTab");
 const iconButton = require("./iconButton");
 const likeButton = require("./likeButton");
 const badge = require("./badge");
@@ -30,7 +30,7 @@ module.exports = [
   tag,
   filledTag,
   tab,
-  BoxedTab,
+  boxedTab,
   iconButton,
   likeButton,
   badge,
