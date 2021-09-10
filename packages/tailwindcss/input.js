@@ -108,7 +108,6 @@ module.exports = plugin.withOptions(
             "font-size": "unset",
             "line-height": "inherit",
             "&:focus": {
-              outline: `1px solid ButtonText`,
               outline: `1px auto -webkit-focus-ring-color`,
             },
           },
