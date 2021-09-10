@@ -58,21 +58,21 @@ const Template = () => {
         </div>
 
         <div class="px-4 mb-4 flex">
-            <div class="avatar border-2 border-white w-10 h-10">
+            <a href="#" class="avatar border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
+            </a>
         </div>
 
         <div class="mb-4 px-4 text-gray-500 text-xs">marieさん、DLOさん、Kateさん…他3人がフォロー中</div>
@@ -129,21 +129,21 @@ const Template = () => {
         </div>
 
         <div class="px-4 mb-4 flex">
-            <div class="avatar border-2 border-white w-10 h-10">
+            <a href="#" class="avatar border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
-            <div class="avatar -ml-2 border-2 border-white w-10 h-10">
+            </a>
+            <a href="#" class="avatar -ml-2 border-2 border-white w-10 h-10">
                 <img src="${avatarImage}" alt="城田 亜利沙" />
-            </div>
+            </a>
         </div>
 
         <div class="mb-4 px-4 text-gray-500 text-xs">marieさん、DLOさん、Kateさん…他3人がフォロー中</div>
