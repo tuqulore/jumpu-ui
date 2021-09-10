@@ -11,7 +11,6 @@ module.exports = plugin.withOptions(
             padding: `${theme("spacing.3")} ${theme("spacing.4")}`,
             backgroundColor: `${theme("colors.gray.100")}`,
             borderRadius: `${theme("borderRadius.2xl")}`,
-            maxWidth: "80%",
             a: {
               textDecoration: "underline",
             },
