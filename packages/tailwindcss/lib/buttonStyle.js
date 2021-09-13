@@ -9,11 +9,12 @@ module.exports = (theme) => ({
     textDecoration: "none !important",
   },
   disabled: {
+    color: theme("colors.white"),
     backgroundColor: theme("colors.gray.300"),
     "border-color": theme("colors.gray.300"),
     "--tw-ring-color": theme("colors.gray.200"),
     cursor: "default",
-    "&:hover": {
+    "&:hover, &:active": {
       filter: "none",
       boxShadow: "none",
     },

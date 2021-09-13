@@ -34,7 +34,7 @@ module.exports = plugin.withOptions(
                 filter: "brightness(110%)",
               },
             },
-            "&.button-text": {
+            "&.texted-button": {
               background: "transparent",
               borderColor: "transparent",
               color: theme("colors.primary.500"),
