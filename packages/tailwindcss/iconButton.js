@@ -11,7 +11,7 @@ module.exports = plugin.withOptions(
             justifyContent: "center",
             alignItems: "center",
             color: theme("colors.gray.600"),
-            borderRadius: theme("borderRadius.full"),
+            borderRadius: theme("borderRadius.md"),
             outline: "none",
             width: theme("width.8"),
             height: theme("height.8"),
@@ -19,7 +19,7 @@ module.exports = plugin.withOptions(
             ".icon-button-inner": {
               width: "100%",
               height: "100%",
-              borderRadius: theme("borderRadius.full"),
+              borderRadius: theme("borderRadius.md"),
               display: "inline-flex",
               justifyContent: "center",
               alignItems: "center",
