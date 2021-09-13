@@ -11,7 +11,6 @@ module.exports = plugin.withOptions(
             justifyContent: "center",
             alignItems: "center",
             color: theme("colors.gray.600"),
-            backgroundColor: theme("colors.gray.50"),
             borderRadius: theme("borderRadius.full"),
             outline: "none",
             width: theme("width.8"),
@@ -28,18 +27,14 @@ module.exports = plugin.withOptions(
             "&:focus": {
               outline: "none",
             },
-            "&:active": {
-              backgroundColor: theme("colors.gray.200"),
-            },
             "&:hover": {
-              backgroundColor: theme("colors.gray.100"),
+              backgroundColor: theme("colors.gray.50"),
               color: theme("colors.gray.800"),
               "&::after": {
                 content: "attr(data-label)",
                 display: "inline-flex",
                 left: "50%",
                 top: 0,
-                padding: `${theme("spacing.1")} ${theme("spacing.2")}`,
                 position: "absolute",
                 transition: "0.2s",
                 transform: "translateX(-50%) translateY(-110%)",
@@ -50,6 +45,9 @@ module.exports = plugin.withOptions(
                 color: theme("colors.gray.500"),
                 lineHeight: 1.2,
               },
+            },
+            "&:active": {
+              backgroundColor: theme("colors.gray.200"),
             },
           },
         },
