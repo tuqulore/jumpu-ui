@@ -1,3 +1,5 @@
+const typography = require("@tailwindcss/typography");
+
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -11,5 +13,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [...require("./")],
+  plugins: [typography, ...require("./")],
 };
