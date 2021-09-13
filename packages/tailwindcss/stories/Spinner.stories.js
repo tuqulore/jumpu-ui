@@ -14,6 +14,35 @@ const Template = () => {
 
 export const Default = Template.bind({});
 
+const SizedTemplate = () => {
+  return `
+    <div class="flex items-center">
+        <div class="spinner w-4 h-4">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20"></circle>
+            </svg>
+        </div>
+        <div class="spinner w-6 h-6">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20"></circle>
+            </svg>
+        </div>
+        <div class="spinner w-8 h-8">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20"></circle>
+            </svg>
+        </div>
+        <div class="spinner w-16 h-16">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20"></circle>
+            </svg>
+        </div>
+    </div>
+    `;
+};
+
+export const Sized = SizedTemplate.bind({});
+
 const ColoredTemplate = () => {
   return `
   <div class="spinner text-primary-500">
