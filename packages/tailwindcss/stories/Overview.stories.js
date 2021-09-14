@@ -13,7 +13,7 @@ const Template = () => {
           <li>リスト</li>
         </ul>
         <p>
-              <a href="https://github.com/tuqulore/tuqulore-ui/">https://github.com/tuqulore/tuqulore-ui/</a>
+          <a href="https://github.com/tuqulore/tuqulore-ui/">https://github.com/tuqulore/tuqulore-ui/</a>
         </p>
         <p>
           <a href="#" class="button">ボタン</a>
