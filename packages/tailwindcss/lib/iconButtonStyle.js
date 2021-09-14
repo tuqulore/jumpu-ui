@@ -1,8 +1,8 @@
 const svgToDataUri = require("mini-svg-data-uri");
 
 module.exports = (theme) => {
-  const heart = (fill, stroke) => {
-    return {
+  return {
+    heart: (fill, stroke) => ({
       content: '""',
       left: 0,
       top: 0,
@@ -14,12 +14,7 @@ module.exports = (theme) => {
       "background-repeat": `no-repeat`,
       "background-size": `${theme("spacing.4")}`,
       height: "100%",
-    };
-  };
-  return {
-    heart: (fill, stroke) => {
-      return heart(fill, stroke);
-    },
+    }),
     base: {
       width: `${theme("spacing.8")}`,
       height: `${theme("spacing.8")}`,
