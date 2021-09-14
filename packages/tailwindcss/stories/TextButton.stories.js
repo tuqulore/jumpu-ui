@@ -1,5 +1,5 @@
 export default {
-  title: "Buttons/TextedButton",
+  title: "Buttons/TextButton",
   argTypes: {
     label: { control: "text" },
     disabled: { control: "boolean" },
@@ -7,7 +7,7 @@ export default {
 };
 
 const Template = ({ label, disabled }) => {
-  return `<button class="texted-button" ${
+  return `<button class="text-button" ${
     disabled && "disabled"
   }>${label}</button>`;
 };
@@ -19,7 +19,7 @@ Default.args = {
 
 const DisabledTemplate = ({ label }) => {
   return `
-    <button disabled class="texted-button">${label}</button>
+    <button disabled class="text-button">${label}</button>
     `;
 };
 

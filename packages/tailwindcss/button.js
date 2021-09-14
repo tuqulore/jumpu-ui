@@ -23,29 +23,6 @@ module.exports = plugin.withOptions(
             "&:focus": {
               outline: "none",
             },
-            "&.button-outlined": {
-              background: "transparent",
-              color: `${theme("colors.primary.500")} !important`,
-              "&:hover": {
-                background: theme("colors.primary.100"),
-                filter: "brightness(120%)",
-              },
-              "&:active": {
-                filter: "brightness(110%)",
-              },
-            },
-            "&.texted-button": {
-              background: "transparent",
-              borderColor: "transparent",
-              color: theme("colors.primary.500"),
-              "&:hover": {
-                background: theme("colors.primary.100"),
-                filter: "brightness(120%)",
-              },
-              "&:active": {
-                filter: "brightness(110%)",
-              },
-            },
             "&[disabled]": disabled,
           },
         },
