@@ -1,9 +1,6 @@
 const svgToDataUri = require("mini-svg-data-uri");
 
-module.exports = (theme, option = { close: {} }) => {
-  const {
-    close: { fill = theme("colors.gray.900") },
-  } = option;
+module.exports = (theme) => {
   return {
     base: {
       display: "inline-flex",
@@ -21,7 +18,7 @@ module.exports = (theme, option = { close: {} }) => {
         borderColor: theme("colors.gray.400"),
       },
     },
-    close: {
+    close: ({ fill = theme("colors.gray.900") } = {}) => ({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -36,6 +33,6 @@ module.exports = (theme, option = { close: {} }) => {
       "background-size": `1em 1em`,
       width: theme("spacing.2"),
       height: theme("spacing.2"),
-    },
+    }),
   };
 };

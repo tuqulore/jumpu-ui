@@ -10,7 +10,7 @@ module.exports = plugin.withOptions(
         {
           ".tag": {
             ...base,
-            button: close,
+            button: close(),
           },
         },
       ]);
