@@ -5,9 +5,7 @@ const tagStyle = require("./lib/tagStyle");
 module.exports = plugin.withOptions(
   () => {
     return ({ addComponents, theme }) => {
-      const { base, close } = tagStyle(theme, {
-        close: { fill: theme("colors.white") },
-      });
+      const { base, close } = tagStyle(theme);
       addComponents([
         {
           ".filled-tag": {
@@ -15,7 +13,7 @@ module.exports = plugin.withOptions(
             border: "none",
             backgroundColor: theme("colors.primary.500"),
             color: theme("colors.white"),
-            button: close,
+            button: close({ fill: theme("colors.white") }),
           },
         },
       ]);

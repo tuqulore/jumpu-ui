@@ -16,14 +16,6 @@ module.exports = plugin.withOptions(
             width: theme("width.8"),
             height: theme("height.8"),
             position: "relative",
-            ".icon-button-inner": {
-              width: "100%",
-              height: "100%",
-              borderRadius: theme("borderRadius.md"),
-              display: "inline-flex",
-              justifyContent: "center",
-              alignItems: "center",
-            },
             "&:focus": {
               outline: "none",
             },
