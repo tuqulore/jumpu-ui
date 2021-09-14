@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(
       addComponents([
         {
           ".accordion": {
-            ".accordion-header": {
+            "& > button": {
               width: "100%",
               padding: `${theme("spacing.3")} ${theme("spacing.4")}`,
               display: "flex",
@@ -43,7 +43,7 @@ module.exports = plugin.withOptions(
                 },
               },
             },
-            ".accordion-body": {
+            "& > div": {
               transition: "0.2s",
               overflow: "hidden",
               "&[aria-hidden='true']": {
