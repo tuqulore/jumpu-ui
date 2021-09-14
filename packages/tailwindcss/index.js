@@ -13,6 +13,7 @@ const tab = require("./tab");
 const boxedTab = require("./boxedTab");
 const iconButton = require("./iconButton");
 const likeButton = require("./likeButton");
+const labeledLikeButton = require("./labeledLikeButton");
 const badge = require("./badge");
 const spinner = require("./spinner");
 const balloon = require("./balloon");
@@ -33,6 +34,7 @@ module.exports = [
   boxedTab,
   iconButton,
   likeButton,
+  labeledLikeButton,
   badge,
   spinner,
   balloon,
