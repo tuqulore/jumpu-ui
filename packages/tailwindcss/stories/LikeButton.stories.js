@@ -11,7 +11,7 @@ export const Default = Template.bind({});
 
 const LikedTemplate = () => {
   return `
-        <a class="like-button" aria-pressed="true"></a>
+        <a class="like-button" role="button" aria-pressed="true"></a>
     `;
 };
 export const Liked = LikedTemplate.bind({});
