@@ -16,7 +16,7 @@ const Template = () => {
 export const Default = Template.bind({});
 
 const CollapsedTemplate = () => {
-  return ` 
+  return `
       <div class="accordion">
           <button type="button" aria-expanded="false" aria-controls="accordion-body-2">人間失格</button>
           <div id="accordion-body-2" aria-hidden="true">
