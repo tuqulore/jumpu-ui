@@ -8,20 +8,16 @@ module.exports = plugin.withOptions(
       const { base, disabled } = buttonStyle(theme);
       addComponents([
         {
-          ".button": {
+          ".text-button": {
             ...base,
-            backgroundColor: theme("colors.primary.500"),
-            color: "#fff",
-            borderColor: theme("colors.primary.500"),
+            background: "transparent",
+            borderColor: "transparent",
+            color: theme("colors.primary.500"),
             "&:hover": {
-              filter: "brightness(95%)",
-              boxShadow: `var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);`,
+              background: theme("colors.primary.50"),
             },
             "&:active": {
-              filter: "brightness(80%)",
-            },
-            "&:focus": {
-              outline: "none",
+              filter: "brightness(90%)",
             },
             "&[disabled]": disabled,
           },
