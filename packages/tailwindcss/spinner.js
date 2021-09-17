@@ -8,8 +8,8 @@ module.exports = plugin.withOptions(
         {
           ".spinner": {
             "text-align": "center",
-            width: theme("spacing.12"),
-            height: theme("spacing.12"),
+            width: theme("width.12"),
+            height: theme("height.12"),
             svg: {
               height: "100%",
               width: "100%",
