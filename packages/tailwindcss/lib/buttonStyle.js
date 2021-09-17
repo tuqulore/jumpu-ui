@@ -2,10 +2,8 @@ module.exports = (theme) => ({
   base: {
     appearance: "none",
     borderRadius: theme("borderRadius.md"),
-    borderWidth: theme("borderWidth.DEFAULT"),
     display: "inline-block",
-    fontWeight: 700,
-    padding: ".8em 3.2em",
+    padding: ".6em 1.2em",
     textDecoration: "none !important",
   },
   disabled: {

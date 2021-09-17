@@ -12,7 +12,6 @@ module.exports = plugin.withOptions(
             ...base,
             backgroundColor: theme("colors.primary.500"),
             color: "#fff",
-            borderColor: theme("colors.primary.500"),
             "&:hover": {
               filter: "brightness(95%)",
               boxShadow: `var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);`,
