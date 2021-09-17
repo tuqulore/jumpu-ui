@@ -9,13 +9,13 @@ module.exports = (theme) => {
       padding: `${theme("spacing.1")} ${theme("spacing.3")}`,
       fontSize: theme("fontSize.xs"),
       borderRadius: theme("borderRadius.md"),
-      border: `1px solid ${theme("colors.gray.300")}`,
-      background: theme("colors.white"),
+      border: `1px solid ${theme("colors.gray.100")}`,
+      background: theme("colors.gray.50"),
       textDecoration: "none",
       lineHeight: 1.3,
       cursor: "pointer",
       "&:hover": {
-        borderColor: theme("colors.gray.400"),
+        borderColor: theme("colors.gray.300"),
       },
     },
     close: ({ fill = theme("colors.gray.900") } = {}) => ({
