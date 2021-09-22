@@ -28,15 +28,15 @@ module.exports = (theme) => {
       overflow: "hidden",
       cursor: "pointer",
       position: "relative",
-      color: theme("colors.primary.500"),
+      color: theme("colors.gray.400"),
       "&:focus": {
         outline: "none",
       },
       "&:hover": {
-        backgroundColor: theme("colors.primary.50"),
+        backgroundColor: theme("colors.gray.50"),
       },
       "&:active": {
-        backgroundColor: theme("colors.primary.100"),
+        backgroundColor: theme("colors.gray.100"),
       },
     },
     liked: {

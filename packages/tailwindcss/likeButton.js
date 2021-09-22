@@ -11,7 +11,7 @@ module.exports = plugin.withOptions(
           ".like-button": {
             ...base,
             "&::before": {
-              ...heart("transparent", theme("colors.primary.500")),
+              ...heart("transparent", theme("colors.gray.400")),
               width: "100%",
               position: "absolute",
             },

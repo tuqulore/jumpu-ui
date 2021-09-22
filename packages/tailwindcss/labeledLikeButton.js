@@ -13,11 +13,10 @@ module.exports = plugin.withOptions(
             width: "auto",
             whiteSpace: "nowrap",
             fontSize: theme("fontSize.sm"),
-            fontWeight: "bold",
-            padding: `0 ${theme("spacing.2")}`,
+            padding: `0 ${theme("spacing.3")}`,
             lineHeight: 1,
             "&::before": {
-              ...heart("transparent", theme("colors.primary.500")),
+              ...heart("transparent", theme("colors.gray.400")),
               width: "20px",
               position: "relative",
               marginRight: theme("spacing.1"),
