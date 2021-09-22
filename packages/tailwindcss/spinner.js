@@ -3,14 +3,16 @@ const theme = require("./theme");
 
 module.exports = plugin.withOptions(
   () => {
-    return ({ addComponents }) => {
+    return ({ addComponents, theme }) => {
       addComponents([
         {
           ".spinner": {
             "text-align": "center",
+            width: theme("width.12"),
+            height: theme("height.12"),
             svg: {
-              height: "42px",
-              width: "42px",
+              height: "100%",
+              width: "100%",
               animation: "loading-rotate 2s linear infinite",
               stroke: "currentColor",
             },
