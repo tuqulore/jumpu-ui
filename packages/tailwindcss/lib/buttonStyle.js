@@ -5,7 +5,6 @@ module.exports = (theme) => ({
     display: "inline-block",
     padding: ".6em 1.2em",
     textDecoration: "none !important",
-    "will-change": "auto",
   },
   disabled: {
     color: theme("colors.white"),
