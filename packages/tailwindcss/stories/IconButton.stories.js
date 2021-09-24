@@ -4,34 +4,45 @@ export default {
 
 const Template = () => {
   return `
-        <button type="button" class="icon-button" aria-label="Twitter" data-label="Twitter">    
+        <button class="icon-button" aria-describedby="tooltip-Twitter">    
             <i class="fab fa-twitter"></i>
+            <span id="tooltip-Twitter" role="tooltip">Twitter</span>
         </button>
-        <button type="button" class="icon-button" aria-label="メール" data-label="メール">
+
+        <button class="icon-button" aria-describedby="tooltip-envelope">    
             <i class="fas fa-envelope"></i>
+            <span id="tooltip-envelope" role="tooltip">メール</span>
         </button>
-        <button type="button" class="icon-button" aria-label="ホーム" data-label="ホーム">
+
+        <button class="icon-button" aria-describedby="tooltip-home">    
             <i class="fas fa-home"></i>
+            <span id="tooltip-home" role="tooltip">ホーム</span>
         </button>
-        <button type="button" class="icon-button" aria-label="その他" data-label="その他">
+
+        <button class="icon-button" aria-describedby="tooltip-etc">    
             <i class="fas fa-ellipsis-h"></i>
+            <span id="tooltip-etc" role="tooltip">その他</span>
         </button>
+
     `;
 };
 export const Default = Template.bind({});
 
 const NoLabelTemplate = () => {
   return `
-        <button type="button" class="icon-button" aria-label="Twitter">
+        <button class="icon-button" aria-describedby="tooltip-Twitter">    
             <i class="fab fa-twitter"></i>
         </button>
-        <button type="button" class="icon-button" aria-label="メール">
+
+        <button class="icon-button" aria-describedby="tooltip-envelope">    
             <i class="fas fa-envelope"></i>
         </button>
-        <button type="button" class="icon-button" aria-label="ホーム">
+
+        <button class="icon-button" aria-describedby="tooltip-home">    
             <i class="fas fa-home"></i>
         </button>
-        <button type="button" class="icon-button" aria-label="その他">
+
+        <button class="icon-button" aria-describedby="tooltip-etc">    
             <i class="fas fa-ellipsis-h"></i>
         </button>
       `;
@@ -40,17 +51,24 @@ export const NoLabel = NoLabelTemplate.bind({});
 
 const LargeTemplate = () => {
   return `
-        <button type="button" class="icon-button text-lg w-12 h-12" aria-label="Twitter" data-label="Twitter">    
+        <button class="icon-button text-lg w-12 h-12" aria-describedby="tooltip-Twitter">    
             <i class="fab fa-twitter"></i>
+            <span id="tooltip-Twitter" role="tooltip">Twitter</span>
         </button>
-        <button type="button" class="icon-button text-lg w-12 h-12" aria-label="メール" data-label="メール">
+
+        <button class="icon-button text-lg w-12 h-12" aria-describedby="tooltip-envelope">    
             <i class="fas fa-envelope"></i>
+            <span id="tooltip-envelope" role="tooltip">メール</span>
         </button>
-        <button type="button" class="icon-button text-lg w-12 h-12" aria-label="ホーム" data-label="ホーム">
+
+        <button class="icon-button text-lg w-12 h-12" aria-describedby="tooltip-home">    
             <i class="fas fa-home"></i>
+            <span id="tooltip-home" role="tooltip">ホーム</span>
         </button>
-        <button type="button" class="icon-button text-lg w-12 h-12" aria-label="その他" data-label="その他">
+
+        <button class="icon-button text-lg w-12 h-12" aria-describedby="tooltip-etc">    
             <i class="fas fa-ellipsis-h"></i>
+            <span id="tooltip-etc" role="tooltip">その他</span>
         </button>
       `;
 };
@@ -58,17 +76,24 @@ export const Large = LargeTemplate.bind({});
 
 const SmallTemplate = () => {
   return `
-        <button type="button" class="icon-button text-xs w-6 h-6" aria-label="Twitter" data-label="Twitter">    
+        <button class="icon-button text-xs w-6 h-6" aria-describedby="tooltip-Twitter">    
             <i class="fab fa-twitter"></i>
+            <span id="tooltip-Twitter" role="tooltip">Twitter</span>
         </button>
-        <button type="button" class="icon-button text-xs w-6 h-6" aria-label="メール" data-label="メール">
+
+        <button class="icon-button text-xs w-6 h-6" aria-describedby="tooltip-envelope">    
             <i class="fas fa-envelope"></i>
+            <span id="tooltip-envelope" role="tooltip">メール</span>
         </button>
-        <button type="button" class="icon-button text-xs w-6 h-6" aria-label="ホーム" data-label="ホーム">
+
+        <button class="icon-button text-xs w-6 h-6" aria-describedby="tooltip-home">    
             <i class="fas fa-home"></i>
+            <span id="tooltip-home" role="tooltip">ホーム</span>
         </button>
-        <button type="button" class="icon-button text-xs w-6 h-6" aria-label="その他" data-label="その他">
+
+        <button class="icon-button text-xs w-6 h-6" aria-describedby="tooltip-etc">    
             <i class="fas fa-ellipsis-h"></i>
+            <span id="tooltip-etc" role="tooltip">その他</span>
         </button>
         `;
 };
