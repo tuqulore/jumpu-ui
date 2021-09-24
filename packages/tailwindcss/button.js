@@ -12,12 +12,12 @@ module.exports = plugin.withOptions(
             ...base,
             backgroundColor: theme("colors.primary.500"),
             color: "#fff",
+            transition: "30ms filter cubic-bezier(0, 0, 0.12, 1)",
             "&:hover": {
-              filter: "brightness(95%)",
-              boxShadow: `var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);`,
+              filter: "brightness(90%)",
             },
             "&:active": {
-              filter: "brightness(80%)",
+              filter: "brightness(75%)",
             },
             "&:focus": {
               outline: "none",
