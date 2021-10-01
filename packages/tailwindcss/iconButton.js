@@ -30,7 +30,7 @@ module.exports = plugin.withOptions(
               fontSize: theme("fontSize.xs"),
               whiteSpace: "nowrap",
               color: theme("colors.white"),
-              lineHeight: 1.2,
+              lineHeight: theme("lineHeight.tight"),
             },
             "&:focus": {
               outline: "none",
