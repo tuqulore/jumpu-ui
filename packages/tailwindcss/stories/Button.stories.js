@@ -62,7 +62,7 @@ const RoundedFullTemplate = () => {
   `;
 };
 
-export const RooundedFull = RoundedFullTemplate.bind({});
+export const RoundedFull = RoundedFullTemplate.bind({});
 
 const ColoredTemplate = () => {
   return `
