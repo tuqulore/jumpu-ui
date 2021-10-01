@@ -86,6 +86,56 @@ const ColoredTemplate = () => {
 
 export const Colored = ColoredTemplate.bind({});
 
+const RingColoredTemplate = () => {
+  return `
+    <p class="mb-4">
+      <button type="button" class="button ring-opacity-50 ring-4">ボタン</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-success ring-success ring-opacity-50 ring-4">成功しました</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-danger ring-danger ring-opacity-50 ring-4">削除します</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-warning text-black ring-warning ring-opacity-50 ring-4">下書き保存</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-gray-100 text-black ring-gray-200 ring-opacity-60 ring-4">白いボタン</button>
+    </p>
+    <p>
+      <button type="button" class="button bg-gray-700 ring-gray-700 ring-opacity-50 ring-4">黒いボタン</button>
+    </p>
+  `;
+};
+
+export const RingColored = RingColoredTemplate.bind({});
+
+const OutlinedRingColorTemplate = () => {
+  return `
+    <p class="mb-4">
+      <button type="button" class="button ring-opacity-50 ring-offset-1 ring-4">ボタン</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-success ring-success ring-opacity-50 ring-offset-1 ring-4">成功しました</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-danger ring-danger ring-opacity-50 ring-offset-1 ring-4">削除します</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-warning text-black ring-warning ring-opacity-50 ring-offset-1 ring-4">下書き保存</button>
+    </p>
+    <p class="mb-4">
+      <button type="button" class="button bg-gray-100 text-black ring-gray-200 ring-opacity-60 ring-offset-1 ring-4">白いボタン</button>
+    </p>
+    <p>
+      <button type="button" class="button bg-gray-700 ring-gray-700 ring-opacity-50 ring-offset-1 ring-4">黒いボタン</button>
+    </p>
+  `;
+};
+
+export const OutlinedRingColor = OutlinedRingColorTemplate.bind({});
+
 const DisabledTemplate = () => {
   return `
     <button type="button" disabled class="button">利用できないボタン</button>
