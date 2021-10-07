@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+
+<Meta title="Communications/Avatar" />
+
+export const avatarImage = require("./assets/avatar_photo.jpg")
+
+# Avatar
+
+<Canvas>
+  <Story name="Default">
+    {`
+      <div class="avatar">
+        <img src="${require("./assets/avatar_photo.jpg")}" alt="城田 亜利沙" />
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+## Stories
+
+### Anchor
+
+<Canvas>
+  <Story name="Anchor">
+    {`
+      <a href="#" class="avatar">
+        <img src="${avatarImage}" alt="城田 亜利沙" />
+      </a>
+    `}
+  </Story>
+</Canvas>
+
+### Square
+
+<Canvas>
+  <Story name="Square">
+    {`
+      <div class="avatar rounded-none">
+        <img src="${avatarImage}" alt="城田 亜利沙" />
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+### Radius
+
+<Canvas>
+  <Story name="Radius">
+    {`
+      <div class="avatar rounded">
+        <img src="${avatarImage}" alt="城田 亜利沙" />
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+### Small
+
+<Canvas>
+  <Story name="Small">
+    {`
+      <div class="avatar w-8 h-8">
+        <img src="${avatarImage}" alt="城田 亜利沙" />
+      </div>
+    `}
+  </Story>
+</Canvas>
