@@ -17,6 +17,21 @@ const Template = () => {
 };
 export const Default = Template.bind({});
 
+const AnchorTemplate = () => {
+  return `
+        <a href="#" class="filled-tag">デフォルト</a>
+        <a href="#" class="filled-tag bg-green-700 ">検討中</a>
+        <a href="#" class="filled-tag bg-red-700 ">着手</a>
+        <a href="#" class="filled-tag bg-yellow-700 ">作業済</a>
+        <a href="#" class="filled-tag bg-pink-600 ">確認中</a>
+        <a href="#" class="filled-tag bg-gray-600 ">ペンディング</a>
+        <a href="#" class="filled-tag bg-blue-700 ">TypeScript</a>
+        <a href="#" class="filled-tag bg-indigo-600 ">Git</a>
+        <a href="#" class="filled-tag bg-purple-600 ">Design</a>
+    `;
+};
+export const Anchor = AnchorTemplate.bind({});
+
 const RoundedTemplate = () => {
   return `
           <div class="filled-tag rounded-full">デフォルト</div>
