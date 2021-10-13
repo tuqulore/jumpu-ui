@@ -12,6 +12,7 @@ module.exports = plugin.withOptions(
             overflow: "hidden",
             "border-width": "1px",
             "border-color": theme("colors.gray.200"),
+            display: "block",
           },
         },
       ]);
