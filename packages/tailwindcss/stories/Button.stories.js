@@ -17,6 +17,12 @@ Default.args = {
   label: "ボタン",
 };
 
+const AnchorTemplate = () => {
+  return `<a href="#" class="button">リンクボタン</a>`;
+};
+
+export const Anchor = AnchorTemplate.bind({});
+
 const LongTextTemplate = () => {
   return `<button type="button" class="button">利用規約に同意して登録</button>`;
 };
