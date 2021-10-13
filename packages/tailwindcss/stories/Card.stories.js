@@ -16,6 +16,14 @@ Default.args = {
   label: "カード",
 };
 
+const AnchorTemplate = () => {
+  return `
+        <a href="#" class="card px-4 py-3 mb-4">リンクカード</a>
+    `;
+};
+
+export const Anchor = AnchorTemplate.bind({});
+
 const ShadowedTemplate = ({ label }) => {
   return `
         <div class="card px-4 py-3 border-0 shadow-lg">${label}</div>    
