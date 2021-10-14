@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const em = require("./tailwind.em.theme");
 
 module.exports = {
   tuqulore: {
@@ -7,6 +8,9 @@ module.exports = {
     },
   },
   extend: {
+    spacing: {
+      ...em,
+    },
     colors: {
       primary: {
         50: "#E9F1F9",
