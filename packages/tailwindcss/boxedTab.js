@@ -36,14 +36,14 @@ module.exports = plugin.withOptions(
               "border-radius": `${theme("borderRadius.md")} ${theme(
                 "borderRadius.md"
               )} 0 0`,
-              padding: "0.4em 1.2em",
+              padding: `${theme("padding['rel1.5']")} ${theme("padding.rel5")}`,
               "&[aria-selected=true]": {
                 border: `1px solid ${theme("colors.gray.300")}`,
                 "background-color": `${theme("colors.white")}`,
                 "border-bottom-color": "transparent",
                 position: "relative",
-                paddingTop: "0.5em",
-                paddingBottom: "0.4em",
+                paddingTop: theme("padding['rel2']"),
+                paddingBottom: theme("padding['rel2']"),
               },
             },
           },

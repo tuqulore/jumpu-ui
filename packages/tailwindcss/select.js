@@ -15,7 +15,7 @@ module.exports = plugin.withOptions(
             )}")`,
             "background-position": `right ${theme("spacing.2")} center`,
             "background-repeat": `no-repeat`,
-            "background-size": `1.5em 1.5em`,
+            "background-size": theme("width.rel6"),
             "padding-right": theme("spacing.10"),
             "color-adjust": `exact`,
           },

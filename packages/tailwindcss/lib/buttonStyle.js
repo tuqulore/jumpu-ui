@@ -3,7 +3,7 @@ module.exports = (theme) => ({
     appearance: "none",
     borderRadius: theme("borderRadius.md"),
     display: "inline-block",
-    padding: `${theme("padding.3em")} ${theme("padding.5em")}`,
+    padding: `${theme("padding['rel2.5']")} ${theme("padding.rel4")}`,
     textDecoration: "none !important",
   },
   disabled: {

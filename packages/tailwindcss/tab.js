@@ -33,7 +33,9 @@ module.exports = plugin.withOptions(
               "justify-content": "space-between",
               "align-items": "center",
               "margin-bottom": "-1px",
-              padding: "0.6em 0.8em",
+              padding: `${theme("padding['rel2.5']")} ${theme(
+                "padding['rel3.5']"
+              )}`,
               "vertical-align": "top",
               "&:hover": {
                 "border-bottom": `1px solid ${theme("colors.gray.400")}`,

@@ -13,7 +13,7 @@ module.exports = plugin.withOptions(
             borderWidth: theme("borderWidth.DEFAULT"),
             color: theme("colors.gray.900"),
             borderColor: theme("colors.gray.300"),
-            padding: "0.5em 0.75em",
+            padding: `${theme("padding.rel2")} ${theme("padding.rel3")}`,
             "&::placeholder": {
               color: theme("colors.gray.300"),
             },
