@@ -30,7 +30,7 @@ module.exports = (theme) => {
       )}")`,
       "background-position": `center`,
       "background-repeat": `no-repeat`,
-      "background-size": `1em 1em`,
+      "background-size": `${theme("spacing.rel4")} ${theme("spacing.rel4")}`,
       width: theme("spacing.2"),
       height: theme("spacing.2"),
     }),
