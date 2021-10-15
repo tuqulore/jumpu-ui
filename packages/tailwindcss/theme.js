@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const relScale = require("./lib/relScale");
 
 module.exports = {
   tuqulore: {
@@ -7,6 +8,7 @@ module.exports = {
     },
   },
   extend: {
+    spacing: relScale,
     colors: {
       primary: {
         50: "#E9F1F9",
