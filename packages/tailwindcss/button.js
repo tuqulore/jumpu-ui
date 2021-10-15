@@ -10,7 +10,7 @@ module.exports = plugin.withOptions(
         {
           ".button": {
             ...base,
-            backgroundColor: theme("colors.primary.500"),
+            backgroundColor: theme("colors.primary.700"),
             color: "#fff",
             transition: "30ms filter cubic-bezier(0, 0, 0.12, 1)",
             "&:hover": {

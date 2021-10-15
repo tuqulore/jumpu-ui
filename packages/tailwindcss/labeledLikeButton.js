@@ -17,7 +17,7 @@ module.exports = plugin.withOptions(
             padding: `0 ${theme("spacing.2")}`,
             lineHeight: 1,
             "&::before": {
-              ...heart("transparent", theme("colors.primary.500")),
+              ...heart("transparent", theme("colors.primary.700")),
               width: "20px",
               position: "relative",
               marginRight: theme("spacing.1"),

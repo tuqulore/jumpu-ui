@@ -44,7 +44,7 @@ module.exports = plugin.withOptions(
 
             "input:checked": {
               "+label": {
-                "background-color": theme("colors.primary.500"),
+                "background-color": theme("colors.primary.700"),
                 span: {
                   transform: "translateX(100%)",
                 },

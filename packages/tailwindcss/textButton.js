@@ -12,7 +12,7 @@ module.exports = plugin.withOptions(
             ...base,
             background: "transparent",
             borderColor: "transparent",
-            color: theme("colors.primary.500"),
+            color: theme("colors.primary.700"),
             "&:hover": {
               background: theme("colors.primary.50"),
             },
