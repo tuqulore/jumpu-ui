@@ -41,11 +41,11 @@ module.exports = plugin.withOptions(
                 "border-bottom": `1px solid ${theme("colors.gray.400")}`,
               },
               "&[aria-selected=true]": {
-                "border-bottom": `1px solid ${theme("colors.primary.500")}`,
-                color: `${theme("colors.primary.500")}`,
+                "border-bottom": `1px solid ${theme("colors.primary.700")}`,
+                color: `${theme("colors.primary.700")}`,
                 cursor: "pointer",
                 "&:hover": {
-                  "border-bottom": `1px solid ${theme("colors.primary.600")}`,
+                  "border-bottom": `1px solid ${theme("colors.primary.800")}`,
                 },
                 "&:active": {
                   backgroundColor: `${theme("colors.gray.50")}`,

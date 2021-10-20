@@ -23,7 +23,7 @@ const Template = () => {
                     </label>
                 </div>
                 <div class="mb-4">
-                    <a class="text-primary-500 text-sm" href="#">ログインにお困りの方はこちら</a>
+                    <a class="text-primary-700 text-sm" href="#">ログインにお困りの方はこちら</a>
                 </div>
                 <input type="submit" class="button w-full" value="ログイン">
             </form>
@@ -54,7 +54,7 @@ const NotEnteredTemplate = () => {
                       </label>
                   </div>
                   <div class="mb-4">
-                    <a class="text-primary-500 text-sm" href="#">ログインにお困りの方はこちら</a>
+                    <a class="text-primary-700 text-sm" href="#">ログインにお困りの方はこちら</a>
                   </div>
                   <input type="submit" disabled class="button w-full" value="ログイン">
               </form>
@@ -88,7 +88,7 @@ const InvalidTemplate = () => {
                         </label>
                     </div>
                     <div class="mb-4">
-                        <a class="text-primary-500 text-sm" href="#">ログインにお困りの方はこちら</a>
+                        <a class="text-primary-700 text-sm" href="#">ログインにお困りの方はこちら</a>
                     </div>
                     <input type="submit" disabled class="button w-full" value="ログイン">
                 </form>

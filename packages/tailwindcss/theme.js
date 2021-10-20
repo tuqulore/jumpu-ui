@@ -11,16 +11,7 @@ module.exports = {
     spacing: relScale,
     colors: {
       primary: {
-        50: "#E9F1F9",
-        100: "#C7DAEF",
-        200: "#91B6E1",
-        300: "#5990D1",
-        400: "#60A5FA",
-        500: "#0950C3",
-        600: "#2563EB",
-        700: "#113661",
-        800: "#081B30",
-        900: "#030B13",
+        ...colors.blue,
       },
       tq: {
         50: "#FFE6EB",
