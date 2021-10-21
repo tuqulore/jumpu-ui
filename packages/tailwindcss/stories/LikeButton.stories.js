@@ -4,14 +4,14 @@ export default {
 
 const Template = () => {
   return `
-        <a class="like-button"></a>
+        <button type="button" class="like-button" aria-pressed="false" aria-label="いいね"></button>
     `;
 };
 export const Default = Template.bind({});
 
 const LikedTemplate = () => {
   return `
-        <a class="like-button" role="button" aria-pressed="true"></a>
+        <button type="button" class="like-button" aria-pressed="true" aria-label="いいね"></button>
     `;
 };
 export const Liked = LikedTemplate.bind({});
