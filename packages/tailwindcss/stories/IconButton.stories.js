@@ -20,6 +20,24 @@ const Template = () => {
 };
 export const Default = Template.bind({});
 
+const AnchorTemplate = () => {
+  return `
+          <a href="#" class="icon-button" aria-label="Twitter" data-label="Twitter">    
+              <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="icon-button" aria-label="メール" data-label="メール">
+              <i class="fas fa-envelope"></i>
+          </a>
+          <a href="#" class="icon-button" aria-label="ホーム" data-label="ホーム">
+              <i class="fas fa-home"></i>
+          </a>
+          <a href="#" class="icon-button" aria-label="その他" data-label="その他">
+              <i class="fas fa-ellipsis-h"></i>
+          </a>
+      `;
+};
+export const Anchor = AnchorTemplate.bind({});
+
 const NoLabelTemplate = () => {
   return `
         <button type="button" class="icon-button" aria-label="Twitter">

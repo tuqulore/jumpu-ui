@@ -25,6 +25,27 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 
 ## Stories
 
+### Anchor
+
+<Canvas>
+  <Story name="Anchor">
+    {`
+      <div class="boxed-tabs">
+        <div role="tablist" aria-label="Sample BoxedTabs">
+          <a href="#" role="tab" aria-selected="false" aria-controls="anchor-panel-1" id="anchor-tab-1" tabindex="0">ホーム</a>
+          <a href="#" role="tab" aria-selected="false" aria-controls="anchor-panel-2" id="anchor-tab-2" tabindex="0">タスク</a>
+          <a href="#" role="tab" aria-selected="true" aria-controls="anchor-panel-3" id="anchor-tab-3" tabindex="-1">実績</a>
+          <a href="#" role="tab" aria-selected="false" aria-controls="anchor-panel-4" id="anchor-tab-4" tabindex="0">会話</a>
+        </div>
+      </div>
+      <div role="tabpanel" id="anchor-panel-1" aria-labelledby="anchor-tab-1"></div>
+      <div role="tabpanel" id="anchor-panel-2" aria-labelledby="anchor-tab-2"></div>
+      <div role="tabpanel" id="anchor-panel-3" aria-labelledby="anchor-tab-3"></div>
+      <div role="tabpanel" id="anchor-panel-4" aria-labelledby="anchor-tab-4"></div>
+    `}
+  </Story>
+</Canvas>
+
 ### Small
 
 <Canvas>
