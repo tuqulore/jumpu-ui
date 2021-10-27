@@ -17,6 +17,14 @@ Default.args = {
   label: "ボタン",
 };
 
+const AnchorTemplate = ({ disabled }) => {
+  return `<a href="#" class="text-button" ${
+    disabled && "disabled"
+  }>リンクボタン</a>`;
+};
+
+export const Anchor = AnchorTemplate.bind({});
+
 const DisabledTemplate = ({ label }) => {
   return `
     <button disabled class="text-button">${label}</button>

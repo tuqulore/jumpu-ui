@@ -14,6 +14,12 @@ Default.args = {
   label: "ボタン",
 };
 
+const AnchorTemplate = () => {
+  return `<a href="#" class="outlined-button">リンクボタン</a>`;
+};
+
+export const Anchor = AnchorTemplate.bind({});
+
 const DisabledTemplate = ({ label }) => {
   return `
     <button type="button" disabled class="outlined-button">${label}</button>

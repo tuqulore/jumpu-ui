@@ -33,17 +33,19 @@ module.exports = plugin.withOptions(
               "justify-content": "space-between",
               "align-items": "center",
               "margin-bottom": "-1px",
-              padding: "0.6em 0.8em",
+              padding: `${theme("spacing['rel2.5']")} ${theme(
+                "spacing['rel3.5']"
+              )}`,
               "vertical-align": "top",
               "&:hover": {
                 "border-bottom": `1px solid ${theme("colors.gray.400")}`,
               },
               "&[aria-selected=true]": {
-                "border-bottom": `1px solid ${theme("colors.primary.500")}`,
-                color: `${theme("colors.primary.500")}`,
+                "border-bottom": `1px solid ${theme("colors.primary.700")}`,
+                color: `${theme("colors.primary.700")}`,
                 cursor: "pointer",
                 "&:hover": {
-                  "border-bottom": `1px solid ${theme("colors.primary.600")}`,
+                  "border-bottom": `1px solid ${theme("colors.primary.800")}`,
                 },
                 "&:active": {
                   backgroundColor: `${theme("colors.gray.50")}`,

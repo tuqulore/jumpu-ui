@@ -11,8 +11,9 @@ module.exports = plugin.withOptions(
           ".outlined-button": {
             ...base,
             background: "transparent",
-            color: theme("colors.primary.500"),
-            borderColor: theme("colors.primary.500"),
+            color: theme("colors.primary.700"),
+            borderColor: theme("colors.primary.700"),
+            borderWidth: theme("borderWidth.DEFAULT"),
             "&:hover": {
               background: theme("colors.primary.100"),
               filter: "brightness(120%)",

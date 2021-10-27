@@ -28,7 +28,7 @@ module.exports = (theme) => {
       overflow: "hidden",
       cursor: "pointer",
       position: "relative",
-      color: theme("colors.primary.500"),
+      color: theme("colors.primary.700"),
       "&:focus": {
         outline: "none",
       },
@@ -41,13 +41,13 @@ module.exports = (theme) => {
     },
     liked: {
       color: theme("colors.white"),
-      backgroundColor: theme("colors.primary.500"),
-      border: `1px solid ${theme("colors.primary.500")}`,
+      backgroundColor: theme("colors.primary.700"),
+      border: `1px solid ${theme("colors.primary.700")}`,
       "&:hover": {
-        backgroundColor: theme("colors.primary.600"),
+        backgroundColor: theme("colors.primary.800"),
       },
       "&:active": {
-        backgroundColor: theme("colors.primary.700"),
+        backgroundColor: theme("colors.primary.900"),
       },
     },
   };

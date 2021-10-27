@@ -11,7 +11,7 @@ module.exports = plugin.withOptions(
           ".filled-tag": {
             ...base,
             border: "none",
-            backgroundColor: theme("colors.primary.500"),
+            backgroundColor: theme("colors.primary.700"),
             color: theme("colors.white"),
             button: close({ fill: theme("colors.white") }),
           },
