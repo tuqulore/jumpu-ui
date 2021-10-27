@@ -1,4 +1,4 @@
-const html = require("./.html");
+const html = require("./html");
 
 export default {
   title: "Galleries/Chat",
