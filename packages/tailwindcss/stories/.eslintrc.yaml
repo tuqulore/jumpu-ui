@@ -2,3 +2,5 @@ env:
   browser: true
 parserOptions:
   sourceType: module
+rules:
+  import/no-commonjs: "error"
