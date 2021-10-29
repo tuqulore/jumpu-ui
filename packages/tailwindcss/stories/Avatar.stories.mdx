@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
+const html = require("./html");
 
 <Meta title="Communications/Avatar" />
 
@@ -8,7 +9,7 @@ export const avatarImage = require("./assets/avatar_photo.jpg");
 
 <Canvas>
   <Story name="Default">
-    {`
+    {html`
       <div class="avatar">
         <img src="${require("./assets/avatar_photo.jpg")}" alt="城田 亜利沙" />
       </div>
@@ -22,7 +23,7 @@ export const avatarImage = require("./assets/avatar_photo.jpg");
 
 <Canvas>
   <Story name="Anchor">
-    {`
+    {html`
       <a href="#" class="avatar">
         <img src="${avatarImage}" alt="城田 亜利沙" />
       </a>
@@ -34,7 +35,7 @@ export const avatarImage = require("./assets/avatar_photo.jpg");
 
 <Canvas>
   <Story name="Square">
-    {`
+    {html`
       <div class="avatar rounded-none">
         <img src="${avatarImage}" alt="城田 亜利沙" />
       </div>
@@ -46,7 +47,7 @@ export const avatarImage = require("./assets/avatar_photo.jpg");
 
 <Canvas>
   <Story name="Radius">
-    {`
+    {html`
       <div class="avatar rounded">
         <img src="${avatarImage}" alt="城田 亜利沙" />
       </div>
@@ -58,7 +59,7 @@ export const avatarImage = require("./assets/avatar_photo.jpg");
 
 <Canvas>
   <Story name="Small">
-    {`
+    {html`
       <div class="avatar w-8 h-8">
         <img src="${avatarImage}" alt="城田 亜利沙" />
       </div>
