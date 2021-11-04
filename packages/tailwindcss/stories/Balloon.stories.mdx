@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
+const html = require("./html");
 
 <Meta title="Communications/Balloon" />
 
@@ -6,7 +7,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 
 <Canvas>
   <Story name="Default">
-    {`
+    {html`
       <div class="balloon">
         あっという間の時間でしたが困難の多かった東京オリンピックの一番最後の式典で選手の方々、関係者の方々の労をねぎらう役目を頂けて光栄でした
       </div>
@@ -20,7 +21,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 
 <Canvas>
   <Story name="Small">
-    {`
+    {html`
       <div class="balloon text-sm">
         あっという間の時間でしたが困難の多かった東京オリンピックの一番最後の式典で選手の方々、関係者の方々の労をねぎらう役目を頂けて光栄でした
       </div>
@@ -32,7 +33,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 
 <Canvas>
   <Story name="No Background">
-    {`
+    {html`
       <div class="balloon bg-transparent">
         あっという間の時間でしたが困難の多かった東京オリンピックの一番最後の式典で選手の方々、関係者の方々の労をねぎらう役目を頂けて光栄でした
       </div>

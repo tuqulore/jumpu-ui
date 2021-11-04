@@ -1,3 +1,5 @@
+const html = require("./html");
+
 export default {
   title: "Buttons/OutlinedButton",
   argTypes: {
@@ -6,7 +8,7 @@ export default {
 };
 
 const Template = ({ label }) => {
-  return `<button type="button" class="outlined-button">${label}</button>`;
+  return html`<button type="button" class="outlined-button">${label}</button>`;
 };
 
 export const Default = Template.bind({});
@@ -15,15 +17,15 @@ Default.args = {
 };
 
 const AnchorTemplate = () => {
-  return `<a href="#" class="outlined-button">リンクボタン</a>`;
+  return html`<a href="#" class="outlined-button">リンクボタン</a>`;
 };
 
 export const Anchor = AnchorTemplate.bind({});
 
 const DisabledTemplate = ({ label }) => {
-  return `
+  return html`
     <button type="button" disabled class="outlined-button">${label}</button>
-    `;
+  `;
 };
 
 export const Disabled = DisabledTemplate.bind({});

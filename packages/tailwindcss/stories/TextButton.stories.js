@@ -1,3 +1,5 @@
+const html = require("./html");
+
 export default {
   title: "Buttons/TextButton",
   argTypes: {
@@ -7,9 +9,9 @@ export default {
 };
 
 const Template = ({ label, disabled }) => {
-  return `<button class="text-button" ${
-    disabled && "disabled"
-  }>${label}</button>`;
+  return html`<button class="text-button" ${disabled && "disabled"}>
+    ${label}
+  </button>`;
 };
 
 export const Default = Template.bind({});
@@ -18,17 +20,15 @@ Default.args = {
 };
 
 const AnchorTemplate = ({ disabled }) => {
-  return `<a href="#" class="text-button" ${
-    disabled && "disabled"
-  }>リンクボタン</a>`;
+  return html`<a href="#" class="text-button" ${disabled && "disabled"}
+    >リンクボタン</a
+  >`;
 };
 
 export const Anchor = AnchorTemplate.bind({});
 
 const DisabledTemplate = ({ label }) => {
-  return `
-    <button disabled class="text-button">${label}</button>
-    `;
+  return html` <button disabled class="text-button">${label}</button> `;
 };
 
 export const Disabled = DisabledTemplate.bind({});
