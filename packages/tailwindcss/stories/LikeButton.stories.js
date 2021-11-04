@@ -1,4 +1,4 @@
-const html = require("./html");
+import html from "./html";
 export default {
   title: "Buttons/LikeButton",
 };

@@ -1,5 +1,5 @@
 import { useEffect } from "@storybook/client-api";
-const html = require("./html");
+import html from "./html";
 
 export default {
   title: "Forms/Input",

@@ -6,4 +6,4 @@ const html = (strings, ...args) =>
     (previous, current, index) => previous + args[index - 1] + current
   );
 
-module.exports = html;
+export default html;
