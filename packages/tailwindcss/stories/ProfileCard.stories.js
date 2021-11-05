@@ -1,12 +1,12 @@
-const html = require("./html");
+import html from "./html";
 
 export default {
   title: "Galleries/ProfileCard",
 };
 
-const bgImage = require("./assets/chat-photo.jpg");
-const avatarImage = require("./assets/avatar_photo.jpg");
-const avatarImage2 = require("./assets/avatar_hideki.jpg");
+import bgImage from "./assets/chat-photo.jpg";
+import avatarImage from "./assets/avatar_photo.jpg";
+import avatarImage2 from "./assets/avatar_hideki.jpg";
 
 const Template = () => {
   return html`

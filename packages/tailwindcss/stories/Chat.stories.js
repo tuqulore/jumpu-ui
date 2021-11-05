@@ -1,12 +1,12 @@
-const html = require("./html");
+import html from "./html";
 
 export default {
   title: "Galleries/Chat",
 };
 
-const avatarImage = require("./assets/avatar_photo.jpg");
-const posterImage = require("./assets/Cover.png");
-const faviconImage = require("./assets/sample_favicon.ico");
+import avatarImage from "./assets/avatar_photo.jpg";
+import posterImage from "./assets/Cover.png";
+import faviconImage from "./assets/sample_favicon.ico";
 
 const Template = () => {
   return html`
