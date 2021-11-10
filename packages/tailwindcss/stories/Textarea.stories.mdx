@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import html from "./html";
+
+<Meta title="Forms/Textarea" />
+
+# Textarea
+
+<Canvas>
+  <Story name="Textarea">
+    {html`<textarea placeholder="お問い合わせ内容..."></textarea> `}
+  </Story>
+</Canvas>
+
+## Stories
+
+### TextareaFull
+
+<Canvas>
+  <Story name="TextareaFull">
+    {html`<textarea
+      class="w-full"
+      placeholder="お問い合わせ内容..."
+    ></textarea>`}
+  </Story>
+</Canvas>
+
+### TextareaHeightAdjust
+
+<Canvas>
+  <Story name="TextareaHeightAdjust">
+    {html`<textarea class="h-64" placeholder="お問い合わせ内容..."></textarea>`}
+  </Story>
+</Canvas>

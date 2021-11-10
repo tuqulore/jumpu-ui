@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import html from "./html";
+
+<Meta title="Buttons/LabeledLikeButton" />
+
+# Input
+
+<Canvas>
+  <Story name="Default">
+    {html`
+      <button
+        type="button"
+        class="labeled-like-button"
+        aria-pressed="false"
+        aria-label="いいねする"
+      >
+        いいね
+      </button>
+    `}
+  </Story>
+</Canvas>
+
+## Stories
+
+### LikedLabeled
+
+<Canvas>
+  <Story name="LikedLabeled">
+    {html`
+      <button
+        type="button"
+        class="labeled-like-button"
+        aria-pressed="true"
+        aria-label="いいねを取り消す"
+      >
+        いいね
+      </button>
+    `}
+  </Story>
+</Canvas>

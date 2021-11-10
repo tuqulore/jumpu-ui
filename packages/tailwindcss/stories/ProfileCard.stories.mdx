@@ -1,16 +1,17 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import html from "./html";
 
-export default {
-  title: "Galleries/ProfileCard",
-};
+<Meta title="Galleries/ProfileCard" />
 
 import bgImage from "./assets/chat-photo.jpg";
 import avatarImage from "./assets/avatar_photo.jpg";
 import avatarImage2 from "./assets/avatar_hideki.jpg";
 
-const Template = () => {
-  return html`
-    <div class="flex">
+# ProfileCard
+
+<Canvas>
+  <Story name="Default">
+    {html`<div class="flex">
       <div class="card w-80 mr-4">
         <div
           class="h-32 bg-center bg-cover"
@@ -37,7 +38,6 @@ const Template = () => {
                 <i class="fas fa-envelope"></i>
               </div>
             </button>
-
             <button
               type="button"
               class="icon-button"
@@ -69,7 +69,6 @@ const Template = () => {
         <div class="px-4 py-4 text-sm">
           元ファッションモデル。都内でウォーキンレッスンのインストラクターをしています。お仕事のご依頼はDMまで。
         </div>
-
         <div class="px-4 mb-4 flex">
           <a href="#" class="avatar border-2 border-white w-10 h-10">
             <img src="${avatarImage}" alt="城田 亜利沙" />
@@ -87,12 +86,10 @@ const Template = () => {
             <img src="${avatarImage}" alt="城田 亜利沙" />
           </a>
         </div>
-
         <div class="mb-4 px-4 text-gray-500 text-xs">
           marieさん、DLOさん、Kateさん…他3人がフォロー中
         </div>
       </div>
-
       <div class="card w-80">
         <div
           class="h-32 bg-center bg-cover bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
@@ -118,7 +115,6 @@ const Template = () => {
                 <i class="fas fa-envelope"></i>
               </div>
             </button>
-
             <button
               type="button"
               class="icon-button"
@@ -151,7 +147,6 @@ const Template = () => {
           クリエイター・デザイナー。アングラな音楽ユニット、ニューロナのサウンドクリエイター。本業はUX・UI、デザインエンジニアですが仕事関係は
           @tuqulore にて。
         </div>
-
         <div class="px-4 mb-4 flex">
           <a href="#" class="avatar border-2 border-white w-10 h-10">
             <img src="${avatarImage}" alt="城田 亜利沙" />
@@ -169,12 +164,10 @@ const Template = () => {
             <img src="${avatarImage}" alt="城田 亜利沙" />
           </a>
         </div>
-
         <div class="mb-4 px-4 text-gray-500 text-xs">
           marieさん、DLOさん、Kateさん…他3人がフォロー中
         </div>
       </div>
-    </div>
-  `;
-};
-export const Default = Template.bind({});
+    </div>`}
+  </Story>
+</Canvas>

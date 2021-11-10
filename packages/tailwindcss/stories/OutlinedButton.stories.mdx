@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import html from "./html";
+
+<Meta title="Buttons/OutlinedButton" />
+
+# OutlinedButton
+
+<Canvas>
+  <Story name="Default">
+    {html`<button type="button" class="outlined-button">ボタン</button>`}
+  </Story>
+</Canvas>
+
+## Stories
+
+### Anchor
+
+<Canvas>
+  <Story name="Anchor">
+    {html`<a href="#" class="outlined-button">リンクボタン</a>`}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story name="Disabled">
+    {html`
+      <button type="button" disabled class="outlined-button">ボタン</button>
+    `}
+  </Story>
+</Canvas>

@@ -1,0 +1,91 @@
+import { useEffect } from "@storybook/client-api";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import html from "./html";
+
+<Meta title="Forms/Input" />
+
+# Input
+
+<Canvas>
+  <Story name="Text">
+    {html`<input type="text" class="input" placeholder="名前" />`}
+  </Story>
+</Canvas>
+
+## Stories
+
+### TextIcon
+
+<Canvas>
+  <Story name="TextIcon">
+    {html` <p class="mb-4">Font Awesome 5を使った例です</p>
+      <div class="mt-4">
+        <h3 class="mb-1"><i class="fas fa-search"></i> 検索</h3>
+        <input type="text" class="input-icon" placeholder="&#xf002; 検索" />
+      </div>
+      <div class="mt-4">
+        <h3 class="mb-1"><i class="fas fa-envelope"></i> メール</h3>
+        <input type="email" class="input-icon" placeholder="&#xf0e0; メール" />
+      </div>`}
+  </Story>
+</Canvas>
+
+### Number
+
+<Canvas>
+  <Story name="Number">{html`<input type="number" placeholder="0" />`}</Story>
+</Canvas>
+
+### Email
+
+<Canvas>
+  <Story name="Email">
+    {html`<input type="email" placeholder="example@hoge.com" />`}
+  </Story>
+</Canvas>
+
+### Date
+
+<Canvas>
+  <Story name="Date">{html`<input type="date" />`}</Story>
+</Canvas>
+
+### Radio
+
+<Canvas>
+  <Story name="Radio">
+    {html`
+      <input
+        type="radio"
+        name="radio-sample"
+        value="radio-1"
+        class="mr-4"
+        checked
+      />
+      <input type="radio" name="radio-sample" value="radio-2" />
+    `}
+  </Story>
+</Canvas>
+
+### Checkbox
+
+export const CheckboxTemplate = () => {
+  useEffect(() => {
+    document.querySelector("#checkbox input:nth-child(3)").indeterminate = true;
+  });
+  return html` <div id="checkbox">
+    <input type="checkbox" value="checkbox-1" class="mr-4" checked />
+    <input type="checkbox" value="checkbox-2" class="mr-4" />
+    <input type="checkbox" value="checkbox-3" />
+  </div>`;
+};
+
+<Canvas>
+  <Story name="Checkbox">{CheckboxTemplate.bind({})}</Story>
+</Canvas>
+
+### File
+
+<Canvas>
+  <Story name="File">{html`<input type="file" />`}</Story>
+</Canvas>
