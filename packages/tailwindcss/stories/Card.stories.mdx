@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import html from "./html";
+
+<Meta title="Card/Card" />
+
+# Card
+
+<Canvas>
+  <Story name="Default">
+    {html` <div class="card px-4 py-3 mb-4">カード</div> `}
+  </Story>
+</Canvas>
+
+## Stories
+
+### Anchor
+
+<Canvas>
+  <Story name="Anchor">
+    {html` <a href="#" class="card px-4 py-3 mb-4 block">リンクカード</a> `}
+  </Story>
+</Canvas>
+
+### Shadowed
+
+<Canvas>
+  <Story name="Shadowed">
+    {html` <div class="card px-4 py-3 border-0 shadow-lg">影付きカード</div> `}
+  </Story>
+</Canvas>
