@@ -16,8 +16,7 @@
     "tailwindcss": "^2"
   },
   "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "repository": "git@github.com:tuqulore/tuqulore-ui.git",
   "scripts": {
