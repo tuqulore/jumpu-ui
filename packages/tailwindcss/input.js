@@ -23,15 +23,6 @@ module.exports = plugin.withOptions(
           },
         },
         {
-          ".input-icon": {
-            "&::placeholder": {
-              "font-family": "'Font Awesome 5 Free'",
-              fontWeight: 900,
-              fontSize: theme("fontSize.sm"),
-            },
-          },
-        },
-        {
           "[type='checkbox'], [type='radio']": {
             appearance: "none",
             padding: "0",
