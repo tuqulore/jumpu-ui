@@ -7,10 +7,10 @@
     "url": "https://github.com/tuqulore/tuqulore-ui/issues"
   },
   "devDependencies": {
+    "@lerna-lite/cli": "^0.3.7",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.25.2",
-    "lerna": "^4.0.0",
     "prettier": "^2.2.1"
   },
   "engines": {
@@ -30,8 +30,8 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:rdjson": "eslint --format rdjson .",
-    "release": "lerna publish from-package",
-    "versionup": "lerna version --conventional-commits"
+    "release": "ws-roller publish from-package",
+    "versionup": "ws-roller version --conventional-commits"
   },
   "workspaces": [
     "packages/*"
