@@ -31,7 +31,7 @@
     "lint": "eslint .",
     "lint:rdjson": "eslint --format rdjson .",
     "release": "ws-roller publish from-package",
-    "versionup": "ws-roller version --conventional-commits"
+    "versionup": "ws-roller version"
   },
   "workspaces": [
     "packages/*"
