@@ -14,7 +14,7 @@
     "prettier": "^2.2.1"
   },
   "engines": {
-    "node": ">=14.15"
+    "node": ">=16"
   },
   "homepage": "https://github.com/tuqulore/tuqulore-ui#readme",
   "keywords": [
