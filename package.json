@@ -29,7 +29,6 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint .",
-    "lint:rdjson": "eslint --format rdjson .",
     "release": "lerna publish from-package",
     "versionup": "lerna version --conventional-commits"
   },
