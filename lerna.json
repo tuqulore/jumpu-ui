@@ -9,7 +9,7 @@
       "registry": "https://registry.npmjs.org"
     },
     "version": {
-      "allowBranch": ["main", "develop"],
+      "allowBranch": ["chore-release"],
       "conventionalCommits": true
     }
   }
