@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.1](https://github.com/tuqulore/tuqulore-ui/compare/v1.0.1-alpha.0...v1.0.1-alpha.1) (2022-03-14)
+
+### Bug Fixes
+
+* missing dependencies mini-svg-data-uri ([00f0e4c](https://github.com/tuqulore/tuqulore-ui/commit/00f0e4cdba5a1abaebff76bdde4056133f493492))
+* **workflows:** ダイアログでリリースが止まる ([68823d9](https://github.com/tuqulore/tuqulore-ui/commit/68823d9f689dd017b7695632d1fa4120b3029151))
+
 ## 1.0.1-alpha.0 (2022-03-11)
 
 ### Bug Fixes
