@@ -12,6 +12,6 @@ jobs:
           node-version: "16"
       - run: yarn install --check-files --frozen-lockfile --non-interactive
       - run: |
-          yarn release --yes
+          NPM_TOKEN=${NPM_TOKEN} yarn release --yes
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
