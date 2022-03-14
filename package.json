@@ -30,7 +30,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "release": "ws-roller publish from-package",
-    "versionup": "ws-roller version"
+    "versionup": "ws-roller version --no-git-tag-version --no-push"
   },
   "workspaces": [
     "packages/*"
