@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: "16"
       - run: yarn install --check-files --frozen-lockfile --non-interactive
-      - run: |
-          NPM_TOKEN=${NPM_TOKEN} yarn release --yes
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: yarn release --yes
