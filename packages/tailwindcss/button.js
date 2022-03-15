@@ -19,9 +19,6 @@ module.exports = plugin.withOptions(
             "&:active": {
               filter: "brightness(75%)",
             },
-            "&:focus": {
-              outline: "none",
-            },
             "&[disabled]": disabled,
           },
         },

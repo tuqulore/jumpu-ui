@@ -12,7 +12,6 @@ module.exports = plugin.withOptions(
             alignItems: "center",
             color: theme("colors.gray.600"),
             borderRadius: theme("borderRadius.md"),
-            outline: "none",
             width: theme("width.8"),
             height: theme("height.8"),
             position: "relative",
@@ -31,9 +30,6 @@ module.exports = plugin.withOptions(
               whiteSpace: "nowrap",
               color: theme("colors.white"),
               lineHeight: theme("lineHeight.tight"),
-            },
-            "&:focus": {
-              outline: "none",
             },
             "&:hover": {
               backgroundColor: theme("colors.gray.50"),

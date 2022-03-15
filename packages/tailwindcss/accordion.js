@@ -16,7 +16,6 @@ module.exports = plugin.withOptions(
               alignItems: "center",
               border: `1px solid ${theme("colors.gray.300")}`,
               cursor: "pointer",
-              outline: "none",
               "&::before": {
                 content: "''",
                 display: "block",
