@@ -5,6 +5,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.0.1-alpha.2](https://github.com/tuqulore/tuqulore-ui/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2022-03-15)
 
+### BREAKING CHANGE
+
+* **deps:** update whole packages ([a2f7b40](https://github.com/tuqulore/jumpu-ui/commit/a2f7b404b5049f2b950a986209f6b407088ee1a1))
+    * including major version update of tailwindcss to v3
+
 ### Bug Fixes
 
 * **tailwindcss:** theme function returns undefined ([d0653f6](https://github.com/tuqulore/tuqulore-ui/commit/d0653f620b98e342983fff7473d8921370ab93a3))
