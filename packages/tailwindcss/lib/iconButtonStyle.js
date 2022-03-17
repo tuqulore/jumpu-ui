@@ -24,14 +24,10 @@ module.exports = (theme) => {
       backgroundColor: theme("colors.white"),
       borderRadius: theme("borderRadius.full"),
       border: `1px solid currentColor`,
-      outline: "none",
       overflow: "hidden",
       cursor: "pointer",
       position: "relative",
       color: theme("colors.primary.700"),
-      "&:focus": {
-        outline: "none",
-      },
       "&:hover": {
         backgroundColor: theme("colors.primary.50"),
       },

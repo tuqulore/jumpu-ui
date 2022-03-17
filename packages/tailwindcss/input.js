@@ -46,7 +46,6 @@ module.exports = plugin.withOptions(
             "border-radius": theme("borderRadius.full"),
           },
           "[type='checkbox']:focus, [type='radio']:focus": {
-            outline: "none",
             "--tw-ring-inset": "var(--tw-empty,/*!*/ /*!*/)",
             "--tw-ring-offset-width": "2px",
             "--tw-ring-offset-color": "#fff",
