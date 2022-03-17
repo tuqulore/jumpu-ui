@@ -10,7 +10,7 @@ module.exports = plugin.withOptions(
       addComponents([
         {
           ".input": {
-            "&[type='text'], &[type='email'], &[type='url'], &[type='password'], &[type='number'], &[type='date'], &[type='datetime-local'], &[type='month'], &[type='search'], &[type='tel'], &[type='time'], &[type='week']":
+            "&:not([type]), &[type='text'], &[type='email'], &[type='url'], &[type='password'], &[type='number'], &[type='date'], &[type='datetime-local'], &[type='month'], &[type='search'], &[type='tel'], &[type='time'], &[type='week']":
               base,
             "&[type='checkbox'], &[type='radio']": {
               appearance: "none",
