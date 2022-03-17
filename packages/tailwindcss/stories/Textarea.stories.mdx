@@ -7,7 +7,7 @@ import html from "./html";
 
 <Canvas>
   <Story name="Textarea">
-    {html`<textarea placeholder="お問い合わせ内容..."></textarea> `}
+    {html`<textarea class="textarea" placeholder="お問い合わせ内容..."></textarea> `}
   </Story>
 </Canvas>
 
@@ -18,7 +18,7 @@ import html from "./html";
 <Canvas>
   <Story name="TextareaFull">
     {html`<textarea
-      class="w-full"
+      class="textarea w-full"
       placeholder="お問い合わせ内容..."
     ></textarea>`}
   </Story>
@@ -28,6 +28,6 @@ import html from "./html";
 
 <Canvas>
   <Story name="TextareaHeightAdjust">
-    {html`<textarea class="h-64" placeholder="お問い合わせ内容..."></textarea>`}
+    {html`<textarea class="textarea h-64 resize-none" placeholder="お問い合わせ内容..."></textarea>`}
   </Story>
 </Canvas>
