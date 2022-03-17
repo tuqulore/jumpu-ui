@@ -116,6 +116,7 @@ import html from "./html";
               <input
                 type="text"
                 class="text-input w-full"
+                value="example@hoge.com"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -126,21 +127,21 @@ import html from "./html";
             </label>
             <label class="mb-4 block relative">
               <div class="text-sm mb-2">パスワード</div>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="text-input w-full" value="password" required />
               <i
                 class="fas fa-check absolute text-success right-3 top-1/2 transform translate-y-1/2"
               ></i>
             </label>
             <label class="mb-6 block relative">
               <div class="text-sm mb-2">確認用パスワード（上記と同じもの）</div>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="text-input w-full" required value="password" />
               <i
                 class="fas fa-check absolute text-success right-3 top-1/2 transform translate-y-1/2"
               ></i>
             </label>
             <div class="mb-6 bg-warning bg-opacity-10 rounded-md">
               <label class="flex px-4 py-3">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input-check mr-2" checked />
                 <span class="text-sm">
                   <a class="text-primary-500" href="#">ご利用規約</a>
                   を読んで内容に同意しました
