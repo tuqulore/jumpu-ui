@@ -7,7 +7,7 @@ import html from "./html";
 
 <Canvas>
   <Story name="Default">
-    {html` <div class="card px-4 py-3 mb-4">カード</div> `}
+    {html` <div class="jumpu-card px-4 py-3 mb-4">カード</div> `}
   </Story>
 </Canvas>
 
@@ -17,7 +17,9 @@ import html from "./html";
 
 <Canvas>
   <Story name="Anchor">
-    {html` <a href="#" class="card px-4 py-3 mb-4 block">リンクカード</a> `}
+    {html`
+      <a href="#" class="jumpu-card px-4 py-3 mb-4 block">リンクカード</a>
+    `}
   </Story>
 </Canvas>
 
@@ -25,6 +27,8 @@ import html from "./html";
 
 <Canvas>
   <Story name="Shadowed">
-    {html` <div class="card px-4 py-3 border-0 shadow-lg">影付きカード</div> `}
+    {html`
+      <div class="jumpu-card px-4 py-3 border-0 shadow-lg">影付きカード</div>
+    `}
   </Story>
 </Canvas>

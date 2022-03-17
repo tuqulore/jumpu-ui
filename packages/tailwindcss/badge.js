@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".badge": {
+          [`.${theme("jumpu.prefix")}badge`]: {
             display: "inline-flex",
             justifyContent: "center",
             alignItems: "center",

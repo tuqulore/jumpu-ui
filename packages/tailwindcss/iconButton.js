@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".icon-button": {
+          [`.${theme("jumpu.prefix")}icon-button`]: {
             display: "inline-flex",
             justifyContent: "center",
             alignItems: "center",
