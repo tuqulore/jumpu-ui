@@ -1,7 +1,6 @@
 const button = require("./button");
 const outlinedButton = require("./outlinedButton");
 const textButton = require("./textButton");
-const status = require("./status");
 const card = require("./card");
 const input = require("./input");
 const select = require("./select");
@@ -23,7 +22,6 @@ module.exports = [
   button,
   outlinedButton,
   textButton,
-  status,
   card,
   input,
   select,
