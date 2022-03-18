@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(
       const { base, close } = tagStyle(theme);
       addComponents([
         {
-          ".filled-tag": {
+          [`.${theme("jumpu.prefix")}filled-tag`]: {
             ...base,
             border: "none",
             backgroundColor: theme("colors.primary.700"),

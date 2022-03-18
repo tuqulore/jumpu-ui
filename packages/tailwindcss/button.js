@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(
       const { base, disabled } = buttonStyle(theme);
       addComponents([
         {
-          ".button": {
+          [`.${theme("jumpu.prefix")}button`]: {
             ...base,
             backgroundColor: theme("colors.primary.700"),
             color: "#fff",

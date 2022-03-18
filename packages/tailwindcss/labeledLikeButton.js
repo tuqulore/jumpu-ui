@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(
       const { base, heart, liked } = iconButtonStyle(theme);
       addComponents([
         {
-          ".labeled-like-button": {
+          [`.${theme("jumpu.prefix")}labeled-like-button`]: {
             ...base,
             width: "auto",
             whiteSpace: "nowrap",

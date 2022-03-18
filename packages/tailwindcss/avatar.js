@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".avatar": {
+          [`.${theme("jumpu.prefix")}avatar`]: {
             overflow: "hidden",
             "border-radius": theme("borderRadius.full"),
             width: theme("width.16"),
