@@ -8,7 +8,7 @@ import html from "./html";
 
 <Canvas>
   <Story name="Text">
-    {html`<input type="text" class="input" placeholder="名前" />`}
+    {html`<input type="text" class="jumpu-input" placeholder="名前" />`}
   </Story>
 </Canvas>
 
@@ -21,11 +21,11 @@ import html from "./html";
     {html` <p class="mb-4">Font Awesome 5を使った例です</p>
       <div class="mt-4">
         <h3 class="mb-1"><i class="fas fa-search"></i> 検索</h3>
-        <input type="text" placeholder="タイトル、著者、etc." />
+        <input type="text" class="input" placeholder="タイトル、著者、etc." />
       </div>
       <div class="mt-4">
         <h3 class="mb-1"><i class="fas fa-envelope"></i> メール</h3>
-        <input type="email" placeholder="user@example.com" />
+        <input type="email" class="input" placeholder="user@example.com" />
       </div>`}
   </Story>
 </Canvas>
@@ -33,21 +33,25 @@ import html from "./html";
 ### Number
 
 <Canvas>
-  <Story name="Number">{html`<input type="number" placeholder="0" />`}</Story>
+  <Story name="Number">{html`<input
+    type="number"
+    class="input"
+    placeholder="0"
+  />`}</Story>
 </Canvas>
 
 ### Email
 
 <Canvas>
   <Story name="Email">
-    {html`<input type="email" placeholder="example@hoge.com" />`}
+    {html`<input type="email" class="input" placeholder="example@hoge.com" />`}
   </Story>
 </Canvas>
 
 ### Date
 
 <Canvas>
-  <Story name="Date">{html`<input type="date" />`}</Story>
+  <Story name="Date">{html`<input type="date" class="input" />`}</Story>
 </Canvas>
 
 ### Radio
@@ -57,12 +61,13 @@ import html from "./html";
     {html`
       <input
         type="radio"
+        class="input"
         name="radio-sample"
         value="radio-1"
         class="mr-4"
         checked
       />
-      <input type="radio" name="radio-sample" value="radio-2" />
+      <input type="radio" class="input" name="radio-sample" value="radio-2" />
     `}
   </Story>
 </Canvas>
@@ -74,9 +79,15 @@ export const CheckboxTemplate = () => {
     document.querySelector("#checkbox input:nth-child(3)").indeterminate = true;
   });
   return html` <div id="checkbox">
-    <input type="checkbox" value="checkbox-1" class="mr-4" checked />
-    <input type="checkbox" value="checkbox-2" class="mr-4" />
-    <input type="checkbox" value="checkbox-3" />
+    <input
+      type="checkbox"
+      class="input"
+      value="checkbox-1"
+      class="mr-4"
+      checked
+    />
+    <input type="checkbox" class="input" value="checkbox-2" class="mr-4" />
+    <input type="checkbox" class="input" value="checkbox-3" />
   </div>`;
 };
 
@@ -87,5 +98,5 @@ export const CheckboxTemplate = () => {
 ### File
 
 <Canvas>
-  <Story name="File">{html`<input type="file" />`}</Story>
+  <Story name="File">{html`<input type="file" class="input" />`}</Story>
 </Canvas>

@@ -7,7 +7,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".accordion": {
+          [`.${theme("jumpu.prefix")}accordion`]: {
             "& > [aria-expanded]": {
               width: "100%",
               padding: `${theme("spacing.3")} ${theme("spacing.4")}`,

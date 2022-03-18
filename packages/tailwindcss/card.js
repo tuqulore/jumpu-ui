@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".card": {
+          [`.${theme("jumpu.prefix")}card`]: {
             backgroundColor: theme("colors.white"),
             borderRadius: theme("borderRadius.md"),
             overflow: "hidden",

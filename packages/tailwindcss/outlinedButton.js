@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(
       const { base, disabled } = buttonStyle(theme);
       addComponents([
         {
-          ".outlined-button": {
+          [`.${theme("jumpu.prefix")}outlined-button`]: {
             ...base,
             background: "transparent",
             color: theme("colors.primary.700"),

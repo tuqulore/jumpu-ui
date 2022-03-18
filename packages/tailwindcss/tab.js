@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".tabs": {
+          [`.${theme("jumpu.prefix")}tabs`]: {
             "-webkit-overflow-scrolling": "touch",
             "white-space": "nowrap",
             overflow: "hidden",

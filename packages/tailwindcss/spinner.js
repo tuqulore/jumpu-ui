@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".spinner": {
+          [`.${theme("jumpu.prefix")}spinner`]: {
             "text-align": "center",
             width: theme("width.12"),
             height: theme("height.12"),

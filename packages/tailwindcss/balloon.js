@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".balloon ": {
+          [`.${theme("jumpu.prefix")}balloon`]: {
             display: "inline-block",
             padding: `${theme("spacing.3")} ${theme("spacing.4")}`,
             backgroundColor: `${theme("colors.gray.100")}`,

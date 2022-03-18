@@ -8,7 +8,7 @@ import html from "./html";
 <Canvas>
   <Story name="Default">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">ログイン</div>
@@ -16,7 +16,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">アカウント</span>
               <input
                 type="text"
-                class="text-input w-full"
+                class="input w-full"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -24,11 +24,11 @@ import html from "./html";
             </label>
             <label class="mb-4 block">
               <span class="text-sm mb-2 block">パスワード</span>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <div class="mb-4">
               <label class="flex items-center">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input mr-2" />
                 <span class="text-sm">次回から自動でログイン</span>
               </label>
             </div>
@@ -37,7 +37,7 @@ import html from "./html";
                 >ログインにお困りの方はこちら</a
               >
             </div>
-            <input type="submit" class="button w-full" value="ログイン" />
+            <input type="submit" class="jumpu-button w-full" value="ログイン" />
           </form>
         </div>
       </div>
@@ -52,7 +52,7 @@ import html from "./html";
 <Canvas>
   <Story name="Empty">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">ログイン</div>
@@ -60,7 +60,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">アカウント</span>
               <input
                 type="text"
-                class="text-input w-full"
+                class="input w-full"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -68,11 +68,11 @@ import html from "./html";
             </label>
             <label class="mb-4 block">
               <span class="text-sm mb-2 block">パスワード</span>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <div class="mb-4">
               <label class="flex items-center">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input mr-2" />
                 <span class="text-sm">次回から自動でログイン</span>
               </label>
             </div>
@@ -84,7 +84,7 @@ import html from "./html";
             <input
               type="submit"
               disabled
-              class="button w-full"
+              class="jumpu-button w-full"
               value="ログイン"
             />
           </form>
@@ -99,7 +99,7 @@ import html from "./html";
 <Canvas>
   <Story name="Invalid">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">ログイン</div>
@@ -110,7 +110,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">アカウント</span>
               <input
                 type="text"
-                class="text-input w-full border-danger bg-danger bg-opacity-5"
+                class="input w-full border-danger bg-danger bg-opacity-5"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -118,11 +118,11 @@ import html from "./html";
             </label>
             <label class="mb-4 block">
               <span class="text-sm mb-2 block">パスワード</span>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <div class="mb-4">
               <label class="flex items-center">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input mr-2" />
                 <span class="text-sm">次回から自動でログイン</span>
               </label>
             </div>
@@ -134,7 +134,7 @@ import html from "./html";
             <input
               type="submit"
               disabled
-              class="button w-full"
+              class="jumpu-button w-full"
               value="ログイン"
             />
           </form>

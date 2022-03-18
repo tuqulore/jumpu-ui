@@ -8,7 +8,7 @@ import html from "./html";
 <Canvas>
   <Story name="Default">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">新規登録</div>
@@ -16,7 +16,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">メールアドレス</span>
               <input
                 type="text"
-                class="text-input w-full"
+                class="input w-full"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -24,24 +24,24 @@ import html from "./html";
             </label>
             <label class="mb-4 block relative">
               <span class="text-sm mb-2 block">パスワード</span>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <label class="mb-6 block relative">
               <span class="text-sm mb-2 block"
                 >確認用パスワード（上記と同じもの）</span
               >
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <div class="mb-6 bg-warning bg-opacity-10 rounded-md">
               <label class="flex px-4 py-3">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input mr-2" />
                 <span class="text-sm">
                   <a class="text-primary-500" href="#">ご利用規約</a>
                   を読んで内容に同意しました
                 </span>
               </label>
             </div>
-            <input type="submit" class="button w-full" value="登録する" />
+            <input type="submit" class="jumpu-button w-full" value="登録する" />
           </form>
         </div>
       </div>
@@ -56,7 +56,7 @@ import html from "./html";
 <Canvas>
   <Story name="Empty">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">新規登録</div>
@@ -64,7 +64,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">メールアドレス</span>
               <input
                 type="text"
-                class="text-input w-full"
+                class="input w-full"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -72,17 +72,17 @@ import html from "./html";
             </label>
             <label class="mb-4 block relative">
               <span class="text-sm mb-2 block">パスワード</span>
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <label class="mb-6 block relative">
               <span class="text-sm mb-2 block"
                 >確認用パスワード（上記と同じもの）</span
               >
-              <input type="password" class="text-input w-full" required />
+              <input type="password" class="input w-full" required />
             </label>
             <div class="mb-6 bg-warning bg-opacity-10 rounded-md">
               <label class="flex px-4 py-3">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input mr-2" />
                 <span class="text-sm">
                   <a class="text-primary-500" href="#">ご利用規約</a>
                   を読んで内容に同意しました
@@ -92,7 +92,7 @@ import html from "./html";
             <input
               type="submit"
               disabled
-              class="button w-full"
+              class="jumpu-button w-full"
               value="登録する"
             />
           </form>
@@ -107,7 +107,7 @@ import html from "./html";
 <Canvas>
   <Story name="Valid">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">新規登録</div>
@@ -115,7 +115,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">メールアドレス</span>
               <input
                 type="text"
-                class="text-input w-full"
+                class="input w-full"
                 value="example@hoge.com"
                 placeholder="example@hoge.com"
                 aria-required="true"
@@ -129,7 +129,7 @@ import html from "./html";
               <div class="text-sm mb-2">パスワード</div>
               <input
                 type="password"
-                class="text-input w-full"
+                class="input w-full"
                 value="password"
                 required
               />
@@ -141,7 +141,7 @@ import html from "./html";
               <div class="text-sm mb-2">確認用パスワード（上記と同じもの）</div>
               <input
                 type="password"
-                class="text-input w-full"
+                class="input w-full"
                 required
                 value="password"
               />
@@ -151,14 +151,14 @@ import html from "./html";
             </label>
             <div class="mb-6 bg-warning bg-opacity-10 rounded-md">
               <label class="flex px-4 py-3">
-                <input type="checkbox" class="input-check mr-2" checked />
+                <input type="checkbox" class="input mr-2" checked />
                 <span class="text-sm">
                   <a class="text-primary-500" href="#">ご利用規約</a>
                   を読んで内容に同意しました
                 </span>
               </label>
             </div>
-            <input type="submit" class="button w-full" value="登録する" />
+            <input type="submit" class="jumpu-button w-full" value="登録する" />
           </form>
         </div>
       </div>
@@ -171,7 +171,7 @@ import html from "./html";
 <Canvas>
   <Story name="Invalid">
     {html`
-      <div class="card w-96 mx-auto">
+      <div class="jumpu-card w-96 mx-auto">
         <div class="p-8">
           <form action="#">
             <div class="text-xl my-4 text-center">新規登録</div>
@@ -184,7 +184,7 @@ import html from "./html";
               <span class="text-sm mb-2 block">メールアドレス</span>
               <input
                 type="text"
-                class="text-input w-full border-danger bg-danger bg-opacity-5"
+                class="input w-full border-danger bg-danger bg-opacity-5"
                 placeholder="example@hoge.com"
                 aria-required="true"
                 required
@@ -194,7 +194,7 @@ import html from "./html";
               <div class="text-sm mb-2">パスワード</div>
               <input
                 type="password"
-                class="text-input w-full border-danger bg-danger bg-opacity-5"
+                class="input w-full border-danger bg-danger bg-opacity-5"
                 required
               />
             </label>
@@ -202,13 +202,13 @@ import html from "./html";
               <div class="text-sm mb-2">確認用パスワード（上記と同じもの）</div>
               <input
                 type="password"
-                class="text-input w-full border-danger bg-danger bg-opacity-5"
+                class="input w-full border-danger bg-danger bg-opacity-5"
                 required
               />
             </label>
             <div class="mb-6 bg-danger bg-opacity-10 rounded-md">
               <label class="flex px-4 py-3">
-                <input type="checkbox" class="input-check mr-2" />
+                <input type="checkbox" class="input mr-2" />
                 <span class="text-sm">
                   <a class="text-primary-500" href="#">ご利用規約</a>
                   を読んで内容に同意しました
@@ -218,7 +218,7 @@ import html from "./html";
             <input
               type="submit"
               disabled
-              class="button w-full"
+              class="jumpu-button w-full"
               value="登録する"
             />
           </form>

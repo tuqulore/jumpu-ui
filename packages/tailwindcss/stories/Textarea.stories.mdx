@@ -6,28 +6,34 @@ import html from "./html";
 # Textarea
 
 <Canvas>
-  <Story name="Textarea">
-    {html`<textarea placeholder="お問い合わせ内容..."></textarea> `}
+  <Story name="Default">
+    {html`<textarea
+      class="textarea"
+      placeholder="お問い合わせ内容..."
+    ></textarea> `}
   </Story>
 </Canvas>
 
 ## Stories
 
-### TextareaFull
+### Full Width
 
 <Canvas>
-  <Story name="TextareaFull">
+  <Story name="Full Width">
     {html`<textarea
-      class="w-full"
+      class="textarea w-full"
       placeholder="お問い合わせ内容..."
     ></textarea>`}
   </Story>
 </Canvas>
 
-### TextareaHeightAdjust
+### Fixed Height
 
 <Canvas>
-  <Story name="TextareaHeightAdjust">
-    {html`<textarea class="h-64" placeholder="お問い合わせ内容..."></textarea>`}
+  <Story name="Fixed Height">
+    {html`<textarea
+      class="textarea h-64 resize-none"
+      placeholder="お問い合わせ内容..."
+    ></textarea>`}
   </Story>
 </Canvas>

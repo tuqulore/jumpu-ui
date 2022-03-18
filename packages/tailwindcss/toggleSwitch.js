@@ -6,7 +6,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       addComponents([
         {
-          ".toggle-switch": {
+          [`.${theme("jumpu.prefix")}toggle-switch`]: {
             position: "relative",
 
             input: {
