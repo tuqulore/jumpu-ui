@@ -4,6 +4,7 @@ const textButton = require("./textButton");
 const card = require("./card");
 const input = require("./input");
 const select = require("./select");
+const textarea = require("./textarea");
 const toggleSwitch = require("./toggleSwitch");
 const avatar = require("./avatar");
 const accordion = require("./accordion");
@@ -25,6 +26,7 @@ module.exports = [
   card,
   input,
   select,
+  textarea,
   toggleSwitch,
   avatar,
   accordion,
