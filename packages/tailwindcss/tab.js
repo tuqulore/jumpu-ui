@@ -33,8 +33,8 @@ module.exports = plugin.withOptions(
               "justify-content": "space-between",
               "align-items": "center",
               "margin-bottom": "-1px",
-              padding: `${theme("spacing['rel2.5']")} ${theme(
-                "spacing['rel3.5']"
+              padding: `${theme("spacing[rel2.5]")} ${theme(
+                "spacing[rel3.5]"
               )}`,
               "vertical-align": "top",
               "&:hover": {
