@@ -9,7 +9,7 @@ module.exports = plugin.withOptions(
       const { base } = inputStyle(theme);
       addComponents([
         {
-          ".input": {
+          [`.${theme("jumpu.prefix")}input`]: {
             "&:not([type]), &[type='text'], &[type='email'], &[type='url'], &[type='password'], &[type='number'], &[type='date'], &[type='datetime-local'], &[type='month'], &[type='search'], &[type='tel'], &[type='time'], &[type='week']": base,
             "&[type='checkbox'], &[type='radio']": {
               appearance: "none",

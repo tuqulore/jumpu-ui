@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(
       const { base } = inputStyle(theme);
       addComponents([
         {
-          ".textarea": base,
+          [`.${theme("jumpu.prefix")}textarea`]: base,
         },
       ]);
     };
