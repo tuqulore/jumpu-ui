@@ -1,21 +1,26 @@
-# tuqulore ui
+# Jumpu UI
 
-tuqulore ui は tuqulore がデザインした UI コンポーネントです。
+Jumpu UI はユーティリティフレンドリーな UI コンポーネントライブラリーです。
 
-以下のバリエーションで提供しています。
+## コンセプト
 
-- tailwindcss (plugin)
+Jumpu UI の最大の特徴は、コンポーネントのバリエーションを TailwindCSS ユーティリティーと組み合わせて表現できることです。
 
-## 導入方法
+たとえば、「ボタン」を小さくしたいとします。一般的には、ボタンへの関心を中心に「小さいボタン」の見た目を用意することになるでしょう。Jumpu UI ではどうするかというと、「ボタン」と「文字が小さい」によって見た目を用意します。それぞれ「ボタン」は Jumpu UI コンポーネントに、「文字が小さい」は TailwindCSS ユーティリティーに対応づけられます。Jumpu UI では「さまざまなボタン」を「ひとつのボタン」では用意しません。それは TailwindCSS ユーティリティーによって表現されるからです。これがユーティリティフレンドリーな UI コンポーネントというコンセプトです。
 
-`$ yarn`
+ここで、有名な CSS 設計論と比較をしてみましょう。
 
-## 開発方法
+| CSS 設計論 | Block              | Element                                                      | Modifier                                                                                        |
+| :--------- | :----------------- | :----------------------------------------------------------- | :---------------------------------------------------------------------------------------------- |
+| BEM        | `.block`           | `.block__elem`                                               | `.block--mod`                                                                                   |
+| RSCSS      | `.rscss-component` | `.rscss-component > .elem`                                   | `.rscss-component.-variant`                                                                     |
+| Jumpu UI   | `.jumpu-component` | `.jumpu-component type` / `.jumpu-component [role="button"]` | `.jumpu-component[aria-pressed="true"]` / `.jumpu-component.text-sm` / `.jumpu-other-component` |
 
-```
-$ cd packages/tailwindcss
-$ yarn storybook
-```
+重要なのはクラス名を定義しているのはコンポーネントの粒度のみで、それ以外は要素型セレクター、属性セレクター、TailwindCSS ユーティリティーで表現されていることです。これによって、可能な限りクラスの名前空間を TailwindCSS ユーティリティーに割り当てることができます。
+
+## パッケージ
+
+- [@jumpu-ui/tailwindcss](https://github.com/tuqulore/jumpu-ui/blob/develop/packages/tailwindcss/README.md)
 
 ## Jumpu UI を使った開発に関する問い合わせ
 
