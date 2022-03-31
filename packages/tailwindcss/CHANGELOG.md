@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.3](https://github.com/tuqulore/tuqulore-ui/compare/v1.0.1-alpha.1...v1.0.1-alpha.3) (2022-03-25)
+
+### Bug Fixes
+
+* **Tabs:** theme function returns undefined ([2bec635](https://github.com/tuqulore/tuqulore-ui/commit/2bec63576f86ac9076bbda17fd0877ae663f1e10))
+
+### Features
+
+* `outline: "none"` を取り除く ([ae3b044](https://github.com/tuqulore/tuqulore-ui/commit/ae3b0448b6993779439e59290e3ce3095e43bf0b))
+* add `jumpu.prefix` option ([2a8e895](https://github.com/tuqulore/tuqulore-ui/commit/2a8e8956ba7e394ff02a6fafe3d13d68c68e4de2))
+* drop status ([a0f1e9b](https://github.com/tuqulore/tuqulore-ui/commit/a0f1e9b49605b3d5751dbfbd5a54767ef11ee08c))
+* **Input:** apply style withoute type attribute ([c31cdb1](https://github.com/tuqulore/tuqulore-ui/commit/c31cdb130450f6a51fd0a2347c3d627c4c739afb))
+* jumpu.prefix への追従 ([93a10cd](https://github.com/tuqulore/tuqulore-ui/commit/93a10cd6f04ec4e4b15a7fbf7818a3d0c30a78bc))
+* require class name when use input, select, textarea ([387d0d0](https://github.com/tuqulore/tuqulore-ui/commit/387d0d01d5b8a39458a5f90de1fb5d01da4c45e0))
+
+### BREAKING CHANGES
+
+* please apply `.jumpu-input` `.jumpu-select` `.jumpu-textarea` classes when already in use input, select, textarea elements
+* if you want without prefix, please configure like `theme: { jumpu: { prefix: "" } }`
+
 ## [1.0.1-alpha.2](https://github.com/tuqulore/tuqulore-ui/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2022-03-15)
 
 ### BREAKING CHANGE
