@@ -6,14 +6,12 @@ module.exports = plugin.withOptions(
   () => {
     return ({ addComponents, theme }) => {
       const { base, close } = tagStyle(theme);
-      addComponents([
-        {
-          [`.${theme("jumpu.prefix")}tag`]: {
-            ...base,
-            "[role='button']": close(),
-          },
+      addComponents({
+        [`.${theme("jumpu.prefix")}tag`]: {
+          ...base,
+          "[role='button']": close(),
         },
-      ]);
+      });
     };
   },
   () => ({ theme })

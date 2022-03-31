@@ -6,11 +6,9 @@ module.exports = plugin.withOptions(
   () => {
     return ({ addComponents, theme }) => {
       const { base } = inputStyle(theme);
-      addComponents([
-        {
-          [`.${theme("jumpu.prefix")}textarea`]: base,
-        },
-      ]);
+      addComponents({
+        [`.${theme("jumpu.prefix")}textarea`]: base,
+      });
     };
   },
   () => ({ theme })
