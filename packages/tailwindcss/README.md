@@ -14,7 +14,7 @@
 npm i -D @jumpu-ui/tailwindcss
 ```
 
-`tailwind.config.js` に TailwindCSS プラグインとして使用するように設定します。このとき、変数 `jumpu` は各コンポーネントごとの TailwindCSS プラグインを含んだオブジェクトです。すべて使用したい場合は、スプレッド構文などによって展開してください。
+`tailwind.config.js` に TailwindCSS プラグインとして使用するように設定します。このとき、変数 `jumpu` は各コンポーネントごとの TailwindCSS プラグインを含んだ配列です。すべて使用したい場合は、スプレッド構文などによって展開してください。
 
 ```js
 const jumpu = require("@jumpu-ui/tailwindcss");
@@ -28,10 +28,12 @@ module.exports = {
 };
 ```
 
-一部が使用したい場合は、分割代入などによって使用したいプラグインを抽出してください。
+一部が使用したい場合は、個別に使用したいプラグインを設定してください。
 
 ```js
-const { button, outlinedButton, textButton } = require("@jumpu-ui/tailwindcss");
+const button = require("@jumpu-ui/tailwindcss/button");
+const outlinedButton = require("@jumpu-ui/tailwindcss/outlinedButton");
+const textButton = require("@jumpu-ui/tailwindcss/textButton");
 
 module.exports = {
   content: ["src/**/*.tsx"],
