@@ -70,7 +70,7 @@ theme: {
 
 - `primary`: UI コンポーネントで用いられるプライマリカラー。デフォルトは `require("tailwindcss/colors").colors.blue`
 - `white`: 白色。デフォルトは `require("tailwindcss/colors").white`
-- `black`: 黒色。 `require("tailwindcss/colors").black`
+- `black`: 黒色。デフォルトは `require("tailwindcss/colors").black`
 - `success`: 成功のステータス色。デフォルトは `#00A93E`
 - `emphasis`: 強調のステータス色。デフォルトは `#FF002E`
 - `warning`: 警告のステータス色。デフォルトは `#FACC15`
