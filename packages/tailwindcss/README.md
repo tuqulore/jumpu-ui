@@ -75,3 +75,7 @@ theme: {
 - `emphasis`: 強調のステータス色。デフォルトは `#FF002E`
 - `warning`: 警告のステータス色。デフォルトは `#FACC15`
 - `danger`: 危険のステータス色。デフォルトは `#B80000`
+
+### 開発
+
+[DEVELOPMENT.md](https://github.com/tuqulore/jumpu-ui/blob/develop/packages/tailwindcss/DEVELOPMENT.md)を参照してください。
