@@ -10,7 +10,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Overview", "*", "Galleries"],
+      order: ["Overview", ["Introduction"], "*", "Galleries"],
     },
   },
 };
