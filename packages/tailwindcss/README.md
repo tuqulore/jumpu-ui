@@ -66,7 +66,7 @@ theme: {
 
 ### [spacing](https://tailwindcss.com/docs/customizing-spacing)
 
-`rel1` であれば `0.25rem` となるような相対サイズのスケールを追加しています。
+`rel1` であれば `0.25em` となるような相対サイズのスケールを追加しています。
 
 ### [colors](https://tailwindcss.com/docs/customizing-colors)
 
