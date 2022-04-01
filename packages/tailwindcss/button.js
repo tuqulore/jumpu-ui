@@ -6,23 +6,21 @@ module.exports = plugin.withOptions(
   () => {
     return ({ addComponents, theme }) => {
       const { base, disabled } = buttonStyle(theme);
-      addComponents([
-        {
-          [`.${theme("jumpu.prefix")}button`]: {
-            ...base,
-            backgroundColor: theme("colors.primary.700"),
-            color: "#fff",
-            transition: "30ms filter cubic-bezier(0, 0, 0.12, 1)",
-            "&:hover": {
-              filter: "brightness(90%)",
-            },
-            "&:active": {
-              filter: "brightness(75%)",
-            },
-            "&[disabled]": disabled,
+      addComponents({
+        [`.${theme("jumpu.prefix")}button`]: {
+          ...base,
+          backgroundColor: theme("colors.primary.700"),
+          color: "#fff",
+          transition: "30ms filter cubic-bezier(0, 0, 0.12, 1)",
+          "&:hover": {
+            filter: "brightness(90%)",
           },
+          "&:active": {
+            filter: "brightness(75%)",
+          },
+          "&[disabled]": disabled,
         },
-      ]);
+      });
     };
   },
   () => ({ theme })
