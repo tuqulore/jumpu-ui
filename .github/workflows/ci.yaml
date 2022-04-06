@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: "16"
           cache: yarn
-      - uses: reviewdog/action-setup@v1
       - run: yarn install --check-files --frozen-lockfile --non-interactive
       - run: yarn lint
       - id: format
