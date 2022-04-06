@@ -2,6 +2,10 @@
 
 @jumpu-ui/tailwindcss パッケージは Jumpu UI の TailwindCSS プラグインです。
 
+## Storybook
+
+https://tuqulore.github.io/jumpu-ui/
+
 ## ステータス
 
 現在不安定リリースのみ提供しています。安定リリースまで破壊的な変更が含まれる可能性があります。

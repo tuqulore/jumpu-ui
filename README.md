@@ -2,6 +2,10 @@
 
 Jumpu UI はユーティリティフレンドリーな UI コンポーネントライブラリーです。
 
+## Storybook
+
+https://tuqulore.github.io/jumpu-ui/
+
 ## コンセプト
 
 Jumpu UI の最大の特徴は、コンポーネントのバリエーションを TailwindCSS ユーティリティーと組み合わせて表現できることです。
