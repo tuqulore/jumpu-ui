@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.4](https://github.com/tuqulore/jumpu-ui/compare/v1.0.1-alpha.3...v1.0.1-alpha.4) (2022-04-06)
+
+### Bug Fixes
+
+* typo ([6c25959](https://github.com/tuqulore/jumpu-ui/commit/6c25959148fd2000cd6b7b6c784f2bc7d4c9c6e4))
+
 ## [1.0.1-alpha.3](https://github.com/tuqulore/jumpu-ui/compare/v1.0.1-alpha.1...v1.0.1-alpha.3) (2022-03-25)
 
 ### Bug Fixes
