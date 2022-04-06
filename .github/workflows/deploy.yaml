@@ -1,0 +1,19 @@
+name: Deploy
+on:
+  push:
+    branches: [develop]
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: yarn
+      - run: yarn install --check-files --frozen-lockfile --non-interactive
+      - run: yran --cwd packages/tailwindcss build-storybook
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ github.token }}
+          publish_dir: packages/tailwindcss/storybook-static
