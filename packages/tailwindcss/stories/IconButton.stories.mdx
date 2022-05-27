@@ -113,6 +113,35 @@ import html from "./html";
   </Story>
 </Canvas>
 
+### TooltipPosition
+
+<Canvas>
+  <Story name="TooltipPosition">
+    {html`
+      <button type="button" class="jumpu-icon-button aria-describedby="tooltip-position-Twitter">
+        <i class="fab fa-twitter"></i>
+        <span id="tooltip-position-Twitter" role="tooltip">Twitter</span>
+      </button>
+      <button type="button" class="jumpu-icon-button group" aria-describedby="tooltip-position-envelope">
+        <i class="fas fa-envelope"></i>
+        <span id="tooltip-position-envelope" role="tooltip" class="![transform:translateX(50%)_scale(0)] group-hover:![transform:translateX(50%)_scale(1)]" role="tooltip">メール</span>
+      </a>
+      <button type="button" class="jumpu-icon-button group" aria-describedby="tooltip-position-home">
+        <i class="fas fa-home"></i>
+        <span id="tooltip-position-home" role="tooltip" class="![transform:translate(-50%,_150%)_scale(0)] group-hover:![transform:translate(-50%,_150%)_scale(1)]" role="tooltip">ホーム</span>
+      </a>
+      <button type="button" class="jumpu-icon-button group" aria-describedby="tooltip-position-etc">
+        <i class="fas fa-ellipsis-h"></i>
+        <span id="tooltip-position-etc" role="tooltip" class="![transform:translateX(-150%)_scale(0)] group-hover:![transform:translateX(-150%)_scale(1)]">その他</span>
+      </button>
+    `}
+  </Story>
+</Canvas>
+
+ツールチップの位置を変更するには、transform プロパティの上書きが必要です。
+
+TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values) を使うことで上書きすることができます。
+
 ### Large
 
 <Canvas>
