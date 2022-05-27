@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+const jumpuColors = require("./colors");
 const typography = require("@tailwindcss/typography");
 
 module.exports = {
@@ -6,6 +8,11 @@ module.exports = {
     extend: {
       fontSize: {
         xxs: ["10px", "1.6em"],
+      },
+      colors: {
+        white: colors.white,
+        black: colors.black,
+        ...jumpuColors,
       },
     },
   },
