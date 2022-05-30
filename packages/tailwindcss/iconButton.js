@@ -15,7 +15,7 @@ module.exports = plugin.withOptions(
           height: theme("height.8"),
           position: "relative",
           "[role='tooltip']": {
-            transform: "translateX(-50%) translateY(-110%) scale(0)",
+            transform: "translate(-50%, -110%) scale(0)",
             display: "inline-flex",
             left: "50%",
             top: 0,
@@ -34,7 +34,7 @@ module.exports = plugin.withOptions(
             backgroundColor: theme("colors.gray.50"),
             color: theme("colors.gray.800"),
             "[role='tooltip']": {
-              transform: "translateX(-50%) translateY(-110%) scale(1)",
+              transform: "translate(-50%, -110%) scale(1)",
               opacity: 1,
             },
           },
