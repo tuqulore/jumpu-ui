@@ -48,6 +48,23 @@ module.exports = {
 };
 ```
 
+`primary` 以外の Jumpu UI が定義している色は、 `tailwindcss/color` モジュールと同様に別途導入する必要があります。
+
+```js
+const jumpuColors = require("@jumpu-ui/tailwindcss/colors");
+const jumpu = require("@jumpu-ui/tailwindcss");
+
+module.exports = {
+  content: ["src/**/*.tsx"],
+  theme: {
+    extend: {
+      colors: jumpuColors,
+    },
+  },
+  plugins: [...jumpu],
+};
+```
+
 ## 設定
 
 Jumpu UI は theme を拡張しています。拡張した値に対してカスタマイズすることができます。
@@ -75,12 +92,6 @@ theme: {
 ### [colors](https://tailwindcss.com/docs/customizing-colors)
 
 - `primary`: UI コンポーネントで用いられるプライマリカラー。デフォルトは `require("tailwindcss/colors").colors.blue`
-- `white`: 白色。デフォルトは `require("tailwindcss/colors").white`
-- `black`: 黒色。デフォルトは `require("tailwindcss/colors").black`
-- `success`: 成功のステータス色。デフォルトは `#00A93E`
-- `emphasis`: 強調のステータス色。デフォルトは `#FF002E`
-- `warning`: 警告のステータス色。デフォルトは `#FACC15`
-- `danger`: 危険のステータス色。デフォルトは `#B80000`
 
 ### 開発
 
