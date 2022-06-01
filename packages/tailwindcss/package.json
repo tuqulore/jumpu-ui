@@ -25,20 +25,20 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.7",
-    "@storybook/addon-a11y": "^6.4.19",
-    "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/client-api": "^6.4.19",
-    "@storybook/html": "^6.4.19",
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.2",
-    "babel-loader": "^8.2.3",
-    "clsx": "^1.1.1",
-    "postcss": "^8.4.8",
-    "tailwindcss": "3"
+    "@babel/core": "7.17.7",
+    "@storybook/addon-a11y": "6.4.19",
+    "@storybook/addon-actions": "6.4.19",
+    "@storybook/addon-essentials": "6.4.19",
+    "@storybook/addon-links": "6.4.19",
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/client-api": "6.4.19",
+    "@storybook/html": "6.4.19",
+    "@tailwindcss/typography": "0.5.2",
+    "autoprefixer": "10.4.2",
+    "babel-loader": "8.2.3",
+    "clsx": "1.1.1",
+    "postcss": "8.4.8",
+    "tailwindcss": "3.0.23"
   },
   "dependencies": {
     "mini-svg-data-uri": "^1.4.4"
