@@ -25,7 +25,7 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@babel/core": "7.17.7",
+    "@babel/core": "7.18.2",
     "@storybook/addon-a11y": "6.4.19",
     "@storybook/addon-actions": "6.4.19",
     "@storybook/addon-essentials": "6.4.19",
@@ -35,7 +35,7 @@
     "@storybook/html": "6.4.19",
     "@tailwindcss/typography": "0.5.2",
     "autoprefixer": "10.4.7",
-    "babel-loader": "8.2.3",
+    "babel-loader": "8.2.5",
     "clsx": "1.1.1",
     "postcss": "8.4.14",
     "tailwindcss": "3.0.23"
