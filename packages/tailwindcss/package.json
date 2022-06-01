@@ -34,7 +34,7 @@
     "@storybook/client-api": "6.4.19",
     "@storybook/html": "6.4.19",
     "@tailwindcss/typography": "0.5.2",
-    "autoprefixer": "10.4.2",
+    "autoprefixer": "10.4.7",
     "babel-loader": "8.2.3",
     "clsx": "1.1.1",
     "postcss": "8.4.8",
