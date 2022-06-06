@@ -9,7 +9,8 @@ module.exports = plugin.withOptions(
       const { base } = inputStyle(theme);
       addComponents({
         [`.${theme("jumpu.prefix")}input`]: {
-          "&:not([type]), &[type='text'], &[type='email'], &[type='url'], &[type='password'], &[type='number'], &[type='date'], &[type='datetime-local'], &[type='month'], &[type='search'], &[type='tel'], &[type='time'], &[type='week']": base,
+          "&:not([type]), &[type='text'], &[type='email'], &[type='url'], &[type='password'], &[type='number'], &[type='date'], &[type='datetime-local'], &[type='month'], &[type='search'], &[type='tel'], &[type='time'], &[type='week']":
+            base,
           "&[type='checkbox'], &[type='radio']": {
             appearance: "none",
             padding: "0",
@@ -58,10 +59,11 @@ module.exports = plugin.withOptions(
               `<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>`
             )}")`,
           },
-          "&[type='checkbox']:checked:hover, &[type='checkbox']:checked:focus, &[type='radio']:checked:hover, &[type='radio']:checked:focus": {
-            "border-color": "transparent",
-            "background-color": "currentColor",
-          },
+          "&[type='checkbox']:checked:hover, &[type='checkbox']:checked:focus, &[type='radio']:checked:hover, &[type='radio']:checked:focus":
+            {
+              "border-color": "transparent",
+              "background-color": "currentColor",
+            },
           "&[type='checkbox']:indeterminate": {
             "background-image": `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h8"/></svg>`
@@ -72,10 +74,11 @@ module.exports = plugin.withOptions(
             "background-position": `center`,
             "background-repeat": `no-repeat`,
           },
-          "&[type='checkbox']:indeterminate:hover, &[type='checkbox']:indeterminate:focus": {
-            "border-color": "transparent",
-            "background-color": "currentColor",
-          },
+          "&[type='checkbox']:indeterminate:hover, &[type='checkbox']:indeterminate:focus":
+            {
+              "border-color": "transparent",
+              "background-color": "currentColor",
+            },
           "&[type='file']": {
             background: "unset",
             "border-color": "inherit",
