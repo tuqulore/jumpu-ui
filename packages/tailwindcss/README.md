@@ -91,7 +91,7 @@ theme: {
 
 ### [colors](https://tailwindcss.com/docs/customizing-colors)
 
-- `primary`: UI コンポーネントで用いられるプライマリカラー。デフォルトは `require("tailwindcss/colors").colors.blue`
+- `primary`: UI コンポーネントで用いられるプライマリカラー。デフォルトは `require("tailwindcss/colors").blue`
 
 ### 開発
 
