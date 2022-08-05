@@ -10,7 +10,7 @@ https://tuqulore.github.io/jumpu-ui/
 
 デザインツール Figma でも Jumpu UI が公開されています。
 
-[Jumpu UI （Figma 版）](https://www.figma.com/community/file/1042706969451783914/%5Bdev%5D-Jumpu-UI-%7C-Tailwind-CSS-Components-%26-Design-System)
+[Jumpu UI （Figma 版）](https://www.figma.com/community/file/1042706969451783914)
 
 ## ステータス
 

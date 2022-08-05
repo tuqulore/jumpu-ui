@@ -6,6 +6,12 @@ Jumpu UI はユーティリティフレンドリーな UI コンポーネント�
 
 https://tuqulore.github.io/jumpu-ui/
 
+## Figma
+
+デザインツール Figma でも Jumpu UI が公開されています。
+
+[Jumpu UI （Figma 版）](https://www.figma.com/community/file/1042706969451783914)
+
 ## コンセプト
 
 Jumpu UI の最大の特徴は、コンポーネントのバリエーションを TailwindCSS ユーティリティーと組み合わせて表現できることです。
