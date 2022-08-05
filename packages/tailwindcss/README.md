@@ -6,6 +6,12 @@
 
 https://tuqulore.github.io/jumpu-ui/
 
+## Figma
+
+デザインツール Figma でも Jumpu UI が公開されています。
+
+[Jumpu UI （Figma 版）](https://www.figma.com/community/file/1042706969451783914)
+
 ## ステータス
 
 現在不安定リリースのみ提供しています。安定リリースまで破壊的な変更が含まれる可能性があります。
