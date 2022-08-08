@@ -1,5 +1,5 @@
 module.exports = {
-  success: "#00A93E",
+  success: "#15803D",
   warning: "#FACC15",
   danger: "#B80000",
 };
