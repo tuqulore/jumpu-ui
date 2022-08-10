@@ -1,5 +1,7 @@
 # Jumpu UI
 
+![Jumpu UI logo](./docs/logo.svg)
+
 Jumpu UI はユーティリティフレンドリーな UI コンポーネントライブラリーです。
 
 ## Storybook
