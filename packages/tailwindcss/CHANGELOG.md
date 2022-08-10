@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-alpha.5](https://github.com/tuqulore/jumpu-ui/compare/v1.0.1-alpha.4...v1.0.1-alpha.5) (2022-08-10)
+
+### Bug Fixes
+
+* idが重複しうる ([b5b304f](https://github.com/tuqulore/jumpu-ui/commit/b5b304febd15a4dcaebfa2854b2004976d85de43))
+
+### Features
+
+* labelのドキュメント ([#234](https://github.com/tuqulore/jumpu-ui/issues/234)) ([8eaa0f2](https://github.com/tuqulore/jumpu-ui/commit/8eaa0f2e75f33f9205498ec5db2483c6e72cdfe9))
+* 色の整理 ([74f232c](https://github.com/tuqulore/jumpu-ui/commit/74f232c8f7adfe15e9fe90f77a5566e4c51e8e98))
+
+### BREAKING CHANGES
+
+* Please define colors yourself if already use predefined one
+* Please define success color yourself as `#00A93E` if already use
+
 ## [1.0.1-alpha.4](https://github.com/tuqulore/jumpu-ui/compare/v1.0.1-alpha.3...v1.0.1-alpha.4) (2022-04-06)
 
 **Note:** Version bump only for package @jumpu-ui/tailwindcss
