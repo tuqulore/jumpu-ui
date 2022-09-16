@@ -18,6 +18,7 @@ const labeledLikeButton = require("./labeledLikeButton");
 const badge = require("./badge");
 const spinner = require("./spinner");
 const balloon = require("./balloon");
+const modal = require("./modal");
 
 module.exports = [
   button,
@@ -40,4 +41,5 @@ module.exports = [
   badge,
   spinner,
   balloon,
+  modal,
 ];

@@ -1,0 +1,104 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import html from "./html";
+
+<Meta title="Modals/Modal" />
+
+# Modal
+
+Jumpu UI ではモーダルに`dialog`要素を使っています。`dialog`要素は非常にシンプルな機能をネイティブで提供してくれます。
+原則は JavaScript と併用で使い、`showModal()` メソッドと `close()` メソッドだけで開閉するだけでなく、背景色の指定は CSS`::backdrop`疑似要素に指定すればよく、開いている状態でエスケープキーを押すと閉じるような機能も提供します。
+
+`open` 属性は最初は外しておき、JavaScript で呼び出すようにしてください。
+`::backdrop`疑似要素は`showModal()`の呼び出し時に表示されます。
+
+```
+const dialog = document.querySelector(".jumpu-dialog");
+dialog.showModal()
+
+```
+
+参考 https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal
+
+<Canvas>
+  <Story name="Default">
+    {html`
+      <div class="py-48 bg-gray-300">
+        <dialog open class="jumpu-modal">
+          <p class="text-lg">Jumpu UI のモーダル</p>
+          <div class="mt-8">
+            Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
+            <br />
+            そのため、ブランドイメージなどを大切にしたいデザイナーの意図を柔軟に反映させやすい設計となっています。
+          </div>
+          <button role="button" class="jumpu-icon-button"></button>
+        </dialog>
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+## Stories
+
+### Padding
+
+<Canvas>
+  <Story name="Padding">
+    {html`
+      <div class="py-48 bg-gray-300">
+        <dialog open class="jumpu-modal px-10 py-8">
+          <p class="text-lg">Jumpu UI のモーダル</p>
+          <div class="mt-8">
+            Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
+            <br />
+            そのため、ブランドイメージなどを大切にしたいデザイナーの意図を柔軟に反映させやすい設計となっています。
+          </div>
+          <button role="button" class="jumpu-icon-button"></button>
+        </dialog>
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+### Action
+
+<Canvas>
+  <Story name="Action">
+    {html`
+      <div class="py-48 bg-gray-300">
+        <dialog open class="jumpu-modal px-10 py-8">
+          <p class="text-lg">Jumpu UI のモーダル</p>
+          <div class="mt-8">
+            Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
+            <br />
+            そのため、ブランドイメージなどを大切にしたいデザイナーの意図を柔軟に反映させやすい設計となっています。
+          </div>
+          <button role="button" class="jumpu-icon-button"></button>
+          <div class="flex items-center gap-x-4 mt-6">
+            <button class="jumpu-button">カートに入れる</button>
+            <button class="jumpu-outlined-button">キャンセル</button>
+          </div>
+        </dialog>
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+### Shadow
+
+<Canvas>
+  <Story name="Shadow">
+    {html`
+      <div class="py-48 bg-gray-300">
+        <dialog open class="jumpu-modal px-10 py-8 shadow-xl">
+          <p class="text-lg">Jumpu UI のモーダル</p>
+          <div class="mt-8">
+            Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
+            <br />
+            そのため、ブランドイメージなどを大切にしたいデザイナーの意図を柔軟に反映させやすい設計となっています。
+          </div>
+          <button role="button" class="jumpu-icon-button"></button>
+        </dialog>
+      </div>
+    `}
+  </Story>
+</Canvas>
