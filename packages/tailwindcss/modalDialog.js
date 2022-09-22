@@ -7,7 +7,7 @@ module.exports = plugin.withOptions(
     return ({ addComponents, theme }) => {
       const { close } = tagStyle(theme);
       addComponents({
-        [`.${theme("jumpu.prefix")}modal`]: {
+        [`.${theme("jumpu.prefix")}modal-dialog`]: {
           backgroundColor: theme("colors.white"),
           borderRadius: theme("borderRadius.xl"),
           overflow: "hidden",
