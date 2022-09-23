@@ -10,7 +10,7 @@ module.exports = plugin.withOptions(
           borderRadius: theme("borderRadius.md"),
           overflow: "hidden",
           "border-width": "1px",
-          "border-color": theme("colors.gray.200"),
+          "border-color": theme("colors.border"),
         },
       });
     };
