@@ -1,9 +1,9 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import html from "./html";
 
-<Meta title="Modals/ModalDialog" />
+<Meta title="Modals/Modal" />
 
-# ModalDialog
+# Modal
 
 Jumpu UI ではモーダルに`dialog`要素を使っています。`dialog`要素は非常にシンプルな機能をネイティブで提供してくれます。
 原則は JavaScript と併用で使い、`showModal()` メソッドと `close()` メソッドだけで開閉するだけでなく、背景色の指定は CSS`::backdrop`疑似要素に指定すればよく、開いている状態でエスケープキーを押すと閉じるような機能も提供します。
@@ -12,7 +12,7 @@ Jumpu UI ではモーダルに`dialog`要素を使っています。`dialog`要�
 `::backdrop`疑似要素は`showModal()`の呼び出し時に表示されます。
 
 ```
-const dialog = document.querySelector(".jumpu-modal-dialog");
+const dialog = document.querySelector(".jumpu-dialog");
 dialog.showModal()
 
 ```
@@ -23,7 +23,7 @@ dialog.showModal()
   <Story name="Default">
     {html`
       <div class="py-48 bg-gray-300">
-        <dialog open class="jumpu-modal-dialog">
+        <dialog open class="jumpu-modal">
           <p class="text-lg">Jumpu UI のモーダル</p>
           <div class="mt-8">
             Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
@@ -45,7 +45,7 @@ dialog.showModal()
   <Story name="Padding">
     {html`
       <div class="py-48 bg-gray-300">
-        <dialog open class="jumpu-modal-dialog px-10 py-8">
+        <dialog open class="jumpu-modal px-10 py-8">
           <p class="text-lg">Jumpu UI のモーダル</p>
           <div class="mt-8">
             Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
@@ -65,7 +65,7 @@ dialog.showModal()
   <Story name="Action">
     {html`
       <div class="py-48 bg-gray-300">
-        <dialog open class="jumpu-modal-dialog px-10 py-8">
+        <dialog open class="jumpu-modal px-10 py-8">
           <p class="text-lg">Jumpu UI のモーダル</p>
           <div class="mt-8">
             Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
@@ -89,7 +89,7 @@ dialog.showModal()
   <Story name="Shadow">
     {html`
       <div class="py-48 bg-gray-300">
-        <dialog open class="jumpu-modal-dialog px-10 py-8 shadow-xl">
+        <dialog open class="jumpu-modal px-10 py-8 shadow-xl">
           <p class="text-lg">Jumpu UI のモーダル</p>
           <div class="mt-8">
             Jumpu UI はCSSスタイルを最小限に定義した UI フレームワークです。
