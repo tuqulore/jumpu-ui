@@ -18,6 +18,10 @@ module.exports = plugin.withOptions(
           "&:active": {
             filter: "brightness(75%)",
           },
+          "&:focus": {
+            outline: `2px solid ${theme("colors.primary.700")}`,
+            "outline-offset": "2px",
+          },
           "&[disabled]": disabled,
         },
       });
