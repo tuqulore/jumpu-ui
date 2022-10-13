@@ -21,6 +21,34 @@ import html from "./html";
   </Story>
 </Canvas>
 
+### [role=button]
+
+div 要素などでボタンを実現するケースには WAI-ARIA ロールによってアクセシビリティの向上に役立ちます。
+
+<blockquote cite="https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/button_role#accessibility_concerns">
+  <p>
+    role="button"
+    を追加すると、要素がスクリーンリーダーにボタンコントロールとして表示されます。このロールを
+    aria-pressed 属性と組み合わせて使用することで、トグルボタンを作成できます。
+  </p>
+</blockquote>
+
+<Canvas>
+  <Story name="[role=button]">
+    {html`
+      <div
+        class="jumpu-button"
+        id="saveChanges"
+        tabindex="0"
+        role="button"
+        aria-pressed="false"
+      >
+        ARIA: button ロール
+      </div>
+    `}
+  </Story>
+</Canvas>
+
 ### Long Text
 
 <Canvas>
