@@ -5,6 +5,8 @@ import html from "./html";
 
 # Tag
 
+デフォルトではクリッカブルにしない設計になっています。何かクリック等のアクションを受け入れるのであれば、 a 要素、 button 要素、 [role="button"] 属性などを採用します。
+
 <Canvas>
   <Story name="Default">
     {html`
@@ -54,6 +56,16 @@ import html from "./html";
 <Canvas>
   <Story name="Button">{html`
     <button class="jumpu-tag">デフォルト</button>
+  `}</Story>
+</Canvas>
+
+### ARIA button role
+
+<Canvas>
+  <Story name="ARIA button role">{html`
+    <div class="jumpu-tag" tabindex="0" role="button" aria-pressed="false">
+      デフォルト
+    </div>
   `}</Story>
 </Canvas>
 
