@@ -90,7 +90,7 @@ a 要素を用いる場合、通常はユーザーを異なるページへ移動
   <Story name="AnchorWithClose">
     {html`
       <a href="#" class="jumpu-tag ">
-        デフォルト
+        a 要素と閉じるアクションの競合
         <div role="button" aria-label="閉じる"></div>
       </a>
     `}
@@ -99,11 +99,13 @@ a 要素を用いる場合、通常はユーザーを異なるページへ移動
 
 ### ButtonWithClose
 
+これはボタンの中にボタンがあります、混乱の元となり推奨できません。
+
 <Canvas>
   <Story name="Closable Button">
     {html`
       <button class="jumpu-tag">
-        デフォルト
+        ボタン同士の競合
         <div role="button" aria-label="閉じる" />
       </button>
     `}
