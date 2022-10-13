@@ -13,10 +13,6 @@ module.exports = (theme) => {
       background: theme("colors.gray.50"),
       textDecoration: "none",
       lineHeight: 1.3,
-      cursor: "pointer",
-      "&:hover": {
-        borderColor: theme("colors.gray.300"),
-      },
     },
     close: ({ fill = theme("colors.gray.900") } = {}) => ({
       display: "flex",
