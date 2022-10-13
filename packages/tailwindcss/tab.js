@@ -27,22 +27,23 @@ module.exports = plugin.withOptions(
             margin: 0,
             marginRight: `${theme("spacing.2")}`,
             textDecoration: "none",
-            "border-bottom": `1px solid ${theme("colors.gray.300")}`,
             display: "flex",
             "justify-content": "space-between",
             "align-items": "center",
-            "margin-bottom": "-1px",
             padding: `${theme("spacing[rel2.5]")} ${theme("spacing[rel3.5]")}`,
             "vertical-align": "top",
-            "&:hover": {
-              "border-bottom": `1px solid ${theme("colors.gray.400")}`,
-            },
+            "border-bottom": `1px solid rgba(0,0,0,0)`,
             "&[aria-selected=true]": {
               "border-bottom": `1px solid ${theme("colors.primary.700")}`,
               color: `${theme("colors.primary.700")}`,
+              cursor: "default",
+              "pointer-events": "none",
+            },
+            "&:not(&[aria-selected=true])": {
               cursor: "pointer",
+              position: "relative",
               "&:hover": {
-                "border-bottom": `1px solid ${theme("colors.primary.800")}`,
+                "border-bottom": `1px solid ${theme("colors.gray.400")}`,
               },
               "&:active": {
                 backgroundColor: `${theme("colors.gray.50")}`,

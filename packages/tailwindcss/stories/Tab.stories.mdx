@@ -5,6 +5,8 @@ import html from "./html";
 
 # Tabs
 
+`aria-selected=true` になっているタブはデフォルトでクリッカブルにならないように設計されています。もしもこれまでクリッカブルにしたい場合、CSS プロパティ `cursor`や`pointer-events`などを使い、スタイルで打ち消すようにしてください。
+
 <Canvas>
   <Story name="Default">
     {html`

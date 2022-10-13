@@ -36,6 +36,12 @@ module.exports = plugin.withOptions(
               "borderRadius.md"
             )} 0 0`,
             padding: `${theme("spacing[rel1.5]")} ${theme("spacing.rel5")}`,
+            "&:hover": {
+              "background-color": `${theme("colors.gray.50")}`,
+            },
+            "&:active": {
+              backgroundColor: `${theme("colors.gray.100")}`,
+            },
             "&[aria-selected=true]": {
               border: `1px solid ${theme("colors.gray.300")}`,
               "background-color": `${theme("colors.white")}`,
@@ -43,6 +49,8 @@ module.exports = plugin.withOptions(
               position: "relative",
               paddingTop: theme("spacing.rel2"),
               paddingBottom: theme("spacing[rel1.5]"),
+              cursor: "default",
+              "pointer-events": "none",
             },
           },
         },
