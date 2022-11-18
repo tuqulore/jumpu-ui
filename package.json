@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@lerna-lite/cli": "1.12.0",
-    "eslint": "8.27.0",
+    "eslint": "8.28.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
     "prettier": "2.7.1"
