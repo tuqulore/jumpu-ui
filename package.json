@@ -7,11 +7,11 @@
     "url": "https://github.com/tuqulore/jumpu-ui/issues"
   },
   "devDependencies": {
-    "@lerna-lite/cli": "1.11.3",
-    "eslint": "8.25.0",
-    "eslint-config-prettier": "8.5.0",
+    "@lerna-lite/cli": "1.13.0",
+    "eslint": "8.31.0",
+    "eslint-config-prettier": "8.6.0",
     "eslint-plugin-import": "2.26.0",
-    "prettier": "2.7.1"
+    "prettier": "2.8.2"
   },
   "engines": {
     "node": ">=16"
