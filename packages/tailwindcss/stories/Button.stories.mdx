@@ -26,7 +26,39 @@ import html from "./html";
 div 要素などでボタンを実現するケースには WAI-ARIA ロールによってアクセシビリティの向上に役立ちます。
 
 <blockquote cite="https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/button_role#sect1">
-  <p><strong>メモ:</strong> 意味論的な <code>&lt;button&gt;</code> や <code>&lt;input type="button"&gt;</code> 要素の代わりに role="button" を使用する場合は、要素をフォーカス可能にし、ユーザーの入力を処理するためにクリック (<code><a href="/ja/docs/Web/API/Element/click_event" title="/ja/docs/Web/Reference/Events/click">click</a></code>) イベントと <kbd>Enter</kbd> キーと <kbd>Space</kbd> キーを含むキーダウン (<code><a href="/en-US/docs/Web/API/Element/keydown_event" title="Currently only available in English (US)" class="only-in-en-us">keydown (en-US)</a></code>) イベントのイベントハンドラーを定義する必要があります。 <a href="https://www.w3.org/TR/wai-aria-practices/examples/button/button.html" class="external" rel=" noopener">公式の WAI-ARIA サンプルコード</a>を参照してください。</p>
+  <p>
+    <strong>メモ:</strong> 意味論的な <code>&lt;button&gt;</code> や{" "}
+    <code>&lt;input type="button"&gt;</code> 要素の代わりに role="button"
+    を使用する場合は、要素をフォーカス可能にし、ユーザーの入力を処理するためにクリック
+    (
+    <code>
+      <a
+        href="/ja/docs/Web/API/Element/click_event"
+        title="/ja/docs/Web/Reference/Events/click"
+      >
+        click
+      </a>
+    </code>
+    ) イベントと <kbd>Enter</kbd> キーと <kbd>Space</kbd> キーを含むキーダウン (
+    <code>
+      <a
+        href="/en-US/docs/Web/API/Element/keydown_event"
+        title="Currently only available in English (US)"
+        class="only-in-en-us"
+      >
+        keydown (en-US)
+      </a>
+    </code>
+    ) イベントのイベントハンドラーを定義する必要があります。{" "}
+    <a
+      href="https://www.w3.org/TR/wai-aria-practices/examples/button/button.html"
+      class="external"
+      rel=" noopener"
+    >
+      公式の WAI-ARIA サンプルコード
+    </a>
+    を参照してください。
+  </p>
 </blockquote>
 
 <Canvas>
