@@ -1665,17 +1665,17 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@lerna-lite/cli@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/cli/-/cli-1.14.0.tgz#69ac2cd6a1eb22195e9c0cc032de7fad35999873"
-  integrity sha512-KZIxF6sJXEL9NWXW8i0Ve+J2oCT1+Nduug7O0wBNQ42/45NJF1K8ZBcTeFOzbucfveg1wSCf2+CpTEQGNlxW/g==
+"@lerna-lite/cli@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/cli/-/cli-1.14.2.tgz#8e17b9ddd01f73be71e6ae37001972eed0e21f5f"
+  integrity sha512-ovvcL85bktZa8w1BEEYSoPfaF2teN1UP/pYun+WXJweSdTU6iCwgsSzHXOb2Z6unlTqNEQINvAiH0uce0/uk1A==
   dependencies:
-    "@lerna-lite/core" "1.14.0"
-    "@lerna-lite/info" "1.14.0"
-    "@lerna-lite/init" "1.14.0"
-    "@lerna-lite/listable" "1.14.0"
-    "@lerna-lite/publish" "1.14.0"
-    "@lerna-lite/version" "1.14.0"
+    "@lerna-lite/core" "1.14.2"
+    "@lerna-lite/info" "1.14.2"
+    "@lerna-lite/init" "1.14.2"
+    "@lerna-lite/listable" "1.14.2"
+    "@lerna-lite/publish" "1.14.2"
+    "@lerna-lite/version" "1.14.2"
     dedent "^0.7.0"
     dotenv "^16.0.3"
     import-local "^3.1.0"
@@ -1684,10 +1684,10 @@
     path "^0.12.7"
     yargs "^17.6.2"
 
-"@lerna-lite/core@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/core/-/core-1.14.0.tgz#1b87b3ff152271f4cdc777312972c623a5c38d6e"
-  integrity sha512-pTufYQ54TV+ZhfDyWPxt94ONYxBt59cfOFFSY8dlEKjCv5otawan7SeCq5QqLK5nrpUsD5Y2S/1CFW1FUDDDng==
+"@lerna-lite/core@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/core/-/core-1.14.2.tgz#dc0993dff7b7032ed13422ca059168e24dac5eaf"
+  integrity sha512-KRYpNOO85QQ7lav/nQcLuTIgqO0jxZSUS8JKnrE5WCmrlT78aoQoYy17nK/SDy1A98Pmutg6Y9AvZK18vBkCOA==
   dependencies:
     "@npmcli/run-script" "^6.0.0"
     "@octokit/plugin-enterprise-rest" "^6.0.1"
@@ -1732,41 +1732,41 @@
     write-json-file "^4.3.0"
     write-pkg "^4.0.0"
 
-"@lerna-lite/info@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/info/-/info-1.14.0.tgz#157f0808b2541fdd7cb2f74bb313fce24de7a1aa"
-  integrity sha512-SdR+X6jsJEK2t1s87cVYbzxlPjvQZ4mhwmLV+PIAy+0f4tDE7W+m6ij9o3yk+Rt5rbX6P+PYQPDWFWNwQm89/Q==
+"@lerna-lite/info@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/info/-/info-1.14.2.tgz#e2183a815a0f50a39faff6deb09d12506693498f"
+  integrity sha512-Cu0Cc1fpJVYPZW9WKYjMU9rijJQKkuSr26xbwOFIUM+jm8qvytChJXqeZhmfP5K+PwLIiRx8eCYJ0A0xpHKcDQ==
   dependencies:
-    "@lerna-lite/core" "1.14.0"
+    "@lerna-lite/core" "1.14.2"
     envinfo "^7.8.1"
 
-"@lerna-lite/init@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/init/-/init-1.14.0.tgz#064471f8cb9e190d7cf4b662edac0bc8353a0e1e"
-  integrity sha512-hTcj1fcV9gSnUmVhH9qjTLV1nvlCnQS73rxSIGrD8XFrGF0o3DRLRis3P6iWxZbrjcVYqTIOYOhXe8Y7utR4nA==
+"@lerna-lite/init@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/init/-/init-1.14.2.tgz#f62ea37d30fb7f5fb41c2a1944a28c32ada2e41e"
+  integrity sha512-QJYJCOkRoISrYa8dRvRTFTIbe7M9+yhs+xKykDlnJ3GLUlUsPIeJEStvU47lQmykikP55KnM6alHRIlmXSV1pQ==
   dependencies:
-    "@lerna-lite/core" "1.14.0"
+    "@lerna-lite/core" "1.14.2"
     fs-extra "^11.1.0"
     p-map "^4.0.0"
     path "^0.12.7"
     write-json-file "^4.3.0"
 
-"@lerna-lite/listable@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/listable/-/listable-1.14.0.tgz#a3bd4f227485f8668e8dac35bb8cbe4dcafc07e3"
-  integrity sha512-haFnJKKN8HFBZh8QEeFubAC3XGA0GAiQwfBXHzbyLqthy3kirNfX3QWed13qffUJOIetyxT4vB4kfzoIaOnZjA==
+"@lerna-lite/listable@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/listable/-/listable-1.14.2.tgz#962733e2240be8eaf53f6d52ba1b4c2827b9352f"
+  integrity sha512-Ojt7VoQ8fq7em06IfJiTTrBH74B88D+1fteH1zuFvtjLHKRrVPf+es0+ottMGJAs6lAJv1L2MAbTgYl4IlLc+w==
   dependencies:
-    "@lerna-lite/core" "1.14.0"
+    "@lerna-lite/core" "1.14.2"
     chalk "^4.1.2"
     columnify "^1.6.0"
 
-"@lerna-lite/publish@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/publish/-/publish-1.14.0.tgz#c4ef4b27b0f3822a86dad3607f0606d507048cc2"
-  integrity sha512-W7sNpCG5HURSbAkOP85jxrtgz2wzTudtytfV2ypeyMeAbu0mGdNHQKbTBNtFJ1gA0AYGNAN/8UwgmU4wW0l2IA==
+"@lerna-lite/publish@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/publish/-/publish-1.14.2.tgz#b430216d026fc0105fafe5c4bd62111ba2283ad7"
+  integrity sha512-5/24ZpqW7oK4sV0RokTO0Q5ZCbKX93Qt7kjqpfaotjWRi9RI/N+H9Mgr4iMzs2xlZoH8JkrUREZRA/CsA5jgBg==
   dependencies:
-    "@lerna-lite/core" "1.14.0"
-    "@lerna-lite/version" "1.14.0"
+    "@lerna-lite/core" "1.14.2"
+    "@lerna-lite/version" "1.14.2"
     "@npmcli/arborist" "^6.1.6"
     byte-size "^7.0.1"
     chalk "^4.1.2"
@@ -1789,12 +1789,12 @@
     ssri "^10.0.1"
     tar "^6.1.13"
 
-"@lerna-lite/version@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/version/-/version-1.14.0.tgz#4cde6207e5b1064bf9e46fac39e9bdee179b16a7"
-  integrity sha512-ONDnX9dMaE06JRPz6yk3K4PaBgiVam+zsaYhGyR/+YP9/f/6JSjq7B20h89gYO9Tgraho33bR7zOO95vSNGCIw==
+"@lerna-lite/version@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@lerna-lite/version/-/version-1.14.2.tgz#54340f0a45d2676ac8a178ac538b1ec7f11c1aca"
+  integrity sha512-W56tkMARMuBPYSbLbd9/2GxHsdSjO6JbxgGkTAvgYwaGP11WG6fcZVNjOYfML8Um+9zY9cNtWdJIhAxKmInaGA==
   dependencies:
-    "@lerna-lite/core" "1.14.0"
+    "@lerna-lite/core" "1.14.2"
     chalk "^4.1.2"
     dedent "^0.7.0"
     load-json-file "^6.2.0"
