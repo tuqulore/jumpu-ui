@@ -38,7 +38,7 @@
     "babel-loader": "8.3.0",
     "clsx": "1.2.1",
     "postcss": "8.4.21",
-    "tailwindcss": "3.2.6"
+    "tailwindcss": "3.2.7"
   },
   "dependencies": {
     "mini-svg-data-uri": "^1.4.4"
