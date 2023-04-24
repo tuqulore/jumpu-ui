@@ -18,8 +18,8 @@ jobs:
       - id: format
         run: |
           yarn format
-          echo "::set-output name=status::$(git status --porcelain)"
-      - if: steps.format.outputs.status != ''
+          echo "RESULT=$(git diff --shortstat)" >> $GITHUB_OUTPUT
+      - if: steps.format.outputs.RESULT != ''
         run: |
           git -c "user.name=${{ github.actor }}" -c "user.email=${{ github.actor }}@users.noreply.github.com" commit -a -m "bot: format"
           git push origin HEAD
