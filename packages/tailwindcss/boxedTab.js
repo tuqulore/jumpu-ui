@@ -21,7 +21,7 @@ module.exports = plugin.withOptions(
             "align-items": "center",
             "flex-shrink": 0,
             "flex-grow": 1,
-            "border-bottom": `1px solid ${theme("colors.gray.300")}`,
+            borderBottomWidth: theme("borderWidth.DEFAULT"),
           },
           "[role=tab]": {
             display: "block",
@@ -31,13 +31,14 @@ module.exports = plugin.withOptions(
             "align-items": "center",
             "margin-bottom": "-1px",
             "vertical-align": "top",
-            border: "1px solid transparent",
+            borderWidth: theme("borderWidth.DEFAULT"),
+            borderColor: "transparent",
             "border-radius": `${theme("borderRadius.md")} ${theme(
               "borderRadius.md"
             )} 0 0`,
             padding: `${theme("spacing[rel1.5]")} ${theme("spacing.rel5")}`,
             "&[aria-selected=true]": {
-              border: `1px solid ${theme("colors.gray.300")}`,
+              borderColor: theme("borderColor.DEFAULT"),
               "background-color": `${theme("colors.white")}`,
               "border-bottom-color": "transparent",
               position: "relative",

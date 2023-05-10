@@ -21,13 +21,13 @@ module.exports = plugin.withOptions(
             "align-items": "center",
             "flex-shrink": 0,
             "flex-grow": 1,
-            "border-bottom": `1px solid ${theme("colors.gray.300")}`,
+            borderBottomWidth: theme("borderWidth.DEFAULT"),
           },
           "[role=tab]": {
             margin: 0,
             marginRight: `${theme("spacing.2")}`,
             textDecoration: "none",
-            "border-bottom": `1px solid ${theme("colors.gray.300")}`,
+            borderBottomWidth: theme("borderWidth.DEFAULT"),
             display: "flex",
             "justify-content": "space-between",
             "align-items": "center",
@@ -35,7 +35,8 @@ module.exports = plugin.withOptions(
             padding: `${theme("spacing[rel2.5]")} ${theme("spacing[rel3.5]")}`,
             "vertical-align": "top",
             "&:hover": {
-              "border-bottom": `1px solid ${theme("colors.gray.400")}`,
+              borderBottomWidth: theme("borderWidth.DEFAULT"),
+              borderColor: theme("colors.gray.400"),
             },
             "&[aria-selected=true]": {
               "border-bottom": `1px solid ${theme("colors.primary.700")}`,

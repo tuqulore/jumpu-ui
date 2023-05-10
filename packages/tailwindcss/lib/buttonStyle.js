@@ -9,7 +9,7 @@ module.exports = (theme) => ({
   disabled: {
     color: theme("colors.white"),
     backgroundColor: theme("colors.gray.300"),
-    "border-color": theme("colors.gray.300"),
+    "border-color": theme("borderColor.DEFAULT"),
     cursor: "default",
     "&:hover, &:active": {
       filter: "none",
