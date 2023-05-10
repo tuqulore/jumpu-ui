@@ -9,6 +9,7 @@ module.exports = {
     spacing: relScale,
     colors: {
       primary: colors.blue,
+      border: colors.gray[300],
     },
   },
 };
