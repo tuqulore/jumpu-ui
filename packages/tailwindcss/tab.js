@@ -44,9 +44,9 @@ module.exports = plugin.withOptions(
               "&:hover": {
                 "border-bottom": `1px solid ${theme("colors.primary.800")}`,
               },
-              "&:active": {
-                backgroundColor: `${theme("colors.gray.50")}`,
-              },
+            },
+            "&:active": {
+              backgroundColor: `${theme("colors.gray.50")}`,
             },
           },
         },
