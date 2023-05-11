@@ -10,5 +10,8 @@ module.exports = {
     colors: {
       primary: colors.blue,
     },
+    borderColor: {
+      DEFAULT: colors.gray[300],
+    },
   },
 };

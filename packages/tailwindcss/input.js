@@ -24,7 +24,6 @@ module.exports = plugin.withOptions(
             width: theme("spacing.4"),
             color: theme("colors.primary.700"),
             "background-color": theme("colors.white"),
-            "border-color": theme("colors.gray.300"),
             borderWidth: theme("borderWidth.DEFAULT"),
           },
           "&[type='checkbox']": {

@@ -13,7 +13,6 @@ module.exports = {
         white: colors.white,
         black: colors.black,
         ...jumpuColors,
-        border: colors.gray[300],
       },
     },
   },
