@@ -99,6 +99,10 @@ theme: {
 
 - `primary`: UI コンポーネントで用いられるプライマリカラー。デフォルトは `require("tailwindcss/colors").blue`
 
+### [borderColors](https://tailwindcss.com/docs/border-color)
+
+- `DEFAULT`: 境界線で用いられる色。デフォルトは `require("tailwindcss/colors").gray[300]`
+
 ### 開発
 
 [DEVELOPMENT.md](https://github.com/tuqulore/jumpu-ui/blob/develop/packages/tailwindcss/DEVELOPMENT.md)を参照してください。

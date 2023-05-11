@@ -13,7 +13,7 @@ module.exports = plugin.withOptions(
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
-            border: `1px solid ${theme("colors.gray.300")}`,
+            borderWidth: theme("borderWidth.DEFAULT"),
             cursor: "pointer",
             "&::before": {
               content: "''",
