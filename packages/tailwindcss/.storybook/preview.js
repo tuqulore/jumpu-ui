@@ -13,4 +13,9 @@ export const parameters = {
       order: ["Overview", ["Introduction"], "*", "Galleries"],
     },
   },
+  docs: {
+    source: {
+      format: "dedent",
+    },
+  },
 };
