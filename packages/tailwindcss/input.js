@@ -14,7 +14,7 @@ module.exports = plugin.withOptions(
           "&[type='checkbox'], &[type='radio']": {
             appearance: "none",
             padding: "0",
-            "color-adjust": "exact",
+            printColorAdjust: "exact",
             display: "inline-block",
             "vertical-align": "middle",
             "background-origin": "border-box",
