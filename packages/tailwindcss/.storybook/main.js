@@ -8,12 +8,19 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
     {
-      name: "@storybook/addon-postcss",
+      name: "@storybook/addon-styling",
       options: {
-        postcssLoaderOptions: {
+        postcss: {
           implementation: require("postcss"),
         },
       },
     },
   ],
+  framework: {
+    name: "@storybook/html-vite",
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
 };

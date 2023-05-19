@@ -1,9 +1,8 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import html from "./html";
+import avatarImage from "./assets/avatar_photo.jpg";
 
 <Meta title="Communications/Avatar" />
-
-export const avatarImage = require("./assets/avatar_photo.jpg");
 
 # Avatar
 
@@ -11,7 +10,7 @@ export const avatarImage = require("./assets/avatar_photo.jpg");
   <Story name="Default">
     {html`
       <div class="jumpu-avatar">
-        <img src="${require("./assets/avatar_photo.jpg")}" alt="城田 亜利沙" />
+        <img src="${avatarImage}" alt="城田 亜利沙" />
       </div>
     `}
   </Story>
