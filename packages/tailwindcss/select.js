@@ -19,14 +19,14 @@ module.exports = plugin.withOptions(
           "background-repeat": `no-repeat`,
           "background-size": theme("spacing.rel6"),
           "padding-right": theme("spacing.10"),
-          "color-adjust": `exact`,
+          printColorAdjust: `exact`,
           "&[multiple]": {
             "background-image": "initial",
             "background-position": "initial",
             "background-repeat": "unset",
             "background-size": "initial",
             "padding-right": theme("spacing.3"),
-            "color-adjust": "unset",
+            printColorAdjust: "unset",
           },
         },
       });
