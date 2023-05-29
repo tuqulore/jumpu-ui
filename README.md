@@ -1,6 +1,4 @@
-# Jumpu UI
-
-![Jumpu UI logo](./docs/logo.svg)
+# <img alt="Jumpu UI" src="./docs/logo.svg" width="450" height="150">
 
 Jumpu UI はユーティリティフレンドリーな UI コンポーネントライブラリーです。
 
