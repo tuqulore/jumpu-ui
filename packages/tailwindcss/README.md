@@ -105,4 +105,4 @@ theme: {
 
 ### 開発
 
-[DEVELOPMENT.md](https://github.com/tuqulore/jumpu-ui/blob/develop/packages/tailwindcss/DEVELOPMENT.md)を参照してください。
+[DEVELOPMENT.md](./DEVELOPMENT.md)を参照してください。
