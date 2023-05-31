@@ -30,7 +30,7 @@ Jumpu UI の最大の特徴は、コンポーネントのバリエーション�
 
 ## パッケージ
 
-- [@jumpu-ui/tailwindcss](https://github.com/tuqulore/jumpu-ui/blob/develop/packages/tailwindcss/README.md)
+- [@jumpu-ui/tailwindcss](./packages/tailwindcss/README.md)
 
 ## Jumpu UI を使った開発に関する問い合わせ
 
