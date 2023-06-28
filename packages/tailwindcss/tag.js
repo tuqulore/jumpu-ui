@@ -9,6 +9,9 @@ module.exports = plugin.withOptions(
       addComponents({
         [`.${theme("jumpu.prefix")}tag`]: {
           ...base,
+          "&:is(button, a, [role='button']):hover": {
+            borderColor: theme("borderColor.DEFAULT"),
+          },
           "[role='button']": close(),
         },
       });
