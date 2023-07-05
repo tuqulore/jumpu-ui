@@ -34,7 +34,7 @@ module.exports = plugin.withOptions(
             borderWidth: theme("borderWidth.DEFAULT"),
             borderColor: "transparent",
             "border-radius": `${theme("borderRadius.md")} ${theme(
-              "borderRadius.md"
+              "borderRadius.md",
             )} 0 0`,
             padding: `${theme("spacing[rel1.5]")} ${theme("spacing.rel5")}`,
             "&[aria-selected=true]": {
@@ -50,5 +50,5 @@ module.exports = plugin.withOptions(
       });
     };
   },
-  () => ({ theme })
+  () => ({ theme }),
 );

@@ -3,7 +3,7 @@
  */
 const html = (strings, ...args) =>
   strings.reduce(
-    (previous, current, index) => previous + args[index - 1] + current
+    (previous, current, index) => previous + args[index - 1] + current,
   );
 
 export default html;

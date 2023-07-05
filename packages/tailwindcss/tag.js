@@ -17,5 +17,5 @@ module.exports = plugin.withOptions(
       });
     };
   },
-  () => ({ theme })
+  () => ({ theme }),
 );
