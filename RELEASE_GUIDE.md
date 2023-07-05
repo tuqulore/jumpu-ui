@@ -2,37 +2,32 @@
 
 ## これは何
 
-Jumpu UI のパッケージをリリースしていくにあたりおこなう作業手順を示したものです
+Jumpu UI のパッケージをリリースしていくにあたりおこなう作業手順を示したものです。
 
-## 不安定版リリース
+## 手順
 
-1. `main` ブランチに移動し最新の状態にします `git swtich main; git pull origin main`
-2. リリース作業用のブランチを作成します `git switch -c chore-release`
-3. ローカルでバージョニングのためのタスクを実行します `yarn versionup prerelease`
-4. 差分をコミットします `git add .; git commit -m "chore(release): <v + lerna.jsonに記載のあるversion>"`
-5. `chore-release` ブランチをリモートにプッシュします `git push origin chore-release`
-6. `chore-release` ブランチでプルリクエストを作成します
-   - マージ先は `main` ブランチに指定します
-7. レビューを通してプルリクエストをマージします
-8. `main` ブランチに移動し最新の状態にします `git switch main; git pull origin main`
-9. タグを作成します `git tag -a <v + lerna.jsonに記載のあるversion> -m <v + lerna.jsonに記載のあるversion>`
-10. タグをリモートにプッシュします `git push origin <lerna.jsonに記載のあるversion>`
-11. GitHub Release を作成します
-    - 本文に `CHANGELOG.md` の当該バージョンのセクションを含めます
-    - `This is a pre-release` にチェックを入れます
+### Versionup ワークフローの実行
 
-## 安定版リリース
+[ワークフローの手動実行](https://docs.github.com/ja/actions/using-workflows/manually-running-a-workflow)を参考に実施してください。実施するとリリース用プルリクエストが作成されます。
 
-1. `main` ブランチに移動し最新の状態にします `git swtich main; git pull origin main`
-2. リリース作業用のブランチを作成します `git switch -c chore-release`
-3. ローカルでバージョニングのためのタスクを実行します `yarn versionup prerelease --conventional-graduate`
-4. 差分をコミットします `git add .; git commit -m "chore(release): <v + lerna.jsonに記載のあるversion>"`
-5. `chore-release` ブランチをリモートにプッシュします `git push origin chore-release`
-6. `chore-release` ブランチでプルリクエストを作成します
-   - マージ先は `main` ブランチに指定します
-7. レビューを通してプルリクエストをマージします
-8. `main` ブランチに移動し最新の状態にします `git switch main; git pull origin main`
-9. タグを作成します `git tag -a <v + lerna.jsonに記載のあるversion> -m <v + lerna.jsonに記載のあるversion>`
-10. タグをリモートにプッシュします `git push origin <lerna.jsonに記載のあるversion>`
-11. GitHub Release を作成します
-    - 本文に `CHANGELOG.md` の当該バージョンのセクションを含めます
+1. [Versionup ワークフロー](https://github.com/tuqulore/jumpu-ui/actions/workflows/versionup.yaml)にアクセスします
+2. プルダウン "Run workflow" を選択します
+3. "next semantic version(s) value" に適切な次期バージョンを選択します
+4. ボタン "Run workflow" を選択します
+
+### リリース用プルリクエストのマージ
+
+1. [レビュー](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)を通してマージします
+
+### リリースの作成
+
+[リリースの作成](https://docs.github.com/ja/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)を参考に実施してください。実施すると npm パッケージが公開されます。
+
+1. [リリースの下書き](https://github.com/tuqulore/jumpu-ui/releases/new)を開始します
+2. プルダウン "Choose a tag" 背選択します
+3. リリース用プルリクエストで反映したバージョンを入力します
+4. 選択アイテム "Create a new tag" を選択します
+5. ボタン "Generate release notes" を選択します
+6. 必要に応じてリリースノートを編集します
+7. 必要に応じてチェック "Set as a pre-release" を選択します
+8. ボタン "Publish release" を選択します
