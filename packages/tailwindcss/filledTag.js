@@ -15,7 +15,7 @@ module.exports = plugin.withOptions(
           "&:is(button, a, [role='button']):hover": {
             filter: "brightness(90%)",
           },
-          button: close({ fill: theme("colors.white") }),
+          "[role='button']": close({ fill: theme("colors.white") }),
         },
       });
     };
