@@ -8,7 +8,7 @@ import html from "./html";
 
 <Canvas>
   <Story name="Text">
-    {html`<input type="text" class="jumpu-input" placeholder="名前" />`}
+    {html` <input type="text" class="jumpu-input" placeholder="名前" /> `}
   </Story>
 </Canvas>
 
@@ -18,7 +18,8 @@ import html from "./html";
 
 <Canvas>
   <Story name="TextIcon">
-    {html` <p class="mb-4">Font Awesome 5を使った例です</p>
+    {html`
+      <p class="mb-4">Font Awesome 5を使った例です</p>
       <div class="mt-4">
         <label class="mb-1 block" for="search-input"
           ><i class="fas fa-search"></i> 検索</label
@@ -40,36 +41,33 @@ import html from "./html";
           placeholder="user@example.com"
           id="search-email"
         />
-      </div>`}
+      </div>
+    `}
   </Story>
 </Canvas>
 
 ### Number
 
 <Canvas>
-  <Story name="Number">{html`<input
-    type="number"
-    class="jumpu-input"
-    placeholder="0"
-  />`}</Story>
+  <Story name="Number">{html`
+    <input type="number" class="jumpu-input" placeholder="0" />
+  `}</Story>
 </Canvas>
 
 ### Email
 
 <Canvas>
   <Story name="Email">
-    {html`<input
-      type="email"
-      class="jumpu-input"
-      placeholder="example@hoge.com"
-    />`}
+    {html`
+      <input type="email" class="jumpu-input" placeholder="example@hoge.com" />
+    `}
   </Story>
 </Canvas>
 
 ### Date
 
 <Canvas>
-  <Story name="Date">{html`<input type="date" class="jumpu-input" />`}</Story>
+  <Story name="Date">{html` <input type="date" class="jumpu-input" /> `}</Story>
 </Canvas>
 
 ### Radio
@@ -101,22 +99,24 @@ export const CheckboxTemplate = () => {
   useEffect(() => {
     document.querySelector("#checkbox input:nth-child(3)").indeterminate = true;
   });
-  return html` <div id="checkbox">
-    <input
-      type="checkbox"
-      class="jumpu-input"
-      value="checkbox-1"
-      class="mr-4"
-      checked
-    />
-    <input
-      type="checkbox"
-      class="jumpu-input"
-      value="checkbox-2"
-      class="mr-4"
-    />
-    <input type="checkbox" class="jumpu-input" value="checkbox-3" />
-  </div>`;
+  return html`
+    <div id="checkbox">
+      <input
+        type="checkbox"
+        class="jumpu-input"
+        value="checkbox-1"
+        class="mr-4"
+        checked
+      />
+      <input
+        type="checkbox"
+        class="jumpu-input"
+        value="checkbox-2"
+        class="mr-4"
+      />
+      <input type="checkbox" class="jumpu-input" value="checkbox-3" />
+    </div>
+  `;
 };
 
 <Canvas>
@@ -126,5 +126,5 @@ export const CheckboxTemplate = () => {
 ### File
 
 <Canvas>
-  <Story name="File">{html`<input type="file" class="jumpu-input" />`}</Story>
+  <Story name="File">{html` <input type="file" class="jumpu-input" /> `}</Story>
 </Canvas>
