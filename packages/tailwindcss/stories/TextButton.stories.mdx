@@ -7,9 +7,9 @@ import html from "./html";
 
 <Canvas>
   <Story name="Default">
-    {html`<button type="button" class="jumpu-text-button">
-      テキストボタン
-    </button>`}
+    {html`
+      <button type="button" class="jumpu-text-button">テキストボタン</button>
+    `}
   </Story>
 </Canvas>
 
@@ -19,7 +19,7 @@ import html from "./html";
 
 <Canvas>
   <Story name="Anchor">
-    {html`<a href="#" class="jumpu-text-button">テキストボタン</a>`}
+    {html` <a href="#" class="jumpu-text-button">テキストボタン</a> `}
   </Story>
 </Canvas>
 
@@ -27,8 +27,10 @@ import html from "./html";
 
 <Canvas>
   <Story name="Disabled">
-    {html`<button type="button" disabled class="jumpu-text-button">
-      テキストボタン
-    </button>`}
+    {html`
+      <button type="button" disabled class="jumpu-text-button">
+        テキストボタン
+      </button>
+    `}
   </Story>
 </Canvas>

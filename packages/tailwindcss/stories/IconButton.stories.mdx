@@ -7,7 +7,8 @@ import html from "./html";
 
 <Canvas>
   <Story name="Default">
-    {html` <button type="button" class="jumpu-icon-button" aria-label="Twitter">
+    {html`
+      <button type="button" class="jumpu-icon-button" aria-label="Twitter">
         <i class="fab fa-twitter"></i>
       </button>
       <button type="button" class="jumpu-icon-button" aria-label="Email">
@@ -18,7 +19,8 @@ import html from "./html";
       </button>
       <button type="button" class="jumpu-icon-button" aria-label="その他">
         <i class="fas fa-ellipsis-h"></i>
-      </button>`}
+      </button>
+    `}
   </Story>
 </Canvas>
 
@@ -28,7 +30,8 @@ import html from "./html";
 
 <Canvas>
   <Story name="Tooltip">
-    {html` <button
+    {html`
+      <button
         type="button"
         class="jumpu-icon-button"
         aria-describedby="tooltip-Twitter"
@@ -59,7 +62,8 @@ import html from "./html";
       >
         <i class="fas fa-ellipsis-h"></i>
         <span id="tooltip-etc" role="tooltip">その他</span>
-      </button>`}
+      </button>
+    `}
   </Story>
 </Canvas>
 
@@ -183,7 +187,8 @@ TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-cust
 
 <Canvas>
   <Story name="Small">
-    {html` <button
+    {html`
+      <button
         type="button"
         class="jumpu-icon-button text-xs w-6 h-6"
         aria-label="Twitter"
@@ -210,6 +215,7 @@ TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-cust
         aria-label="その他"
       >
         <i class="fas fa-ellipsis-h"></i>
-      </button>`}
+      </button>
+    `}
   </Story>
 </Canvas>
