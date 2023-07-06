@@ -1,4 +1,4 @@
-name: Versionup
+name: Version Up
 on:
   workflow_dispatch:
     inputs:
