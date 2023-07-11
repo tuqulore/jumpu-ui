@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.1-alpha.6 (2023-07-11)
+
+### Bug Fixes
+
+* missing backslash ([b635264](https://github.com/tuqulore/jumpu-ui/commit/b6352645448c4ddaceb54a7a60e188e665bbad0d))
+
 ## [1.0.1-alpha.5](https://github.com/tuqulore/jumpu-ui/compare/v1.0.1-alpha.4...v1.0.1-alpha.5) (2022-08-10)
 
 ### Bug Fixes
