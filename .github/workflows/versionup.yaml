@@ -35,7 +35,7 @@ jobs:
           NEXT_VERSION="v$(cat lerna.json | jq -r .version)"
           git commit --all \
             --message="chore(release): ${NEXT_VERSION}" \
-            --message="diff: https://github.com/tuqulore/jumpu-ui/compare/${PREV_VERSION}...${NEXT_VERSION}"
+            --message="diff: https://github.com/tuqulore/jumpu-ui/compare/${PREV_VERSION}...${GITHUB_SHA}"
           git push origin release
           gh pr create --fill
         env:
