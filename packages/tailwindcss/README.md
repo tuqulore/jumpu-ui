@@ -85,7 +85,7 @@ Jumpu UI は theme を拡張しています。拡張した値に対してカス�
 theme: {
   extend: {
     jumpu: {
-      prefix: "";
+      prefix: "",
     }
   }
 }
