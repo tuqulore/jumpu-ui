@@ -2120,20 +2120,6 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
   integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
-"@lerna-lite/cli@2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/cli/-/cli-2.7.1.tgz#da3913c090aadb35632ec411b35b667c319373ab"
-  integrity sha512-nMsdEHd2aYPJYCJh/lcsWC0Awse6vtTqisnVB+WdTJF9l/Yb+5eXd7cdh7j5oWTolhGivmiOkQJdASVyoOxvCg==
-  dependencies:
-    "@lerna-lite/core" "2.7.1"
-    "@lerna-lite/init" "2.7.1"
-    dedent "^1.5.1"
-    dotenv "^16.3.1"
-    import-local "^3.1.0"
-    load-json-file "^7.0.1"
-    npmlog "^7.0.1"
-    yargs "^17.7.2"
-
 "@lerna-lite/cli@2.7.2":
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/@lerna-lite/cli/-/cli-2.7.2.tgz#0961b4a093967d6750610809a33622f194e8c12b"
@@ -2147,38 +2133,6 @@
     load-json-file "^7.0.1"
     npmlog "^7.0.1"
     yargs "^17.7.2"
-
-"@lerna-lite/core@2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/core/-/core-2.7.1.tgz#e8a18dd92d688441eb36e7188340b91e0b1f0c3d"
-  integrity sha512-lTaOOTvawNNE1dRpOzU2ukKyjzUBoYe2Nhp2gZYXeHY74EaqBc5RE34pfeULDDGqMSjbUK9PdwOlKewCl6rmow==
-  dependencies:
-    "@npmcli/run-script" "^7.0.2"
-    chalk "^5.3.0"
-    clone-deep "^4.0.1"
-    config-chain "^1.1.13"
-    cosmiconfig "^8.3.6"
-    dedent "^1.5.1"
-    execa "^8.0.1"
-    fs-extra "^11.1.1"
-    glob-parent "^6.0.2"
-    globby "^13.2.2"
-    inquirer "^9.2.12"
-    is-ci "^3.0.1"
-    json5 "^2.2.3"
-    load-json-file "^7.0.1"
-    minimatch "^9.0.3"
-    npm-package-arg "^11.0.1"
-    npmlog "^7.0.1"
-    p-map "^6.0.0"
-    p-queue "^7.4.1"
-    resolve-from "^5.0.0"
-    semver "^7.5.4"
-    slash "^5.1.0"
-    strong-log-transformer "^2.1.0"
-    write-file-atomic "^5.0.1"
-    write-json-file "^5.0.0"
-    write-pkg "^6.0.1"
 
 "@lerna-lite/core@2.7.2":
   version "2.7.2"
@@ -2211,16 +2165,6 @@
     write-file-atomic "^5.0.1"
     write-json-file "^5.0.0"
     write-pkg "^6.0.1"
-
-"@lerna-lite/init@2.7.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/init/-/init-2.7.1.tgz#5a65cba1e689083b094d245838faf222ca8a7bf2"
-  integrity sha512-tSiZEHEe1pfw4EwmX3GwvMr95nwH/pCSztLW5a3Od++nMNpb3H2bK3HmNdnUAwPUx6KKP74U7joFHL4hqYUgSA==
-  dependencies:
-    "@lerna-lite/core" "2.7.1"
-    fs-extra "^11.1.1"
-    p-map "^6.0.0"
-    write-json-file "^5.0.0"
 
 "@lerna-lite/init@2.7.2":
   version "2.7.2"
@@ -2264,51 +2208,13 @@
     tar "^6.2.0"
     temp-dir "^3.0.0"
 
-"@lerna-lite/version@2.7.2":
+"@lerna-lite/version@2.7.2", "@lerna-lite/version@^2.4.0":
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/@lerna-lite/version/-/version-2.7.2.tgz#db4635881b726c9a767b1742d89ce18e6c9260ff"
   integrity sha512-rd8sdEBcKEiMX93YaftHDPc8oXoVmcdOnE4VMXFShRue/e5++RenUyCrDssyOJRujvNMcvgYeoDQ+xf6/3A00A==
   dependencies:
     "@lerna-lite/cli" "2.7.2"
     "@lerna-lite/core" "2.7.2"
-    "@octokit/plugin-enterprise-rest" "^6.0.1"
-    "@octokit/rest" "^19.0.13"
-    chalk "^5.3.0"
-    conventional-changelog-angular "^7.0.0"
-    conventional-changelog-core "^5.0.2"
-    conventional-changelog-writer "^6.0.1"
-    conventional-commits-parser "^5.0.0"
-    conventional-recommended-bump "^7.0.1"
-    dedent "^1.5.1"
-    fs-extra "^11.1.1"
-    get-stream "^8.0.1"
-    git-url-parse "^13.1.1"
-    graceful-fs "^4.2.11"
-    is-stream "^3.0.0"
-    load-json-file "^7.0.1"
-    make-dir "^4.0.0"
-    minimatch "^9.0.3"
-    new-github-release-url "^2.0.0"
-    node-fetch "^3.3.2"
-    npm-package-arg "^11.0.1"
-    npmlog "^7.0.1"
-    p-map "^6.0.0"
-    p-pipe "^4.0.0"
-    p-reduce "^3.0.0"
-    pify "^6.1.0"
-    semver "^7.5.4"
-    slash "^5.1.0"
-    temp-dir "^3.0.0"
-    uuid "^9.0.1"
-    write-json-file "^5.0.0"
-
-"@lerna-lite/version@^2.4.0":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@lerna-lite/version/-/version-2.7.1.tgz#70f931895884b3b6bc00629133746846f1249189"
-  integrity sha512-JXl84gvYUCoogwmxq3S82+SbE6l7cA2YsMMu8IgoB3iaWZAQNzweaXLjxGhcDXjHK45Qrk+y1jnaWJZNEGlqwA==
-  dependencies:
-    "@lerna-lite/cli" "2.7.1"
-    "@lerna-lite/core" "2.7.1"
     "@octokit/plugin-enterprise-rest" "^6.0.1"
     "@octokit/rest" "^19.0.13"
     chalk "^5.3.0"
