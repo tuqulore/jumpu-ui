@@ -1,6 +1,6 @@
 {
   "extends": ["stylelint-config-standard"],
-  "customSyntax": "postcss",
+  "customSyntax": "postcss-js",
   "rules": {
     "property-disallowed-list": ["padding", "margin", "border", "background"]
   }
