@@ -23,6 +23,7 @@
     "ui"
   ],
   "license": "MIT",
+  "packageManager": "yarn@1.22.22",
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
   },
@@ -36,6 +37,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "packageManager": "yarn@1.22.22"
+  ]
 }
