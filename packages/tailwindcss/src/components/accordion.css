@@ -1,0 +1,42 @@
+.jumpu-accordion {
+  > [aria-expanded] {
+    width: 100%;
+    padding-block: --spacing(4);
+    padding-inline: --spacing(3);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-width: 1px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      display: block;
+      transition: 500ms;
+      width: --spacing(4);
+      height: --spacing(4);
+      margin-inline-end: --spacing(2);
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20448%20512%22%3E%3Cpath%20d=%22M443.5%20162.6l-7.1-7.1c-4.7-4.7-12.3-4.7-17%200L224%20351%2028.5%20155.5c-4.7-4.7-12.3-4.7-17%200l-7.1%207.1c-4.7%204.7-4.7%2012.3%200%2017l211%20211.1c4.7%204.7%2012.3%204.7%2017%200l211-211.1c4.8-4.7%204.8-12.3.1-17z%22%3E%3C/path%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: --spacing(4);
+    }
+    &:hover {
+      background-color: var(--color-gray-50);
+    }
+    &:active {
+      background-color: var(--color-gray-100);
+    }
+    &[aria-expanded="false"] {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  > [aria-hidden] {
+    transition: 200ms;
+    overflow: hidden;
+    &[aria-hidden="true"] {
+      display: none;
+    }
+  }
+}
