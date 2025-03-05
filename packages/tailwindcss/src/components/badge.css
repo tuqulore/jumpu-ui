@@ -1,0 +1,11 @@
+.jumpu-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: --spacing(1);
+  padding-inline: --spacing(3);
+  font-size: var(--text-sm);
+  border-radius: calc(infinity * 1px);
+  text-decoration: none;
+  font-weight: bold;
+}

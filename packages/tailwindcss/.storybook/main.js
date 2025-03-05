@@ -1,23 +1,15 @@
+import path from "node:path";
+
+const getAbsolutePath = (packageName) =>
+  path.dirname(require.resolve(path.join(packageName, "package.json")));
+
 module.exports = {
-  stories: ["../stories/**/*.stories.mdx"],
+  stories: ["../src/**/*.mdx"],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
-    {
-      name: "@storybook/addon-styling",
-      options: {
-        postcss: {
-          implementation: require("postcss"),
-        },
-      },
-    },
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-a11y"),
+    "@chromatic-com/storybook",
   ],
-  framework: {
-    name: "@storybook/html-vite",
-    options: {},
-  },
-  docs: {
-    autodocs: true,
-  },
+  framework: getAbsolutePath("@storybook/preact-vite"),
 };

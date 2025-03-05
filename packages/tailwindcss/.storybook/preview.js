@@ -1,7 +1,6 @@
-import "./tailwindcss.css";
+import "../src/style.css";
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -10,7 +9,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Overview", ["Introduction"], "*", "Galleries"],
+      order: ["Introduction", "Principles", "Recipes", "Tokens", "Components"],
     },
   },
   docs: {
@@ -19,3 +18,4 @@ export const parameters = {
     },
   },
 };
+export const tags = ["autodocs"];
