@@ -6,46 +6,39 @@
   "bugs": {
     "url": "https://github.com/tuqulore/jumpu-ui/issues"
   },
-  "dependencies": {
-    "mini-svg-data-uri": "^1.4.4"
-  },
   "devDependencies": {
-    "@babel/core": "7.26.9",
-    "@storybook/addon-a11y": "7.6.20",
-    "@storybook/addon-actions": "7.6.20",
-    "@storybook/addon-essentials": "7.6.20",
-    "@storybook/addon-links": "7.6.20",
-    "@storybook/addon-styling": "2.0.0",
-    "@storybook/client-api": "7.6.17",
-    "@storybook/html-vite": "7.6.20",
+    "@preact/preset-vite": "^2.10.1",
     "@tailwindcss/typography": "0.5.16",
-    "autoprefixer": "10.4.20",
-    "babel-loader": "9.2.1",
-    "clean-css": "^5.3.2",
+    "@tailwindcss/vite": "^4.0.10",
     "clsx": "2.1.1",
-    "postcss": "8.5.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "7.6.20",
-    "tailwindcss": "3.4.17",
-    "vite": "^4.3.8"
+    "preact": "^10.26.4",
+    "tailwindcss": "4.0.9",
+    "vite": "^6.2.0"
+  },
+  "exports": {
+    ".": {
+      "default": "./src/style.css",
+      "browser": "./dist/style.css"
+    },
+    "./*": {
+      "default": "./src/*",
+      "browser": "./dist/*"
+    }
   },
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "keywords": [
     "tailwindcss"
   ],
   "license": "MIT",
-  "main": "index.js",
   "peerDependencies": {
-    "tailwindcss": "^3"
+    "tailwindcss": "^4"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": "git@github.com:tuqulore/jumpu-ui.git",
   "scripts": {
-    "build": "storybook build",
-    "dev": "storybook dev -p 6006",
-    "prepublishOnly": "node scripts/build.js"
-  }
+    "prepublishOnly": ""
+  },
+  "type": "module"
 }
