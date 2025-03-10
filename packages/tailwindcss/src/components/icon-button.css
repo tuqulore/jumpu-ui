@@ -1,0 +1,38 @@
+.jumpu-icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-gray-600);
+  border-radius: var(--radius-md);
+  width: --spacing(8);
+  height: --spacing(8);
+  position: relative;
+  [role="tooltip"] {
+    transform: translate(-50%, -110%) scale(0);
+    display: inline-flex;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    transition: 100ms;
+    opacity: 0;
+    background-color: var(--color-gray-500);
+    padding-block: --spacing(1);
+    padding-inline: --spacing(2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    white-space: nowrap;
+    color: var(--color-white);
+    line-height: var(--leading-tight);
+  }
+  &:hover {
+    background-color: var(--color-gray-50);
+    color: var(--color-gray-800);
+    [role="tooltip"] {
+      transform: translate(-50%, -110%) scale(1);
+      opacity: 1;
+    }
+  }
+  &:active {
+    background-color: var(--color-gray-200);
+  }
+}

@@ -1,0 +1,31 @@
+.jumpu-button {
+  appearance: none;
+  border-radius: var(--radius-md);
+  display: inline-block;
+  padding-block: calc(var(--spacing-relative) * 2.5);
+  padding-inline: calc(var(--spacing-relative) * 5);
+  text-decoration: none;
+  background-color: var(--color-primary-700);
+  color: var(--color-white);
+  transition-duration: 30ms;
+  transition-property: filter;
+  transition-timing-function: cubic-bezier(0, 0, 0.12, 1);
+  &:hover {
+    filter: brightness(90%);
+  }
+  &:active {
+    filter: brightness(75%);
+  }
+  &[role="button"] {
+    cursor: default;
+  }
+  &[disabled] {
+    color: var(--color-white);
+    background-color: var(--color-gray-300);
+    border-color: var(--color-gray-300);
+    &:hover {
+      filter: none;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.jumpu-avatar {
+  overflow: hidden;
+  border-radius: calc(infinity * 1px);
+  width: --spacing(16);
+  height: --spacing(16);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &:is(a) {
+    display: block;
+  }
+}

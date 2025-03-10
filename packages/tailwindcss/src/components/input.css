@@ -1,0 +1,70 @@
+.jumpu-input {
+  &:is(:not([type]), [type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"]) {
+    appearance: none;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    color: var(--color-gray-900);
+    padding-block: calc(var(--spacing-relative) * 2);
+    padding-inline: calc(var(--spacing-relative) * 3);
+    &::placeholder {
+      color: var(--color-gray-300);
+    }
+    &:focus {
+      border-color: var(--color-primary-700);
+    }
+  }
+  &[type="checkbox"], &[type="radio"] {
+    appearance: none;
+    padding: 0;
+    print-color-adjust: exact;
+    display: inline-block;
+    vertical-align: middle;
+    background-origin: border-box;
+    user-select: none;
+    flex-shrink: 0;
+    width: --spacing(4);
+    height: --spacing(4);
+    color: var(--color-primary-700);
+    background-color: var(--color-white);
+    border-width: 1px;
+  }
+  &[type="checkbox"] {
+    border-radius: var(--radius-md);
+  }
+  &[type="radio"] {
+    border-radius: calc(infinity * 1px);
+  }
+  &:is([type="checkbox"], [type="radio"]):focus {
+    --tw-ring-offset-width: 2px;
+    --tw-ring-offset-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-color: var(--color-primary-700);
+    --tw-ring-shadow: 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  &:is([type="checkbox"], [type="radio"]):checked, &[type="checkbox"]:indeterminate {
+    border-color: transparent;
+    background-color: currentColor;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3Csvg%20viewBox=%220%200%2016%2016%22%20fill=%22white%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M12.207%204.793a1%201%200%20010%201.414l-5%205a1%201%200%2001-1.414%200l-2-2a1%201%200%20011.414-1.414L6.5%209.086l4.293-4.293a1%201%200%20011.414%200z%22/%3E%3C/svg%3E");
+  }
+  &[type="radio"]:checked {
+    background-image: url("data:image/svg+xml,%3Csvg%20viewBox=%220%200%2016%2016%22%20fill=%22white%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx=%228%22%20cy=%228%22%20r=%223%22/%3E%3C/svg%3E");
+  }
+  &[type="checkbox"]:indeterminate {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20fill=%22none%22%20viewBox=%220%200%2016%2016%22%3E%3Cpath%20stroke=%22white%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20stroke-width=%222%22%20d=%22M4%208h8%22/%3E%3C/svg%3E");
+  }
+  &[type="file"] {
+    color: var(--color-gray-900);
+  }
+  &[type="file"]:focus {
+    outline-width: 1px;
+    outline-style: auto;
+  }
+  &[type="file"]::file-selector-button {
+    all: revert;
+  }
+}
