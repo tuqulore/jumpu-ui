@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "@jumpu-ui/tailwindcss";
+
+:root {
+  --vp-nav-logo-height: 2rem;
+}

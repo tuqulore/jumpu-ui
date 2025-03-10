@@ -1,0 +1,6 @@
+.jumpu-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border-width: 1px;
+}
