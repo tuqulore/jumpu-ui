@@ -1,5 +1,19 @@
 .jumpu-input {
-  &:is(:not([type]), [type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"]) {
+  &:is(
+      :not([type]),
+      [type="text"],
+      [type="email"],
+      [type="url"],
+      [type="password"],
+      [type="number"],
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="search"],
+      [type="tel"],
+      [type="time"],
+      [type="week"]
+    ) {
     appearance: none;
     border-radius: var(--radius-md);
     border-width: 1px;
@@ -13,7 +27,8 @@
       border-color: var(--color-primary-700);
     }
   }
-  &[type="checkbox"], &[type="radio"] {
+  &[type="checkbox"],
+  &[type="radio"] {
     appearance: none;
     padding: 0;
     print-color-adjust: exact;
@@ -36,12 +51,17 @@
   }
   &:is([type="checkbox"], [type="radio"]):focus {
     --tw-ring-offset-width: 2px;
-    --tw-ring-offset-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-offset-shadow: 0 0 0 var(--tw-ring-offset-width)
+      var(--tw-ring-offset-color);
     --tw-ring-color: var(--color-primary-700);
-    --tw-ring-shadow: 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    --tw-ring-shadow: 0 0 0 calc(2px + var(--tw-ring-offset-width))
+      var(--tw-ring-color);
+    box-shadow:
+      var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  &:is([type="checkbox"], [type="radio"]):checked, &[type="checkbox"]:indeterminate {
+  &:is([type="checkbox"], [type="radio"]):checked,
+  &[type="checkbox"]:indeterminate {
     border-color: transparent;
     background-color: currentcolor;
     background-size: 100% 100%;
