@@ -14,7 +14,8 @@
     "preact": "^10.26.4",
     "tailwindcss": "4.0.9",
     "vite": "^6.2.0",
-    "vitepress": "^1.6.3"
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
   },
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "license": "MIT",
