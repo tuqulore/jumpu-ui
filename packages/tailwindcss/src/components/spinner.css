@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     animation: spinner-rotate 2s linear infinite;
-    stroke: currentColor;
+    stroke: currentcolor;
   }
   circle {
     animation: spinner-dash 1.5s ease-in-out infinite;

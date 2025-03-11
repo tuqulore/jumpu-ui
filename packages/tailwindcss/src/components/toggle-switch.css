@@ -26,7 +26,7 @@
       top: 0;
       z-index: 2;
       background-color: var(--color-white);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 5px rgb(0 0 0 / 20%);
       transition: 100ms;
     }
   }

@@ -6,7 +6,6 @@
   padding-inline: --spacing(3);
   font-size: var(--text-xs);
   border-radius: var(--radius-md);
-  background-color: var(--color-gray-100);
   text-decoration: none;
   line-height: var(--text-xs--line-height);
   border: none;

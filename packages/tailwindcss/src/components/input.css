@@ -43,7 +43,7 @@
   }
   &:is([type="checkbox"], [type="radio"]):checked, &[type="checkbox"]:indeterminate {
     border-color: transparent;
-    background-color: currentColor;
+    background-color: currentcolor;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
