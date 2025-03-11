@@ -13,7 +13,7 @@
     "prettier": "3.5.3"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "keywords": [
