@@ -6,13 +6,13 @@
   <div class="jumpu-card w-80 mr-4">
     <div
       class="h-32 bg-center bg-cover"
-      style="background-image: url(https://tuqulore.github.io/jumpu-ui/assets/chat-photo-49c209fc.jpg);"
+      style="background-image: url(../assets/bg.jpg);"
     ></div>
     <div class="relative py-2 px-4 flex justify-end align-center">
       <div
         class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="須田 知世" />
+        <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </div>
       <div class="flex align-center gap-2">
         <button
@@ -35,8 +35,8 @@
     </div>
     <div class="px-4 flex justify-between items-end">
       <div>
-        須田 知世
-        <div class="text-xxs text-gray-600">@tomoyo_suda_000</div>
+        城田 亜利沙
+        <div class="text-xxs text-gray-600">@shirota_arisa</div>
       </div>
       <div class="flex">
         <div class="text-center text-sm mr-4">
@@ -54,31 +54,31 @@
     </div>
     <div class="px-4 mb-4 flex">
       <a href="#" class="jumpu-avatar border-2 border-white w-10 h-10">
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
     </div>
     <div class="mb-4 px-4 text-gray-500 text-xs">
@@ -93,7 +93,7 @@
       <div
         class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_hideki-08e05985.jpg" alt="秋葉 秀樹" />
+        <img src="../assets/avatar-2.jpg" alt="秋葉 秀樹" />
       </div>
       <div class="flex align-center gap-2">
         <button
@@ -136,31 +136,31 @@
     </div>
     <div class="px-4 mb-4 flex">
       <a href="#" class="jumpu-avatar border-2 border-white w-10 h-10">
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a
         href="#"
         class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10"
       >
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
     </div>
     <div class="mb-4 px-4 text-gray-500 text-xs">
@@ -176,16 +176,13 @@
   <div class="jumpu-card w-80 mr-4">
     <div
       class="h-32 bg-center bg-cover"
-      style="background-image: url(https://tuqulore.github.io/jumpu-ui/assets/chat-photo-49c209fc.jpg);"
+      style="background-image: url(../assets/bg.jpg);"
     ></div>
     <div class="relative py-2 px-4 flex justify-end align-center">
       <div
         class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
       >
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="須田 知世"
-        />
+        <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </div>
       <div class="flex align-center gap-2">
         <button
@@ -208,7 +205,7 @@
     </div>
     <div class="px-4 flex justify-between items-end">
       <div>
-        須田 知世
+        城田 亜利沙
         <div class="text-xxs text-gray-600">@tomoyo_suda_000</div>
       </div>
       <div class="flex">
@@ -227,34 +224,19 @@
     </div>
     <div class="px-4 mb-4 flex">
       <a href="#" class="jumpu-avatar border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
     </div>
     <div class="mb-4 px-4 text-gray-500 text-xs">
@@ -269,10 +251,7 @@
       <div
         class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
       >
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_hideki-08e05985.jpg"
-          alt="秋葉 秀樹"
-        />
+        <img src="../assets/avatar-2.jpg" alt="秋葉 秀樹" />
       </div>
       <div class="flex align-center gap-2">
         <button
@@ -315,34 +294,19 @@
     </div>
     <div class="px-4 mb-4 flex">
       <a href="#" class="jumpu-avatar border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
       <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
     </div>
     <div class="mb-4 px-4 text-gray-500 text-xs">

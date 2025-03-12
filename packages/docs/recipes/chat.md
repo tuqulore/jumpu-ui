@@ -8,7 +8,7 @@
   <div class="mb-4 flex">
     <div class="jumpu-avatar flex-shrink-0 mr-4">
       <a href="#">
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </a>
     </div>
     <div>
@@ -32,10 +32,7 @@
   <div class="mb-4 flex">
     <div class="jumpu-avatar flex-shrink-0 mr-4">
       <a href="#">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </a>
     </div>
     <div>
@@ -60,7 +57,7 @@
   <div class="mb-4 flex">
     <div class="jumpu-avatar shrink-0 mr-4">
       <a href="#">
-        <img src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg" alt="城田 亜利沙" />
+        <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </a>
     </div>
     <div>
@@ -73,7 +70,7 @@
       >
         <a href="#" class="w-32 h-32 shrink-0">
           <img
-            src="https://tuqulore.github.io/jumpu-ui/assets/Cover-87f3f885.png"
+            src="../assets/cover.png"
             alt=""
             class="w-full h-full object-cover"
           />
@@ -89,7 +86,7 @@
             class="text-xs text-gray-500 leading-none flex items-center"
           >
             <img
-              src="https://tuqulore.github.io/jumpu-ui/assets/sample_favicon-ba24a4f1.ico"
+              src="../assets/favicon.example.ico"
               class="w-3 h-3 inline mr-1"
               alt=""
             />
@@ -108,10 +105,7 @@
   <div class="mb-4 flex">
     <div class="jumpu-avatar shrink-0 mr-4">
       <a href="#">
-        <img
-          src="https://tuqulore.github.io/jumpu-ui/assets/avatar_photo-7d9edc44.jpg"
-          alt="城田 亜利沙"
-        />
+        <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </a>
     </div>
     <div>
@@ -124,7 +118,7 @@
       >
         <a href="#" class="w-32 h-32 shrink-0">
           <img
-            src="https://tuqulore.github.io/jumpu-ui/assets/Cover-87f3f885.png"
+            src="../assets/cover.png"
             alt=""
             class="w-full h-full object-cover"
           />
@@ -138,7 +132,7 @@
           </div>
           <div class="text-xs text-gray-500 leading-none flex items-center">
             <img
-              src="https://tuqulore.github.io/jumpu-ui/assets/sample_favicon-ba24a4f1.ico"
+              src="../assets/favicon.example.ico"
               class="w-3 h-3 inline mr-1"
               alt=""
             />
