@@ -1,5 +1,5 @@
 ---
 layout: redirected
 sitemap: false
-redirect_to: <新しいURL>
+redirect_to: https://jumpu-ui.pages.dev/
 ---
