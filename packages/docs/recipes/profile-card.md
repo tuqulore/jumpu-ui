@@ -4,10 +4,7 @@
 
 <div class="flex">
   <div class="jumpu-card w-80 mr-4">
-    <div
-      class="h-32 bg-center bg-cover"
-      style="background-image: url(../assets/bg.jpg);"
-    ></div>
+    <div class="h-32 bg-center bg-cover bg-[url(/bg.example.jpg)]"></div>
     <div class="relative py-2 px-4 flex justify-end align-center">
       <div
         class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
@@ -174,10 +171,7 @@
 ```html
 <div class="flex">
   <div class="jumpu-card w-80 mr-4">
-    <div
-      class="h-32 bg-center bg-cover"
-      style="background-image: url(../assets/bg.jpg);"
-    ></div>
+    <div class="h-32 bg-center bg-cover bg-[url(/bg.example.jpg)]"></div>
     <div class="relative py-2 px-4 flex justify-end align-center">
       <div
         class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
