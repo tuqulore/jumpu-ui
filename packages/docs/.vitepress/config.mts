@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import * as pkg from "../package.json";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -20,11 +21,19 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: false,
+
     logo: {
       src: "/logo.svg",
       width: "auto",
       alt: "Jumpu UI",
     },
+
+    nav: [
+      {
+        text: `v${pkg.version}`,
+        items: [{ text: "v1", link: "https://jumpu-ui-v1.pages.dev/" }],
+      },
+    ],
 
     sidebar: [
       { text: "はじめに", link: "/introduction" },
