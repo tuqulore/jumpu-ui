@@ -4,7 +4,6 @@ on:
     inputs:
       semver:
         description: next semantic version(s) value
-        required: true
         default: patch
         type: choice
         options:
@@ -20,18 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9.15.3
       - uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
-          cache: "yarn"
-      - run: yarn install --check-files --frozen-lockfiles --non-interactive
+          cache: "pnpm"
+      - run: pnpm install
       - run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git branch --move release
           git push -f origin release
           PREV_VERSION="v$(cat lerna.json | jq -r .version)"
-          yarn versionup ${{ github.event.inputs.semver }} --yes
+          pnpm versionup ${{ github.event.inputs.semver }} --yes
           NEXT_VERSION="v$(cat lerna.json | jq -r .version)"
           git commit --all \
             --message="chore(release): ${NEXT_VERSION}" \
