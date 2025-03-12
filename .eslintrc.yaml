@@ -1,9 +1,0 @@
-root: true
-plugins:
-  - import
-extends:
-  - "eslint:recommended"
-  - "plugin:import/recommended"
-  - "prettier"
-parserOptions:
-  ecmaVersion: 12

@@ -1,0 +1,33 @@
+.jumpu-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: --spacing(1);
+  padding-inline: --spacing(3);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-md);
+  border-width: 1px;
+  border-color: var(--color-gray-100);
+  background-color: var(--color-gray-100);
+  text-decoration: none;
+  line-height: var(--text-xs--line-height);
+  &:is(a, button, [role="button"]):hover {
+    border-color: var(--color-gray-300);
+  }
+  &[role="button"] {
+    cursor: default;
+  }
+  [role="button"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline-start: --spacing(2);
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20320%20512%22%3E%3Cpath%20fill=%22oklch(0.21%200.034%20264.665)%22%20d=%22M193.94%20256L296.5%20153.44l21.15-21.15c3.12-3.12%203.12-8.19%200-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31%200L160%20222.06%2036.29%2098.34c-3.12-3.12-8.19-3.12-11.31%200L2.34%20120.97c-3.12%203.12-3.12%208.19%200%2011.31L126.06%20256%202.34%20379.71c-3.12%203.12-3.12%208.19%200%2011.31l22.63%2022.63c3.12%203.12%208.19%203.12%2011.31%200L160%20289.94%20262.56%20392.5l21.15%2021.15c3.12%203.12%208.19%203.12%2011.31%200l22.63-22.63c3.12-3.12%203.12-8.19%200-11.31L193.94%20256z%22%20class=%22%22%3E%3C/path%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(var(--spacing-relative) * 4)
+      calc(var(--spacing-relative) * 4);
+    width: --spacing(2);
+    height: --spacing(2);
+  }
+}

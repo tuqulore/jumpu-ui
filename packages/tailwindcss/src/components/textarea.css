@@ -1,0 +1,15 @@
+.jumpu-textarea {
+  appearance: none;
+  border-radius: var(--radius-md);
+  border-color: var(--color-gray-300);
+  border-width: 1px;
+  color: var(--color-gray-900);
+  padding-block: calc(var(--spacing-relative) * 2);
+  padding-inline: calc(var(--spacing-relative) * 3);
+  &::placeholder {
+    color: var(--color-gray-300);
+  }
+  &:focus {
+    border-color: var(--color-primary-700);
+  }
+}

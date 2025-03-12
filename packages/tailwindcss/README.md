@@ -2,19 +2,9 @@
 
 @jumpu-ui/tailwindcss パッケージは Jumpu UI の TailwindCSS プラグインです。
 
-## Storybook
+## ドキュメント
 
-https://tuqulore.github.io/jumpu-ui/
-
-## Figma
-
-デザインツール Figma でも Jumpu UI が公開されています。
-
-[Jumpu UI （Figma 版）](https://www.figma.com/community/file/1042706969451783914)
-
-## ステータス
-
-現在不安定リリースのみ提供しています。安定リリースまで破壊的な変更が含まれる可能性があります。
+https://jumpu-ui.tuqulore.com/
 
 ## 使い方
 
@@ -24,84 +14,36 @@ https://tuqulore.github.io/jumpu-ui/
 npm i -D @jumpu-ui/tailwindcss
 ```
 
-`tailwind.config.js` に TailwindCSS プラグインとして使用するように設定します。このとき、変数 `jumpu` は各コンポーネントごとの TailwindCSS プラグインを含んだ配列です。すべて使用したい場合は、スプレッド構文などによって展開してください。
+> [!NOTE]
+>
+> 現時点では [@tailwindcss/vite での導入](https://tailwindcss.com/docs/installation/using-vite)のみサポートしています。
 
-```js
-const jumpu = require("@jumpu-ui/tailwindcss");
+Tailwind CSS をインポートしている CSS ファイルでパッケージをインポートしてください。
 
-module.exports = {
-  content: ["src/**/*.tsx"],
-  theme: {
-    extend: {},
-  },
-  plugins: [...jumpu],
-};
+```css
+@import "tailwindcss";
+@import "@jumpu-ui/tailwindcss";
 ```
 
-一部が使用したい場合は、個別に使用したいプラグインを設定してください。
+一部が使用したい場合は、次のようにいくつかの CSS ファイルをインポートしてください。
 
-```js
-const button = require("@jumpu-ui/tailwindcss/button");
-const outlinedButton = require("@jumpu-ui/tailwindcss/outlinedButton");
-const textButton = require("@jumpu-ui/tailwindcss/textButton");
-
-module.exports = {
-  content: ["src/**/*.tsx"],
-  theme: {
-    extend: {},
-  },
-  plugins: [button, outlinedButton, textButton],
-};
-```
-
-`primary` 以外の Jumpu UI が定義している色は、 `tailwindcss/color` モジュールと同様に別途導入する必要があります。
-
-```js
-const jumpuColors = require("@jumpu-ui/tailwindcss/colors");
-const jumpu = require("@jumpu-ui/tailwindcss");
-
-module.exports = {
-  content: ["src/**/*.tsx"],
-  theme: {
-    extend: {
-      colors: jumpuColors,
-    },
-  },
-  plugins: [...jumpu],
-};
+```css
+@import "tailwindcss";
+@import "@jumpu-ui/tailwindcss/theme.css" layer(theme);
+@import "@jumpu-ui/tailwindcss/components/button.css" layer(components);
 ```
 
 ## 設定
 
-Jumpu UI は theme を拡張しています。拡張した値に対してカスタマイズすることができます。
-
-### `jumpu.prefix`
-
-`jumpu.prefix` は Jumpu UI コンポーネントクラスの接頭辞を設定します。デフォルトは `"jumpu-"` です。
-
-接頭辞を取り除きたい場合は、空文字列を設定してください。
-
-```js
-theme: {
-  extend: {
-    jumpu: {
-      prefix: "",
-    }
-  }
-}
-```
-
-### [spacing](https://tailwindcss.com/docs/customizing-spacing)
-
-`rel1` であれば `0.25em` となるような相対サイズのスケールを追加しています。
+Jumpu UI は [theme](https://tailwindcss.com/docs/theme) を拡張しています。拡張した値に対してカスタマイズすることができます。
 
 ### [colors](https://tailwindcss.com/docs/customizing-colors)
 
-- `primary`: UI コンポーネントで用いられるプライマリカラー。デフォルトは `require("tailwindcss/colors").blue`
+- `var(--color-primary-*)`: プライマリカラー。デフォルトは `var(--color-blue-*)`
 
-### [borderColors](https://tailwindcss.com/docs/border-color)
+### spacing
 
-- `DEFAULT`: 境界線で用いられる色。デフォルトは `require("tailwindcss/colors").gray[300]`
+- `var(--spacing-relative)`: 相対的な余白のための数値。デフォルトは `0.25em`
 
 ### 開発
 

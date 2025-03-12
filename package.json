@@ -1,7 +1,7 @@
 {
   "name": "jumpu-ui",
   "description": "A basic ui components designed by tuqulore inc.",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.0",
   "author": "tuqulore inc.",
   "bugs": {
     "url": "https://github.com/tuqulore/jumpu-ui/issues"
@@ -9,20 +9,19 @@
   "devDependencies": {
     "@lerna-lite/cli": "2.7.2",
     "@lerna-lite/publish": "^2.4.0",
+    "@lerna-lite/run": "^3.12.1",
     "@lerna-lite/version": "^2.4.0",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "8.10.0",
-    "eslint-plugin-import": "2.31.0",
     "prettier": "3.5.3"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "keywords": [
     "ui"
   ],
   "license": "MIT",
+  "packageManager": "yarn@1.22.22",
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
   },
@@ -30,12 +29,11 @@
   "repository": "git@github.com:tuqulore/jumpu-ui.git",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint .",
+    "lint": "lerna run lint",
     "release": "lerna publish from-package",
     "versionup": "lerna version --no-git-tag-version"
   },
   "workspaces": [
     "packages/*"
-  ],
-  "packageManager": "yarn@1.22.22"
+  ]
 }

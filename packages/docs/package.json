@@ -1,0 +1,29 @@
+{
+  "name": "@jumpu-ui/docs",
+  "description": "Documentation of Jumpu UI Design System",
+  "version": "2.0.0-alpha.0",
+  "author": "tuqulore inc.",
+  "bugs": {
+    "url": "https://github.com/tuqulore/jumpu-ui/issues"
+  },
+  "devDependencies": {
+    "@jumpu-ui/tailwindcss": "*",
+    "@tailwindcss/typography": "0.5.16",
+    "@tailwindcss/vite": "^4.0.10",
+    "postcss": "^8.5.3",
+    "preact": "^10.26.4",
+    "tailwindcss": "4.0.9",
+    "vite": "^6.2.0",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  },
+  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "vitepress build",
+    "dev": "vitepress dev",
+    "preview": "vitepress preview"
+  },
+  "type": "module"
+}
