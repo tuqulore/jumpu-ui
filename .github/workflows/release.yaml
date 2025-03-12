@@ -7,11 +7,15 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9.15.3
       - uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
-      - run: yarn install --check-files --frozen-lockfile --non-interactive
+          cache: "pnpm"
+      - run: pnpm install
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: yarn release --yes
+      - run: pnpm release --yes

@@ -9,15 +9,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9.15.3
       - uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
-          cache: yarn
-      - run: yarn install --check-files --frozen-lockfile --non-interactive
-      - run: yarn lint
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm -r lint
       - id: format
         run: |
-          yarn format
+          pnpm format
           echo "RESULT=$(git diff --shortstat)" >> $GITHUB_OUTPUT
       - if: steps.format.outputs.RESULT != ''
         run: |
