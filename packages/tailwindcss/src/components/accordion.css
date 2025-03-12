@@ -1,8 +1,8 @@
 .jumpu-accordion {
   > [aria-expanded] {
     width: 100%;
-    padding-block: --spacing(4);
-    padding-inline: --spacing(3);
+    padding-block: --spacing(3);
+    padding-inline: --spacing(4);
     display: flex;
     justify-content: flex-start;
     align-items: center;
