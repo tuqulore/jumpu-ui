@@ -8,7 +8,6 @@
     height: 100%;
     z-index: 5;
     opacity: 0;
-    cursor: pointer;
   }
   label {
     width: 100%;
