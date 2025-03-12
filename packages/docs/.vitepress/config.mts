@@ -27,8 +27,18 @@ export default defineConfig({
     },
 
     sidebar: [
-      { text: "Introduction", link: "/introduction" },
-      { text: "Principles", link: "/principles" },
+      { text: "はじめに", link: "/introduction" },
+      { text: "開発ガイド", link: "/development-guide" },
+      {
+        text: "Principles",
+        link: "/principles",
+        items: [
+          {
+            text: "主要な CSS 設計手法との比較",
+            link: "principles/comparison-with-css-architectures",
+          },
+        ],
+      },
       { text: "Tokens", items: [{ text: "Colors", link: "/tokens/colors" }] },
       {
         text: "Components",

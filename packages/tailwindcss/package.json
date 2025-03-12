@@ -1,6 +1,6 @@
 {
   "name": "@jumpu-ui/tailwindcss",
-  "description": "A Tailwind CSS plugin which serve basic components designed by tuqulore inc.",
+  "description": "A Tailwind CSS plugin of Jumpu UI implementation.",
   "version": "2.0.0-alpha.0",
   "author": "tuqulore inc.",
   "bugs": {

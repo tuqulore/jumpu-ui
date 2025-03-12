@@ -1,14 +1,14 @@
 # @jumpu-ui/tailwindcss
 
-@jumpu-ui/tailwindcss パッケージは Jumpu UI の TailwindCSS プラグインです。
+@jumpu/tailwindcss package is a Tailwind CSS plugin of Jumpu UI implementation.
 
-## ドキュメント
+## Documentation
 
-https://jumpu-ui.tuqulore.com/
+https://jumpu-ui.pages.dev/
 
-## 使い方
+## Usage
 
-パッケージをプロジェクトにインストールします。
+Install the package to your project.
 
 ```shell
 npm i -D @jumpu-ui/tailwindcss
@@ -16,16 +16,16 @@ npm i -D @jumpu-ui/tailwindcss
 
 > [!NOTE]
 >
-> 現時点では [@tailwindcss/vite での導入](https://tailwindcss.com/docs/installation/using-vite)のみサポートしています。
+> Currently, we've only support [@tailwindcss/vite installation](https://tailwindcss.com/docs/installation/using-vite).
 
-Tailwind CSS をインポートしている CSS ファイルでパッケージをインポートしてください。
+Import the package to CSS file which installed Tailwind CSS.
 
 ```css
 @import "tailwindcss";
 @import "@jumpu-ui/tailwindcss";
 ```
 
-一部が使用したい場合は、次のようにいくつかの CSS ファイルをインポートしてください。
+If you want use partial styles, please import several CSS files from the package as follows:
 
 ```css
 @import "tailwindcss";
@@ -33,18 +33,18 @@ Tailwind CSS をインポートしている CSS ファイルでパッケージ�
 @import "@jumpu-ui/tailwindcss/components/button.css" layer(components);
 ```
 
-## 設定
+## Configuration
 
-Jumpu UI は [theme](https://tailwindcss.com/docs/theme) を拡張しています。拡張した値に対してカスタマイズすることができます。
+Jumpu UI does extend [Tailwind CSS Theme](https://tailwindcss.com/docs/theme). You can customize several CSS values.
 
 ### [colors](https://tailwindcss.com/docs/customizing-colors)
 
-- `var(--color-primary-*)`: プライマリカラー。デフォルトは `var(--color-blue-*)`
+- `var(--color-primary-*)`: Primary color palette. Default is `var(--color-blue-*)`
 
 ### spacing
 
-- `var(--spacing-relative)`: 相対的な余白のための数値。デフォルトは `0.25em`
+- `var(--spacing-relative)`: Unit of relative spacing. Default is `0.25em`
 
-### 開発
+## How to contribute
 
-[DEVELOPMENT.md](./DEVELOPMENT.md)を参照してください。
+Please refer https://jumpu-ui.pages.dev/development-guide.html
