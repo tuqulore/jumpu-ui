@@ -21,7 +21,7 @@
     "ui"
   ],
   "license": "MIT",
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.6.2",
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
   },
