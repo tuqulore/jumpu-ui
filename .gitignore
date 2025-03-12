@@ -1,4 +1,2 @@
 *.log
-.npmrc
 node_modules
-storybook-static
