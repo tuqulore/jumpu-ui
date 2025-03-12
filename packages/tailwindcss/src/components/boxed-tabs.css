@@ -8,6 +8,7 @@
     flex-shrink: 0;
     flex-grow: 1;
     gap: --spacing(2);
+    border-color: var(--color-gray-300);
     border-bottom-width: 1px;
   }
   [role="tab"] {

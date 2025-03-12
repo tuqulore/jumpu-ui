@@ -16,6 +16,7 @@
     ) {
     appearance: none;
     border-radius: var(--radius-md);
+    border-color: var(--color-gray-300);
     border-width: 1px;
     color: var(--color-gray-900);
     padding-block: calc(var(--spacing-relative) * 2);
@@ -41,6 +42,7 @@
     height: --spacing(4);
     color: var(--color-primary-700);
     background-color: var(--color-white);
+    border-color: var(--color-gray-300);
     border-width: 1px;
   }
   &[type="checkbox"] {
