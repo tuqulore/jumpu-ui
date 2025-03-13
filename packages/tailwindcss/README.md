@@ -14,10 +14,6 @@ Install the package to your project.
 npm i -D @jumpu-ui/tailwindcss
 ```
 
-> [!NOTE]
->
-> Currently, we've only support [@tailwindcss/vite installation](https://tailwindcss.com/docs/installation/using-vite).
-
 Import the package to CSS file which installed Tailwind CSS.
 
 ```css
