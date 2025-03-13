@@ -37,6 +37,7 @@ export default defineConfig({
 
     sidebar: [
       { text: "はじめに", link: "/introduction" },
+      { text: "プレイグラウンド", link: "/playground" },
       { text: "開発ガイド", link: "/development-guide" },
       {
         text: "Principles",
