@@ -1,6 +1,6 @@
 # プレイグラウンド
 
-[Tailwind Play](https://play.tailwindcss.com/pSGYDOV7ep) で [@jumpu-ui/tailwindcss](https://www.npmjs.com/package/@jumpu-ui/tailwindcss) のコンポーネントを試すことができます。
+[Tailwind Play](https://play.tailwindcss.com/b67ztqNxEi) で [@jumpu-ui/tailwindcss](https://www.npmjs.com/package/@jumpu-ui/tailwindcss) のコンポーネントを試すことができます。
 
 > [!NOTE]
 >
