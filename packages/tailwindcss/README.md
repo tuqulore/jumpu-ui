@@ -25,7 +25,7 @@ Import the package to CSS file which installed Tailwind CSS.
 @import "@jumpu-ui/tailwindcss";
 ```
 
-If you want use partial styles, please import several CSS files from the package as follows:
+If you want to use partial styles, please import several CSS files from the package as follows:
 
 ```css
 @import "tailwindcss";
