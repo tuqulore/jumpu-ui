@@ -46,6 +46,18 @@ If you want to use partial styles, please import several CSS files from the pack
 @import "@jumpu-ui/tailwindcss/src/components/button.css" layer(components);
 ```
 
+### Using CDN
+
+If you want to use in client directly, you can use CDN as follows:
+
+```html
+<link rel="stylesheet" href="https://esm.sh/@jumpu-ui/tailwindcss" />
+```
+
+> [!NOTE]
+>
+> In this case, there are limitations that utility unavailable. Please use `var(--*)` instead.
+
 ## Configuration
 
 Jumpu UI does extend [Tailwind CSS Theme](https://tailwindcss.com/docs/theme). You can customize several CSS values.
