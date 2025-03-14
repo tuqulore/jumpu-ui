@@ -1,31 +1,31 @@
 .jumpu-tabs {
-  white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  white-space: nowrap;
   [role="tablist"] {
     display: flex;
-    align-items: center;
-    flex-shrink: 0;
     flex-grow: 1;
+    flex-shrink: 0;
     gap: --spacing(2);
+    align-items: center;
     border-color: var(--color-gray-300);
     border-bottom-width: 1px;
   }
   [role="tab"] {
-    border-color: var(--color-gray-300);
-    border-bottom-width: 1px;
-    margin-block-end: -1px;
     padding-block: calc(var(--spacing-relative) * 2.5);
     padding-inline: calc(var(--spacing-relative) * 3.5);
+    margin-block-end: -1px;
+    border-color: var(--color-gray-300);
+    border-bottom-width: 1px;
     &:hover {
-      border-bottom-width: 1px;
       border-color: var(--color-gray-400);
+      border-bottom-width: 1px;
     }
     &[aria-selected="true"] {
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      border-bottom-color: var(--color-primary-700);
       color: var(--color-primary-700);
+      border-bottom-color: var(--color-primary-700);
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
       &:hover {
         border-bottom-color: var(--color-primary-800);
       }

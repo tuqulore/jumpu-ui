@@ -1,15 +1,15 @@
 .jumpu-button {
-  appearance: none;
-  border-radius: var(--radius-md);
   display: inline-block;
   padding-block: calc(var(--spacing-relative) * 2.5);
   padding-inline: calc(var(--spacing-relative) * 5);
-  text-decoration-line: none;
-  background-color: var(--color-primary-700);
   color: var(--color-white);
+  text-decoration-line: none;
+  appearance: none;
+  background-color: var(--color-primary-700);
+  border-radius: var(--radius-md);
+  transition-timing-function: cubic-bezier(0, 0, 0.12, 1);
   transition-duration: 30ms;
   transition-property: filter;
-  transition-timing-function: cubic-bezier(0, 0, 0.12, 1);
   &:hover {
     filter: brightness(90%);
   }
@@ -24,8 +24,8 @@
     background-color: var(--color-gray-300);
     border-color: var(--color-gray-300);
     &:hover {
-      filter: none;
       box-shadow: none;
+      filter: none;
     }
   }
 }

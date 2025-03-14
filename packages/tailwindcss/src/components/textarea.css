@@ -1,11 +1,11 @@
 .jumpu-textarea {
-  appearance: none;
-  border-radius: var(--radius-md);
-  border-color: var(--color-gray-300);
-  border-width: 1px;
-  color: var(--color-gray-900);
   padding-block: calc(var(--spacing-relative) * 2);
   padding-inline: calc(var(--spacing-relative) * 3);
+  color: var(--color-gray-900);
+  appearance: none;
+  border-color: var(--color-gray-300);
+  border-width: 1px;
+  border-radius: var(--radius-md);
   &::placeholder {
     color: var(--color-gray-300);
   }

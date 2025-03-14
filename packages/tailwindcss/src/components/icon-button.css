@@ -1,36 +1,36 @@
 .jumpu-icon-button {
+  position: relative;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  color: var(--color-gray-600);
-  border-radius: var(--radius-md);
+  justify-content: center;
   width: --spacing(8);
   height: --spacing(8);
-  position: relative;
+  color: var(--color-gray-600);
+  border-radius: var(--radius-md);
   [role="tooltip"] {
-    transform: translate(-50%, -110%) scale(0);
-    display: inline-flex;
-    left: 50%;
-    top: 0;
     position: absolute;
-    transition-duration: 100ms;
-    transition-property: transform;
-    opacity: 0;
-    background-color: var(--color-gray-500);
+    top: 0;
+    left: 50%;
+    display: inline-flex;
     padding-block: --spacing(1);
     padding-inline: --spacing(2);
-    border-radius: var(--radius-sm);
     font-size: var(--text-xs);
-    white-space: nowrap;
-    color: var(--color-white);
     line-height: var(--leading-tight);
+    color: var(--color-white);
+    white-space: nowrap;
+    background-color: var(--color-gray-500);
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    transform: translate(-50%, -110%) scale(0);
+    transition-duration: 100ms;
+    transition-property: transform;
   }
   &:hover {
-    background-color: var(--color-gray-50);
     color: var(--color-gray-800);
+    background-color: var(--color-gray-50);
     [role="tooltip"] {
-      transform: translate(-50%, -110%) scale(1);
       opacity: 1;
+      transform: translate(-50%, -110%) scale(1);
     }
   }
   &:active {

@@ -1,13 +1,13 @@
 .jumpu-text-button {
-  appearance: none;
-  border-radius: var(--radius-md);
   display: inline-block;
   padding-block: calc(var(--spacing-relative) * 2.5);
   padding-inline: calc(var(--spacing-relative) * 5);
+  color: var(--color-primary-700);
   text-decoration-line: none;
+  appearance: none;
   background-color: transparent;
   border-color: transparent;
-  color: var(--color-primary-700);
+  border-radius: var(--radius-md);
   &:hover {
     background-color: var(--color-primary-100);
   }
@@ -22,8 +22,8 @@
     background-color: var(--color-gray-300);
     border-color: var(--color-gray-300);
     &:hover {
-      filter: none;
       box-shadow: none;
+      filter: none;
     }
   }
 }
