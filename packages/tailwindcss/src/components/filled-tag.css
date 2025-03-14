@@ -6,9 +6,9 @@
   padding-inline: --spacing(3);
   font-size: var(--text-xs);
   border-radius: var(--radius-md);
-  text-decoration: none;
+  text-decoration-line: none;
   line-height: var(--text-xs--line-height);
-  border: none;
+  border-style: none;
   background-color: var(--color-primary-700);
   color: var(--color-white);
   &:is(a, button, [role="button"]):hover {

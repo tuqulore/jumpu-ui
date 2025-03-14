@@ -31,7 +31,8 @@
   &[type="checkbox"],
   &[type="radio"] {
     appearance: none;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
     print-color-adjust: exact;
     display: inline-block;
     vertical-align: middle;

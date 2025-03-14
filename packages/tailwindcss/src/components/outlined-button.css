@@ -4,13 +4,13 @@
   display: inline-block;
   padding-block: calc(var(--spacing-relative) * 2.5);
   padding-inline: calc(var(--spacing-relative) * 5);
-  text-decoration: none;
+  text-decoration-line: none;
   background-color: transparent;
   color: var(--color-primary-700);
   border-color: var(--color-primary-700);
   border-width: 1px;
   &:hover {
-    background: var(--color-primary-100);
+    background-color: var(--color-primary-100);
     filter: brightness(120%);
     --tw-ring-shadow: 0 0 0 calc(3px + var(--tw-ring-offset-width))
       var(--tw-ring-color, transparent);
