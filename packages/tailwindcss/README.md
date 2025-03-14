@@ -17,15 +17,8 @@ npm i -D @jumpu-ui/tailwindcss
 Import the package to CSS file which installed Tailwind CSS.
 
 ```css
-/* If you installed Tailwind CSS with @tailwindcss/vite: */
 @import "tailwindcss";
 @import "@jumpu-ui/tailwindcss";
-```
-
-```css
-/* If you installed Tailwind CSS with @tailwindcss/postcss: */
-@import "tailwindcss";
-@import "@jumpu-ui/tailwindcss/src/style.css";
 ```
 
 ### Partially Installation
@@ -33,17 +26,9 @@ Import the package to CSS file which installed Tailwind CSS.
 If you want to use partial styles, please import several CSS files from the package as follows:
 
 ```css
-/* If you installed Tailwind CSS with @tailwindcss/vite: */
 @import "tailwindcss";
 @import "@jumpu-ui/tailwindcss/theme.css" layer(theme);
 @import "@jumpu-ui/tailwindcss/components/button.css" layer(components);
-```
-
-```css
-/* If you installed Tailwind CSS with @tailwindcss/postcss: */
-@import "tailwindcss";
-@import "@jumpu-ui/tailwindcss/src/theme.css" layer(theme);
-@import "@jumpu-ui/tailwindcss/src/components/button.css" layer(components);
 ```
 
 ### Using CDN
