@@ -1,26 +1,26 @@
 .jumpu-spinner {
-  text-align: center;
   width: --spacing(12);
   height: --spacing(12);
+  text-align: center;
   svg {
-    height: 100%;
     width: 100%;
-    animation-duration: 2s;
+    height: 100%;
+    stroke: currentcolor;
     animation-name: spinner-rotate;
+    animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    stroke: currentcolor;
   }
   circle {
-    animation-duration: 1.5s;
-    animation-name: spinner-dash;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: 0;
+    fill: none;
     stroke-width: 2;
     stroke-linecap: round;
-    fill: none;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: 0;
+    animation-name: spinner-dash;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 }
 

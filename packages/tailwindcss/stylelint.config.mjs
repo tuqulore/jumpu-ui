@@ -1,6 +1,6 @@
 /** @type {import("stylelint").Config} */
 export default {
-  extends: ["stylelint-config-standard"],
+  extends: ["stylelint-config-standard", "stylelint-config-recess-order"],
   rules: {
     "at-rule-no-unknown": [true, { ignoreAtRules: ["theme"] }],
     "custom-property-empty-line-before": null,
