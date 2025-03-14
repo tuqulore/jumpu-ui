@@ -16,7 +16,8 @@
     position: relative;
     display: inline-block;
     border-radius: calc(infinity * 1px);
-    transition: 100ms;
+    transition-duration: 100ms;
+    transition-property: background-color;
     box-sizing: border-box;
     span {
       position: absolute;
@@ -26,7 +27,8 @@
       z-index: 2;
       background-color: var(--color-white);
       box-shadow: 0 0 5px rgb(0 0 0 / 20%);
-      transition: 100ms;
+      transition-duration: 100ms;
+      transition-property: transform;
     }
   }
   input:checked + label {

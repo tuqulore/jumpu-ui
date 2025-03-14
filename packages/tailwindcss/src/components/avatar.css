@@ -1,5 +1,6 @@
 .jumpu-avatar {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   border-radius: calc(infinity * 1px);
   width: --spacing(16);
   height: --spacing(16);

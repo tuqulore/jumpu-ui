@@ -5,11 +5,17 @@
   svg {
     height: 100%;
     width: 100%;
-    animation: spinner-rotate 2s linear infinite;
+    animation-duration: 2s;
+    animation-name: spinner-rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     stroke: currentcolor;
   }
   circle {
-    animation: spinner-dash 1.5s ease-in-out infinite;
+    animation-duration: 1.5s;
+    animation-name: spinner-dash;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
     stroke-dasharray: 90, 150;
     stroke-dashoffset: 0;
     stroke-width: 2;

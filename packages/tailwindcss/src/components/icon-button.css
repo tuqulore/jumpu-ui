@@ -13,7 +13,8 @@
     left: 50%;
     top: 0;
     position: absolute;
-    transition: 100ms;
+    transition-duration: 100ms;
+    transition-property: transform;
     opacity: 0;
     background-color: var(--color-gray-500);
     padding-block: --spacing(1);

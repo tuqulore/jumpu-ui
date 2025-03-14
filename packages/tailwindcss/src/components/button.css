@@ -4,7 +4,7 @@
   display: inline-block;
   padding-block: calc(var(--spacing-relative) * 2.5);
   padding-inline: calc(var(--spacing-relative) * 5);
-  text-decoration: none;
+  text-decoration-line: none;
   background-color: var(--color-primary-700);
   color: var(--color-white);
   transition-duration: 30ms;
