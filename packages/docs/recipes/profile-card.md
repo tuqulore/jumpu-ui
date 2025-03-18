@@ -170,15 +170,15 @@
 
 ```html
 <div class="flex">
-  <div class="jumpu-card w-80 mr-4">
-    <div class="h-32 bg-center bg-cover bg-[url(/bg.example.jpg)]"></div>
-    <div class="relative py-2 px-4 flex justify-end align-center">
+  <div class="jumpu-card mr-4 w-80">
+    <div class="h-32 bg-[url(/bg.example.jpg)] bg-cover bg-center"></div>
+    <div class="align-center relative flex justify-end px-4 py-2">
       <div
-        class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
+        class="jumpu-avatar absolute -top-10 left-4 h-20 w-20 border-4 border-white"
       >
         <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
       </div>
-      <div class="flex align-center gap-2">
+      <div class="align-center flex gap-2">
         <button
           type="button"
           class="jumpu-icon-button"
@@ -197,13 +197,13 @@
         </button>
       </div>
     </div>
-    <div class="px-4 flex justify-between items-end">
+    <div class="flex items-end justify-between px-4">
       <div>
         城田 亜利沙
         <div class="text-xxs text-gray-600">@tomoyo_suda_000</div>
       </div>
       <div class="flex">
-        <div class="text-center text-sm mr-4">
+        <div class="mr-4 text-center text-sm">
           1480
           <div class="text-xxs text-gray-600">フォロワー</div>
         </div>
@@ -216,38 +216,38 @@
     <div class="px-4 py-4 text-sm">
       元ファッションモデル。都内でウォーキンレッスンのインストラクターをしています。お仕事のご依頼はDMまで。
     </div>
-    <div class="px-4 mb-4 flex">
-      <a href="#" class="jumpu-avatar border-2 border-white w-10 h-10">
+    <div class="mb-4 flex px-4">
+      <a href="#" class="jumpu-avatar h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
     </div>
-    <div class="mb-4 px-4 text-gray-500 text-xs">
+    <div class="mb-4 px-4 text-xs text-gray-500">
       marieさん、DLOさん、Kateさん…他3人がフォロー中
     </div>
   </div>
   <div class="jumpu-card w-80">
     <div
-      class="h-32 bg-center bg-cover bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
+      class="h-32 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-cover bg-center"
     ></div>
-    <div class="relative py-2 px-4 flex justify-end align-center">
+    <div class="align-center relative flex justify-end px-4 py-2">
       <div
-        class="jumpu-avatar absolute left-4 -top-10 border-4 border-white w-20 h-20"
+        class="jumpu-avatar absolute -top-10 left-4 h-20 w-20 border-4 border-white"
       >
         <img src="../assets/avatar-2.jpg" alt="秋葉 秀樹" />
       </div>
-      <div class="flex align-center gap-2">
+      <div class="align-center flex gap-2">
         <button
           type="button"
           class="jumpu-icon-button"
@@ -266,13 +266,13 @@
         </button>
       </div>
     </div>
-    <div class="px-4 flex justify-between items-end">
+    <div class="flex items-end justify-between px-4">
       <div>
         秋葉 秀樹
         <div class="text-xxs text-gray-600">@hidetaro7</div>
       </div>
       <div class="flex">
-        <div class="text-center text-sm mr-4">
+        <div class="mr-4 text-center text-sm">
           1480
           <div class="text-xxs text-gray-600">フォロワー</div>
         </div>
@@ -286,24 +286,24 @@
       クリエイター・デザイナー。アングラな音楽ユニット、ニューロナのサウンドクリエイター。本業はUX・UI、デザインエンジニアですが仕事関係は
       @tuqulore にて。
     </div>
-    <div class="px-4 mb-4 flex">
-      <a href="#" class="jumpu-avatar border-2 border-white w-10 h-10">
+    <div class="mb-4 flex px-4">
+      <a href="#" class="jumpu-avatar h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
-      <a href="#" class="jumpu-avatar -ml-2 border-2 border-white w-10 h-10">
+      <a href="#" class="jumpu-avatar -ml-2 h-10 w-10 border-2 border-white">
         <img src="../assets/avatar-1.jpg" alt="フォロワー" />
       </a>
     </div>
-    <div class="mb-4 px-4 text-gray-500 text-xs">
+    <div class="mb-4 px-4 text-xs text-gray-500">
       marieさん、DLOさん、Kateさん…他3人がフォロー中
     </div>
   </div>

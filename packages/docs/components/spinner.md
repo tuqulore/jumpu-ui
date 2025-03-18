@@ -51,22 +51,22 @@
 
 ```html
 <div class="flex items-center">
-  <div class="jumpu-spinner w-4 h-4">
+  <div class="jumpu-spinner h-4 w-4">
     <svg viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20"></circle>
     </svg>
   </div>
-  <div class="jumpu-spinner w-6 h-6">
+  <div class="jumpu-spinner h-6 w-6">
     <svg viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20"></circle>
     </svg>
   </div>
-  <div class="jumpu-spinner w-8 h-8">
+  <div class="jumpu-spinner h-8 w-8">
     <svg viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20"></circle>
     </svg>
   </div>
-  <div class="jumpu-spinner w-16 h-16">
+  <div class="jumpu-spinner h-16 w-16">
     <svg viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20"></circle>
     </svg>

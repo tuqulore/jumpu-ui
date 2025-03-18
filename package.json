@@ -11,7 +11,8 @@
     "@lerna-lite/publish": "3.12.3",
     "@lerna-lite/run": "3.12.3",
     "@lerna-lite/version": "3.12.3",
-    "prettier": "3.5.3"
+    "prettier": "3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "engines": {
     "node": ">=18"
