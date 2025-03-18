@@ -15,7 +15,7 @@
 :::
 
 ```html
-<div class="jumpu-card w-96 h-48 flex items-center justify-center mx-auto">
+<div class="jumpu-card mx-auto flex h-48 w-96 items-center justify-center">
   <div class="jumpu-spinner">
     <svg viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20"></circle>
@@ -41,9 +41,9 @@
 
 ```html
 <div
-  class="jumpu-card w-96 h-48 flex items-center justify-center flex-col mx-auto"
+  class="jumpu-card mx-auto flex h-48 w-96 flex-col items-center justify-center"
 >
-  <div class="font-bold mb-4">読み込み中です</div>
+  <div class="mb-4 font-bold">読み込み中です</div>
   <div class="jumpu-spinner">
     <svg viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20"></circle>

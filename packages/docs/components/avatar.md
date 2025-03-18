@@ -75,7 +75,7 @@
 :::
 
 ```html
-<div class="jumpu-avatar w-8 h-8">
+<div class="jumpu-avatar h-8 w-8">
   <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
 </div>
 ```

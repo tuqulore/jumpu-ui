@@ -9,7 +9,7 @@
 :::
 
 ```html
-<div class="jumpu-card px-4 py-3 mb-4">カード</div>
+<div class="jumpu-card mb-4 px-4 py-3">カード</div>
 ```
 
 ## Anchor
@@ -21,7 +21,7 @@
 :::
 
 ```html
-<a href="#" class="jumpu-card px-4 py-3 mb-4 block">リンクカード</a>
+<a href="#" class="jumpu-card mb-4 block px-4 py-3">リンクカード</a>
 ```
 
 ## Shadowed
@@ -33,5 +33,5 @@
 :::
 
 ```html
-<div class="jumpu-card px-4 py-3 border-0 shadow-lg">影付きカード</div>
+<div class="jumpu-card border-0 px-4 py-3 shadow-lg">影付きカード</div>
 ```

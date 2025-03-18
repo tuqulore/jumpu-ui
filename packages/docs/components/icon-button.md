@@ -210,7 +210,7 @@ TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-cust
 </button>
 <button
   type="button"
-  class="jumpu-icon-button group z-1"
+  class="jumpu-icon-button z-1 group"
   aria-describedby="tooltip-position-home"
 >
   <i class="fas fa-home"></i>
@@ -257,28 +257,28 @@ TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-cust
 ```html
 <button
   type="button"
-  class="jumpu-icon-button text-lg w-12 h-12"
+  class="jumpu-icon-button h-12 w-12 text-lg"
   aria-label="Twitter"
 >
   <i class="fab fa-twitter"></i>
 </button>
 <button
   type="button"
-  class="jumpu-icon-button text-lg w-12 h-12"
+  class="jumpu-icon-button h-12 w-12 text-lg"
   aria-label="Email"
 >
   <i class="fas fa-envelope"></i>
 </button>
 <button
   type="button"
-  class="jumpu-icon-button text-lg w-12 h-12"
+  class="jumpu-icon-button h-12 w-12 text-lg"
   aria-label="ホーム"
 >
   <i class="fas fa-home"></i>
 </button>
 <button
   type="button"
-  class="jumpu-icon-button text-lg w-12 h-12"
+  class="jumpu-icon-button h-12 w-12 text-lg"
   aria-label="その他"
 >
   <i class="fas fa-ellipsis-h"></i>
@@ -307,28 +307,28 @@ TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-cust
 ```html
 <button
   type="button"
-  class="jumpu-icon-button text-xs w-6 h-6"
+  class="jumpu-icon-button h-6 w-6 text-xs"
   aria-label="Twitter"
 >
   <i class="fab fa-twitter"></i>
 </button>
 <button
   type="button"
-  class="jumpu-icon-button text-xs w-6 h-6"
+  class="jumpu-icon-button h-6 w-6 text-xs"
   aria-label="Email"
 >
   <i class="fas fa-envelope"></i>
 </button>
 <button
   type="button"
-  class="jumpu-icon-button text-xs w-6 h-6"
+  class="jumpu-icon-button h-6 w-6 text-xs"
   aria-label="ホーム"
 >
   <i class="fas fa-home"></i>
 </button>
 <button
   type="button"
-  class="jumpu-icon-button text-xs w-6 h-6"
+  class="jumpu-icon-button h-6 w-6 text-xs"
   aria-label="その他"
 >
   <i class="fas fa-ellipsis-h"></i>

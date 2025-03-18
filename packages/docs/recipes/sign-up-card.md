@@ -45,12 +45,12 @@
 :::
 
 ```html
-<div class="jumpu-card w-96 mx-auto">
+<div class="jumpu-card mx-auto w-96">
   <div class="p-8">
     <form action="#">
-      <div class="text-xl my-4 text-center">新規登録</div>
-      <label class="mb-4 block relative">
-        <span class="text-sm mb-2 block">メールアドレス</span>
+      <div class="my-4 text-center text-xl">新規登録</div>
+      <label class="relative mb-4 block">
+        <span class="mb-2 block text-sm">メールアドレス</span>
         <input
           type="text"
           class="jumpu-input w-full"
@@ -59,17 +59,17 @@
           required
         />
       </label>
-      <label class="mb-4 block relative">
-        <span class="text-sm mb-2 block">パスワード</span>
+      <label class="relative mb-4 block">
+        <span class="mb-2 block text-sm">パスワード</span>
         <input type="password" class="jumpu-input w-full" required />
       </label>
-      <label class="mb-6 block relative">
-        <span class="text-sm mb-2 block"
+      <label class="relative mb-6 block">
+        <span class="mb-2 block text-sm"
           >確認用パスワード（上記と同じもの）</span
         >
         <input type="password" class="jumpu-input w-full" required />
       </label>
-      <div class="mb-6 bg-warning/10 rounded-md">
+      <div class="bg-warning/10 mb-6 rounded-md">
         <label class="flex px-4 py-3">
           <input type="checkbox" class="jumpu-input mr-2" />
           <span class="text-sm">
@@ -134,12 +134,12 @@
 :::
 
 ```html
-<div class="jumpu-card w-96 mx-auto">
+<div class="jumpu-card mx-auto w-96">
   <div class="p-8">
     <form action="#">
-      <div class="text-xl my-4 text-center">新規登録</div>
-      <label class="mb-4 block relative">
-        <span class="text-sm mb-2 block">メールアドレス</span>
+      <div class="my-4 text-center text-xl">新規登録</div>
+      <label class="relative mb-4 block">
+        <span class="mb-2 block text-sm">メールアドレス</span>
         <input
           type="text"
           class="jumpu-input w-full"
@@ -148,17 +148,17 @@
           required
         />
       </label>
-      <label class="mb-4 block relative">
-        <span class="text-sm mb-2 block">パスワード</span>
+      <label class="relative mb-4 block">
+        <span class="mb-2 block text-sm">パスワード</span>
         <input type="password" class="jumpu-input w-full" required />
       </label>
-      <label class="mb-6 block relative">
-        <span class="text-sm mb-2 block"
+      <label class="relative mb-6 block">
+        <span class="mb-2 block text-sm"
           >確認用パスワード（上記と同じもの）</span
         >
         <input type="password" class="jumpu-input w-full" required />
       </label>
-      <div class="mb-6 bg-warning/10 rounded-md">
+      <div class="bg-warning/10 mb-6 rounded-md">
         <label class="flex px-4 py-3">
           <input type="checkbox" class="jumpu-input mr-2" />
           <span class="text-sm">
@@ -241,12 +241,12 @@
 :::
 
 ```html
-<div class="jumpu-card w-96 mx-auto">
+<div class="jumpu-card mx-auto w-96">
   <div class="p-8">
     <form action="#">
-      <div class="text-xl my-4 text-center">新規登録</div>
-      <label class="mb-4 block relative">
-        <span class="text-sm mb-2 block">メールアドレス</span>
+      <div class="my-4 text-center text-xl">新規登録</div>
+      <label class="relative mb-4 block">
+        <span class="mb-2 block text-sm">メールアドレス</span>
         <input
           type="text"
           class="jumpu-input w-full"
@@ -256,11 +256,11 @@
           required
         />
         <i
-          class="fas fa-check absolute text-success right-3 top-1/2 transform translate-y-1/2"
+          class="fas fa-check text-success absolute right-3 top-1/2 translate-y-1/2 transform"
         ></i>
       </label>
-      <label class="mb-4 block relative">
-        <div class="text-sm mb-2">パスワード</div>
+      <label class="relative mb-4 block">
+        <div class="mb-2 text-sm">パスワード</div>
         <input
           type="password"
           class="jumpu-input w-full"
@@ -268,11 +268,11 @@
           required
         />
         <i
-          class="fas fa-check absolute text-success right-3 top-1/2 transform translate-y-1/2"
+          class="fas fa-check text-success absolute right-3 top-1/2 translate-y-1/2 transform"
         ></i>
       </label>
-      <label class="mb-6 block relative">
-        <div class="text-sm mb-2">確認用パスワード（上記と同じもの）</div>
+      <label class="relative mb-6 block">
+        <div class="mb-2 text-sm">確認用パスワード（上記と同じもの）</div>
         <input
           type="password"
           class="jumpu-input w-full"
@@ -280,10 +280,10 @@
           value="password"
         />
         <i
-          class="fas fa-check absolute text-success right-3 top-1/2 transform translate-y-1/2"
+          class="fas fa-check text-success absolute right-3 top-1/2 translate-y-1/2 transform"
         ></i>
       </label>
-      <div class="mb-6 bg-warning/10 rounded-md">
+      <div class="bg-warning/10 mb-6 rounded-md">
         <label class="flex px-4 py-3">
           <input type="checkbox" class="jumpu-input mr-2" checked />
           <span class="text-sm">
@@ -359,42 +359,42 @@
 :::
 
 ```html
-<div class="jumpu-card w-96 mx-auto">
+<div class="jumpu-card mx-auto w-96">
   <div class="p-8">
     <form action="#">
-      <div class="text-xl my-4 text-center">新規登録</div>
-      <div class="rounded-md bg-danger text-xs text-white px-4 py-3 mb-4">
+      <div class="my-4 text-center text-xl">新規登録</div>
+      <div class="bg-danger mb-4 rounded-md px-4 py-3 text-xs text-white">
         正しいメールアドレスを入力してください<br />
         パスワードが違うようです...<br />
         ご利用規約への同意が必要です
       </div>
-      <label class="mb-4 block relative">
-        <span class="text-sm mb-2 block">メールアドレス</span>
+      <label class="relative mb-4 block">
+        <span class="mb-2 block text-sm">メールアドレス</span>
         <input
           type="text"
-          class="jumpu-input w-full border-danger bg-danger/5"
+          class="jumpu-input border-danger bg-danger/5 w-full"
           placeholder="example@hoge.com"
           aria-required="true"
           required
         />
       </label>
-      <label class="mb-4 block relative">
-        <div class="text-sm mb-2">パスワード</div>
+      <label class="relative mb-4 block">
+        <div class="mb-2 text-sm">パスワード</div>
         <input
           type="password"
-          class="jumpu-input w-full border-danger bg-danger/5"
+          class="jumpu-input border-danger bg-danger/5 w-full"
           required
         />
       </label>
-      <label class="mb-6 block relative">
-        <div class="text-sm mb-2">確認用パスワード（上記と同じもの）</div>
+      <label class="relative mb-6 block">
+        <div class="mb-2 text-sm">確認用パスワード（上記と同じもの）</div>
         <input
           type="password"
-          class="jumpu-input w-full border-danger bg-danger/5"
+          class="jumpu-input border-danger bg-danger/5 w-full"
           required
         />
       </label>
-      <div class="mb-6 bg-danger/10 rounded-md">
+      <div class="bg-danger/10 mb-6 rounded-md">
         <label class="flex px-4 py-3">
           <input type="checkbox" class="jumpu-input mr-2" />
           <span class="text-sm">

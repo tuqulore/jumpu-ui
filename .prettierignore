@@ -1,2 +1,5 @@
+!/packages/docs/.vitepress/config.mts
+!/packages/docs/.vitepress/theme
+/packages/docs/.vitepress
 lerna.json
 pnpm-lock.yaml
