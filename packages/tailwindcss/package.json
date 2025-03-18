@@ -25,7 +25,7 @@
       "default": "./src/*",
       "browser": "./dist/*"
     },
-    "./package.json": "./package.json",
+    "./package.json": "./package.json"
   },
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "keywords": [
