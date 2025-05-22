@@ -1,0 +1,38 @@
+.jumpu-modal-dialog {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out,
+    overlay 0.4s ease-out allow-discrete,
+    display 0.4s ease-out allow-discrete;
+}
+
+@starting-style {
+  .jumpu-modal-dialog[open] {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+.jumpu-modal-dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.jumpu-modal-dialog::backdrop {
+  transition:
+    display 0.4s allow-discrete,
+    overlay 0.4s allow-discrete,
+    background-color 0.4s;
+}
+
+.jumpu-modal-dialog[open]::backdrop {
+  background-color: --alpha(var(--color-gray-950) / 25%);
+}
+
+@starting-style {
+  .jumpu-modal-dialog[open]::backdrop {
+    background-color: --alpha(var(--color-gray-950) / 0%);
+  }
+}
