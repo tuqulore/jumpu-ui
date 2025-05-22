@@ -19,6 +19,7 @@
 
 ```html
 <dialog
+  id="dialog-1"
   class="jumpu-modal-dialog jumpu-card -translate-1/2 fixed left-1/2 top-1/2"
   onclick="if(event.target !== document.querySelector('.dialog-content')){event.target.close()}"
 >
