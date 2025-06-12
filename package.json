@@ -7,10 +7,10 @@
     "url": "https://github.com/tuqulore/jumpu-ui/issues"
   },
   "devDependencies": {
-    "@lerna-lite/cli": "4.1.2",
-    "@lerna-lite/publish": "4.1.2",
-    "@lerna-lite/run": "4.1.2",
-    "@lerna-lite/version": "4.1.2",
+    "@lerna-lite/cli": "4.3.0",
+    "@lerna-lite/publish": "4.3.0",
+    "@lerna-lite/run": "4.3.0",
+    "@lerna-lite/version": "4.3.0",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11"
   },
@@ -22,7 +22,7 @@
     "ui"
   ],
   "license": "MIT",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.12.1",
   "private": true,
   "repository": "git@github.com:tuqulore/jumpu-ui.git",
   "scripts": {
