@@ -5,14 +5,11 @@ on:
 jobs:
   release:
     runs-on: ubuntu-24.04
+    concurrency:
+      group: release
+      cancel-in-progress: true
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version-file: "package.json"
-          cache: "pnpm"
-      - run: pnpm install
+      - uses: tuqulore/.github/setup@main
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

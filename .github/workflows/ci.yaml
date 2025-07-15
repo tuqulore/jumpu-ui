@@ -1,26 +1,14 @@
 name: CI
-on:
-  pull_request:
-    types: [opened, reopened, synchronize]
+on: push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   ci:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          ref: ${{ github.head_ref }}
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version-file: "package.json"
-          cache: "pnpm"
-      - run: pnpm install
+      - uses: tuqulore/.github/setup@main
       - run: pnpm -r lint
-      - id: format
-        run: |
-          pnpm format
-          echo "RESULT=$(git diff --shortstat)" >> $GITHUB_OUTPUT
-      - if: steps.format.outputs.RESULT != ''
-        run: |
-          git -c "user.name=${{ github.actor }}" -c "user.email=${{ github.actor }}@users.noreply.github.com" commit -a -m "bot: format"
-          git push origin HEAD
+      - uses: tuqulore/.github/format@main
