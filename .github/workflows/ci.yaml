@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: tuqulore/.github/setup@main
       - run: pnpm -r lint
-      - uses: tuqulore/.github/format@knokmki612-patch-1
+      - uses: tuqulore/.github/format@main
