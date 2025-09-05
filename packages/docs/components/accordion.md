@@ -36,7 +36,7 @@
 
 :::raw
 
-<details open class="jumpu-accordion" name="accordion">
+<details class="jumpu-accordion" name="accordion">
   <summary>人間失格</summary>
     <div class="pl-6">
       <p>
