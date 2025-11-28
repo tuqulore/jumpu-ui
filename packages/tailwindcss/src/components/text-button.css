@@ -1,7 +1,7 @@
 .jumpu-text-button {
   display: inline-flex;
-  align-items: center;
   column-gap: calc(var(--spacing-relative) * 2);
+  align-items: center;
   padding-block: calc(var(--spacing-relative) * 2.5);
   padding-inline: calc(var(--spacing-relative) * 5);
   color: var(--color-primary-700);
