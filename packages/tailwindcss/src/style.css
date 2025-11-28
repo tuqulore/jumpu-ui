@@ -11,6 +11,7 @@
 @import "./components/filled-tag.css" layer(components);
 @import "./components/icon-button.css" layer(components);
 @import "./components/input.css" layer(components);
+@import "./components/modal-dialog.css" layer(components);
 @import "./components/outlined-button.css" layer(components);
 @import "./components/select.css" layer(components);
 @import "./components/spinner.css" layer(components);
