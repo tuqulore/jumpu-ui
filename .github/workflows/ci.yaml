@@ -10,5 +10,5 @@ jobs:
       contents: write
     steps:
       - uses: tuqulore/.github/setup@main
-      - run: pnpm -r lint
+      - run: pnpm -r lint --fix
       - uses: tuqulore/.github/format@main
