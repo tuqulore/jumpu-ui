@@ -256,7 +256,7 @@
           required
         />
         <i
-          class="fas fa-check text-success absolute right-3 top-1/2 translate-y-1/2 transform"
+          class="fas fa-check text-success absolute top-1/2 right-3 translate-y-1/2 transform"
         ></i>
       </label>
       <label class="relative mb-4 block">
@@ -268,7 +268,7 @@
           required
         />
         <i
-          class="fas fa-check text-success absolute right-3 top-1/2 translate-y-1/2 transform"
+          class="fas fa-check text-success absolute top-1/2 right-3 translate-y-1/2 transform"
         ></i>
       </label>
       <label class="relative mb-6 block">
@@ -280,7 +280,7 @@
           value="password"
         />
         <i
-          class="fas fa-check text-success absolute right-3 top-1/2 translate-y-1/2 transform"
+          class="fas fa-check text-success absolute top-1/2 right-3 translate-y-1/2 transform"
         ></i>
       </label>
       <div class="bg-warning/10 mb-6 rounded-md">

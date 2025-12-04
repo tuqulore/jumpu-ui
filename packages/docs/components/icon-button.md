@@ -210,7 +210,7 @@ TailwindCSS では、[Arbitrary Values](https://tailwindcss.com/docs/adding-cust
 </button>
 <button
   type="button"
-  class="jumpu-icon-button z-1 group"
+  class="jumpu-icon-button group z-1"
   aria-describedby="tooltip-position-home"
 >
   <i class="fas fa-home"></i>
