@@ -40,11 +40,11 @@
     color: var(--color-primary-700);
     appearance: none;
     user-select: none;
+    print-color-adjust: exact;
     background-color: var(--color-white);
     background-origin: border-box;
     border-color: var(--color-gray-300);
     border-width: 1px;
-    print-color-adjust: exact;
   }
   &[type="checkbox"] {
     border-radius: var(--radius-md);
