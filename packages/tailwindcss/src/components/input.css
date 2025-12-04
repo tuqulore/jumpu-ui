@@ -1,19 +1,19 @@
 .jumpu-input {
   &:is(
-      :not([type]),
-      [type="text"],
-      [type="email"],
-      [type="url"],
-      [type="password"],
-      [type="number"],
-      [type="date"],
-      [type="datetime-local"],
-      [type="month"],
-      [type="search"],
-      [type="tel"],
-      [type="time"],
-      [type="week"]
-    ) {
+    :not([type]),
+    [type="text"],
+    [type="email"],
+    [type="url"],
+    [type="password"],
+    [type="number"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="search"],
+    [type="tel"],
+    [type="time"],
+    [type="week"]
+  ) {
     padding-block: calc(var(--spacing-relative) * 2);
     padding-inline: calc(var(--spacing-relative) * 3);
     color: var(--color-gray-900);
@@ -40,11 +40,11 @@
     color: var(--color-primary-700);
     appearance: none;
     user-select: none;
+    print-color-adjust: exact;
     background-color: var(--color-white);
     background-origin: border-box;
     border-color: var(--color-gray-300);
     border-width: 1px;
-    print-color-adjust: exact;
   }
   &[type="checkbox"] {
     border-radius: var(--radius-md);
