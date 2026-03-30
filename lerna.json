@@ -12,7 +12,8 @@
     },
     "version": {
       "allowBranch": [
-        "release"
+        "release",
+        "alpha"
       ],
       "noChangelog": true
     }

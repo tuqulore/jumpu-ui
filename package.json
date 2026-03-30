@@ -1,10 +1,25 @@
 {
   "name": "jumpu-ui",
-  "description": "A basic ui components designed by tuqulore inc.",
   "version": "2.0.1-alpha.0",
-  "author": "tuqulore inc.",
+  "private": true,
+  "description": "A basic ui components designed by tuqulore inc.",
+  "keywords": [
+    "ui"
+  ],
+  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "bugs": {
     "url": "https://github.com/tuqulore/jumpu-ui/issues"
+  },
+  "repository": "git@github.com:tuqulore/jumpu-ui.git",
+  "license": "MIT",
+  "author": "tuqulore inc.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "packages:bump-version": "lerna version",
+    "packages:publish": "lerna publish from-package"
   },
   "devDependencies": {
     "@lerna-lite/cli": "4.11.5",
@@ -14,23 +29,8 @@
     "prettier": "3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.0"
   },
+  "packageManager": "pnpm@10.32.1",
   "engines": {
     "node": "24"
-  },
-  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
-  "keywords": [
-    "ui"
-  ],
-  "license": "MIT",
-  "packageManager": "pnpm@10.32.1",
-  "private": true,
-  "repository": "git@github.com:tuqulore/jumpu-ui.git",
-  "scripts": {
-    "format": "prettier --write .",
-    "release": "lerna publish from-package",
-    "versionup": "lerna version --no-git-tag-version"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }

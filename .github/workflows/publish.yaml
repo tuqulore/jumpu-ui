@@ -1,0 +1,65 @@
+name: Publish
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
+
+jobs:
+  publish:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'chore(release):'))
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: tuqulore/.github/setup@main
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Publish to npm
+        run: pnpm packages:publish --yes
+        env:
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Create release tag
+        run: |
+          git checkout main
+          git pull origin main
+          VERSION=$(cat lerna.json | jq -r .version)
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
+
+      - name: Create alpha branch and bump version
+        run: |
+          git checkout main
+          git pull origin main
+          git checkout -b alpha
+          pnpm packages:bump-version prerelease --preid alpha --yes --no-git-tag-version
+          git commit --all --message "chore(alpha): v$(cat lerna.json | jq -r .version)"
+          git push -f origin alpha
+
+      - name: Create alpha pull request
+        run: |
+          VERSION=$(cat lerna.json | jq -r .version)
+          gh pr create \
+            --base main \
+            --title "chore(alpha): v${VERSION}" \
+            --body "Bump to alpha version v${VERSION}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Cleanup alpha branch on failure
+        if: failure()
+        run: git push origin :alpha
