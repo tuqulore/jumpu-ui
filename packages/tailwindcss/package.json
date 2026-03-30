@@ -18,12 +18,12 @@
   },
   "exports": {
     ".": {
-      "default": "./src/style.css",
-      "browser": "./dist/style.css"
+      "browser": "./dist/style.css",
+      "default": "./src/style.css"
     },
     "./*": {
-      "default": "./src/*",
-      "browser": "./dist/*"
+      "browser": "./dist/*",
+      "default": "./src/*"
     },
     "./package.json": "./package.json"
   },
