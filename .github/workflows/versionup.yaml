@@ -18,7 +18,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: tuqulore/.github/setup@main
+      - uses: tuqulore/.github/setup@80f9e99c22e033871e7f972d24d666b057fdfecf # main
       - run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
