@@ -67,7 +67,7 @@ alpha PRをマージして、mainブランチをalphaバージョンに更新し
 
 ### 1. publish.yaml を手動実行
 
-1. GitHub Actions の [publish.yaml](https://github.com/tuqulore/website-boilerplate/actions/workflows/publish.yaml) を開く
+1. GitHub Actions の [publish.yaml](https://github.com/tuqulore/jumpu-ui/actions/workflows/publish.yaml) を開く
 2. 「Run workflow」をクリック
 3. 「Run workflow」を実行
 
@@ -132,7 +132,7 @@ main: 3.0.0
 npmjs.comで各パッケージにTrusted Publisherを設定する必要があります：
 
 - Organization/User: `tuqulore`
-- Repository: `website-boilerplate`
+- Repository: `jumpu-ui`
 - Workflow filename: `publish.yaml`
 
 ### alpha PRの取り扱い
