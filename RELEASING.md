@@ -14,9 +14,7 @@
 ```
 正式リリース (3.0.1)
     ↓
-alpha開発版 (3.0.2-alpha.0) ← publishされない
-    ↓
-alpha開発版 (3.0.2-alpha.1) ← 手動でpublish可能
+alpha開発版 (3.0.2-alpha.0) ← 手動でpublish可能
     ↓
 正式リリース (3.0.2)
 ```
