@@ -9,7 +9,7 @@ jobs:
       group: release
       cancel-in-progress: true
     steps:
-      - uses: tuqulore/.github/setup@main
+      - uses: tuqulore/.github/setup@80f9e99c22e033871e7f972d24d666b057fdfecf # main
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
