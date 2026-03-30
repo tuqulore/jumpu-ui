@@ -18,6 +18,9 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-24.04
+    concurrency:
+      group: release
+      cancel-in-progress: true
     steps:
       - uses: tuqulore/.github/setup@main
 
