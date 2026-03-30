@@ -1,6 +1,6 @@
 {
   "name": "@jumpu-ui/docs",
-  "version": "2.0.1-alpha.0",
+  "version": "2.0.1",
   "private": true,
   "description": "Documentation of Jumpu UI Design System",
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
