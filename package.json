@@ -15,7 +15,7 @@
     "prettier-plugin-tailwindcss": "^0.7.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": "24"
   },
   "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "keywords": [
