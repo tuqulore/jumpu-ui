@@ -1,16 +1,48 @@
 name: Release
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      semver:
+        description: next semantic version(s) value
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release:
     runs-on: ubuntu-24.04
-    concurrency:
-      group: release
-      cancel-in-progress: true
     steps:
-      - uses: tuqulore/.github/setup@80f9e99c22e033871e7f972d24d666b057fdfecf # main
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - uses: tuqulore/.github/setup@main
+
+      - name: Configure git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Create release branch and bump version
+        run: |
+          git checkout -b release
+          pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
+          VERSION=$(cat lerna.json | jq -r .version)
+          git commit --all --message "chore(release): v${VERSION}"
+          git push -f origin release
+
+      - name: Create pull request
+        run: |
+          VERSION=$(cat lerna.json | jq -r .version)
+          gh pr create \
+            --base main \
+            --title "chore(release): v${VERSION}" \
+            --body "Release v${VERSION}"
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: pnpm release --yes
+          GH_TOKEN: ${{ github.token }}
+
+      - if: failure()
+        run: git push origin :release
