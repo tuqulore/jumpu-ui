@@ -19,7 +19,7 @@ jobs:
       (github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'chore(release):'))
     runs-on: ubuntu-24.04
     steps:
-      - uses: tuqulore/.github/setup@main
+      - uses: tuqulore/.github/setup@bfc3a44941a6d4499735fa48c913b51c15f9ca7b # main
         with:
           fetch-depth: 0
 
