@@ -39,7 +39,10 @@ export default defineConfig({
     nav: [
       {
         text: `v${pkg.version}`,
-        items: [{ text: "v1", link: "https://jumpu-ui-v1.pages.dev/" }],
+        items: [
+          { text: "v2", link: "https://jumpu-ui-v2.pages.dev/" },
+          { text: "v1", link: "https://jumpu-ui-v1.pages.dev/" },
+        ],
       },
     ],
 
