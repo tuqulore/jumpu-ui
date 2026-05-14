@@ -28,14 +28,14 @@
     "prepublishOnly": "npx @tailwindcss/cli -i ./dist.css -o ./dist/style.css"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "4.2.2",
+    "@tailwindcss/cli": "4.2.4",
     "@tailwindcss/typography": "0.5.19",
-    "@tailwindcss/vite": "4.2.2",
-    "stylelint": "17.5.0",
+    "@tailwindcss/vite": "4.2.4",
+    "stylelint": "17.11.0",
     "stylelint-config-recess-order": "7.7.0",
     "stylelint-config-standard": "40.0.0",
-    "tailwindcss": "4.2.2",
-    "vite": "8.0.1"
+    "tailwindcss": "4.2.4",
+    "vite": "8.0.10"
   },
   "peerDependencies": {
     "tailwindcss": "^4"
