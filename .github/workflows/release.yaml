@@ -22,30 +22,16 @@ jobs:
       group: release
       cancel-in-progress: true
     steps:
-      - uses: tuqulore/.github/setup@main
+      - uses: tuqulore/.github/setup@add-releasing-composite-action
+      - uses: tuqulore/.github/configure-git@add-releasing-composite-action
+      - uses: tuqulore/.github/bump-and-pr@add-releasing-composite-action
+        with:
+          branch: release
+          bump-command: pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
+          version-command: jq -r .version lerna.json
+          commit-prefix: chore(release)
+          pr-body: Release v${VERSION}
+          github-token: ${{ github.token }}
 
-      - name: Configure git
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Create release branch and bump version
-        run: |
-          git checkout -b release
-          pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
-          VERSION=$(cat lerna.json | jq -r .version)
-          git commit --all --message "chore(release): v${VERSION}"
-          git push -f origin release
-
-      - name: Create pull request
-        run: |
-          VERSION=$(cat lerna.json | jq -r .version)
-          gh pr create \
-            --base main \
-            --title "chore(release): v${VERSION}" \
-            --body "Release v${VERSION}"
-        env:
-          GH_TOKEN: ${{ github.token }}
-
-      - if: failure()
+      - if: cancelled() || failure()
         run: git push origin :release
