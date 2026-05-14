@@ -126,12 +126,12 @@ main: 3.0.0
 
 ドキュメント（`packages/docs`）は Cloudflare Pages の Git 連携で、ブランチごとに別プロジェクトとしてデプロイしています。
 
-| URL                               | ビルド元ブランチ | 内容                           |
-| --------------------------------- | ---------------- | ------------------------------ |
-| https://jumpu-ui.pages.dev/       | `v3`             | 最新メジャーの安定版（本番）   |
-| https://jumpu-ui-alpha.pages.dev/ | `main`           | 開発中の alpha 版              |
-| https://jumpu-ui-v2.pages.dev/    | `v2`             | v2 系（凍結）                  |
-| https://jumpu-ui-v1.pages.dev/    | `v1`             | v1 系（凍結）                  |
+| URL                               | ビルド元ブランチ | 内容                         |
+| --------------------------------- | ---------------- | ---------------------------- |
+| https://jumpu-ui.pages.dev/       | `v3`             | 最新メジャーの安定版（本番） |
+| https://jumpu-ui-alpha.pages.dev/ | `main`           | 開発中の alpha 版            |
+| https://jumpu-ui-v2.pages.dev/    | `v2`             | v2 系（凍結）                |
+| https://jumpu-ui-v1.pages.dev/    | `v1`             | v1 系（凍結）                |
 
 ### 安定ブランチ（`v3` など）について
 
