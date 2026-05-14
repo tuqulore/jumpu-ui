@@ -14,16 +14,15 @@
   "author": "tuqulore inc.",
   "type": "module",
   "exports": {
-    ".": {
-      "browser": "./dist/style.css",
-      "default": "./src/style.css"
-    },
-    "./*": {
-      "browser": "./dist/*",
-      "default": "./src/*"
-    },
+    ".": "./src/style.css",
+    "./*": "./src/*",
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "src",
+    "NOTICE.md"
+  ],
   "scripts": {
     "lint": "stylelint './**/*.css' --ignore-path .gitignore",
     "prepublishOnly": "npx @tailwindcss/cli -i ./dist.css -o ./dist/style.css"
