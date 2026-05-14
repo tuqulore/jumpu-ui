@@ -36,7 +36,10 @@ If you want to use partial styles, please import several CSS files from the pack
 If you want to use in client directly, you can use CDN as follows:
 
 ```html
-<link rel="stylesheet" href="https://esm.sh/@jumpu-ui/tailwindcss/dist/style.css" />
+<link
+  rel="stylesheet"
+  href="https://esm.sh/@jumpu-ui/tailwindcss/dist/style.css"
+/>
 ```
 
 > [!NOTE]
