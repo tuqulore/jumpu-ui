@@ -26,7 +26,7 @@
   },
   "scripts": {
     "lint": "stylelint './**/*.css' --ignore-path .gitignore",
-    "prepublishOnly": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css"
+    "prepublishOnly": "npx @tailwindcss/cli -i ./dist.css -o ./dist/style.css"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.2.2",

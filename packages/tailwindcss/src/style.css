@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @import "./theme.css" layer(theme);
 @import "./colors.css" layer(theme);
 @import "./components/accordion.css" layer(components);
