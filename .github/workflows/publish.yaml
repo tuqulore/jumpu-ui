@@ -19,10 +19,10 @@ jobs:
       (github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'chore(release):'))
     runs-on: ubuntu-24.04
     steps:
-      - uses: tuqulore/.github/setup@add-releasing-composite-action
+      - uses: tuqulore/.github/setup@main
         with:
           fetch-depth: 0
-      - uses: tuqulore/.github/configure-git@add-releasing-composite-action
+      - uses: tuqulore/.github/configure-git@main
 
       - name: Publish to npm
         run: pnpm packages:publish --yes
@@ -37,7 +37,7 @@ jobs:
           git tag "v${VERSION}"
           git push origin "v${VERSION}"
 
-      - uses: tuqulore/.github/bump-and-pr@add-releasing-composite-action
+      - uses: tuqulore/.github/bump-and-pr@main
         with:
           branch: alpha
           bump-command: pnpm packages:bump-version prerelease --preid alpha --yes --no-git-tag-version

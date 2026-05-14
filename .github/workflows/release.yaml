@@ -22,9 +22,9 @@ jobs:
       group: release
       cancel-in-progress: true
     steps:
-      - uses: tuqulore/.github/setup@add-releasing-composite-action
-      - uses: tuqulore/.github/configure-git@add-releasing-composite-action
-      - uses: tuqulore/.github/bump-and-pr@add-releasing-composite-action
+      - uses: tuqulore/.github/setup@main
+      - uses: tuqulore/.github/configure-git@main
+      - uses: tuqulore/.github/bump-and-pr@main
         with:
           branch: release
           bump-command: pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
