@@ -40,6 +40,8 @@ export default defineConfig({
       {
         text: `v${pkg.version}`,
         items: [
+          { text: "Latest (stable)", link: "https://jumpu-ui.pages.dev/" },
+          { text: "Alpha (next)", link: "https://jumpu-ui-alpha.pages.dev/" },
           { text: "v2", link: "https://jumpu-ui-v2.pages.dev/" },
           { text: "v1", link: "https://jumpu-ui-v1.pages.dev/" },
         ],
