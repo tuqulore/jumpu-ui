@@ -7,56 +7,120 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: write
-  id-token: write
-  pull-requests: write
+env:
+  RELEASE_BRANCH: release
+  PRERELEASE_BRANCH: alpha
+  RELEASE_COMMIT_PREFIX: chore(release)
+
+permissions: {}
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 jobs:
-  publish:
+  check:
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'chore(release):'))
+      (
+        github.event.pull_request.merged == true &&
+        github.event.pull_request.head.ref == env.RELEASE_BRANCH &&
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        startsWith(github.event.pull_request.title, format('{0}:', env.RELEASE_COMMIT_PREFIX))
+      )
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      tag-exists: ${{ steps.check-tag.outputs.tag-exists }}
+      sha: ${{ steps.target.outputs.sha }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: tuqulore/.github/resolve-target-sha@main
+        id: target
+        with:
+          default-branch: main
+
+      - name: Check if tag already exists
+        id: check-tag
+        env:
+          SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          VERSION=$(git show "${SHA}:lerna.json" | jq -r .version)
+          if git ls-remote --exit-code --tags origin "refs/tags/v${VERSION}"; then
+            echo "tag-exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag-exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  publish:
+    needs: check
+    if: needs.check.outputs.tag-exists == 'false'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      id-token: write
+      pull-requests: write
     steps:
       - uses: tuqulore/.github/setup@main
         with:
           fetch-depth: 0
+
       - uses: tuqulore/.github/configure-git@main
 
+      # 公開物とタグの指すコミットを一致させるため、check で解決した SHA を detached HEAD で checkout する。
+      - name: Checkout target sha for publishing
+        env:
+          SHA: ${{ needs.check.outputs.sha }}
+        run: git checkout "${SHA}"
+
+      # npm 公開は Trusted Publishing (OIDC) 前提。npm 側で Trusted Publisher 登録が必要 (詳細は RELEASING.md)。
       - name: Publish to npm
-        run: pnpm packages:publish --yes
+        run: |
+          VERSION=$(jq -r .version lerna.json)
+          if [[ "$VERSION" == *"-alpha."* ]]; then
+            DIST_TAG="alpha"
+          else
+            DIST_TAG="latest"
+          fi
+          pnpm packages:publish --yes --dist-tag "${DIST_TAG}"
         env:
           NPM_CONFIG_PROVENANCE: true
 
       - name: Create release tag
-        id: tag
         run: |
-          git checkout main
-          git pull origin main
-          VERSION=$(cat lerna.json | jq -r .version)
+          VERSION=$(jq -r .version lerna.json)
           git tag "v${VERSION}"
           git push origin "v${VERSION}"
-          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
       # 安定版リリース時のみ、メジャーごとの安定ブランチ（例: v3）を更新する。
       # このブランチは Cloudflare Pages の本番ドキュメント（jumpu-ui.pages.dev）のビルド元。
-      # alpha 公開（workflow_dispatch、バージョンに -alpha を含む）では実行しない。
+      # alpha 公開（バージョンに prerelease 識別子を含む）では実行しない。
       - name: Update stable docs branch
-        if: ${{ !contains(steps.tag.outputs.version, '-') }}
+        env:
+          SHA: ${{ needs.check.outputs.sha }}
         run: |
-          MAJOR=$(echo "${{ steps.tag.outputs.version }}" | cut -d. -f1)
-          git push origin "main:refs/heads/v${MAJOR}" --force
+          VERSION=$(jq -r .version lerna.json)
+          if [[ "$VERSION" != *"-"* ]]; then
+            MAJOR=${VERSION%%.*}
+            git push origin "${SHA}:refs/heads/v${MAJOR}" --force
+          fi
+
+      # alpha ブランチはデフォルトブランチの最新から派生させたいので checkout し直す
+      - name: Checkout default branch for alpha bump
+        run: git checkout -B main origin/main
 
       - uses: tuqulore/.github/bump-and-pr@main
         with:
-          branch: alpha
+          branch: ${{ env.PRERELEASE_BRANCH }}
           bump-command: pnpm packages:bump-version prerelease --preid alpha --yes --no-git-tag-version
           version-command: jq -r .version lerna.json
           commit-prefix: chore(alpha)
+          pr-base: main
           pr-body: Bump to alpha version v${VERSION}
           github-token: ${{ github.token }}
 
-      - name: Cleanup alpha branch on failure
-        if: cancelled() || failure()
-        run: git push origin :alpha
+      - name: Cleanup alpha branch on failure or cancellation
+        if: failure() || cancelled()
+        run: git push origin ":$PRERELEASE_BRANCH" || true
