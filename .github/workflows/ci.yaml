@@ -1,5 +1,6 @@
 name: CI
-on: push
+on:
+  push:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -9,6 +10,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: tuqulore/.github/setup@bfc3a44941a6d4499735fa48c913b51c15f9ca7b # main
+      - uses: tuqulore/.github/setup@main
       - run: pnpm -r lint --fix
-      - uses: tuqulore/.github/format@bfc3a44941a6d4499735fa48c913b51c15f9ca7b # main
+      - uses: tuqulore/.github/format@main

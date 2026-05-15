@@ -15,23 +15,37 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: release
+  cancel-in-progress: true
+
 jobs:
   release:
     runs-on: ubuntu-24.04
-    concurrency:
-      group: release
-      cancel-in-progress: true
     steps:
       - uses: tuqulore/.github/setup@main
         with:
           fetch-depth: 0
+
       - uses: tuqulore/.github/configure-git@main
 
-      - name: Determine previous release tag
-        id: prev-tag
+      - name: Find previous release tag
+        id: previous-tag
         run: |
-          PREV_TAG=$(git tag --list 'v*' --sort=-version:refname | grep -v -- '-' | head -n 1)
-          echo "tag=${PREV_TAG}" >> "$GITHUB_OUTPUT"
+          PREVIOUS_TAG=$(git tag -l 'v*' --sort=-v:refname | { grep -v -- '-' || true; } | sed -n '1p')
+          echo "tag=${PREVIOUS_TAG}" >> "$GITHUB_OUTPUT"
+
+      - name: Build changelog URL
+        id: changelog
+        env:
+          PREVIOUS_TAG: ${{ steps.previous-tag.outputs.tag }}
+        run: |
+          if [ -n "${PREVIOUS_TAG}" ]; then
+            URL="https://github.com/${{ github.repository }}/compare/${PREVIOUS_TAG}...release"
+          else
+            URL="https://github.com/${{ github.repository }}/commits/release"
+          fi
+          echo "url=${URL}" >> "$GITHUB_OUTPUT"
 
       - uses: tuqulore/.github/bump-and-pr@main
         with:
@@ -39,11 +53,20 @@ jobs:
           bump-command: pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
           version-command: jq -r .version lerna.json
           commit-prefix: chore(release)
+          pr-base: main
           pr-body: |
             Release v${VERSION}
 
-            **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ steps.prev-tag.outputs.tag }}...release
+            **Full Changelog**: ${{ steps.changelog.outputs.url }}
           github-token: ${{ github.token }}
 
-      - if: cancelled() || failure()
-        run: git push origin :release
+      - name: Cleanup on failure or cancellation
+        if: failure() || cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXISTING_PR=$(gh pr list --base main --head release --json number --jq '.[0].number // empty' 2>/dev/null || true)
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr close "$EXISTING_PR" || true
+          fi
+          git push origin :release || true
