@@ -30,12 +30,23 @@ jobs:
           NPM_CONFIG_PROVENANCE: true
 
       - name: Create release tag
+        id: tag
         run: |
           git checkout main
           git pull origin main
           VERSION=$(cat lerna.json | jq -r .version)
           git tag "v${VERSION}"
           git push origin "v${VERSION}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      # 安定版リリース時のみ、メジャーごとの安定ブランチ（例: v3）を更新する。
+      # このブランチは Cloudflare Pages の本番ドキュメント（jumpu-ui.pages.dev）のビルド元。
+      # alpha 公開（workflow_dispatch、バージョンに -alpha を含む）では実行しない。
+      - name: Update stable docs branch
+        if: ${{ !contains(steps.tag.outputs.version, '-') }}
+        run: |
+          MAJOR=$(echo "${{ steps.tag.outputs.version }}" | cut -d. -f1)
+          git push origin "main:refs/heads/v${MAJOR}" --force
 
       - uses: tuqulore/.github/bump-and-pr@main
         with:
