@@ -23,14 +23,26 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: tuqulore/.github/setup@main
+        with:
+          fetch-depth: 0
       - uses: tuqulore/.github/configure-git@main
+
+      - name: Determine previous release tag
+        id: prev-tag
+        run: |
+          PREV_TAG=$(git tag --list 'v*' --sort=-version:refname | grep -v -- '-' | head -n 1)
+          echo "tag=${PREV_TAG}" >> "$GITHUB_OUTPUT"
+
       - uses: tuqulore/.github/bump-and-pr@main
         with:
           branch: release
           bump-command: pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
           version-command: jq -r .version lerna.json
           commit-prefix: chore(release)
-          pr-body: Release v${VERSION}
+          pr-body: |
+            Release v${VERSION}
+
+            **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ steps.prev-tag.outputs.tag }}...release
           github-token: ${{ github.token }}
 
       - if: cancelled() || failure()
