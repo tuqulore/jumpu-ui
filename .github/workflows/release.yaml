@@ -42,7 +42,7 @@ jobs:
           pr-body: |
             Release v${VERSION}
 
-            **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ steps.prev-tag.outputs.tag }}...v${VERSION}
+            **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ steps.prev-tag.outputs.tag }}...release
           github-token: ${{ github.token }}
 
       - if: cancelled() || failure()
