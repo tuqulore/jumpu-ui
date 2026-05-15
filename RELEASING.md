@@ -133,6 +133,19 @@ main: 3.0.0
 | https://jumpu-ui-v2.pages.dev/    | `v2`             | v2 系（凍結）                |
 | https://jumpu-ui-v1.pages.dev/    | `v1`             | v1 系（凍結）                |
 
+### Cloudflare Pages の構成
+
+各プロジェクトの本番ブランチとプレビュー対象は以下のとおりです。**どのブランチも必ず1プロジェクトでしかビルドされない** よう、`jumpu-ui-alpha` 側でメジャーブランチを ignore しています。
+
+| Project          | Production | Preview pattern | Ignore            |
+| ---------------- | ---------- | --------------- | ----------------- |
+| `jumpu-ui`       | `v3`       | `v3*`           | —                 |
+| `jumpu-ui-alpha` | `main`     | `*`             | `v1*` `v2*` `v3*` |
+| `jumpu-ui-v2`    | `v2`       | `v2*`           | —                 |
+| `jumpu-ui-v1`    | `v1`       | `v1*`           | —                 |
+
+ビルド設定はすべてのプロジェクトで共通です（新規プロジェクト作成時は既存の `jumpu-ui` プロジェクトと同じ内容をコピーしてください）。
+
 ### 安定ブランチ（`v3` など）について
 
 - `vX`（`v3` など）はメジャーごとの **安定版ドキュメント専用ブランチ** です。
@@ -176,11 +189,42 @@ git push -u origin backport/<topic>
 
 ### 新しいメジャーバージョンをリリースするとき
 
-`release.yaml` を `major` で実行すると、CI が新メジャーの `vX+1` ブランチを自動的に作成します（旧 `vX` ブランチはそのまま凍結されます）。あわせて Cloudflare Pages 側で以下の作業を行ってください。
+`release.yaml` を `major` で実行すると、CI が新メジャーの `vX+1` ブランチを自動的に作成します（旧 `vX` ブランチはそのまま凍結されます）。あわせて Cloudflare Pages と config 側で以下の作業を行ってください。
 
-1. 旧メジャー用プロジェクト（例: `jumpu-ui-v3`）を新規作成し、本番ブランチを旧 `vX` に設定する。
-2. `jumpu-ui` プロジェクトの本番ブランチを新メジャーの `vX+1` に変更する。
-3. `packages/docs/.vitepress/config.mts` の `nav` に旧メジャーへのリンクを追加する。
+以下は **v3 → v4 への切り替え** を例にした手順です（他メジャーへの切り替え時はバージョン数字を読み替えてください）。
+
+#### 1. 旧メジャー（v3）用プロジェクトを新規作成
+
+Cloudflare Pages で `jumpu-ui-v3` を新規作成し、以下を設定する：
+
+- Production branch: `v3`
+- Preview branch pattern: `v3*`
+- Build settings: 既存の `jumpu-ui` プロジェクトと同じ内容をコピー
+
+これで `https://jumpu-ui-v3.pages.dev/` が立ち上がります。
+
+#### 2. `jumpu-ui` プロジェクトを新メジャーに付け替え
+
+旧 v3 を専用プロジェクトに移したので、`jumpu-ui` を新メジャー `v4` に向ける：
+
+- Production branch: `v3` → `v4`
+- Preview branch pattern: `v3*` → `v4*`
+
+`https://jumpu-ui.pages.dev/` が v4 安定版のドキュメントになります。
+
+#### 3. `jumpu-ui-alpha` の ignore 更新
+
+メジャーブランチの重複ビルドを避けるため、`v4*` を ignore に追加する：
+
+- Ignore branch patterns: `v1*` `v2*` `v3*` → `v1*` `v2*` `v3*` `v4*`
+
+#### 4. `config.mts` の nav 更新
+
+`packages/docs/.vitepress/config.mts` の `nav.items` に旧 v3 へのリンクを追加する（main への PR としてマージ）：
+
+```js
+{ text: "v3", link: "https://jumpu-ui-v3.pages.dev/" },
+```
 
 ## 注意事項
 
