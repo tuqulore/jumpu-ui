@@ -140,6 +140,40 @@ main: 3.0.0
 - **手動で push しないでください。** CI 管理専用のブランチです。
 - alpha 公開（publish.yaml の手動実行）では更新されません。
 
+### docs の修正フロー
+
+修正対象によってフローが変わります。
+
+#### 最新メジャー（`v3`）の docs を直したい
+
+`main` ブランチに対して PR を作成・マージしてください。
+
+- `main` への変更は `jumpu-ui-alpha.pages.dev` に即時反映されます。
+- `jumpu-ui.pages.dev`（安定版）には **次の正式リリース時に自動反映** されます（CI が `main` を `v3` に上書き更新するため）。
+- 安定版へ即時反映したい場合は、`release.yaml` (patch) を実行してパッチリリースを切ってください。`v3` ブランチへの直接 push は採用しません（CI に上書きされるため）。
+
+#### 過去メジャー（`v1` / `v2`）の docs を直したい
+
+該当ブランチ（`v1` / `v2`）に対して直接 PR を作成・マージしてください。
+
+- v1/v2 は CI の自動更新対象外なので、push した内容がそのまま `jumpu-ui-v1.pages.dev` / `jumpu-ui-v2.pages.dev` に反映されます。
+- npm パッケージのリリースは不要です（docs のみのため）。
+
+#### 複数のメジャーに同じ修正を入れたい
+
+手動で cherry-pick してください。
+
+```bash
+# 例: main に入った修正を v2 にも入れる
+git fetch origin
+git checkout -b backport/<topic> origin/v2
+git cherry-pick <commit-on-main>
+git push -u origin backport/<topic>
+# v2 向けに PR を作成してマージ
+```
+
+頻度が増えてきたら、自動 backport ツール（例: `korthout/backport-action`）の導入を検討します。
+
 ### 新しいメジャーバージョンをリリースするとき
 
 `release.yaml` を `major` で実行すると、CI が新メジャーの `vX+1` ブランチを自動的に作成します（旧 `vX` ブランチはそのまま凍結されます）。あわせて Cloudflare Pages 側で以下の作業を行ってください。
