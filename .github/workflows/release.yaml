@@ -23,11 +23,11 @@ jobs:
   release:
     runs-on: ubuntu-24.04
     steps:
-      - uses: tuqulore/.github/setup@main
+      - uses: tuqulore/.github/setup@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
         with:
           fetch-depth: 0
 
-      - uses: tuqulore/.github/configure-git@main
+      - uses: tuqulore/.github/configure-git@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
 
       - name: Find previous release tag
         id: previous-tag
@@ -47,7 +47,7 @@ jobs:
           fi
           echo "url=${URL}" >> "$GITHUB_OUTPUT"
 
-      - uses: tuqulore/.github/bump-and-pr@main
+      - uses: tuqulore/.github/bump-and-pr@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
         with:
           branch: release
           bump-command: pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
