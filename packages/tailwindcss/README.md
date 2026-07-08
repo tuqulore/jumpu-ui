@@ -60,14 +60,10 @@ Jumpu UI does extend [Tailwind CSS Theme](https://tailwindcss.com/docs/theme). Y
 
 ## Migration
 
-If you are upgrading from an older major version, run [@jumpu-ui/codemod](https://www.npmjs.com/package/@jumpu-ui/codemod) in your project root:
+Run [@jumpu-ui/codemod](https://www.npmjs.com/package/@jumpu-ui/codemod) in your project root. It detects the installed version and applies every applicable transform up to latest:
 
 ```shell
-# v2 -> v3
-npx @jumpu-ui/codemod v2-to-v3 .
-
-# v1 -> v2
-npx @jumpu-ui/codemod v1-to-v2 .
+npx @jumpu-ui/codemod upgrade
 ```
 
 See the [Migration guide](https://jumpu-ui.pages.dev/migration/) for details.

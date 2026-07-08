@@ -1,27 +1,29 @@
 # v2 → v3 マイグレーション
 
-`@jumpu-ui/tailwindcss` を v2 系から v3 系にアップグレードするための移行ガイドです。
-
-## 破壊的変更サマリ
-
-| 変更 | codemod で自動化 | ドキュメント |
-| --- | --- | --- |
-| CDN 経由の読み込み URL に `/dist/style.css` が必要 | ○ `cdn-url` | [CDN URL 変更](#cdn-url-変更) |
-| プロジェクトの CSS で `@import "tailwindcss";` の明示が必要 | ○ `explicit-tailwindcss-import` | [tailwindcss import の明示化](#tailwindcss-import-の明示化) |
+`@jumpu-ui/tailwindcss` を v2 系から v3 系にアップグレードするための移行ガイドです。基本は `upgrade` サブコマンド 1 つで済みます。
 
 ## codemod で自動化する
 
-以下 1 コマンドで両方適用できます。
+プロジェクトのルートで:
 
 ```sh
-npx @jumpu-ui/codemod v2-to-v3 .
+npx @jumpu-ui/codemod upgrade
 ```
+
+`node_modules/@jumpu-ui/tailwindcss/package.json` から起点バージョンが自動検出され、v3 系までの適用対象 transform が順に実行されます。CDN 経由で使っている場合は HTML 内の `esm.sh` URL からバージョンが検出されます。
 
 差分だけ確認したい場合は `--dry-run` を付けてください。
 
 ```sh
-npx @jumpu-ui/codemod v2-to-v3 . --dry-run --verbose
+npx @jumpu-ui/codemod upgrade --dry-run --verbose
 ```
+
+## 破壊的変更サマリ
+
+| 変更 | transform | kind |
+| --- | --- | --- |
+| CDN 経由の読み込み URL に `/dist/style.css` が必要 | `cdn-url` | rewrite（単一） |
+| プロジェクトの CSS で `@import "tailwindcss";` の明示が必要 | `explicit-tailwindcss-import` | rewrite（単一） |
 
 ## CDN URL 変更
 
@@ -65,6 +67,7 @@ After:
 
 ## トラブルシュート
 
-- **`Working tree has uncommitted changes.`** — 実行前に `git commit` するか、`--no-git-check` を渡してください。
-- **書き換わらない `<link>` がある** — URL に不要なクエリや複数行に跨ぐ属性が入っていないか確認してください。上記に該当しない場合は `--include` で対象ファイルを狭めて再実行し、必要なら手動で修正してください。
-- **`@import "tailwindcss";` が二重に入った** — 事前に手動で挿入していた場合、`explicit-tailwindcss-import` はその CSS を no-op として扱います。二重挿入は起きません。
+- **`Could not detect the installed @jumpu-ui/tailwindcss version.`** — install 検出も CDN 検出も失敗した場合。`--from 2.0.1` のように起点バージョンを明示してください
+- **`Working tree has uncommitted changes.`** — 実行前に `git commit` するか、`--no-git-check` を渡してください
+- **書き換わらない `<link>` がある** — URL に不要なクエリや複数行に跨ぐ属性が入っていないか確認してください。上記に該当しない場合は `--include` で対象ファイルを狭めて再実行し、必要なら手動で修正してください
+- **`@import "tailwindcss";` が二重に入った** — 事前に手動で挿入していた場合、`explicit-tailwindcss-import` はその CSS を no-op として扱います。二重挿入は起きません

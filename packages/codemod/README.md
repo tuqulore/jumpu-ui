@@ -1,37 +1,40 @@
 # @jumpu-ui/codemod
 
-`@jumpu-ui/tailwindcss` のメジャーバージョン間マイグレーションを機械化するコマンドライン codemod です。
+`@jumpu-ui/tailwindcss` のマイグレーションを機械化するコマンドライン codemod です。破壊的変更はメジャーだけでなくコンポーネントクラスの構造変更を伴う minor / patch でも発生し得るため、CLI は「起点バージョンから最新までを常に走らせる」設計になっています。
 
 ## インストールと実行
 
 `npx` から直接実行できます。プロジェクトのルートで:
 
 ```sh
-# v2 系から v3 系へ
-npx @jumpu-ui/codemod v2-to-v3 .
-
-# v1 系から v2 系へ
-npx @jumpu-ui/codemod v1-to-v2 .
+npx @jumpu-ui/codemod upgrade
 ```
 
-書き込み前の差分だけを見たい場合は `--dry-run`:
+`node_modules/@jumpu-ui/tailwindcss/package.json` から起点を自動検出します。書き込む前に差分を確認したい場合は `--dry-run`:
 
 ```sh
-npx @jumpu-ui/codemod v2-to-v3 . --dry-run
+npx @jumpu-ui/codemod upgrade --dry-run --verbose
 ```
 
 ## サブコマンド
 
 | コマンド | 概要 |
 | --- | --- |
-| `v1-to-v2` | v1 → v2 の 3 transform を順に適用 |
-| `v2-to-v3` | v2 → v3 の 2 transform を順に適用 |
+| `upgrade [paths...]` | 起点を検出し、適用対象の transform を順に実行 |
 | `class-prefix` | 単発: bare クラス名を `jumpu-*` にリネーム |
 | `spacing-rel` | 単発: CSS の `rel<N>` を `calc(var(--spacing-relative) * N)` に置換 |
 | `drop-colors-import` | 単発: `@import "@jumpu-ui/tailwindcss/colors";` を削除 |
-| `cdn-url` | 単発: esm.sh の CDN URL を v3 用の `/dist/style.css` 付きに書き換え |
-| `explicit-tailwindcss-import` | 単発: CSS に `@import "tailwindcss";` の明示挿入 |
-| `list` | 利用可能な transform を一覧 |
+| `cdn-url` | 単発: esm.sh の CDN URL に `/dist/style.css` を付与 |
+| `explicit-tailwindcss-import` | 単発: `@import "tailwindcss";` の明示挿入 |
+| `list` | 利用可能な transform を一覧（kind / sinceVersion 表示） |
+
+## `upgrade` のオプション
+
+| オプション | 説明 |
+| --- | --- |
+| `--from <version>` | 起点バージョンを明示（install 検出のフォールバック） |
+| `--skip <id...>` | 特定の transform を除外（意味論的等価な変換や compat のみ） |
+| `--adopt <id...>` | opt-in の adopt transform を追加適用 |
 
 ## グローバルオプション
 
@@ -44,35 +47,38 @@ npx @jumpu-ui/codemod v2-to-v3 . --dry-run
 | `--include-css` | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off） |
 | `--extra-class <name...>` | クラス名マップに追加する bare クラス名 |
 
-パスを省略すると cwd を対象にします。デフォルトの glob は `**/*.{html,vue,jsx,tsx,astro,css,mdx}` で、`.gitignore` を尊重します。
+パスを省略すると cwd を対象にします。デフォルトの glob は `**/*.{html,htm,vue,jsx,tsx,astro,css}` で、`.gitignore` を尊重します。
+
+## 破壊的変更の分類
+
+各 transform は 2 種類の `kind` のいずれかを持ちます。
+
+- **rewrite** — 出力を書き換える
+- **notice** — 出力は変えず、影響箇所を `notes` として通知するのみ（機械化が原理的に難しい変更用）
+
+さらに、破壊的変更の性質に応じて transform は 3 パターンのいずれかで提供されます。
+
+- **単一 transform** — 意味論的等価な変換。副作用ゼロ。default 適用、`--skip <id>` で外せる
+- **compat + adopt ペア** — スタイル・デフォルト値の変更。`-compat`（default 適用、旧見た目を utility で維持）と `-adopt`（opt-in、`-compat` を剥がして新規範に乗る）の 2 個ペアで提供
+- **adopt のみ** — 構造変換で compat が原理的に提供できないもの。default で必ず走り、`--skip` 不可
+
+## 推奨する実行フロー
+
+1. すべての変更をコミット、または stash する
+2. `npx @jumpu-ui/codemod upgrade --dry-run --verbose` で差分と `notes` を確認
+3. 問題なければ `--dry-run` を外して実行
+4. `git diff` で見直し、テストやビルドを走らせて確認
+5. サマリに「Opt-in transforms available」が出ていたら、必要に応じて `--adopt <id>` で再実行
 
 ## 対応する破壊的変更
 
-### v1 → v2
-
-- **`class-prefix`** — `jumpu.prefix` オプション廃止に伴い、`class="input"` などの bare クラス名を `class="jumpu-input"` へ。
-- **`spacing-rel`** — CSS の `rel<N>` を `calc(var(--spacing-relative) * N)` へ。
-- **`drop-colors-import`** — `@import "@jumpu-ui/tailwindcss/colors";` を削除。v2 以降は本体に同梱。
-
-### v2 → v3
-
-- **`cdn-url`** — `<link href="https://esm.sh/@jumpu-ui/tailwindcss">` を `<link href="https://esm.sh/@jumpu-ui/tailwindcss/dist/style.css">` へ。
-- **`explicit-tailwindcss-import`** — CSS で `@import "@jumpu-ui/tailwindcss";` の直前に `@import "tailwindcss";` を挿入。
-
-詳しくは docs の [Migration ガイド](https://jumpu-ui.pages.dev/migration/) を参照してください。
+詳細は docs の [Migration ガイド](https://jumpu-ui.pages.dev/migration/) を参照してください。
 
 ## 既知の未対応
 
-- Vue の `:class="{ input: cond }"` オブジェクト構文（初回リリース非対応、`--verbose` で個別に warning を表示）。
-- JSX の template literal 内 (`` `input ${x}` ``)、変数、spread。string リテラル引数のみ書き換え対象。
-- ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）。
-
-## 実行時の推奨フロー
-
-1. すべての変更をコミット、または stash する。
-2. `npx @jumpu-ui/codemod <cmd> . --dry-run --verbose` で差分と `notes` を確認する。
-3. 問題なければ `--dry-run` を外して実行する。
-4. `git diff` で見直し、テストを走らせて確認する。
+- Vue の `:class="{ input: cond }"` オブジェクト構文（初回リリース非対応、`--verbose` で個別に warning を表示）
+- JSX の template literal (`` `input ${x}` ``)、変数、spread。string リテラル引数のみ書き換え対象
+- ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）
 
 ## ライセンス
 
