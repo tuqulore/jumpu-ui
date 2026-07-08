@@ -37,22 +37,34 @@ export const classPrefix: Transform = {
 function rewriteHtml(input: string, map: ClassMap) {
   const root = parse(Lang.Html, input).root();
   const edits: Edit[] = [];
+  const notes: string[] = [];
   for (const attr of root.findAll({ rule: { kind: "attribute" } })) {
     const nameNode = attr.children().find((c) => c.kind() === "attribute_name");
-    if (nameNode?.text() !== "class") continue;
-    const quoted = attr
-      .children()
-      .find((c) => c.kind() === "quoted_attribute_value");
-    const valueNode = quoted
-      ?.children()
-      .find((c) => c.kind() === "attribute_value");
-    if (!valueNode) continue;
-    const before = valueNode.text();
-    const after = rewriteClassString(before, map);
-    if (after !== before) edits.push(valueNode.replace(after));
+    const attrName = nameNode?.text();
+    if (attrName === "class") {
+      const quoted = attr
+        .children()
+        .find((c) => c.kind() === "quoted_attribute_value");
+      const valueNode = quoted
+        ?.children()
+        .find((c) => c.kind() === "attribute_value");
+      if (!valueNode) continue;
+      const before = valueNode.text();
+      const after = rewriteClassString(before, map);
+      if (after !== before) edits.push(valueNode.replace(after));
+      continue;
+    }
+    // Vue の :class / v-bind:class は動的バインドで書き換え対象外
+    // (オブジェクト構文や式評価が絡むため機械化困難)
+    if (attrName === ":class" || attrName === "v-bind:class") {
+      const line = attr.range().start.line + 1;
+      notes.push(
+        `dynamic ${attrName} at line ${line} needs manual review`,
+      );
+    }
   }
   const output = root.commitEdits(edits);
-  return { output, changed: output !== input, notes: [] };
+  return { output, changed: output !== input, notes };
 }
 
 function rewriteTsx(input: string, map: ClassMap) {
@@ -70,7 +82,24 @@ function rewriteTsx(input: string, map: ClassMap) {
         rewriteStringLiteral(child, map, edits);
       } else if (child.kind() === "jsx_expression") {
         for (const gc of child.children()) {
-          if (gc.kind() === "string") rewriteStringLiteral(gc, map, edits);
+          const gcKind = gc.kind();
+          if (gcKind === "string") {
+            rewriteStringLiteral(gc, map, edits);
+          } else if (gcKind === "call_expression") {
+            // cn / clsx / classnames の call は下の loop で個別に処理される。
+            // それ以外の call は自動書き換えできないので notes に残す。
+            const callee = gc.child(0);
+            const name = callee?.text();
+            if (name !== "cn" && name !== "clsx" && name !== "classnames") {
+              notes.push(
+                `dynamic className call ${name ?? "<expr>"}(...) at line ${gc.range().start.line + 1} needs manual review`,
+              );
+            }
+          } else if (gcKind !== "{" && gcKind !== "}") {
+            notes.push(
+              `dynamic className expression (${gcKind}) at line ${gc.range().start.line + 1} needs manual review`,
+            );
+          }
         }
       }
     }
