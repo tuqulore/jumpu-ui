@@ -13,8 +13,8 @@ program
   .option("-v, --verbose", "Print detailed notes and per-file logs", false)
   .option("--no-git-check", "Skip the git working tree cleanliness check")
   .option(
-    "--include <glob...>",
-    "Explicit glob patterns for target files (repeatable)",
+    "--include <globs>",
+    "Comma-separated glob patterns for target files",
   )
   .option(
     "--include-css",
@@ -22,8 +22,8 @@ program
     false,
   )
   .option(
-    "--extra-class <name...>",
-    "Additional bare class names to treat as renamable",
+    "--extra-class <names>",
+    "Comma-separated bare class names to treat as renamable",
   );
 
 program
@@ -55,7 +55,7 @@ program
       },
     ) => {
       const options: UpgradeOptions = {
-        ...program.opts<RunOptions>(),
+        ...toRunOptions(),
         from: cmdOptions.from,
         only: splitCsv(cmdOptions.only),
         skip: splitCsv(cmdOptions.skip),
@@ -64,6 +64,27 @@ program
       await runUpgrade(paths, options);
     },
   );
+
+interface GlobalOpts {
+  dryRun: boolean;
+  verbose: boolean;
+  gitCheck: boolean;
+  include?: string;
+  includeCss: boolean;
+  extraClass?: string;
+}
+
+function toRunOptions(): RunOptions {
+  const g = program.opts<GlobalOpts>();
+  return {
+    dryRun: g.dryRun,
+    verbose: g.verbose,
+    gitCheck: g.gitCheck,
+    include: splitCsv(g.include),
+    includeCss: g.includeCss,
+    extraClass: splitCsv(g.extraClass),
+  };
+}
 
 function splitCsv(value: string | undefined): string[] | undefined {
   if (!value) return undefined;
