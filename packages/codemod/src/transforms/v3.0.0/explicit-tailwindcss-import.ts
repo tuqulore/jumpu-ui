@@ -1,7 +1,9 @@
 import type { Transform } from "../../context.ts";
 
-const TAILWIND_IMPORT = /@import\s+["']tailwindcss["']\s*;?/;
-const JUMPU_IMPORT = /@import\s+["']@jumpu-ui\/tailwindcss["']\s*;?/;
+// 行頭 (任意のインデント許容) アンカー付き。コメント (/* ... */) 内の
+// @import 記述に反応して誤検知しないようにする。
+const TAILWIND_IMPORT = /^\s*@import\s+["']tailwindcss["']\s*;?/m;
+const JUMPU_IMPORT = /^\s*@import\s+["']@jumpu-ui\/tailwindcss["']\s*;?/m;
 
 export const explicitTailwindcssImport: Transform = {
   id: "explicit-tailwindcss-import",
