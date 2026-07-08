@@ -11,6 +11,9 @@ export async function isGitTreeClean(cwd: string): Promise<boolean> {
     });
     return stdout.trim().length === 0;
   } catch {
-    return true;
+    // NOTE: git がない / 権限がない / git 管理外などの理由で判定できない場合は
+    // 「クリーンでない」側に倒して bail する。ユーザーは --no-git-check で
+    // 明示的に回避できる。
+    return false;
   }
 }
