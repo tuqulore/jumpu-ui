@@ -232,11 +232,18 @@ Cloudflare Pages で `jumpu-ui-v3` を新規作成し、以下を設定する：
 
 このリポジトリではnpmのTrusted Publishingを使用しています。npmトークンは不要で、GitHub ActionsのOIDC認証によりパッケージを公開します。
 
-npmjs.comで各パッケージにTrusted Publisherを設定する必要があります：
+npmjs.comで **公開する各パッケージごとに** Trusted Publisherを設定する必要があります。以下の設定は全パッケージ共通です：
 
 - Organization/User: `tuqulore`
 - Repository: `jumpu-ui`
 - Workflow filename: `publish.yaml`
+
+現在 npm に公開しているパッケージ:
+
+- `@jumpu-ui/tailwindcss` — 本体（Tailwind CSS プラグイン）
+- `@jumpu-ui/codemod` — マイグレーション用の CLI codemod
+
+新しく公開する `packages/*` を追加した場合は、npmjs.com 側でも同じ設定でTrusted Publisherを登録してください。登録しないと `publish.yaml` の Publish ステップが該当パッケージで失敗します。
 
 ### alpha PRの取り扱い
 
