@@ -1,0 +1,5 @@
+@import "@jumpu-ui/tailwindcss";
+
+.app {
+  color: red;
+}

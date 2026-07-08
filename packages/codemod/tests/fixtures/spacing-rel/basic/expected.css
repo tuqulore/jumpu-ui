@@ -1,0 +1,5 @@
+.card {
+  padding-block: calc(var(--spacing-relative) * 2);
+  padding-inline: calc(var(--spacing-relative) * 3);
+  gap: calc(var(--spacing-relative) * 1);
+}
