@@ -90,31 +90,27 @@ CLI が提供するサブコマンドは 2 種類だけです。個別 transform
 - JSX の template literal (`` `input ${x}` ``)、変数、spread。string リテラル引数のみ書き換え対象
 - ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）
 
-## 開発時の動作確認 (pnpm add -g でローカルビルドを試す)
+## 開発時の動作確認
 
-publish 前のローカルビルドを別プロジェクトから叩くには、pnpm のグローバルインストールを使います。pnpm 11 で `pnpm link --global` は削除されたため、[公式ドキュメント](https://pnpm.io/ja/cli/link) が案内する `pnpm add -g <dir>` を使います。
+publish 前のローカルビルドを別プロジェクトから `jumpu-ui-codemod` として呼び出す手順です。
 
 ### 前提
 
 - `pnpm setup` 済みで、グローバル bin ディレクトリ (通常 `~/.local/share/pnpm/bin`) が PATH に通っていること
 - 事前にビルドしていること (`pnpm -F @jumpu-ui/codemod build`)
 
-### 手順
-
-このパッケージのディレクトリで以下を実行:
+### インストール
 
 ```sh
 cd packages/codemod
 CI=true pnpm add -g .
 ```
 
-- `CI=true` はグローバル `node_modules` の purge プロンプトを非対話でスキップするために必要です
-- 実行後、どのディレクトリからも `jumpu-ui-codemod` を呼び出せます
-- リポジトリ root には副作用が残りません (`pnpm link --global` と違い、consumer 側の `package.json` / `pnpm-workspace.yaml` に link 記録が追記されることはありません)
+`CI=true` はグローバル `node_modules` の purge プロンプトを非対話でスキップします。以降どのディレクトリからも `jumpu-ui-codemod` を呼び出せます。
 
 ### 変更の反映
 
-コードを編集したあとは `pnpm -F @jumpu-ui/codemod build` で `dist/cli.js` を作り直すだけで、次回の `jumpu-ui-codemod` 起動時に即反映されます (グローバル側はソースディレクトリを参照しているため)。
+コードを編集したあとは `pnpm -F @jumpu-ui/codemod build` で `dist/cli.js` を作り直せば、次回起動時に反映されます。
 
 ### 動作確認例
 
