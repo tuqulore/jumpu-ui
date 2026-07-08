@@ -29,8 +29,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "lint": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "tsc --noEmit && vitest run",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
