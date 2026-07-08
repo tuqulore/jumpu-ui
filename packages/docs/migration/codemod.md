@@ -59,9 +59,9 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 | `--dry-run`               | 変更を書き込まず、差分サマリのみ表示                                 |
 | `-v, --verbose`           | 詳細ログ。手動対応が必要な箇所（notes）を全表示                      |
 | `--no-git-check`          | 作業ツリーが dirty でも実行を許可                                    |
-| `--include <glob>`        | 対象ファイルの glob を明示指定                                       |
+| `--include <globs>`       | 対象ファイルの glob を明示指定（カンマ区切りで複数指定可）           |
 | `--include-css`           | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off） |
-| `--extra-class <name...>` | クラス名マップに追加する bare クラス名                               |
+| `--extra-class <names>`   | クラス名マップに追加する bare クラス名（カンマ区切り）               |
 
 パスを省略すると cwd を対象にします。デフォルトの glob は `**/*.{html,htm,vue,jsx,tsx,astro,css}` で、`.gitignore` を尊重します。
 
