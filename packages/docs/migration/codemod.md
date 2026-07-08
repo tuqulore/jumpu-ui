@@ -16,10 +16,11 @@ npx @jumpu-ui/codemod upgrade --dry-run --verbose
 
 ## サブコマンド
 
+CLI が提供するサブコマンドは動詞ベースの 2 種類だけです。個別 transform の実行は `upgrade --only <id>` で行います。
+
 | コマンド | 概要 |
 | --- | --- |
 | `upgrade [paths...]` | 起点を検出し、適用対象の transform を順に実行 |
-| 単発コマンド (`class-prefix` 等) | 単一の transform だけを実行（部分適用 / CI 用途） |
 | `list` | 利用可能な transform を一覧（`kind` / `sinceVersion` 表示） |
 
 `list` の出力例:
@@ -35,8 +36,21 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 | オプション | 説明 |
 | --- | --- |
 | `--from <version>` | 起点バージョンを明示（install 検出のフォールバック） |
-| `--skip <id...>` | 特定の transform を除外（意味論的等価な変換や compat のみ） |
-| `--adopt <id...>` | opt-in の adopt transform を追加適用 |
+| `--only <ids>` | 指定した transform だけを実行（バージョン範囲判定をスキップ）。カンマ区切りで複数指定可 |
+| `--skip <ids>` | 特定の transform を除外（意味論的等価な変換や compat のみ）。カンマ区切り |
+| `--adopt <ids>` | opt-in の adopt transform を追加適用。カンマ区切り |
+
+### `upgrade` で扱える transform 一覧
+
+すべて `--only` / `--skip` / `--adopt` の対象になります。`npx @jumpu-ui/codemod list` で手元でも確認できます。
+
+| id | since | kind | 概要 |
+| --- | --- | --- | --- |
+| `class-prefix` | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム |
+| `spacing-rel` | 2.0.0 | rewrite | CSS の `rel<N>` を `calc(var(--spacing-relative) * N)` に置換 |
+| `drop-colors-import` | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除 |
+| `cdn-url` | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与 |
+| `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入 |
 
 ## グローバルオプション
 
@@ -73,7 +87,7 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 - `<name>-compat`（default 適用）: 旧の見た目を保つ utility を付与
 - `<name>-adopt`（opt-in）: `-compat` が付けた utility を剥がし、新規範に乗る
 
-保守的な移行は `-compat` に任せ、後日新規範に乗り換えるタイミングで `--adopt <id>` を実行、あるいは単発サブコマンド `npx @jumpu-ui/codemod <name>-adopt .` を実行します。
+保守的な移行は `-compat` に任せ、後日新規範に乗り換えるタイミングで `--adopt <id>` を実行、あるいは `upgrade --only <name>-adopt` を実行します。
 
 ### adopt のみ（mandatory）
 
