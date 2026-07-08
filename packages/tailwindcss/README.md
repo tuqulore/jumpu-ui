@@ -58,6 +58,20 @@ Jumpu UI does extend [Tailwind CSS Theme](https://tailwindcss.com/docs/theme). Y
 
 - `var(--spacing-relative)`: Unit of relative spacing. Default is `0.25em`
 
+## Migration
+
+If you are upgrading from an older major version, run [@jumpu-ui/codemod](https://www.npmjs.com/package/@jumpu-ui/codemod) in your project root:
+
+```shell
+# v2 -> v3
+npx @jumpu-ui/codemod v2-to-v3 .
+
+# v1 -> v2
+npx @jumpu-ui/codemod v1-to-v2 .
+```
+
+See the [Migration guide](https://jumpu-ui.pages.dev/migration/) for details.
+
 ## How to contribute
 
 Please refer https://jumpu-ui.pages.dev/development-guide.html
