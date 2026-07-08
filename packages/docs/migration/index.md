@@ -16,7 +16,7 @@ npx @jumpu-ui/codemod upgrade
 | ------------------------------------------ | -------------------------------------------- |
 | 起点バージョンを検出して最新まで一気に移行 | `npx @jumpu-ui/codemod upgrade`              |
 | 起点を明示して upgrade                     | `npx @jumpu-ui/codemod upgrade --from 2.0.1` |
-| 特定の transform だけ実行                  | `npx @jumpu-ui/codemod <transform-id>`       |
+| 特定の transform だけ実行                  | `npx @jumpu-ui/codemod upgrade --only <transform-id>` |
 | 利用可能な transform を一覧                | `npx @jumpu-ui/codemod list`                 |
 
 ## CLI の詳細
