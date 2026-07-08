@@ -57,13 +57,10 @@ export async function runUpgrade(
     if (compareVersion(t.sinceVersion, to) > 0) return false;
     const optIn = t.defaultAutoApply === false;
     if (skipSet.has(t.id)) {
-      if (optIn) return false;
-      // adopt-only の transform で compat が無いものは skip 禁止
-      const compatId = t.compatPair;
-      if (!compatId) {
+      if (t.mandatory) {
         console.warn(
           pc.yellow(
-            `Warning: cannot skip "${t.id}" — it has no compat counterpart. Ignoring --skip for this transform.`,
+            `Warning: cannot skip "${t.id}" — it is mandatory. Ignoring --skip for this transform.`,
           ),
         );
       } else {
@@ -190,7 +187,7 @@ export function applicableTransforms(
     if (compareVersion(t.sinceVersion, to) > 0) return false;
     const optIn = t.defaultAutoApply === false;
     if (optIn && !adoptSet.has(t.id)) return false;
-    if (!optIn && skipSet.has(t.id)) return false;
+    if (!optIn && skipSet.has(t.id) && !t.mandatory) return false;
     return true;
   });
 }

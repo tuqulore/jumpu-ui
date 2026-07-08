@@ -20,6 +20,12 @@ export interface Transform {
   sinceVersion: string;
   compatPair?: string;
   defaultAutoApply?: boolean;
+  /**
+   * true のとき、この transform は --skip で除外できない。
+   * 主に adopt-only (構造変換で compat が原理的に提供できないもの) 用途。
+   * 省略時は false (skippable)。
+   */
+  mandatory?: boolean;
   match: (file: string) => boolean;
   run: (
     input: string,
