@@ -90,6 +90,45 @@ CLI が提供するサブコマンドは 2 種類だけです。個別 transform
 - JSX の template literal (`` `input ${x}` ``)、変数、spread。string リテラル引数のみ書き換え対象
 - ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）
 
+## 開発時の動作確認 (pnpm link)
+
+publish 前のローカルビルドを別プロジェクトで試すには、pnpm の global link を使います。
+
+### 前提
+
+- `pnpm setup` 済みで、グローバル bin ディレクトリ (通常 `~/.local/share/pnpm/bin`) が PATH に通っていること
+- 事前にビルドしていること (`pnpm -F @jumpu-ui/codemod build`)
+
+### 手順
+
+リポジトリのルートで以下を実行:
+
+```sh
+CI=true pnpm --global link ./packages/codemod
+```
+
+`CI=true` は「グローバルの `node_modules` を purge していいか」の TTY プロンプトを非対話でスキップするために必要です。link が成功すると、どのディレクトリからでも `jumpu-ui-codemod` を呼び出せます。
+
+### 変更の反映
+
+コードを編集したあとは `pnpm -F @jumpu-ui/codemod build` で `dist/cli.js` を作り直すだけで即座に反映されます (link は symlink なので再 link は不要)。
+
+### 動作確認例
+
+`@jumpu-ui/tailwindcss` を install している任意のプロジェクトのルートで:
+
+```sh
+jumpu-ui-codemod upgrade --dry-run --verbose
+```
+
+install 済みのバージョンが起点として自動検出されます。書き換えを試したい場合は `--from 2.0.0` などで起点を明示すると、対象範囲の transform を強制的に流せます。
+
+### 解除
+
+```sh
+pnpm --global unlink @jumpu-ui/codemod
+```
+
 ## ライセンス
 
 MIT
