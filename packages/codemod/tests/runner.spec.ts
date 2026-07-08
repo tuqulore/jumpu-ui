@@ -3,11 +3,11 @@ import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import type { RunOptions, Transform, TransformCtx } from "../src/context.ts";
-import { classPrefix } from "../src/transforms/v1-to-v2/class-prefix.ts";
-import { dropColorsImport } from "../src/transforms/v1-to-v2/drop-colors-import.ts";
-import { spacingRel } from "../src/transforms/v1-to-v2/spacing-rel.ts";
-import { cdnUrl } from "../src/transforms/v2-to-v3/cdn-url.ts";
-import { explicitTailwindcssImport } from "../src/transforms/v2-to-v3/explicit-tailwindcss-import.ts";
+import { classPrefix } from "../src/transforms/v2.0.0/class-prefix.ts";
+import { dropColorsImport } from "../src/transforms/v2.0.0/drop-colors-import.ts";
+import { spacingRel } from "../src/transforms/v2.0.0/spacing-rel.ts";
+import { cdnUrl } from "../src/transforms/v3.0.0/cdn-url.ts";
+import { explicitTailwindcssImport } from "../src/transforms/v3.0.0/explicit-tailwindcss-import.ts";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = join(HERE, "fixtures");

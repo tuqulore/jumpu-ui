@@ -69,12 +69,12 @@ description: Add a new transform to @jumpu-ui/codemod when a breaking change is 
 
 ## ステップ 3: transform ファイルを作成
 
-ファイル配置は `packages/codemod/src/transforms/<name>.ts` (v1-to-v2 / v2-to-v3 のような version prefix ディレクトリは使わない。既存の 5 個も後方互換のため残っているだけで、新規は flat な配置)。
+ファイル配置は `packages/codemod/src/transforms/v<sinceVersion>/<name>.ts` の形式で、そのまま `sinceVersion` と同じ値の名前を持つサブディレクトリに置く。例: `sinceVersion: "3.1.0"` の transform は `src/transforms/v3.1.0/` に置く。ディレクトリ名がメタデータと 1:1 で対応するため、配置ミスが即座にバグとして検出でき、docs / registry の並びからも「どのバージョンで何が変わったか」が一覧できる。同じサブディレクトリに `index.ts` (バージョン別 barrel) を置いて re-export し、registry 側はその barrel を import する。
 
 最小テンプレート:
 
 ```ts
-import type { Transform } from "../context.ts";
+import type { Transform } from "../../context.ts";
 
 export const yourTransformId: Transform = {
   id: "your-transform-id", // kebab-case、短く動詞的でなく対象を示す

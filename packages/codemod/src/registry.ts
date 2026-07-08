@@ -3,11 +3,11 @@ import {
   classPrefix,
   dropColorsImport,
   spacingRel,
-} from "./transforms/v1-to-v2/index.ts";
+} from "./transforms/v2.0.0/index.ts";
 import {
   cdnUrl,
   explicitTailwindcssImport,
-} from "./transforms/v2-to-v3/index.ts";
+} from "./transforms/v3.0.0/index.ts";
 
 export const TRANSFORMS: Transform[] = [
   classPrefix,

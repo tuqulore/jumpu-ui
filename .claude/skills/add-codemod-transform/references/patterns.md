@@ -32,7 +32,7 @@
 
 正規表現 1 発で十分。ast-grep は使わない。
 
-**参考**: `packages/codemod/src/transforms/v2-to-v3/cdn-url.ts`
+**参考**: `packages/codemod/src/transforms/v3.0.0/cdn-url.ts`
 
 ```ts
 const PATTERN = /https:\/\/esm\.sh\/@jumpu-ui\/tailwindcss(?:@[\w.\-+]+)?(?![\w./@\-+])/g;
@@ -56,7 +56,7 @@ run(input) {
 
 正規表現で十分。
 
-**参考**: `packages/codemod/src/transforms/v1-to-v2/spacing-rel.ts`
+**参考**: `packages/codemod/src/transforms/v2.0.0/spacing-rel.ts`
 
 ```ts
 const REL_TOKEN = /\brel(\d+)\b/g;
@@ -78,7 +78,7 @@ run(input) {
 
 ### CSS の import 削除 / 挿入
 
-**削除の参考**: `packages/codemod/src/transforms/v1-to-v2/drop-colors-import.ts`
+**削除の参考**: `packages/codemod/src/transforms/v2.0.0/drop-colors-import.ts`
 
 ```ts
 const COLORS_IMPORT = /@import\s+["']@jumpu-ui\/tailwindcss\/colors["']\s*;?\n?/g;
@@ -93,7 +93,7 @@ run(input) {
 }
 ```
 
-**挿入の参考**: `packages/codemod/src/transforms/v2-to-v3/explicit-tailwindcss-import.ts`
+**挿入の参考**: `packages/codemod/src/transforms/v3.0.0/explicit-tailwindcss-import.ts`
 
 ```ts
 const TAILWIND_IMPORT = /@import\s+["']tailwindcss["']\s*;?/;
@@ -122,7 +122,7 @@ run(input) {
 
 ### HTML / JSX / TSX の class 属性 (ast-grep)
 
-**参考**: `packages/codemod/src/transforms/v1-to-v2/class-prefix.ts`
+**参考**: `packages/codemod/src/transforms/v2.0.0/class-prefix.ts`
 
 ast-grep の pattern 記法 (`class="$V"`) は attribute 単独では **HTML で 0 hit** になる (実装中に確認済み)。代わりに attribute の kind ベースで走査する:
 
