@@ -8,8 +8,10 @@ const JSX_LIKE = /\.(?:jsx|tsx)$/i;
 const CSS_LIKE = /\.css$/i;
 
 export const classPrefix: Transform = {
-  id: "v1-to-v2/class-prefix",
+  id: "class-prefix",
   title: 'Prefix bare component class names with "jumpu-"',
+  kind: "rewrite",
+  sinceVersion: "2.0.0",
   match: (file) =>
     HTML_LIKE.test(file) || JSX_LIKE.test(file) || CSS_LIKE.test(file),
   async run(input, ctx) {

@@ -16,6 +16,10 @@ export interface TransformCtx {
 export interface Transform {
   id: string;
   title: string;
+  kind: "rewrite" | "notice";
+  sinceVersion: string;
+  compatPair?: string;
+  defaultAutoApply?: boolean;
   match: (file: string) => boolean;
   run: (
     input: string,

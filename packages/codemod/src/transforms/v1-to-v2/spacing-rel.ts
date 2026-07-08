@@ -3,8 +3,10 @@ import type { Transform } from "../../context.ts";
 const REL_TOKEN = /\brel(\d+)\b/g;
 
 export const spacingRel: Transform = {
-  id: "v1-to-v2/spacing-rel",
+  id: "spacing-rel",
   title: "Replace rel<N> with calc(var(--spacing-relative) * <N>)",
+  kind: "rewrite",
+  sinceVersion: "2.0.0",
   match: (file) => /\.css$/i.test(file),
   run(input) {
     let changed = false;
