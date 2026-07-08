@@ -103,10 +103,10 @@ publish 前のローカルビルドを別プロジェクトから `jumpu-ui-code
 
 ```sh
 cd packages/codemod
-CI=true pnpm add -g .
+pnpm add -g .
 ```
 
-`CI=true` はグローバル `node_modules` の purge プロンプトを非対話でスキップします。以降どのディレクトリからも `jumpu-ui-codemod` を呼び出せます。
+以降どのディレクトリからも `jumpu-ui-codemod` を呼び出せます。
 
 ### 変更の反映
 
