@@ -58,9 +58,7 @@ function rewriteHtml(input: string, map: ClassMap) {
     // (オブジェクト構文や式評価が絡むため機械化困難)
     if (attrName === ":class" || attrName === "v-bind:class") {
       const line = attr.range().start.line + 1;
-      notes.push(
-        `dynamic ${attrName} at line ${line} needs manual review`,
-      );
+      notes.push(`dynamic ${attrName} at line ${line} needs manual review`);
     }
   }
   const output = root.commitEdits(edits);

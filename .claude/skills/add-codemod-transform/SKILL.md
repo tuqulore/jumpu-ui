@@ -40,6 +40,7 @@ description: Add a new transform to @jumpu-ui/codemod when a breaking change is 
 **指標**: 「旧の見た目を tailwind の**単一 utility** で上書きできる」なら compat + adopt。
 
 必ず 2 個ペアで用意する:
+
 - `<name>-compat` (default 適用): 旧見た目を保つ utility を付与
 - `<name>-adopt` (opt-in, `defaultAutoApply: false`): compat が付けた utility を剥がす
 
@@ -76,9 +77,9 @@ description: Add a new transform to @jumpu-ui/codemod when a breaking change is 
 import type { Transform } from "../context.ts";
 
 export const yourTransformId: Transform = {
-  id: "your-transform-id",           // kebab-case、短く動詞的でなく対象を示す
+  id: "your-transform-id", // kebab-case、短く動詞的でなく対象を示す
   title: "Human-readable summary",
-  kind: "rewrite",                   // または "notice"
+  kind: "rewrite", // または "notice"
   sinceVersion: "3.1.0",
   // compatPair: "button-inline-flex-compat", // -adopt 系のみ
   // defaultAutoApply: false,        // -adopt 系のみ (opt-in)

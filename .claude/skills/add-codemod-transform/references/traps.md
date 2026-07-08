@@ -23,18 +23,18 @@ for (const attr of root.findAll({ rule: { kind: "attribute" } })) {
 `cn/clsx/classnames` の call は pattern マッチが効く:
 
 ```ts
-root.findAll(`cn($$$ARGS)`);  // 動く
+root.findAll(`cn($$$ARGS)`); // 動く
 ```
 
 pattern が効く場合と効かない場合の切り分けは、`ast-grep playground` で試すか、既存の class-prefix.ts の実装を参照。
 
 ## HTML と JSX / TSX の attribute 子ノードが違う
 
-| コンテナ | HTML | TSX |
-| --- | --- | --- |
-| 属性そのもの | `attribute` | `jsx_attribute` |
-| 属性名 | `attribute_name` (leaf) | `property_identifier` |
-| 引用符付き値 | `quoted_attribute_value` | `string` |
+| コンテナ                 | HTML                                              | TSX                               |
+| ------------------------ | ------------------------------------------------- | --------------------------------- |
+| 属性そのもの             | `attribute`                                       | `jsx_attribute`                   |
+| 属性名                   | `attribute_name` (leaf)                           | `property_identifier`             |
+| 引用符付き値             | `quoted_attribute_value`                          | `string`                          |
 | 書き換え対象の生テキスト | `quoted_attribute_value` の子の `attribute_value` | `string` の子の `string_fragment` |
 
 **罠**: HTML の attribute_value を replace すると quote は残る (`attribute_value` は quote 内側だけを指すノード)。TSX の string_fragment も同様。**quote 込みで書き換えるとダブり `""foo""` になる**。
@@ -58,11 +58,14 @@ for (const n of root.findAll({rule: {kind: "attribute"}})) {
 **回避**: split 後のトークンに `:` が含まれていれば触らない。
 
 ```ts
-value.split(/(\s+)/).map((tok) => {
-  if (!tok.trim()) return tok;
-  if (tok.includes(":")) return tok;  // variant は絶対に触らない
-  return classMap.bare.has(tok) ? classMap.toPrefixed(tok) : tok;
-}).join("");
+value
+  .split(/(\s+)/)
+  .map((tok) => {
+    if (!tok.trim()) return tok;
+    if (tok.includes(":")) return tok; // variant は絶対に触らない
+    return classMap.bare.has(tok) ? classMap.toPrefixed(tok) : tok;
+  })
+  .join("");
 ```
 
 ## commander の variadic option (`<id...>`) が positional 引数を吸う

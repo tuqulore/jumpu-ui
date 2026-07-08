@@ -48,6 +48,7 @@ run(input) {
 ```
 
 **ポイント**:
+
 - 既に適用済みの入力を検出して no-op する (negative lookahead で `/dist/style.css` を検出しないパターンだけマッチさせる)
 - バージョンピン `@X.Y.Z` を保持する (`match` を先頭にそのまま置いて suffix だけ足す)
 
@@ -71,6 +72,7 @@ run(input) {
 ```
 
 **ポイント**:
+
 - 単語境界 `\b` でトークンを区切る (`relaxation` などの誤検知を防ぐ)
 - CSS ファイルのみに `match` を絞る
 
@@ -114,6 +116,7 @@ run(input) {
 ```
 
 **ポイント**:
+
 - 挿入は先に「既に挿入済みか」を判定し、あれば no-op
 - 挿入位置は「トリガーとなる既存の import の直前」
 
@@ -129,8 +132,12 @@ const root = parse(Lang.Html, input).root();
 for (const attr of root.findAll({ rule: { kind: "attribute" } })) {
   const nameNode = attr.children().find((c) => c.kind() === "attribute_name");
   if (nameNode?.text() !== "class") continue;
-  const quoted = attr.children().find((c) => c.kind() === "quoted_attribute_value");
-  const valueNode = quoted?.children().find((c) => c.kind() === "attribute_value");
+  const quoted = attr
+    .children()
+    .find((c) => c.kind() === "quoted_attribute_value");
+  const valueNode = quoted
+    ?.children()
+    .find((c) => c.kind() === "attribute_value");
   if (!valueNode) continue;
   // valueNode.text() を書き換えて edits に push
   edits.push(valueNode.replace(rewriteValue(valueNode.text())));
@@ -141,17 +148,21 @@ for (const attr of root.findAll({ rule: { kind: "attribute" } })) {
 // JSX / TSX
 const root = parse(Lang.Tsx, input).root();
 for (const attr of root.findAll({ rule: { kind: "jsx_attribute" } })) {
-  const nameNode = attr.children().find((c) => c.kind() === "property_identifier");
+  const nameNode = attr
+    .children()
+    .find((c) => c.kind() === "property_identifier");
   if (nameNode?.text() !== "className") continue;
   for (const child of attr.children()) {
     if (child.kind() === "string") {
       // 静的 string リテラル: string_fragment を書き換え
-      const fragment = child.children().find((c) => c.kind() === "string_fragment");
+      const fragment = child
+        .children()
+        .find((c) => c.kind() === "string_fragment");
       if (fragment) edits.push(fragment.replace(rewriteValue(fragment.text())));
     } else if (child.kind() === "jsx_expression") {
       // {"foo"} 形式: 内側の string を再帰的に扱う
       for (const gc of child.children()) {
-        if (gc.kind() === "string") /* 同上 */;
+        if (gc.kind() === "string") /* 同上 */ ;
       }
     }
   }
@@ -160,12 +171,12 @@ for (const attr of root.findAll({ rule: { kind: "jsx_attribute" } })) {
 
 **HTML と TSX の子ノード kind の差** (最重要):
 
-| コンテナ | HTML | TSX |
-| --- | --- | --- |
-| 属性そのもの | `attribute` | `jsx_attribute` |
-| 属性名 | `attribute_name` | `property_identifier` |
-| 引用符付き値 | `quoted_attribute_value` (子に `attribute_value`) | `string` (子に `string_fragment`) |
-| 書き換え対象の生テキスト | `attribute_value` | `string_fragment` |
+| コンテナ                 | HTML                                              | TSX                               |
+| ------------------------ | ------------------------------------------------- | --------------------------------- |
+| 属性そのもの             | `attribute`                                       | `jsx_attribute`                   |
+| 属性名                   | `attribute_name`                                  | `property_identifier`             |
+| 引用符付き値             | `quoted_attribute_value` (子に `attribute_value`) | `string` (子に `string_fragment`) |
+| 書き換え対象の生テキスト | `attribute_value`                                 | `string_fragment`                 |
 
 ### JSX の cn / clsx / classnames 引数
 
@@ -225,7 +236,9 @@ export const legacyOverrideNotice: Transform = {
     const notes: string[] = [];
     lines.forEach((line, i) => {
       if (/\.jumpu-[a-z-]+\s*\{[^}]*color:/.test(line)) {
-        notes.push(`${ctx.file}:${i + 1} overrides jumpu-* color; verify against new default`);
+        notes.push(
+          `${ctx.file}:${i + 1} overrides jumpu-* color; verify against new default`,
+        );
       }
     });
     return { output: input, changed: false, notes };
@@ -237,10 +250,10 @@ export const legacyOverrideNotice: Transform = {
 
 新しい transform を書き始めるときは、まず「一番近いパターンを持つ既存 transform」を熟読して、その構造をベースにする:
 
-| 破壊的変更の性質 | 参考にする既存 transform |
-| --- | --- |
-| クラス名リネーム、HTML / JSX / CSS 対応 | `class-prefix` |
-| CSS 内の値置換 (単一正規表現) | `spacing-rel` |
-| CSS の import 削除 | `drop-colors-import` |
-| CSS の import 挿入 | `explicit-tailwindcss-import` |
-| HTML の attribute value 書き換え | `cdn-url` |
+| 破壊的変更の性質                        | 参考にする既存 transform      |
+| --------------------------------------- | ----------------------------- |
+| クラス名リネーム、HTML / JSX / CSS 対応 | `class-prefix`                |
+| CSS 内の値置換 (単一正規表現)           | `spacing-rel`                 |
+| CSS の import 削除                      | `drop-colors-import`          |
+| CSS の import 挿入                      | `explicit-tailwindcss-import` |
+| HTML の attribute value 書き換え        | `cdn-url`                     |

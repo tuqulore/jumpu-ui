@@ -12,10 +12,7 @@ program
   .option("--dry-run", "Print a summary of changes without writing", false)
   .option("-v, --verbose", "Print detailed notes and per-file logs", false)
   .option("--no-git-check", "Skip the git working tree cleanliness check")
-  .option(
-    "--include <globs>",
-    "Comma-separated glob patterns for target files",
-  )
+  .option("--include <globs>", "Comma-separated glob patterns for target files")
   .option(
     "--include-css",
     "Apply class-prefix to CSS files as well (opt-in, may cause false positives)",
