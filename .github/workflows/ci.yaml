@@ -11,5 +11,7 @@ jobs:
       contents: write
     steps:
       - uses: tuqulore/.github/setup@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
+      - run: pnpm -r --if-present build
       - run: pnpm -r lint --fix
+      - run: pnpm -r --if-present test
       - uses: tuqulore/.github/format@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
