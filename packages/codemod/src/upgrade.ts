@@ -11,6 +11,7 @@ const require = createRequire(import.meta.url);
 
 export interface UpgradeOptions extends RunOptions {
   from?: string;
+  only?: string[];
   skip?: string[];
   adopt?: string[];
 }
@@ -19,6 +20,11 @@ export async function runUpgrade(
   paths: string[],
   options: UpgradeOptions,
 ): Promise<void> {
+  if (options.only && options.only.length > 0) {
+    await runOnly(paths, options.only, options);
+    return;
+  }
+
   const cwd = paths[0] ?? ".";
   const from =
     options.from ??
@@ -75,6 +81,30 @@ export async function runUpgrade(
 
   await runTransforms(applicable, paths, options);
   reportOptIn(from, to);
+}
+
+async function runOnly(
+  paths: string[],
+  ids: string[],
+  options: RunOptions,
+): Promise<void> {
+  const targets: Transform[] = [];
+  const unknown: string[] = [];
+  for (const id of ids) {
+    const t = TRANSFORMS.find((x) => x.id === id);
+    if (t) targets.push(t);
+    else unknown.push(id);
+  }
+  if (unknown.length > 0) {
+    console.error(
+      pc.red(
+        `Unknown transform id: ${unknown.join(", ")}\n` +
+          `  Run "jumpu-ui-codemod list" to see available transforms.`,
+      ),
+    );
+    process.exit(1);
+  }
+  await runTransforms(targets, paths, options);
 }
 
 async function detectInstalledVersion(cwd: string): Promise<string | null> {
@@ -147,8 +177,12 @@ export function compareVersion(a: string, b: string): number {
 export function applicableTransforms(
   from: string,
   to: string,
-  options: { skip?: string[]; adopt?: string[] } = {},
+  options: { only?: string[]; skip?: string[]; adopt?: string[] } = {},
 ): Transform[] {
+  if (options.only && options.only.length > 0) {
+    const onlySet = new Set(options.only);
+    return TRANSFORMS.filter((t) => onlySet.has(t.id));
+  }
   const skipSet = new Set(options.skip ?? []);
   const adoptSet = new Set(options.adopt ?? []);
   return TRANSFORMS.filter((t) => {

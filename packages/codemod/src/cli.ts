@@ -2,7 +2,6 @@ import { Command } from "commander";
 import pc from "picocolors";
 import type { RunOptions } from "./context.ts";
 import { TRANSFORMS } from "./registry.ts";
-import { runTransforms } from "./runner.ts";
 import { runUpgrade, type UpgradeOptions } from "./upgrade.ts";
 
 const program = new Command();
@@ -36,38 +35,43 @@ program
     "--from <version>",
     "Starting version (fallback when install detection fails)",
   )
-  .option("--skip <id...>", "Skip specific transforms by id")
   .option(
-    "--adopt <id...>",
-    "Additionally apply opt-in adopt transforms by id",
+    "--only <ids>",
+    "Comma-separated transform ids to run (skips version range detection)",
+  )
+  .option("--skip <ids>", "Comma-separated transform ids to skip")
+  .option(
+    "--adopt <ids>",
+    "Comma-separated opt-in adopt transform ids to apply",
   )
   .action(
     async (
       paths: string[],
       cmdOptions: {
         from?: string;
-        skip?: string[];
-        adopt?: string[];
+        only?: string;
+        skip?: string;
+        adopt?: string;
       },
     ) => {
       const options: UpgradeOptions = {
         ...program.opts<RunOptions>(),
         from: cmdOptions.from,
-        skip: cmdOptions.skip,
-        adopt: cmdOptions.adopt,
+        only: splitCsv(cmdOptions.only),
+        skip: splitCsv(cmdOptions.skip),
+        adopt: splitCsv(cmdOptions.adopt),
       };
       await runUpgrade(paths, options);
     },
   );
 
-for (const t of TRANSFORMS) {
-  program
-    .command(`${t.id} [paths...]`)
-    .description(t.title)
-    .action(async (paths: string[]) => {
-      const options = program.opts<RunOptions>();
-      await runTransforms([t], paths, options);
-    });
+function splitCsv(value: string | undefined): string[] | undefined {
+  if (!value) return undefined;
+  const items = value
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+  return items.length > 0 ? items : undefined;
 }
 
 program

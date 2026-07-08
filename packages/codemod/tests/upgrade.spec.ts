@@ -53,4 +53,18 @@ describe("applicableTransforms", () => {
     expect(ids).not.toContain("class-prefix");
     expect(ids).toContain("spacing-rel");
   });
+
+  it("returns exactly the ids passed to --only, bypassing version range", () => {
+    const ids = applicableTransforms("3.0.0", "3.0.0", {
+      only: ["class-prefix", "cdn-url"],
+    }).map((t) => t.id);
+    expect(ids).toEqual(["class-prefix", "cdn-url"]);
+  });
+
+  it("--only preserves registry order", () => {
+    const ids = applicableTransforms("3.0.0", "3.0.0", {
+      only: ["cdn-url", "class-prefix"],
+    }).map((t) => t.id);
+    expect(ids).toEqual(["class-prefix", "cdn-url"]);
+  });
 });
