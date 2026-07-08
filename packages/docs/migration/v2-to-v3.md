@@ -73,4 +73,4 @@ After:
 - **`Could not detect the installed @jumpu-ui/tailwindcss version.`** — install 検出も CDN 検出も失敗した場合。`--from 2.0.1` のように起点バージョンを明示してください
 - **`Working tree has uncommitted changes.`** — 実行前に `git commit` するか、`--no-git-check` を渡してください
 - **書き換わらない `<link>` がある** — URL に不要なクエリや複数行に跨ぐ属性が入っていないか確認してください。上記に該当しない場合は `--include` で対象ファイルを狭めて再実行し、必要なら手動で修正してください
-- **`@import "tailwindcss";` が二重に入った** — 事前に手動で挿入していた場合、`explicit-tailwindcss-import` はその CSS を no-op として扱います。二重挿入は起きません
+- **既に `@import "tailwindcss";` を手動で挿入している場合** — `explicit-tailwindcss-import` はその CSS を no-op として扱うため、二重挿入は起きません
