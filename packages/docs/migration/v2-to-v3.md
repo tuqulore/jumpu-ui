@@ -20,9 +20,9 @@ npx @jumpu-ui/codemod upgrade --dry-run --verbose
 
 ## 破壊的変更サマリ
 
-| 変更 | transform | kind |
-| --- | --- | --- |
-| CDN 経由の読み込み URL に `/dist/style.css` が必要 | `cdn-url` | rewrite（単一） |
+| 変更                                                        | transform                     | kind            |
+| ----------------------------------------------------------- | ----------------------------- | --------------- |
+| CDN 経由の読み込み URL に `/dist/style.css` が必要          | `cdn-url`                     | rewrite（単一） |
 | プロジェクトの CSS で `@import "tailwindcss";` の明示が必要 | `explicit-tailwindcss-import` | rewrite（単一） |
 
 ## CDN URL 変更
@@ -36,7 +36,10 @@ v2 系まで esm.sh から次のように読み込んでいた場合:
 v3 系では `/dist/style.css` を明示する必要があります。
 
 ```html
-<link rel="stylesheet" href="https://esm.sh/@jumpu-ui/tailwindcss/dist/style.css" />
+<link
+  rel="stylesheet"
+  href="https://esm.sh/@jumpu-ui/tailwindcss/dist/style.css"
+/>
 ```
 
 バージョンをピンしている場合 (`@jumpu-ui/tailwindcss@2.0.1` など) も、`cdn-url` transform はピンを保持したまま `/dist/style.css` を付与します。

@@ -107,9 +107,7 @@ function rewriteStringLiteral(
   map: ClassMap,
   edits: Edit[],
 ): void {
-  const fragment = node
-    .children()
-    .find((c) => c.kind() === "string_fragment");
+  const fragment = node.children().find((c) => c.kind() === "string_fragment");
   if (fragment) {
     const before = fragment.text();
     const after = rewriteClassString(before, map);

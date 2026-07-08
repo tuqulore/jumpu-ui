@@ -68,7 +68,9 @@ export async function runTransforms(
       if (!options.dryRun) await writeFile(file, current);
       summary.changed += 1;
       if (options.verbose) {
-        console.log(pc.green(`${options.dryRun ? "would change" : "changed"} ${file}`));
+        console.log(
+          pc.green(`${options.dryRun ? "would change" : "changed"} ${file}`),
+        );
       }
     } else {
       summary.unchanged += 1;

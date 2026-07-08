@@ -18,10 +18,10 @@ npx @jumpu-ui/codemod upgrade --dry-run --verbose
 
 CLI が提供するサブコマンドは動詞ベースの 2 種類だけです。個別 transform の実行は `upgrade --only <id>` で行います。
 
-| コマンド | 概要 |
-| --- | --- |
-| `upgrade [paths...]` | 起点を検出し、適用対象の transform を順に実行 |
-| `list` | 利用可能な transform を一覧（`kind` / `sinceVersion` 表示） |
+| コマンド             | 概要                                                        |
+| -------------------- | ----------------------------------------------------------- |
+| `upgrade [paths...]` | 起点を検出し、適用対象の transform を順に実行               |
+| `list`               | 利用可能な transform を一覧（`kind` / `sinceVersion` 表示） |
 
 `list` の出力例:
 
@@ -33,35 +33,35 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 
 ## `upgrade` のオプション
 
-| オプション | 説明 |
-| --- | --- |
-| `--from <version>` | 起点バージョンを明示（install 検出のフォールバック） |
-| `--only <ids>` | 指定した transform だけを実行（バージョン範囲判定をスキップ）。カンマ区切りで複数指定可 |
-| `--skip <ids>` | 特定の transform を除外（意味論的等価な変換や compat のみ）。カンマ区切り |
-| `--adopt <ids>` | opt-in の adopt transform を追加適用。カンマ区切り |
+| オプション         | 説明                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------- |
+| `--from <version>` | 起点バージョンを明示（install 検出のフォールバック）                                    |
+| `--only <ids>`     | 指定した transform だけを実行（バージョン範囲判定をスキップ）。カンマ区切りで複数指定可 |
+| `--skip <ids>`     | 特定の transform を除外（意味論的等価な変換や compat のみ）。カンマ区切り               |
+| `--adopt <ids>`    | opt-in の adopt transform を追加適用。カンマ区切り                                      |
 
 ### `upgrade` で扱える transform 一覧
 
 すべて `--only` / `--skip` / `--adopt` の対象になります。`npx @jumpu-ui/codemod list` で手元でも確認できます。
 
-| id | since | kind | 概要 |
-| --- | --- | --- | --- |
-| `class-prefix` | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム |
-| `spacing-rel` | 2.0.0 | rewrite | CSS の `rel<N>` を `calc(var(--spacing-relative) * N)` に置換 |
-| `drop-colors-import` | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除 |
-| `cdn-url` | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与 |
-| `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入 |
+| id                            | since | kind    | 概要                                                          |
+| ----------------------------- | ----- | ------- | ------------------------------------------------------------- |
+| `class-prefix`                | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム                          |
+| `spacing-rel`                 | 2.0.0 | rewrite | CSS の `rel<N>` を `calc(var(--spacing-relative) * N)` に置換 |
+| `drop-colors-import`          | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除              |
+| `cdn-url`                     | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与                 |
+| `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入                           |
 
 ## グローバルオプション
 
-| オプション | 説明 |
-| --- | --- |
-| `--dry-run` | 変更を書き込まず、差分サマリのみ表示 |
-| `-v, --verbose` | 詳細ログ。手動対応が必要な箇所（notes）を全表示 |
-| `--no-git-check` | 作業ツリーが dirty でも実行を許可 |
-| `--include <glob>` | 対象ファイルの glob を明示指定 |
-| `--include-css` | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off） |
-| `--extra-class <name...>` | クラス名マップに追加する bare クラス名 |
+| オプション                | 説明                                                                 |
+| ------------------------- | -------------------------------------------------------------------- |
+| `--dry-run`               | 変更を書き込まず、差分サマリのみ表示                                 |
+| `-v, --verbose`           | 詳細ログ。手動対応が必要な箇所（notes）を全表示                      |
+| `--no-git-check`          | 作業ツリーが dirty でも実行を許可                                    |
+| `--include <glob>`        | 対象ファイルの glob を明示指定                                       |
+| `--include-css`           | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off） |
+| `--extra-class <name...>` | クラス名マップに追加する bare クラス名                               |
 
 パスを省略すると cwd を対象にします。デフォルトの glob は `**/*.{html,htm,vue,jsx,tsx,astro,css}` で、`.gitignore` を尊重します。
 

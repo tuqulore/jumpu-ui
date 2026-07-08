@@ -1,6 +1,7 @@
 import type { Transform } from "../../context.ts";
 
-const COLORS_IMPORT = /@import\s+["']@jumpu-ui\/tailwindcss\/colors["']\s*;?\n?/g;
+const COLORS_IMPORT =
+  /@import\s+["']@jumpu-ui\/tailwindcss\/colors["']\s*;?\n?/g;
 
 export const dropColorsImport: Transform = {
   id: "drop-colors-import",

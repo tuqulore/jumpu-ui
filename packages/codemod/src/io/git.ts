@@ -6,11 +6,9 @@ const execFileAsync = promisify(execFile);
 
 export async function isGitTreeClean(cwd: string): Promise<boolean> {
   try {
-    const { stdout } = await execFileAsync(
-      "git",
-      ["status", "--porcelain"],
-      { cwd: resolve(cwd) },
-    );
+    const { stdout } = await execFileAsync("git", ["status", "--porcelain"], {
+      cwd: resolve(cwd),
+    });
     return stdout.trim().length === 0;
   } catch {
     return true;
