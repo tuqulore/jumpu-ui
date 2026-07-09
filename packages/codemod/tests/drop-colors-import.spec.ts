@@ -39,8 +39,7 @@ describe("dropColorsImport", () => {
   });
 
   it("is a no-op when the target import is absent", async () => {
-    const input =
-      `@import "@jumpu-ui/tailwindcss";\n.card { color: red; }\n`;
+    const input = `@import "@jumpu-ui/tailwindcss";\n.card { color: red; }\n`;
     const result = await dropColorsImport.run(input, ctx);
     expect(result.changed).toBe(false);
     expect(result.output).toBe(input);
