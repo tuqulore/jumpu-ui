@@ -21,8 +21,10 @@ export const explicitTailwindcssImport: Transform = {
     }
     const before = input.slice(0, match.index);
     const after = input.slice(match.index);
+    // 入力の改行スタイルに合わせて挿入行末を選ぶ (drop-colors-import と対称)
+    const eol = /\r\n/.test(input) ? "\r\n" : "\n";
     return {
-      output: `${before}@import "tailwindcss";\n${after}`,
+      output: `${before}@import "tailwindcss";${eol}${after}`,
       changed: true,
       notes: [],
     };
