@@ -10,6 +10,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: tuqulore/.github/setup@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
+      - uses: tuqulore/.github/setup@8caf5d569132d10bb856f4c14b2530c0e9e8f1ba # main
       - run: pnpm -r lint --fix
-      - uses: tuqulore/.github/format@a6f839a51e2f61b2dbf6437a3a04b6b302365956 # main
+      - uses: tuqulore/.github/format@8caf5d569132d10bb856f4c14b2530c0e9e8f1ba # main
