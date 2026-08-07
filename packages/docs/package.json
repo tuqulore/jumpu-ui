@@ -18,11 +18,11 @@
   "devDependencies": {
     "@jumpu-ui/tailwindcss": "workspace:*",
     "@tailwindcss/typography": "0.5.20",
-    "@tailwindcss/vite": "4.3.2",
-    "postcss": "8.5.16",
-    "tailwindcss": "4.3.2",
+    "@tailwindcss/vite": "4.3.3",
+    "postcss": "8.5.23",
+    "tailwindcss": "4.3.3",
     "vite": "^8.0.0",
     "vitepress": "1.6.4",
-    "vue": "3.5.39"
+    "vue": "3.5.40"
   }
 }
