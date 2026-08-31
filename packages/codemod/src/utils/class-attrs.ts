@@ -10,18 +10,23 @@ export interface ClassRewriteResult {
 /** 空白区切りの class トークン 1 個を受け取り、書き換え後のトークンを返す */
 export type TokenMapper = (token: string) => string;
 
+/** 可変長のクラス文字列を受ける既定のヘルパー関数 */
+const DEFAULT_CLASS_FNS = ["cn", "clsx", "classnames", "twMerge", "twJoin"];
+
 /**
- * HTML 系の class 属性と JSX の className / cn・clsx・classnames 引数を
+ * HTML 系の class 属性と JSX の className / クラスヘルパー関数の引数を
  * トークン単位で書き換える。動的バインド (Vue の :class、className の式)
- * は書き換えず notes で通知する。
+ * は書き換えず notes で通知する。extraFns で対象の関数名を追加できる。
  */
 export function rewriteClassAttributes(
   input: string,
   file: string,
   mapToken: TokenMapper,
+  extraFns: string[] = [],
 ): ClassRewriteResult {
   const lang = detectLang(file);
-  if (lang === Lang.Tsx) return rewriteTsx(input, mapToken);
+  const classFns = [...new Set([...DEFAULT_CLASS_FNS, ...extraFns])];
+  if (lang === Lang.Tsx) return rewriteTsx(input, mapToken, classFns);
   if (lang === Lang.Html) return rewriteHtml(input, mapToken);
   return { output: input, changed: false, notes: [] };
 }
@@ -57,7 +62,11 @@ function rewriteHtml(input: string, mapToken: TokenMapper): ClassRewriteResult {
   return { output, changed: output !== input, notes };
 }
 
-function rewriteTsx(input: string, mapToken: TokenMapper): ClassRewriteResult {
+function rewriteTsx(
+  input: string,
+  mapToken: TokenMapper,
+  classFns: string[],
+): ClassRewriteResult {
   const root = parse(Lang.Tsx, input).root();
   const edits: Edit[] = [];
   const notes: string[] = [];
@@ -76,11 +85,11 @@ function rewriteTsx(input: string, mapToken: TokenMapper): ClassRewriteResult {
           if (gcKind === "string") {
             rewriteStringLiteral(gc, mapToken, edits);
           } else if (gcKind === "call_expression") {
-            // cn / clsx / classnames の call は下の loop で個別に処理される。
+            // クラスヘルパー関数の call は下の loop で個別に処理される。
             // それ以外の call は自動書き換えできないので notes に残す。
             const callee = gc.child(0);
             const name = callee?.text();
-            if (name !== "cn" && name !== "clsx" && name !== "classnames") {
+            if (!name || !classFns.includes(name)) {
               notes.push(
                 `dynamic className call ${name ?? "<expr>"}(...) at line ${gc.range().start.line + 1} needs manual review`,
               );
@@ -95,11 +104,13 @@ function rewriteTsx(input: string, mapToken: TokenMapper): ClassRewriteResult {
     }
   }
 
-  for (const fn of ["cn", "clsx", "classnames"]) {
+  for (const fn of classFns) {
     for (const call of root.findAll(`${fn}($$$ARGS)`)) {
       const args = call.getMultipleMatches("ARGS");
       for (const arg of args) {
         const kind = arg.kind();
+        // $$$ARGS は引数の区切り文字も返す
+        if (kind === ",") continue;
         if (kind === "string") {
           rewriteStringLiteral(arg, mapToken, edits);
         } else if (

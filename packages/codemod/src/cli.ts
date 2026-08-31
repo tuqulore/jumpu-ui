@@ -21,6 +21,10 @@ program
   .option(
     "--extra-class <names>",
     "Comma-separated bare class names to treat as renamable",
+  )
+  .option(
+    "--class-fn <names>",
+    "Comma-separated extra class helper functions to rewrite (cn, clsx, classnames, twMerge, twJoin are built in)",
   );
 
 program
@@ -80,6 +84,7 @@ interface GlobalOpts {
   include?: string;
   includeCss: boolean;
   extraClass?: string;
+  classFn?: string;
 }
 
 function toRunOptions(): RunOptions {
@@ -91,6 +96,7 @@ function toRunOptions(): RunOptions {
     include: splitCsv(g.include),
     includeCss: g.includeCss,
     extraClass: splitCsv(g.extraClass),
+    classFn: splitCsv(g.classFn),
   };
 }
 

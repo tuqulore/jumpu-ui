@@ -5,6 +5,7 @@ export interface RunOptions {
   include?: string[];
   includeCss: boolean;
   extraClass?: string[];
+  classFn?: string[];
 }
 
 export interface TransformCtx {

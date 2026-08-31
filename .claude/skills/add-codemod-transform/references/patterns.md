@@ -181,13 +181,16 @@ for (const attr of root.findAll({ rule: { kind: "jsx_attribute" } })) {
 | 引用符付き値             | `quoted_attribute_value` (子に `attribute_value`) | `string` (子に `string_fragment`) |
 | 書き換え対象の生テキスト | `attribute_value`                                 | `string_fragment`                 |
 
-### JSX の cn / clsx / classnames 引数
+### JSX のクラスヘルパー関数の引数
 
 静的 string リテラルと、`cond && "card"` / `cond ? "card" : ""` の分岐先の string を書き換え、
 それ以外 (template literal / 変数 / spread / object) は notes に記録する:
 
+既定の対象は `cn` / `clsx` / `classnames` / `twMerge` / `twJoin` で、`--class-fn` で追加できる
+(`rewriteClassAttributes` の第 4 引数)。
+
 ```ts
-for (const fn of ["cn", "clsx", "classnames"]) {
+for (const fn of classFns) {
   for (const call of root.findAll(`${fn}($$$ARGS)`)) {
     const args = call.getMultipleMatches("ARGS");
     for (const arg of args) {

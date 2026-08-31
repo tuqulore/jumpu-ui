@@ -27,11 +27,16 @@ export const classPrefix: Transform = {
       }
       return rewriteCss(input, map);
     }
-    return rewriteClassAttributes(input, ctx.file, (token) => {
-      // variant 付き (hover: など) は bare クラス名ではないので触らない
-      if (token.includes(":")) return token;
-      return map.bare.has(token) ? map.toPrefixed(token) : token;
-    });
+    return rewriteClassAttributes(
+      input,
+      ctx.file,
+      (token) => {
+        // variant 付き (hover: など) は bare クラス名ではないので触らない
+        if (token.includes(":")) return token;
+        return map.bare.has(token) ? map.toPrefixed(token) : token;
+      },
+      ctx.options.classFn,
+    );
   },
 };
 

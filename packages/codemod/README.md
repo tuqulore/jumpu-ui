@@ -54,14 +54,15 @@ CLI が提供するサブコマンドは 2 種類だけです。個別 transform
 
 ## グローバルオプション
 
-| オプション              | 説明                                                                 |
-| ----------------------- | -------------------------------------------------------------------- |
-| `--dry-run`             | 変更を書き込まず、差分サマリのみ表示                                 |
-| `-v, --verbose`         | 詳細ログ。`notes`（手動対応が必要な箇所）を全表示                    |
-| `--no-git-check`        | 作業ツリーが dirty でも実行を許可                                    |
-| `--include <globs>`     | 対象ファイルの glob を明示指定（カンマ区切りで複数指定可）           |
-| `--include-css`         | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off） |
-| `--extra-class <names>` | クラス名マップに追加する bare クラス名（カンマ区切り）               |
+| オプション              | 説明                                                                                   |
+| ----------------------- | -------------------------------------------------------------------------------------- |
+| `--dry-run`             | 変更を書き込まず、差分サマリのみ表示                                                   |
+| `-v, --verbose`         | 詳細ログ。`notes`（手動対応が必要な箇所）を全表示                                      |
+| `--no-git-check`        | 作業ツリーが dirty でも実行を許可                                                      |
+| `--include <globs>`     | 対象ファイルの glob を明示指定（カンマ区切りで複数指定可）                             |
+| `--include-css`         | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off）                   |
+| `--extra-class <names>` | クラス名マップに追加する bare クラス名（カンマ区切り）                                 |
+| `--class-fn <names>`    | クラスヘルパー関数を追加（既定は `cn` / `clsx` / `classnames` / `twMerge` / `twJoin`） |
 
 パスを省略すると cwd を対象にします。デフォルトの glob は `**/*.{html,htm,vue,jsx,tsx,astro,css}` で、`.gitignore` を尊重します。
 
@@ -95,6 +96,7 @@ CLI が提供するサブコマンドは 2 種類だけです。個別 transform
 - Vue の `:class="{ input: cond }"` オブジェクト構文（初回リリース非対応、`--verbose` で個別に warning を表示）
 - `@apply` の variant 付きトークン (`hover:p-rel2` など) や、`space-y-*` のように宣言へ落とせない utility は arbitrary value 形式のまま `@apply` に残す (`--verbose` の notes で一覧表示)
 - JSX の template literal (`` `input ${x}` ``)、変数、spread。string リテラル引数のみ書き換え対象
+- cva の variants などオブジェクトリテラル内のクラス文字列（`--class-fn` で関数名を足しても対象外、`--verbose` の notes で通知）
 - ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）
 
 ## 開発時の動作確認

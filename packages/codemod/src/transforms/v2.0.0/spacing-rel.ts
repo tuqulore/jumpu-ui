@@ -77,7 +77,12 @@ export const spacingRel: Transform = {
       notes.push(...expanded.notes);
     }
     if (MARKUP_LIKE.test(ctx.file)) {
-      const rewritten = rewriteClassAttributes(output, ctx.file, toArbitrary);
+      const rewritten = rewriteClassAttributes(
+        output,
+        ctx.file,
+        toArbitrary,
+        ctx.options.classFn,
+      );
       output = rewritten.output;
       notes.push(...rewritten.notes);
     }
