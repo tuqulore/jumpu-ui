@@ -51,6 +51,7 @@ program
         adopt?: string;
       },
     ) => {
+      printExperimentalNotice();
       const options: UpgradeOptions = {
         ...toRunOptions(),
         from: cmdOptions.from,
@@ -61,6 +62,16 @@ program
       await runUpgrade(paths, options);
     },
   );
+
+function printExperimentalNotice(): void {
+  console.warn(
+    pc.yellow(
+      "Warning: @jumpu-ui/codemod is experimental — its options and transforms may change without notice.\n" +
+        "  It rewrites source files in place. Run it on a clean VCS working tree and review the diff (--dry-run).\n" +
+        "  No warranty is provided for the results; use at your own risk (MIT).",
+    ),
+  );
+}
 
 interface GlobalOpts {
   dryRun: boolean;
