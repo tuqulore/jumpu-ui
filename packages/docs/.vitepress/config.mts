@@ -50,6 +50,7 @@ export default defineConfig({
 
     sidebar: [
       { text: "はじめに", link: "/introduction" },
+      { text: "現状の制約", link: "/constraints" },
       { text: "プレイグラウンド", link: "/playground" },
       { text: "開発ガイド", link: "/development-guide" },
       {
@@ -61,15 +62,25 @@ export default defineConfig({
             text: "主要な CSS 設計手法との比較",
             link: "/comparison-with-css-architectures",
           },
+          { text: "アクセシビリティ方針", link: "/accessibility" },
         ],
       },
       {
         text: "Tokens",
         base: "/tokens",
+        link: "/",
         items: [
           { text: "Colors", link: "/colors" },
-          { text: "Icons", link: "/icons" },
+          { text: "Typography", link: "/typography" },
+          { text: "Spacing", link: "/spacing" },
+          { text: "Radius", link: "/radius" },
+          { text: "Interaction", link: "/interaction" },
         ],
+      },
+      {
+        text: "Content",
+        base: "/content",
+        items: [{ text: "アイコン", link: "/icons" }],
       },
       {
         text: "Components",
@@ -110,11 +121,11 @@ export default defineConfig({
         text: "Recipes",
         base: "/recipes",
         items: [
-          { text: "Chat", link: "/chat" },
-          { text: "LoadingCard", link: "/loading-card" },
-          { text: "LoginCard", link: "/login-card" },
-          { text: "ProfileCard", link: "/profile-card" },
-          { text: "SignUpCard", link: "/sign-up-card" },
+          { text: "ログイン", link: "/login" },
+          { text: "サインアップ", link: "/sign-up" },
+          { text: "プロフィールの表示", link: "/profile" },
+          { text: "チャット", link: "/chat" },
+          { text: "読み込み中", link: "/loading" },
         ],
       },
       {
