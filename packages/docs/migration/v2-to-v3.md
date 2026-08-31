@@ -4,6 +4,8 @@
 
 ## codemod で自動化する
 
+codemod は実験的なツールです。実行前に [codemod CLI リファレンス](/migration/codemod) の注意事項を確認してください。
+
 プロジェクトのルートで:
 
 ```sh

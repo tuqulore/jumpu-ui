@@ -1,7 +1,7 @@
 {
   "name": "@jumpu-ui/codemod",
   "version": "3.0.3-alpha.0",
-  "description": "Codemods for migrating between @jumpu-ui/tailwindcss major versions.",
+  "description": "Experimental codemods for migrating between @jumpu-ui/tailwindcss versions.",
   "keywords": [
     "codemod",
     "migration",
