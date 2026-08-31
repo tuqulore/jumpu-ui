@@ -1,0 +1,7 @@
+/* Legacy note: previously we used @import "tailwindcss"; here. */
+@import "tailwindcss";
+@import "@jumpu-ui/tailwindcss";
+
+.app {
+  color: red;
+}

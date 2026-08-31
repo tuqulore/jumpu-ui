@@ -117,6 +117,15 @@ export default defineConfig({
           { text: "SignUpCard", link: "/sign-up-card" },
         ],
       },
+      {
+        text: "Migration",
+        base: "/migration",
+        link: "/",
+        items: [
+          { text: "codemod CLI（実験的）", link: "/codemod" },
+          { text: "v2 → v3", link: "/v2-to-v3" },
+        ],
+      },
     ],
 
     socialLinks: [
