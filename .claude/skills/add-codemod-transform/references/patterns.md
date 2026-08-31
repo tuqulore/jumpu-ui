@@ -52,29 +52,28 @@ run(input) {
 - 既に適用済みの入力を検出して no-op する (negative lookahead で `/dist/style.css` を検出しないパターンだけマッチさせる)
 - バージョンピン `@X.Y.Z` を保持する (`match` を先頭にそのまま置いて suffix だけ足す)
 
-### CSS 内の値置換
+### CSS の @apply 展開
 
-正規表現で十分。
+utility のスケール変更 (`p-rel2` → `--spacing-relative` ベース) のように、値がクラス名として
+書かれている破壊的変更は、`@apply` のトークンを宣言に展開するか arbitrary value 形式に書き換える。
 
 **参考**: `packages/codemod/src/transforms/v2.0.0/spacing-rel.ts`
 
 ```ts
-const REL_TOKEN = /\brel(\d+)\b/g;
+const APPLY_RULE = /^([ \t]*)@apply\b([^;{}]*);/gm;
 
-run(input) {
-  let changed = false;
-  const output = input.replace(REL_TOKEN, (_match, n) => {
-    changed = true;
-    return `calc(var(--spacing-relative) * ${n})`;
-  });
-  return { output, changed, notes: [] };
-}
+input.replace(APPLY_RULE, (match, indent, body, offset) => {
+  // body を空白で split し、対象トークンだけ宣言に展開する。
+  // 宣言に落とせないトークン (variant 付きなど) は書き換えて @apply に残す
+});
 ```
 
 **ポイント**:
 
-- 単語境界 `\b` でトークンを区切る (`relaxation` などの誤検知を防ぐ)
-- CSS ファイルのみに `match` を絞る
+- トークン全体を正規表現でアンカーして判定する (`relative` のような部分一致の誤検知を防ぐ)
+- インデントと改行は入力から取る (`indent` をキャプチャ、CRLF 判定は `/\r\n/.test(input)`)
+- `<style>` を持つ `.vue` / `.astro` も CSS と同じ経路に通す
+- 展開できず `@apply` に残したトークンは notes で通知する
 
 ### CSS の import 削除 / 挿入
 
@@ -122,7 +121,11 @@ run(input) {
 
 ### HTML / JSX / TSX の class 属性 (ast-grep)
 
-**参考**: `packages/codemod/src/transforms/v2.0.0/class-prefix.ts`
+**まず共有ユーティリティを使う**: `packages/codemod/src/utils/class-attrs.ts` の
+`rewriteClassAttributes(input, file, mapToken)` が HTML 系の `class` と JSX の `className` /
+`cn` 系引数の走査を済ませてある。transform 側はトークン 1 個を受け取って書き換え後を返す
+`mapToken` だけ書けばよい (`class-prefix` / `spacing-rel` がどちらもこれを使う)。以下はその
+内部実装の解説で、走査対象を増やすときに読む。
 
 ast-grep の pattern 記法 (`class="$V"`) は attribute 単独では **HTML で 0 hit** になる (実装中に確認済み)。代わりに attribute の kind ベースで走査する:
 
@@ -180,24 +183,28 @@ for (const attr of root.findAll({ rule: { kind: "jsx_attribute" } })) {
 
 ### JSX の cn / clsx / classnames 引数
 
-第 1 引数以降の **静的 string リテラルのみ** 書き換え、template literal / 変数 / spread は notes に記録する:
+静的 string リテラルと、`cond && "card"` / `cond ? "card" : ""` の分岐先の string を書き換え、
+それ以外 (template literal / 変数 / spread / object) は notes に記録する:
 
 ```ts
 for (const fn of ["cn", "clsx", "classnames"]) {
   for (const call of root.findAll(`${fn}($$$ARGS)`)) {
     const args = call.getMultipleMatches("ARGS");
     for (const arg of args) {
-      if (arg.kind() === "string") {
+      const kind = arg.kind();
+      if (kind === "string") {
         // string_fragment を rewriteValue で書き換え
       } else if (
-        arg.kind() === "template_string" ||
-        arg.kind() === "identifier" ||
-        arg.kind() === "spread_element" ||
-        arg.kind() === "object" ||
-        arg.kind() === "member_expression"
+        kind === "binary_expression" ||
+        kind === "ternary_expression"
       ) {
+        // 分岐先の string リテラルは静的なので同様に書き換え
+        for (const str of arg.findAll({ rule: { kind: "string" } })) {
+          /* 同上 */
+        }
+      } else {
         notes.push(
-          `dynamic classname argument (${arg.kind()}) at line ${arg.range().start.line + 1} needs manual review`,
+          `dynamic classname argument (${kind}) at line ${arg.range().start.line + 1} needs manual review`,
         );
       }
     }
@@ -253,7 +260,7 @@ export const legacyOverrideNotice: Transform = {
 | 破壊的変更の性質                        | 参考にする既存 transform      |
 | --------------------------------------- | ----------------------------- |
 | クラス名リネーム、HTML / JSX / CSS 対応 | `class-prefix`                |
-| CSS 内の値置換 (単一正規表現)           | `spacing-rel`                 |
+| CSS の @apply 展開、utility の値移行    | `spacing-rel`                 |
 | CSS の import 削除                      | `drop-colors-import`          |
 | CSS の import 挿入                      | `explicit-tailwindcss-import` |
 | HTML の attribute value 書き換え        | `cdn-url`                     |

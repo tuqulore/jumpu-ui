@@ -53,7 +53,7 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 | id                            | since | kind    | 概要                                                          |
 | ----------------------------- | ----- | ------- | ------------------------------------------------------------- |
 | `class-prefix`                | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム                          |
-| `spacing-rel`                 | 2.0.0 | rewrite | CSS の `rel<N>` を `calc(var(--spacing-relative) * N)` に置換 |
+| `spacing-rel`                 | 2.0.0 | rewrite | `rel<N>` spacing utility を `--spacing-relative` ベースに移行 |
 | `drop-colors-import`          | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除              |
 | `cdn-url`                     | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与                 |
 | `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入                           |
@@ -110,5 +110,6 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 ## 既知の未対応
 
 - Vue の `:class="{ input: cond }"` オブジェクト構文（初回リリース非対応、`--verbose` で警告表示）
+- `@apply` の variant 付きトークン (`hover:p-rel2` など) や、`space-y-*` のように宣言へ落とせない utility は arbitrary value 形式のまま `@apply` に残す (`--verbose` の notes で一覧表示)
 - JSX の template literal (`` `input ${x}` ``)、変数、spread 引数。string リテラル引数のみ書き換え対象
 - ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）

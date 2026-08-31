@@ -26,7 +26,7 @@ description: Add a new transform to @jumpu-ui/codemod when a breaking change is 
 - クラス名リネーム (`.input` → `.jumpu-input`)
 - import path 変更 (`@import "@jumpu-ui/tailwindcss/colors"` の削除)
 - CDN URL 変更 (`esm.sh/@jumpu-ui/tailwindcss` に `/dist/style.css` を付与)
-- CSS 値の同義な書き換え (`rel2` → `calc(var(--spacing-relative) * 2)`)
+- utility の値の同義な書き換え (`p-rel2` → `padding: calc(var(--spacing-relative) * 2)`)
 
 **指標**: 「新旧が同じ意味を持ち、副作用がない」なら単一。default 適用、`--skip <id>` で外せる。
 
@@ -188,10 +188,10 @@ node /path/to/packages/codemod/dist/cli.js \
 
 ## 参考実装 (何を真似るか)
 
-- **単純な文字列書き換え**: `packages/codemod/src/transforms/v2-to-v3/cdn-url.ts` (URL に suffix を追加、既に付いていれば no-op)
-- **CSS 内の値置換**: `packages/codemod/src/transforms/v1-to-v2/spacing-rel.ts` (正規表現 1 発)
-- **前後関係を見た挿入**: `packages/codemod/src/transforms/v2-to-v3/explicit-tailwindcss-import.ts` (前置きが未挿入の場合のみ入れる)
-- **HTML / JSX / CSS を跨ぐ ast-grep**: `packages/codemod/src/transforms/v1-to-v2/class-prefix.ts` (attribute の kind ベース走査、`cn/clsx` 引数の判別、CSS opt-in)
+- **単純な文字列書き換え**: `packages/codemod/src/transforms/v3.0.0/cdn-url.ts` (URL に suffix を追加、既に付いていれば no-op)
+- **CSS の @apply 展開**: `packages/codemod/src/transforms/v2.0.0/spacing-rel.ts` (トークン単位で宣言に展開、残りは arbitrary value)
+- **前後関係を見た挿入**: `packages/codemod/src/transforms/v3.0.0/explicit-tailwindcss-import.ts` (前置きが未挿入の場合のみ入れる)
+- **HTML / JSX / CSS を跨ぐ class 書き換え**: `packages/codemod/src/transforms/v2.0.0/class-prefix.ts` (共有ユーティリティ `utils/class-attrs.ts` に mapToken を渡す、CSS opt-in)
 
 新しい transform を書く時は、まず一番近いパターンの既存 transform を熟読して構造を写経してから、差分だけ書く。
 
