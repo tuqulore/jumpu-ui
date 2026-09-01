@@ -22,14 +22,14 @@
     "packages:publish": "lerna publish from-package"
   },
   "devDependencies": {
-    "@lerna-lite/cli": "5.4.2",
-    "@lerna-lite/publish": "5.4.2",
-    "@lerna-lite/run": "5.4.2",
-    "@lerna-lite/version": "5.4.2",
+    "@lerna-lite/cli": "5.6.1",
+    "@lerna-lite/publish": "5.6.1",
+    "@lerna-lite/run": "5.6.1",
+    "@lerna-lite/version": "5.6.1",
     "prettier": "3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.0"
   },
-  "packageManager": "pnpm@11.17.0",
+  "packageManager": "pnpm@11.24.0",
   "engines": {
     "node": "24"
   }

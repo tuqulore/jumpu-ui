@@ -32,10 +32,10 @@
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
     "stylelint": "17.14.1",
-    "stylelint-config-recess-order": "7.7.0",
+    "stylelint-config-recess-order": "7.8.0",
     "stylelint-config-standard": "40.0.0",
     "tailwindcss": "4.3.3",
-    "vite": "8.1.5"
+    "vite": "8.2.2"
   },
   "peerDependencies": {
     "tailwindcss": "^4"
