@@ -1,142 +1,146 @@
 # @jumpu-ui/codemod
 
-> **⚠️ 実験的なパッケージです**
+> **⚠️ Experimental package**
 >
-> `@jumpu-ui/codemod` は実験的なツールです。CLI のオプションや transform の挙動は予告なく変更される可能性があります。
-> ソースファイルを直接書き換えるため、必ずバージョン管理下のクリーンな状態で、`--dry-run` で差分を確認してから実行してください。
-> 変換結果の正しさは保証されません。利用によって生じたいかなる損害についても責任を負いません（MIT License の無保証条項に準拠）。
+> `@jumpu-ui/codemod` is experimental. Its CLI options and transform behavior may change without notice.
+> It rewrites source files in place, so always run it on a clean VCS working tree and review the diff with `--dry-run` first.
+> The correctness of the output is not guaranteed, and no liability is accepted for any damage caused by its use (per the warranty disclaimer of the MIT License).
 
-`@jumpu-ui/tailwindcss` のマイグレーションを機械化するコマンドライン codemod です。破壊的変更はメジャーだけでなくコンポーネントクラスの構造変更を伴う minor / patch でも発生し得るため、CLI は「起点バージョンから最新までを常に走らせる」設計になっています。
+`@jumpu-ui/codemod` is a command line codemod that automates migrations of `@jumpu-ui/tailwindcss`. Breaking changes are not limited to major releases — minor and patch releases may also change the structure of component classes — so the CLI is designed to always run every applicable transform from the starting version up to latest.
 
-## インストールと実行
+## Documentation
 
-`npx` から直接実行できます。プロジェクトのルートで:
+https://jumpu-ui.pages.dev/migration/codemod.html
 
-```sh
+## Installation
+
+No installation required. Run it with `npx` from your project root:
+
+```shell
 npx @jumpu-ui/codemod upgrade
 ```
 
-`node_modules/@jumpu-ui/tailwindcss/package.json` から起点を自動検出します。書き込む前に差分を確認したい場合は `--dry-run`:
+The starting version is detected from `node_modules/@jumpu-ui/tailwindcss/package.json`. To review the diff before anything is written, pass `--dry-run`:
 
-```sh
+```shell
 npx @jumpu-ui/codemod upgrade --dry-run --verbose
 ```
 
-## サブコマンド
+## Commands
 
-CLI が提供するサブコマンドは 2 種類だけです。個別 transform の実行は `upgrade --only <id>` で行います。
+The CLI provides only two commands. To run a single transform, use `upgrade --only <id>`.
 
-| コマンド             | 概要                                                    |
-| -------------------- | ------------------------------------------------------- |
-| `upgrade [paths...]` | 起点を検出し、適用対象の transform を順に実行           |
-| `list`               | 利用可能な transform を一覧（kind / sinceVersion 表示） |
+| Command              | Description                                                             |
+| -------------------- | ----------------------------------------------------------------------- |
+| `upgrade [paths...]` | Detect the starting version and run every applicable transform in order |
+| `list`               | List the available transforms (with their `kind` and `sinceVersion`)    |
 
-## `upgrade` のオプション
+## `upgrade` options
 
-| オプション         | 説明                                                                                    |
-| ------------------ | --------------------------------------------------------------------------------------- |
-| `--from <version>` | 起点バージョンを明示（install 検出のフォールバック）                                    |
-| `--only <ids>`     | 指定した transform だけを実行（バージョン範囲判定をスキップ）。カンマ区切りで複数指定可 |
-| `--skip <ids>`     | 特定の transform を除外（意味論的等価な変換や compat のみ）。カンマ区切り               |
-| `--adopt <ids>`    | opt-in の adopt transform を追加適用。カンマ区切り                                      |
+| Option             | Description                                                                                     |
+| ------------------ | ----------------------------------------------------------------------------------------------- |
+| `--from <version>` | Set the starting version explicitly (fallback when install detection fails)                     |
+| `--only <ids>`     | Run only the given transforms, skipping the version range check. Comma-separated                |
+| `--skip <ids>`     | Exclude the given transforms (semantically equivalent ones and `-compat` only). Comma-separated |
+| `--adopt <ids>`    | Additionally apply opt-in adopt transforms. Comma-separated                                     |
 
-### `upgrade` で扱える transform 一覧
+### Available transforms
 
-すべて `--only` / `--skip` / `--adopt` の対象になります。手元での確認は `npx @jumpu-ui/codemod list` を実行してください。
+All of them can be passed to `--only`, `--skip` and `--adopt`. Run `npx @jumpu-ui/codemod list` to check them locally.
 
-| id                            | since | kind    | 概要                                                          |
-| ----------------------------- | ----- | ------- | ------------------------------------------------------------- |
-| `class-prefix`                | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム                          |
-| `spacing-rel`                 | 2.0.0 | rewrite | `rel<N>` spacing utility を `--spacing-relative` ベースに移行 |
-| `drop-colors-import`          | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除              |
-| `cdn-url`                     | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与                 |
-| `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入                           |
+| id                            | since | kind    | Description                                                     |
+| ----------------------------- | ----- | ------- | --------------------------------------------------------------- |
+| `class-prefix`                | 2.0.0 | rewrite | Prefix bare component class names with `jumpu-`                 |
+| `spacing-rel`                 | 2.0.0 | rewrite | Migrate `rel<N>` spacing utilities to `--spacing-relative`      |
+| `drop-colors-import`          | 2.0.0 | rewrite | Drop `@import "@jumpu-ui/tailwindcss/colors";` (bundled in v2+) |
+| `cdn-url`                     | 3.0.0 | rewrite | Append `/dist/style.css` to esm.sh CDN links                    |
+| `explicit-tailwindcss-import` | 3.0.0 | rewrite | Insert `@import "tailwindcss";` before the `@jumpu-ui` import   |
 
-## グローバルオプション
+## Global options
 
-| オプション              | 説明                                                                                   |
-| ----------------------- | -------------------------------------------------------------------------------------- |
-| `--dry-run`             | 変更を書き込まず、差分サマリのみ表示                                                   |
-| `-v, --verbose`         | 詳細ログ。`notes`（手動対応が必要な箇所）を全表示                                      |
-| `--no-git-check`        | 作業ツリーが dirty でも実行を許可                                                      |
-| `--include <globs>`     | 対象ファイルの glob を明示指定（カンマ区切りで複数指定可）                             |
-| `--include-css`         | `class-prefix` を CSS ファイルにも適用（誤爆リスクあり、既定は off）                   |
-| `--extra-class <names>` | クラス名マップに追加する bare クラス名（カンマ区切り）                                 |
-| `--class-fn <names>`    | クラスヘルパー関数を追加（既定は `cn` / `clsx` / `classnames` / `twMerge` / `twJoin`） |
+| Option                  | Description                                                                                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `--dry-run`             | Print a summary of the changes without writing them                                                                  |
+| `-v, --verbose`         | Print detailed logs, including every `note` that needs manual follow-up                                              |
+| `--no-git-check`        | Allow running against a dirty working tree                                                                           |
+| `--include <globs>`     | Glob patterns for the target files. Comma-separated                                                                  |
+| `--include-css`         | Apply `class-prefix` to CSS files as well (opt-in, off by default, may cause false positives)                        |
+| `--extra-class <names>` | Additional bare class names to add to the class name map. Comma-separated                                            |
+| `--class-fn <names>`    | Additional class helper functions (`cn`, `clsx`, `classnames`, `twMerge` and `twJoin` are built in). Comma-separated |
 
-パスを省略すると cwd を対象にします。デフォルトの glob は `**/*.{html,htm,vue,jsx,tsx,astro,css}` で、`.gitignore` を尊重します。
+When no path is given, the current working directory is used. The default glob is `**/*.{html,htm,vue,jsx,tsx,astro,css}`, and `.gitignore` is respected.
 
-## 破壊的変更の分類
+## How breaking changes are classified
 
-各 transform は 2 種類の `kind` のいずれかを持ちます。
+Every transform has one of two `kind` values.
 
-- **rewrite** — 出力を書き換える
-- **notice** — 出力は変えず、影響箇所を `notes` として通知するのみ（機械化が原理的に難しい変更用）
+- **rewrite** — rewrites the output
+- **notice** — leaves the output as is and only reports the affected places as `notes` (for changes that are inherently hard to automate)
 
-さらに、破壊的変更の性質に応じて transform は 3 パターンのいずれかで提供されます。
+Depending on the nature of the breaking change, a transform is shipped in one of three shapes.
 
-- **単一 transform** — 意味論的等価な変換。副作用ゼロ。default 適用、`--skip <id>` で外せる
-- **compat + adopt ペア** — スタイル・デフォルト値の変更。`-compat`（default 適用、旧見た目を utility で維持）と `-adopt`（opt-in、`-compat` を剥がして新規範に乗る）の 2 個ペアで提供
-- **adopt のみ** — 構造変換で compat が原理的に提供できないもの。default で必ず走り、`--skip` 不可
+- **Single transform** — a semantically equivalent change with no side effects. Applied by default, and can be excluded with `--skip <id>`
+- **compat + adopt pair** — a change of styles or default values, shipped as a pair: `-compat` (applied by default, keeps the old appearance with utilities) and `-adopt` (opt-in, strips what `-compat` added and moves to the new standard)
+- **adopt only** — a structural change for which a compat path is impossible. Always applied, and cannot be excluded with `--skip`
 
-## 推奨する実行フロー
+## Recommended workflow
 
-1. すべての変更をコミット、または stash する
-2. `npx @jumpu-ui/codemod upgrade --dry-run --verbose` で差分と `notes` を確認
-3. 問題なければ `--dry-run` を外して実行
-4. `git diff` で見直し、テストやビルドを走らせて確認
-5. サマリに「Opt-in transforms available」が出ていたら、必要に応じて `--adopt <id>` で再実行
+1. Commit or stash all of your changes
+2. Review the diff and the `notes` with `npx @jumpu-ui/codemod upgrade --dry-run --verbose`
+3. If everything looks fine, run the same command without `--dry-run`
+4. Review `git diff`, then run your tests and build
+5. If the summary reports "Opt-in transforms available", run it again with `--adopt <id>` as needed
 
-## 対応する破壊的変更
+## Supported breaking changes
 
-詳細は docs の [Migration ガイド](https://jumpu-ui.pages.dev/migration/) を参照してください。
+See the [Migration guide](https://jumpu-ui.pages.dev/migration/) for details.
 
-## 既知の未対応
+## Known limitations
 
-- Vue の `:class="{ input: cond }"` オブジェクト構文（初回リリース非対応、`--verbose` で個別に warning を表示）
-- `@apply` の variant 付きトークン (`hover:p-rel2` など) や、`space-y-*` のように宣言へ落とせない utility は arbitrary value 形式のまま `@apply` に残す (`--verbose` の notes で一覧表示)
-- JSX の template literal (`` `input ${x}` ``)、変数、spread。string リテラル引数のみ書き換え対象
-- cva の variants などオブジェクトリテラル内のクラス文字列（`--class-fn` で関数名を足しても対象外、`--verbose` の notes で通知）
-- ユーザーが独自に定義した `.input` などの CSS セレクタ（誤爆回避のため CSS はデフォルト対象外、`--include-css` で opt-in）
+- Vue object syntax such as `:class="{ input: cond }"` (not supported in the initial release; `--verbose` prints a warning for each occurrence)
+- Tokens with variants in `@apply` (for example `hover:p-rel2`) and utilities that cannot be lowered to declarations (such as `space-y-*`) are left in `@apply` as arbitrary values (listed in the `notes` under `--verbose`)
+- Template literals (`` `input ${x}` ``), variables and spreads in JSX. Only string literal arguments are rewritten
+- Class strings inside object literals such as cva variants (out of scope even if you add the function name with `--class-fn`; reported in the `notes` under `--verbose`)
+- CSS selectors you defined yourself, such as `.input` (CSS is out of scope by default to avoid false positives, and can be opted in with `--include-css`)
 
-## 開発時の動作確認
+## Local development
 
-publish 前のローカルビルドを別プロジェクトから `jumpu-ui-codemod` として呼び出す手順です。
+How to run a local build as `jumpu-ui-codemod` from another project before publishing.
 
-### 前提
+### Prerequisites
 
-- `pnpm setup` 済みで、グローバル bin ディレクトリ (通常 `~/.local/share/pnpm/bin`) が PATH に通っていること
-- 事前にビルドしていること (`pnpm -F @jumpu-ui/codemod build`)
+- `pnpm setup` has been run and the global bin directory (usually `~/.local/share/pnpm/bin`) is on your `PATH`
+- The package has been built (`pnpm -F @jumpu-ui/codemod build`)
 
-### インストール
+### Install
 
-```sh
+```shell
 cd packages/codemod
 pnpm add -g .
 ```
 
-以降どのディレクトリからも `jumpu-ui-codemod` を呼び出せます。
+`jumpu-ui-codemod` is now available from any directory.
 
-### 変更の反映
+### Applying your changes
 
-コードを編集したあとは `pnpm -F @jumpu-ui/codemod build` で `dist/cli.js` を作り直せば、次回起動時に反映されます。
+After editing the code, run `pnpm -F @jumpu-ui/codemod build` to rebuild `dist/cli.js`. The next run picks it up.
 
-### 動作確認例
+### Trying it out
 
-`@jumpu-ui/tailwindcss` を install している任意のプロジェクトのルートで:
+From the root of any project that has `@jumpu-ui/tailwindcss` installed:
 
-```sh
+```shell
 jumpu-ui-codemod upgrade --dry-run --verbose
 ```
 
-install 済みのバージョンが起点として自動検出されます。書き換えを試したい場合は `--from 2.0.0` などで起点を明示すると、対象範囲の transform を強制的に流せます。
+The installed version is detected as the starting version. To try out rewrites, pass an explicit starting version such as `--from 2.0.0` to force the transforms in that range to run.
 
-### 解除
+### Uninstall
 
-```sh
+```shell
 pnpm remove -g @jumpu-ui/codemod
 ```
 
-## ライセンス
+## License
 
 MIT
