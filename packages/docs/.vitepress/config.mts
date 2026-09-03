@@ -90,6 +90,7 @@ export default defineConfig({
           { text: "Card", link: "/card" },
           { text: "IconButton", link: "/icon-button" },
           { text: "Input", link: "/input" },
+          {text: "ModalDialog", link: "/modal-dialog" },
           { text: "Select", link: "/select" },
           { text: "Spinner", link: "/spinner" },
           {
