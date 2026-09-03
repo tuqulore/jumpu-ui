@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - uses: tuqulore/.github/resolve-target-sha@8caf5d569132d10bb856f4c14b2530c0e9e8f1ba # main
+      - uses: tuqulore/.github/resolve-target-sha@cc8a49114d24092c90de619edef3518534fb074e # main
         id: target
         with:
           default-branch: main
@@ -58,11 +58,11 @@ jobs:
       id-token: write
       pull-requests: write
     steps:
-      - uses: tuqulore/.github/setup@8caf5d569132d10bb856f4c14b2530c0e9e8f1ba # main
+      - uses: tuqulore/.github/setup@cc8a49114d24092c90de619edef3518534fb074e # main
         with:
           fetch-depth: 0
 
-      - uses: tuqulore/.github/configure-git@8caf5d569132d10bb856f4c14b2530c0e9e8f1ba # main
+      - uses: tuqulore/.github/configure-git@cc8a49114d24092c90de619edef3518534fb074e # main
 
       # 公開物とタグの指すコミットを一致させるため、check で解決した SHA を detached HEAD で checkout する。
       - name: Checkout target sha for publishing
@@ -106,7 +106,7 @@ jobs:
       - name: Checkout default branch for alpha bump
         run: git checkout -B main origin/main
 
-      - uses: tuqulore/.github/bump-and-pr@8caf5d569132d10bb856f4c14b2530c0e9e8f1ba # main
+      - uses: tuqulore/.github/bump-and-pr@cc8a49114d24092c90de619edef3518534fb074e # main
         with:
           branch: alpha
           bump-command: pnpm packages:bump-version prerelease --preid alpha --yes --no-git-tag-version
