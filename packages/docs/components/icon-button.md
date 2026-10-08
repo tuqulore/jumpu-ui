@@ -35,6 +35,12 @@
 <button type="button" class="jumpu-icon-button" aria-label="Twitter">
   <i class="fab fa-twitter"></i>
 </button>
+<button type="button" class="jumpu-icon-button" aria-label="メール">
+  <i class="fas fa-envelope"></i>
+</button>
+<button type="button" class="jumpu-icon-button" aria-label="ホーム">
+  <i class="fas fa-home"></i>
+</button>
 ```
 
 ### ツールチップをつける
@@ -63,6 +69,14 @@
   <i class="fab fa-twitter"></i>
   <span id="tooltip-Twitter" role="tooltip">Twitter</span>
 </button>
+<button
+  type="button"
+  class="jumpu-icon-button"
+  aria-describedby="tooltip-envelope"
+>
+  <i class="fas fa-envelope"></i>
+  <span id="tooltip-envelope" role="tooltip">メール</span>
+</button>
 ```
 
 `aria-describedby` の値と `id` は必ず一致させてください。
@@ -86,6 +100,10 @@
 <a href="#" class="jumpu-icon-button" aria-describedby="tooltip-anchor-Twitter">
   <i class="fab fa-twitter"></i>
   <span id="tooltip-anchor-Twitter" role="tooltip">Twitter</span>
+</a>
+<a href="#" class="jumpu-icon-button" aria-describedby="tooltip-anchor-home">
+  <i class="fas fa-home"></i>
+  <span id="tooltip-anchor-home" role="tooltip">ホーム</span>
 </a>
 ```
 
@@ -118,9 +136,21 @@
     id="tooltip-position-envelope"
     role="tooltip"
     class="![transform:translateX(50%)_scale(0)] group-hover:![transform:translateX(50%)_scale(1)]"
+    >右に出す</span
   >
-    右に出す
-  </span>
+</button>
+<button
+  type="button"
+  class="jumpu-icon-button group z-1"
+  aria-describedby="tooltip-position-home"
+>
+  <i class="fas fa-home"></i>
+  <span
+    id="tooltip-position-home"
+    role="tooltip"
+    class="![transform:translate(-50%,_150%)_scale(0)] group-hover:![transform:translate(-50%,_150%)_scale(1)]"
+    >下に出す</span
+  >
 </button>
 ```
 

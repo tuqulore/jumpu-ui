@@ -19,7 +19,7 @@
 
 :::raw
 
-<div class="jumpu-spinner">
+<div class="jumpu-spinner" role="status" aria-label="読み込み中">
   <svg viewBox="25 25 50 50">
     <circle cx="50" cy="50" r="20"></circle>
   </svg>
@@ -61,9 +61,15 @@
 :::
 
 ```html
-<div class="jumpu-spinner h-4 w-4">…</div>
-<div class="jumpu-spinner text-primary-500 h-8 w-8">…</div>
-<div class="jumpu-spinner h-12 w-12 text-red-400">…</div>
+<div class="jumpu-spinner h-4 w-4">
+  <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
+</div>
+<div class="jumpu-spinner text-primary-500 h-8 w-8">
+  <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
+</div>
+<div class="jumpu-spinner h-12 w-12 text-red-400">
+  <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
+</div>
 ```
 
 ## マークアップ規約

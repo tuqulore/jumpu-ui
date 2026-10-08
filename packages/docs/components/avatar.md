@@ -70,9 +70,15 @@
 :::
 
 ```html
-<div class="jumpu-avatar h-8 w-8">…</div>
-<div class="jumpu-avatar rounded-none">…</div>
-<div class="jumpu-avatar rounded">…</div>
+<div class="jumpu-avatar h-8 w-8">
+  <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
+</div>
+<div class="jumpu-avatar rounded-none">
+  <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
+</div>
+<div class="jumpu-avatar rounded">
+  <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
+</div>
 ```
 
 大きさは `--spacing(n)` で組まれているため、文字サイズには追従しません。

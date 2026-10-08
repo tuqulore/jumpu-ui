@@ -33,6 +33,8 @@
 <div class="jumpu-tag">デフォルト</div>
 <div class="jumpu-tag bg-green-100">検討中</div>
 <div class="jumpu-tag bg-red-100">着手</div>
+<div class="jumpu-tag bg-yellow-100">作業済</div>
+<div class="jumpu-tag bg-blue-100">TypeScript</div>
 ```
 
 ### 押せるようにする

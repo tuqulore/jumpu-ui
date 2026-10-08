@@ -215,7 +215,7 @@
     <div class="flex items-end justify-between px-4">
       <div>
         城田 亜利沙
-        <div class="text-xxs text-gray-600">@tomoyo_suda_000</div>
+        <div class="text-xxs text-gray-600">@shirota_arisa</div>
       </div>
       <div class="flex">
         <div class="mr-4 text-center text-sm">

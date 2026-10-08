@@ -57,13 +57,30 @@
     >
       タスク
     </button>
+    <button
+      role="tab"
+      aria-selected="false"
+      aria-controls="tabs-panel-3"
+      id="tabs-tab-3"
+      tabindex="-1"
+    >
+      実績
+    </button>
   </div>
 </div>
-<div role="tabpanel" id="tabs-panel-1" aria-labelledby="tabs-tab-1">…</div>
+<div role="tabpanel" id="tabs-panel-1" aria-labelledby="tabs-tab-1" class="p-4">
+  ホームの内容
+</div>
 <div
   role="tabpanel"
   id="tabs-panel-2"
   aria-labelledby="tabs-tab-2"
+  hidden
+></div>
+<div
+  role="tabpanel"
+  id="tabs-panel-3"
+  aria-labelledby="tabs-tab-3"
   hidden
 ></div>
 ```
@@ -88,9 +105,10 @@
 
 ```html
 <div class="jumpu-tabs">
-  <div role="tablist" aria-label="ダッシュボード">
+  <div role="tablist" aria-label="ダッシュボード（リンク）">
     <a role="tab" href="#" aria-selected="true">ホーム</a>
     <a role="tab" href="#" aria-selected="false">タスク</a>
+    <a role="tab" href="#" aria-selected="false">実績</a>
   </div>
 </div>
 ```

@@ -31,6 +31,7 @@
 <div class="jumpu-filled-tag">デフォルト</div>
 <div class="jumpu-filled-tag bg-green-700">検討中</div>
 <div class="jumpu-filled-tag bg-red-700">着手</div>
+<div class="jumpu-filled-tag bg-gray-600">ペンディング</div>
 ```
 
 白い文字を載せるため、背景は**暗い色**を選んでください。
