@@ -76,12 +76,3 @@ Tag と FilledTag は、`a` / `button` / `[role="button"]` のときだけホバ
 | ファイル入力                   | ブラウザ既定のアウトライン                      |
 
 フォーカスリングを `outline: none` で消さないでください。
-
-## 現状
-
-上の表のとおり、ホバーとアクティブの表現は揃っていません。
-明度を下げる系統と背景色を変える系統が混在し、OutlinedButton のアクティブだけは明度を上げています。
-
-また、[Avatar](/components/avatar)、[Card](/components/card)、[BoxedTabs](/components/boxed-tabs) はリンクとして使う例があるにもかかわらず、ホバーの指定が一切ありません。
-
-揃えるための変更は[現状の制約](/constraints)に記載しています。

@@ -20,4 +20,3 @@ npm パッケージを [@jumpu-ui/tailwindcss として公開](https://www.npmjs
 - [Tokens](/tokens/) — 色、余白、角丸、文字サイズ、相互作用の尺度。自分の UI を組み立てるときにも参照できます
 - [Components](/components/button) — 各コンポーネントの使いどころ、マークアップ規約、アクセシビリティ
 - [Recipes](/recipes/login) — 場面ごとの組み立て方
-- [現状の制約](/constraints) — まだ対応していないこと

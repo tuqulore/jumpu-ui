@@ -120,4 +120,6 @@ APG は開閉ボタンを `h2` などの見出しで包むことを示してい�
 CSS が `[aria-hidden]` をセレクターに使っているためです。
 変更にはコンポーネントの構造の変更を伴います。
 
-判断の全体は[アクセシビリティ方針](/principles/accessibility)を参照してください。
+> [!NOTE]
+>
+> APG の構造に合わせる対応を [#767](https://github.com/tuqulore/jumpu-ui/issues/767) で予定しています。

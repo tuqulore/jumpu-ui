@@ -101,5 +101,3 @@ APG には [Switch パターン](https://www.w3.org/WAI/ARIA/apg/patterns/switch
 >
 > `label` の中身はつまみの `span` だけで、テキストがありません。
 > このままではアクセシブルな名前が付かないため、`input` に `aria-label` を与えるか、`label` に文字を入れてください。
-
-判断の全体は[アクセシビリティ方針](/principles/accessibility)を参照してください。

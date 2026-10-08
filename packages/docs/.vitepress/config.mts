@@ -50,7 +50,6 @@ export default defineConfig({
 
     sidebar: [
       { text: "はじめに", link: "/introduction" },
-      { text: "現状の制約", link: "/constraints" },
       { text: "プレイグラウンド", link: "/playground" },
       { text: "開発ガイド", link: "/development-guide" },
       {
