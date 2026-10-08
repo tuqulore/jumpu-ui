@@ -78,19 +78,15 @@ grep -rn "spacing-relative" packages/tailwindcss/src/components/
 
 トークンのページでは、**尺度としてのトークン**と、**いま参照できる CSS 変数**を区別して書く。区別しないと、読者が存在しない変数を書いて動かない。
 
-| 分類                               | 対象                                                    | 読者の参照方法                         |
-| :--------------------------------- | :------------------------------------------------------ | :------------------------------------- |
-| jumpu-ui が定義・配布              | primary パレット、ステータス 3 色、`--spacing-relative` | `var(--color-primary-700)` など        |
-| Tailwind CSS 経由で配布            | 角丸、型サイズ、グレー                                  | `var(--radius-md)` / `rounded-md` など |
-| 未配布（component CSS に直接記述） | 遷移時間、イージング、hover / active の明度差           | なし                                   |
+現在の分類は `packages/docs/tokens/index.md` の「配布状況」の表にある。トークンを追加・変更したら、その表も更新する。
 
 未配布のものを書くこと自体は構わない。尺度の明文化が先で、CSS 変数としての配布は後でよい。ただし**配布していないことを明記する**。
 
 ## ステップ 4: ページ型のテンプレートに従う
 
-ページ型ごとのテンプレートは [references/page-templates.md](references/page-templates.md) にある。Principles / Tokens / Components / Recipes の 4 種。
+ページ型ごとのテンプレートは [references/page-templates.md](references/page-templates.md) にある。Principles / Tokens / Components / Recipes / Content の 5 種。
 
-コンポーネントのページでは、**バリアントを列挙する見出しを作らない**。`## Small` や `## Rounded` という見出しは、読者に「Small という変種がある」と読ませるが、実体は `text-xs` を付けただけであり、原則「コンポーネントにバリアントを持たせない」と矛盾する。ユーティリティによる調整は見出しを立てず表にまとめる。
+コンポーネントのページでは、**バリアントを列挙する見出し（`## Small` など）を作らない**。理由と代わりの書き方は page-templates.md の Components の節にある。
 
 ## ステップ 5: 文章規範に従って書く
 
