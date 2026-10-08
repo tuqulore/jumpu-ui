@@ -113,21 +113,8 @@ APG の [Accordion パターン](https://www.w3.org/WAI/ARIA/apg/patterns/accord
 
 **見出し要素で包んでいません。**
 APG は開閉ボタンを `h2` などの見出しで包むことを示しています。
-これは利用側で対応できます。
-
-```html
-<div class="jumpu-accordion">
-  <h3>
-    <button type="button" aria-expanded="true" aria-controls="panel">…</button>
-  </h3>
-  …
-</div>
-```
-
-> [!IMPORTANT]
->
-> 見出しで包む場合、`button` はルートの直下でなくなるため、スタイルが当たりません。
-> 現在の実装では、見出しで包むことと見た目を保つことを両立できません。
+しかし見出しで包むと、`button` がルートの直下でなくなるため、スタイルが当たりません。
+現在の実装では、見出しで包むことと見た目を保つことを両立できません。
 
 **パネルを `hidden` 属性ではなく `aria-hidden` で隠しています。**
 CSS が `[aria-hidden]` をセレクターに使っているためです。

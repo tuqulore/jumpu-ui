@@ -28,7 +28,7 @@ pnpm -r dev
 
 ### ショートハンドを使わない
 
-`padding`、`margin`、`border`、`background`、`transition`、`font`、`flex`、`grid` など 21 のプロパティを禁止しています。
+`padding`、`margin`、`border`、`background`、`transition`、`font`、`flex`、`grid` など 23 のプロパティを禁止しています。
 
 ショートハンドは、書かなかった副プロパティを初期値に戻します。
 `background: red` と書くと `background-image` が消え、`transition: 100ms` と書くと `transition-delay` が消えます。
@@ -45,8 +45,8 @@ padding-inline: --spacing(4);
 
 ### 余白と大きさは `--spacing()` か `--spacing-relative` で書く
 
-`padding-*`、`margin-*`、`gap`、`width`、`height` には、`--spacing(n)` の形しか書けません。
-任意の数値を書くとエラーになります。
+`padding-*`、`margin-*`、`gap`、`width`、`height` に `--spacing(n)` を書けるよう、stylelint が受け付ける構文を拡張しています。
+任意の数値は禁止していないため、尺度に沿った値を使うことは書き手が守ります。
 
 尺度から外れた値が混ざると、[Spacing](/tokens/spacing) に書いてある尺度が実態と合わなくなります。
 
