@@ -48,15 +48,18 @@ If you want to use in client directly, you can use CDN as follows:
 
 ## Configuration
 
-Jumpu UI does extend [Tailwind CSS Theme](https://tailwindcss.com/docs/theme). You can customize several CSS values.
+Jumpu UI extends the [Tailwind CSS Theme](https://tailwindcss.com/docs/theme). Override the tokens with `@theme`:
 
-### [colors](https://tailwindcss.com/docs/customizing-colors)
+```css
+@import "tailwindcss";
+@import "@jumpu-ui/tailwindcss";
 
-- `var(--color-primary-*)`: Primary color palette. Default is `var(--color-blue-*)`
+@theme {
+  --color-primary-700: var(--color-emerald-700);
+}
+```
 
-### spacing
-
-- `var(--spacing-relative)`: Unit of relative spacing. Default is `0.25em`
+See the [Tokens documentation](https://jumpu-ui.pages.dev/tokens/) for the full list, which tokens are distributed as CSS variables, and the constraints that apply when replacing them.
 
 ## Migration
 

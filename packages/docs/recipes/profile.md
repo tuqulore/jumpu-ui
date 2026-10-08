@@ -1,4 +1,19 @@
-# ProfileCard {class="!mb-8"}
+# プロフィールの表示 {class="!mb-8"}
+
+人物の情報をひとまとまりとして見せる場面です。
+
+## 設計の指針
+
+[Avatar](/components/avatar) の `alt` には**誰であるか**を書きます。
+名前が隣に表示されているなら `alt=""` にして、同じ内容を二度読み上げさせないようにします。
+
+肩書きや所属は [Tag](/components/tag) で示せますが、数が増えると読みにくくなります。
+重要なものだけを残してください。
+
+カード全体をリンクにしないでください。
+読み上げたときに、カード内のすべての文字がリンクの名前になります。
+
+## 例
 
 :::raw
 
@@ -200,7 +215,7 @@
     <div class="flex items-end justify-between px-4">
       <div>
         城田 亜利沙
-        <div class="text-xxs text-gray-600">@tomoyo_suda_000</div>
+        <div class="text-xxs text-gray-600">@shirota_arisa</div>
       </div>
       <div class="flex">
         <div class="mr-4 text-center text-sm">
