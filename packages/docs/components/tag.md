@@ -17,19 +17,7 @@
 背景は `gray-100` です。
 分類ごとに色を変える場合はユーティリティで指定します。
 
-:::raw
-
-<div class="flex flex-wrap gap-1">
-  <div class="jumpu-tag">デフォルト</div>
-  <div class="jumpu-tag bg-green-100">検討中</div>
-  <div class="jumpu-tag bg-red-100">着手</div>
-  <div class="jumpu-tag bg-yellow-100">作業済</div>
-  <div class="jumpu-tag bg-blue-100">TypeScript</div>
-</div>
-
-:::
-
-```html
+```html preview="flex flex-wrap gap-1"
 <div class="jumpu-tag">デフォルト</div>
 <div class="jumpu-tag bg-green-100">検討中</div>
 <div class="jumpu-tag bg-red-100">着手</div>
@@ -41,17 +29,7 @@
 
 `a` / `button` / `[role="button"]` のいずれかにすると、ホバーで境界が濃くなります。
 
-:::raw
-
-<div class="flex flex-wrap gap-1">
-  <a href="#" class="jumpu-tag">リンク</a>
-  <button class="jumpu-tag">ボタン</button>
-  <div class="jumpu-tag" tabindex="0" role="button">ARIA: button ロール</div>
-</div>
-
-:::
-
-```html
+```html preview="flex flex-wrap gap-1"
 <a href="#" class="jumpu-tag">リンク</a>
 <button class="jumpu-tag">ボタン</button>
 <div class="jumpu-tag" tabindex="0" role="button">ARIA: button ロール</div>
@@ -64,16 +42,7 @@
 > 閉じるボタンをつけるときは、必ずタグ自体をクリックできない要素にしてください。
 > 押せる要素の中に押せる要素を入れると、どちらが押されたのかが判別できません。
 
-:::raw
-
-<div class="jumpu-tag">
-  デフォルト
-  <div role="button" aria-label="閉じる" tabindex="0"></div>
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-tag">
   デフォルト
   <div role="button" aria-label="閉じる" tabindex="0"></div>

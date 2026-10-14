@@ -25,6 +25,8 @@ jobs:
     steps:
       - uses: tuqulore/.github/setup@cc8a49114d24092c90de619edef3518534fb074e # main
       - run: pnpm --filter @jumpu-ui/docs build
+      # NOTE: コンテナ内ではワークスペースの所有者が実行ユーザーと異なり、git が操作を拒否する
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       # NOTE: Playwright は使われなくなった baseline を消さないため、全件消してから撮り直す
       - run: git rm -r --quiet --ignore-unmatch packages/docs/vrt/__screenshots__
       - run: pnpm --filter @jumpu-ui/docs vrt:update

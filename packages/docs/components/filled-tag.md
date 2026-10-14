@@ -16,18 +16,7 @@
 
 背景は `primary-700`、文字は白です。
 
-:::raw
-
-<div class="inline-flex flex-wrap gap-1">
-  <div class="jumpu-filled-tag">デフォルト</div>
-  <div class="jumpu-filled-tag bg-green-700">検討中</div>
-  <div class="jumpu-filled-tag bg-red-700">着手</div>
-  <div class="jumpu-filled-tag bg-gray-600">ペンディング</div>
-</div>
-
-:::
-
-```html
+```html preview="inline-flex flex-wrap gap-1"
 <div class="jumpu-filled-tag">デフォルト</div>
 <div class="jumpu-filled-tag bg-green-700">検討中</div>
 <div class="jumpu-filled-tag bg-red-700">着手</div>
@@ -40,16 +29,7 @@
 
 `a` / `button` / `[role="button"]` のいずれかにすると、ホバーで明度が下がります。
 
-:::raw
-
-<div class="inline-flex flex-wrap gap-1">
-  <a href="#" class="jumpu-filled-tag">リンク</a>
-  <a href="#" class="jumpu-filled-tag bg-green-700">検討中</a>
-</div>
-
-:::
-
-```html
+```html preview="inline-flex flex-wrap gap-1"
 <a href="#" class="jumpu-filled-tag">リンク</a>
 <a href="#" class="jumpu-filled-tag bg-green-700">検討中</a>
 ```
@@ -60,16 +40,7 @@
 >
 > 閉じるボタンをつけるときは、必ずタグ自体をクリックできない要素にしてください。
 
-:::raw
-
-<div class="jumpu-filled-tag">
-  デフォルト
-  <div role="button" aria-label="閉じる" tabindex="0"></div>
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-filled-tag">
   デフォルト
   <div role="button" aria-label="閉じる" tabindex="0"></div>

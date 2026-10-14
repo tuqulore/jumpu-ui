@@ -84,3 +84,32 @@ padding-inline: --spacing(4);
 ## ドキュメントを書く
 
 ページを書く・推敲するときの手順、分類の判断、文章の規範は、リポジトリの `.claude/skills/write-design-guideline/` にまとめています。
+
+## ビジュアルリグレッションテスト
+
+このドキュメントの ` ```html preview ` で書いた例の描画を 1 つずつ撮影し、baseline の画像と比べます。
+それ以外の方法で書いた見本（Tokens の色見本など）は対象外です。
+
+baseline は `packages/docs/vrt/__screenshots__/` にあり、ページと見出しごとに画像が並びます。
+**baseline は「VRT update」ワークフローでのみ生成・更新します。**
+開発者の環境で撮った画像は、他の開発者が正しさを確かめられないためです。
+比較は push のたびに GitHub Actions の「VRT」ワークフローが行います。
+
+### 差分が出たとき
+
+1. 失敗したワークフローの artifact `vrt-report` を開き、差分を確認します
+2. 意図した変更なら、Actions の「VRT update」ワークフローを、そのブランチを選んで実行します
+3. baseline を更新するコミットがブランチに積まれるので、画像の差分を PR でレビューします
+
+「VRT update」は main では実行できません。
+このワークフローの push では「VRT」が起動しないため、比較し直すには次の push を待つか「VRT」を手動で実行します。
+
+### ローカルで実行する
+
+```shell
+pnpm --filter @jumpu-ui/docs build
+pnpm --filter @jumpu-ui/docs exec playwright install chromium
+pnpm --filter @jumpu-ui/docs vrt
+```
+
+ローカルでは CI とフォントなどが異なるため、差分がなくても失敗することがあります。

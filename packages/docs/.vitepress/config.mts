@@ -26,6 +26,23 @@ export default defineConfig({
       },
     ],
   ],
+  markdown: {
+    // ```html preview="<並べ方のクラス>" のコードブロックを、描画とコードの両方として出力する
+    config(md) {
+      const fence = md.renderer.rules.fence!;
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const match = token.info.match(/^html\s+preview(?:="([^"]*)")?\s*$/);
+        if (!match) return fence(tokens, idx, options, env, self);
+        const [, layout] = match;
+        token.info = "html";
+        const preview = layout
+          ? `<div class="${layout}">\n${token.content}</div>\n`
+          : token.content;
+        return `<div class="vp-raw">\n${preview}</div>\n${fence(tokens, idx, options, env, self)}`;
+      };
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: false,

@@ -15,18 +15,7 @@
 
 `type` を指定しない場合と、`text` / `email` / `url` / `password` / `number` / `date` / `datetime-local` / `month` / `search` / `tel` / `time` / `week` が同じ見た目になります。
 
-:::raw
-
-<div class="flex flex-wrap gap-2">
-  <input class="jumpu-input" placeholder="名前" />
-  <input type="email" class="jumpu-input" placeholder="email@example.com" />
-  <input type="number" class="jumpu-input" placeholder="0" />
-  <input type="date" class="jumpu-input" />
-</div>
-
-:::
-
-```html
+```html preview="flex flex-wrap gap-2"
 <input class="jumpu-input" placeholder="名前" />
 <input type="email" class="jumpu-input" placeholder="email@example.com" />
 <input type="number" class="jumpu-input" placeholder="0" />
@@ -37,14 +26,7 @@
 
 ### ラジオボタン
 
-:::raw
-
-<input type="radio" class="jumpu-input mr-1" name="radio-sample" value="radio-1" checked />
-<input type="radio" class="jumpu-input" name="radio-sample" value="radio-2" />
-
-:::
-
-```html
+```html preview
 <input
   type="radio"
   class="jumpu-input mr-1"
@@ -60,33 +42,13 @@
 3 つめは `indeterminate`（どちらでもない状態）です。
 
 <script setup>
-import { useTemplateRef, onMounted } from "vue";
-const checkbox = useTemplateRef("checkbox");
+import { onMounted } from "vue";
 onMounted(() => {
-  checkbox.value.indeterminate = true;
+  document.querySelector('input[value="checkbox-3"]').indeterminate = true;
 });
 </script>
 
-:::raw
-
-<div id="checkbox">
-  <input
-    type="checkbox"
-    class="jumpu-input mr-1"
-    value="checkbox-1"
-    checked
-  />
-  <input
-    type="checkbox"
-    class="jumpu-input mr-1"
-    value="checkbox-2"
-  />
-  <input type="checkbox" class="jumpu-input" value="checkbox-3" ref="checkbox" />
-</div>
-
-:::
-
-```html
+```html preview
 <input type="checkbox" class="jumpu-input mr-1" value="checkbox-1" checked />
 <input type="checkbox" class="jumpu-input mr-1" value="checkbox-2" />
 <input type="checkbox" class="jumpu-input" value="checkbox-3" />
@@ -96,13 +58,7 @@ onMounted(() => {
 
 ### ファイル
 
-:::raw
-
-<input type="file" class="jumpu-input" />
-
-:::
-
-```html
+```html preview
 <input type="file" class="jumpu-input" />
 ```
 

@@ -13,22 +13,7 @@
 
 ### 基本
 
-:::raw
-
-<div class="jumpu-boxed-tabs">
-  <div role="tablist" aria-label="ダッシュボード">
-    <button role="tab" aria-selected="true" aria-controls="boxed-panel-1" id="boxed-tab-1" tabindex="0">ホーム</button>
-    <button role="tab" aria-selected="false" aria-controls="boxed-panel-2" id="boxed-tab-2" tabindex="-1">タスク</button>
-    <button role="tab" aria-selected="false" aria-controls="boxed-panel-3" id="boxed-tab-3" tabindex="-1">実績</button>
-  </div>
-</div>
-<div role="tabpanel" id="boxed-panel-1" aria-labelledby="boxed-tab-1" class="p-4">ホームの内容</div>
-<div role="tabpanel" id="boxed-panel-2" aria-labelledby="boxed-tab-2" hidden></div>
-<div role="tabpanel" id="boxed-panel-3" aria-labelledby="boxed-tab-3" hidden></div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-boxed-tabs">
   <div role="tablist" aria-label="ダッシュボード">
     <button
@@ -84,19 +69,7 @@
 
 ### リンクとして使う
 
-:::raw
-
-<div class="jumpu-boxed-tabs">
-  <div role="tablist" aria-label="ダッシュボード（リンク）">
-    <a role="tab" href="#" aria-selected="true">ホーム</a>
-    <a role="tab" href="#" aria-selected="false">タスク</a>
-    <a role="tab" href="#" aria-selected="false">実績</a>
-  </div>
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-boxed-tabs">
   <div role="tablist" aria-label="ダッシュボード（リンク）">
     <a role="tab" href="#" aria-selected="true">ホーム</a>

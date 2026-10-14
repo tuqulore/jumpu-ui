@@ -14,8 +14,7 @@
 
 ### 開いた状態
 
-:::raw
-
+```html preview
 <div class="jumpu-accordion">
   <button type="button" aria-expanded="true" aria-controls="default">
     人間失格
@@ -26,26 +25,13 @@
     </p>
   </div>
 </div>
-
-:::
-
-```html
-<div class="jumpu-accordion">
-  <button type="button" aria-expanded="true" aria-controls="default">
-    人間失格
-  </button>
-  <div id="default" aria-hidden="false">
-    <p class="mt-4">恥の多い生涯を送って来ました。…</p>
-  </div>
-</div>
 ```
 
 ### 閉じた状態
 
 `aria-expanded` と `aria-hidden` の両方を切り替えます。
 
-:::raw
-
+```html preview
 <div class="jumpu-accordion">
   <button type="button" aria-expanded="false" aria-controls="collapse">
     人間失格
@@ -54,18 +40,6 @@
     <p class="mt-4">
       恥の多い生涯を送って来ました。自分には、人間の生活というものが、見当つかないのです。
     </p>
-  </div>
-</div>
-
-:::
-
-```html
-<div class="jumpu-accordion">
-  <button type="button" aria-expanded="false" aria-controls="collapse">
-    人間失格
-  </button>
-  <div id="collapse" aria-hidden="true">
-    <p class="mt-4">恥の多い生涯を送って来ました。…</p>
   </div>
 </div>
 ```

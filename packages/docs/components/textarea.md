@@ -13,25 +13,13 @@
 
 ### 基本
 
-:::raw
-
-<textarea class="jumpu-textarea" placeholder="お問い合わせ内容..."></textarea>
-
-:::
-
-```html
+```html preview
 <textarea class="jumpu-textarea" placeholder="お問い合わせ内容..."></textarea>
 ```
 
 ### 横幅いっぱいにする
 
-:::raw
-
-<textarea class="jumpu-textarea w-full" placeholder="お問い合わせ内容..."></textarea>
-
-:::
-
-```html
+```html preview
 <textarea
   class="jumpu-textarea w-full"
   placeholder="お問い合わせ内容..."
@@ -42,13 +30,7 @@
 
 `resize-none` を併せて指定すると、利用者による伸縮も止まります。
 
-:::raw
-
-<textarea class="jumpu-textarea h-64 resize-none w-full" placeholder="お問い合わせ内容..."></textarea>
-
-:::
-
-```html
+```html preview
 <textarea
   class="jumpu-textarea h-64 w-full resize-none"
   placeholder="お問い合わせ内容..."

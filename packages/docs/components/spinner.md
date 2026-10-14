@@ -17,17 +17,7 @@
 `svg` と `circle` は利用側が書きます。
 アニメーションはコンポーネントが与えます。
 
-:::raw
-
-<div class="jumpu-spinner" role="status" aria-label="読み込み中">
-  <svg viewBox="25 25 50 50">
-    <circle cx="50" cy="50" r="20"></circle>
-  </svg>
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-spinner" role="status" aria-label="読み込み中">
   <svg viewBox="25 25 50 50">
     <circle cx="50" cy="50" r="20"></circle>
@@ -44,23 +34,7 @@
 | 大きさ         | `w-4 h-4` など          | 既定は `w-12 h-12` 相当        |
 | 色             | `text-primary-500` など | 線は `currentcolor` を使います |
 
-:::raw
-
-<div class="flex items-center gap-3">
-  <div class="jumpu-spinner w-4 h-4">
-    <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
-  </div>
-  <div class="jumpu-spinner w-8 h-8 text-primary-500">
-    <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
-  </div>
-  <div class="jumpu-spinner w-12 h-12 text-red-400">
-    <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
-  </div>
-</div>
-
-:::
-
-```html
+```html preview="flex items-center gap-3"
 <div class="jumpu-spinner h-4 w-4">
   <svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20"></circle></svg>
 </div>

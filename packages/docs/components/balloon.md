@@ -14,15 +14,7 @@
 
 ### 基本
 
-:::raw
-
-<div class="jumpu-balloon">
-  あっという間の時間でしたが困難の多かった東京オリンピックの一番最後の式典で選手の方々、関係者の方々の労をねぎらう役目を頂けて光栄でした
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-balloon">
   あっという間の時間でしたが困難の多かった東京オリンピックの一番最後の式典で選手の方々、関係者の方々の労をねぎらう役目を頂けて光栄でした
 </div>
@@ -34,15 +26,10 @@
 
 自分の発言と相手の発言を区別するときなどに使います。
 
-:::raw
-
+```html preview
 <div class="jumpu-balloon bg-transparent">
   あっという間の時間でしたが困難の多かった東京オリンピックの一番最後の式典で選手の方々、関係者の方々の労をねぎらう役目を頂けて光栄でした
 </div>
-:::
-
-```html
-<div class="jumpu-balloon bg-transparent">…</div>
 ```
 
 チャットとして組み立てた例は [Recipes](/recipes/chat) にあります。
