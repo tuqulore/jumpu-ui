@@ -13,10 +13,13 @@
   "scripts": {
     "build": "vitepress build",
     "dev": "vitepress dev",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "vrt": "playwright test",
+    "vrt:update": "playwright test --update-snapshots=all"
   },
   "devDependencies": {
     "@jumpu-ui/tailwindcss": "workspace:*",
+    "@playwright/test": "1.63.0",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
     "postcss": "8.5.26",
