@@ -91,6 +91,8 @@ padding-inline: --spacing(4);
 `:::raw` の外に書いた見本（Tokens の色見本など）は対象外です。
 
 baseline は `packages/docs/vrt/__screenshots__/` にあり、ページと見出しごとに画像が並びます。
+**baseline は「VRT update」ワークフローでのみ生成・更新します。**
+開発者の環境で撮った画像は、他の開発者が正しさを確かめられないためです。
 比較は push のたびに GitHub Actions の「VRT」ワークフローが行います。
 
 ### 差分が出たとき
@@ -110,5 +112,4 @@ pnpm --filter @jumpu-ui/docs exec playwright install chromium
 pnpm --filter @jumpu-ui/docs vrt
 ```
 
-baseline は CI の Playwright コンテナで生成しているため、ローカルではフォントの描画差で失敗することがあります。
-ローカルで `vrt:update` した画像はコミットしないでください。
+ローカルでは CI とフォントなどが異なるため、差分がなくても失敗することがあります。
