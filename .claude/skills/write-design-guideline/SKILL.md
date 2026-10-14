@@ -113,7 +113,7 @@ grep -rn "spacing-relative" packages/tailwindcss/src/components/
 ```sh
 pnpm -F @jumpu-ui/docs build   # リンク切れはここで落ちる
 pnpm format                    # prettier
-pnpm -F @jumpu-ui/docs dev     # :::raw のレンダリングとサイドバーを目視
+pnpm -F @jumpu-ui/docs dev     # 例の描画とサイドバーを目視
 ```
 
 ## 出稿前チェックリスト

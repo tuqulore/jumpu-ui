@@ -26,21 +26,13 @@
 
 ### 基本
 
-:::raw
-<button type="button" class="jumpu-button">ボタン</button>
-:::
-
-```html
+```html preview
 <button type="button" class="jumpu-button">ボタン</button>
 ```
 
 ### リンクとして使う
 
-:::raw
-<a href="#" class="jumpu-button">リンクボタン</a>
-:::
-
-```html
+```html preview
 <a href="#" class="jumpu-button">リンクボタン</a>
 ```
 
@@ -52,15 +44,7 @@ WAI-ARIA の button ロールを使います。
 >
 > `button` / `a` 要素と同等の機能を別途実装する必要があることに注意してください。具体的には、フォーカス可能であること、Enter / Space キーで操作可能であることなどです。詳細は [MDN](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/button_role) を参照してください。
 
-:::raw
-
-<div class="jumpu-button" tabindex="0" role="button">
-  ARIA: button ロール
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-button" tabindex="0" role="button">ARIA: button ロール</div>
 ```
 
@@ -77,24 +61,7 @@ WAI-ARIA の button ロールを使います。
 余白は `--spacing-relative` で組まれているため、文字サイズを変えると余白も追従します。
 詳細は [Spacing](/tokens/spacing) を参照してください。
 
-:::raw
-
-<p class="mb-4">
-  <button type="button" class="jumpu-button text-xs">極小のボタン</button>
-</p>
-<p class="mb-4">
-  <button type="button" class="jumpu-button text-xl">もっと大きなボタン</button>
-</p>
-<p class="mb-4">
-  <button type="button" class="jumpu-button w-full">横幅がいっぱいのボタン</button>
-</p>
-<p>
-  <button type="button" class="jumpu-button rounded-full px-6">角丸のボタン</button>
-</p>
-
-:::
-
-```html
+```html preview="flex flex-col items-start gap-4"
 <button type="button" class="jumpu-button text-xs">極小のボタン</button>
 <button type="button" class="jumpu-button text-xl">もっと大きなボタン</button>
 <button type="button" class="jumpu-button w-full">

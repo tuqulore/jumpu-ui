@@ -17,18 +17,7 @@
 大きさは持っていません。
 ルートに `w-16 h-8`、つまみに `w-8 h-8` のように、**つまみがルートの半分の幅**になるよう指定してください。
 
-:::raw
-
-<div class="jumpu-toggle-switch w-16 h-8">
-  <input id="default" type="checkbox" aria-label="通知を受け取る" />
-  <label for="default">
-    <span class="w-8 h-8"></span>
-  </label>
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-toggle-switch h-8 w-16">
   <input id="default" type="checkbox" aria-label="通知を受け取る" />
   <label for="default">
@@ -39,18 +28,7 @@
 
 ### 小さくする
 
-:::raw
-
-<div class="jumpu-toggle-switch w-8 h-4">
-  <input id="small" type="checkbox" aria-label="通知を受け取る" />
-  <label for="small">
-    <span class="w-4 h-4"></span>
-  </label>
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-toggle-switch h-4 w-8">
   <input id="small" type="checkbox" aria-label="通知を受け取る" />
   <label for="small">

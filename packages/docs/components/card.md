@@ -17,13 +17,7 @@
 余白は持っていません。
 `px-*` と `py-*` で与えてください。
 
-:::raw
-
-<div class="jumpu-card px-4 py-3 mb-4">カード</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-card mb-4 px-4 py-3">カード</div>
 ```
 
@@ -32,11 +26,7 @@
 `display` プロパティを指定していないため、どの要素で使うかによって見た目が変わります。
 `a` 要素のカードを `div` 要素と同じように見せるには、`block` を付けてください。
 
-:::raw
-<a href="#" class="jumpu-card px-4 py-3 mb-4 block">リンクカード</a>
-:::
-
-```html
+```html preview
 <a href="#" class="jumpu-card mb-4 block px-4 py-3">リンクカード</a>
 ```
 
@@ -47,13 +37,7 @@
 
 ### 影をつける
 
-:::raw
-
-<div class="jumpu-card px-4 py-3 border-0 shadow-lg">影付きカード</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-card border-0 px-4 py-3 shadow-lg">影付きカード</div>
 ```
 

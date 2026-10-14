@@ -87,8 +87,8 @@ padding-inline: --spacing(4);
 
 ## ビジュアルリグレッションテスト
 
-このドキュメントの `:::raw` ブロックを 1 つずつ撮影し、baseline の画像と比べます。
-`:::raw` の外に書いた見本（Tokens の色見本など）は対象外です。
+このドキュメントの ` ```html preview ` で書いた例の描画を 1 つずつ撮影し、baseline の画像と比べます。
+それ以外の方法で書いた見本（Tokens の色見本など）は対象外です。
 
 baseline は `packages/docs/vrt/__screenshots__/` にあり、ページと見出しごとに画像が並びます。
 **baseline は「VRT update」ワークフローでのみ生成・更新します。**

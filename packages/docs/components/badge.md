@@ -17,19 +17,7 @@
 色は持っていません。
 背景色と文字色をユーティリティで与えてください。
 
-:::raw
-
-<div class="flex flex-wrap gap-1">
-  <div class="jumpu-badge bg-gray-100">100</div>
-  <div class="jumpu-badge bg-green-100 text-green-800">16</div>
-  <div class="jumpu-badge bg-red-100 text-red-800">2</div>
-  <div class="jumpu-badge bg-yellow-100 text-yellow-800">312</div>
-  <div class="jumpu-badge bg-blue-100 text-blue-800">89</div>
-</div>
-
-:::
-
-```html
+```html preview="flex flex-wrap gap-1"
 <div class="jumpu-badge bg-gray-100">100</div>
 <div class="jumpu-badge bg-green-100 text-green-800">16</div>
 <div class="jumpu-badge bg-red-100 text-red-800">2</div>
@@ -49,14 +37,10 @@
 
 余白は `--spacing(n)` で組まれているため、文字サイズを変えても追従しません。
 
-:::raw
-
-<div class="flex flex-wrap gap-1 items-center">
-  <div class="jumpu-badge bg-gray-100 text-xs">100</div>
-  <div class="jumpu-badge bg-gray-100">100</div>
-</div>
-
-:::
+```html preview="flex flex-wrap gap-1 items-center"
+<div class="jumpu-badge bg-gray-100 text-xs">100</div>
+<div class="jumpu-badge bg-gray-100">100</div>
+```
 
 ## マークアップ規約
 

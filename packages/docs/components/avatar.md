@@ -14,15 +14,7 @@
 
 ### 基本
 
-:::raw
-
-<div class="jumpu-avatar">
-  <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
-</div>
-
-:::
-
-```html
+```html preview
 <div class="jumpu-avatar">
   <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
 </div>
@@ -32,15 +24,7 @@
 
 `a` 要素で使うと `display: block` になります。
 
-:::raw
-
-<a href="#" class="jumpu-avatar">
-  <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
-</a>
-
-:::
-
-```html
+```html preview
 <a href="#" class="jumpu-avatar">
   <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
 </a>
@@ -53,23 +37,7 @@
 | 大きさ         | `w-8 h-8`                  | 既定は `w-16 h-16` 相当。縦横を同じにします |
 | 角の形         | `rounded-none` / `rounded` | 既定は円                                    |
 
-:::raw
-
-<div class="flex items-end gap-2">
-  <div class="jumpu-avatar w-8 h-8">
-    <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
-  </div>
-  <div class="jumpu-avatar rounded-none">
-    <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
-  </div>
-  <div class="jumpu-avatar rounded">
-    <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
-  </div>
-</div>
-
-:::
-
-```html
+```html preview="flex items-end gap-2"
 <div class="jumpu-avatar h-8 w-8">
   <img src="../assets/avatar-1.jpg" alt="城田 亜利沙" />
 </div>

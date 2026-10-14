@@ -17,21 +17,7 @@
 アイコン自体には意味が伝わる名前がありません。
 `aria-label` を必ず与えてください。
 
-:::raw
-
-<button type="button" class="jumpu-icon-button" aria-label="Twitter">
-  <i class="fab fa-twitter"></i>
-</button>
-<button type="button" class="jumpu-icon-button" aria-label="メール">
-  <i class="fas fa-envelope"></i>
-</button>
-<button type="button" class="jumpu-icon-button" aria-label="ホーム">
-  <i class="fas fa-home"></i>
-</button>
-
-:::
-
-```html
+```html preview
 <button type="button" class="jumpu-icon-button" aria-label="Twitter">
   <i class="fab fa-twitter"></i>
 </button>
@@ -47,20 +33,7 @@
 
 `role="tooltip"` を持つ要素を入れ、`aria-describedby` で参照します。
 
-:::raw
-
-<button type="button" class="jumpu-icon-button" aria-describedby="tooltip-Twitter">
-  <i class="fab fa-twitter"></i>
-  <span id="tooltip-Twitter" role="tooltip">Twitter</span>
-</button>
-<button type="button" class="jumpu-icon-button" aria-describedby="tooltip-envelope">
-  <i class="fas fa-envelope"></i>
-  <span id="tooltip-envelope" role="tooltip">メール</span>
-</button>
-
-:::
-
-```html
+```html preview
 <button
   type="button"
   class="jumpu-icon-button"
@@ -83,20 +56,7 @@
 
 ### リンクとして使う
 
-:::raw
-
-<a href="#" class="jumpu-icon-button" aria-describedby="tooltip-anchor-Twitter">
-  <i class="fab fa-twitter"></i>
-  <span id="tooltip-anchor-Twitter" role="tooltip">Twitter</span>
-</a>
-<a href="#" class="jumpu-icon-button" aria-describedby="tooltip-anchor-home">
-  <i class="fas fa-home"></i>
-  <span id="tooltip-anchor-home" role="tooltip">ホーム</span>
-</a>
-
-:::
-
-```html
+```html preview
 <a href="#" class="jumpu-icon-button" aria-describedby="tooltip-anchor-Twitter">
   <i class="fab fa-twitter"></i>
   <span id="tooltip-anchor-Twitter" role="tooltip">Twitter</span>
@@ -112,20 +72,7 @@
 位置は `transform` で決まっています。
 変えるには [Arbitrary Values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values) で `transform` を上書きし、`group-hover:` で表示時の値も指定します。
 
-:::raw
-
-<button type="button" class="jumpu-icon-button group" aria-describedby="tooltip-position-envelope">
-  <i class="fas fa-envelope"></i>
-  <span id="tooltip-position-envelope" role="tooltip" class="![transform:translateX(50%)_scale(0)] group-hover:![transform:translateX(50%)_scale(1)]">右に出す</span>
-</button>
-<button type="button" class="jumpu-icon-button group z-1" aria-describedby="tooltip-position-home">
-  <i class="fas fa-home"></i>
-  <span id="tooltip-position-home" role="tooltip" class="![transform:translate(-50%,_150%)_scale(0)] group-hover:![transform:translate(-50%,_150%)_scale(1)]">下に出す</span>
-</button>
-
-:::
-
-```html
+```html preview
 <button
   type="button"
   class="jumpu-icon-button group"

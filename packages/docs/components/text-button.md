@@ -14,39 +14,19 @@
 
 ### 基本
 
-:::raw
-
-<button type="button" class="jumpu-text-button">テキストボタン</button>
-
-:::
-
-```html
+```html preview
 <button type="button" class="jumpu-text-button">テキストボタン</button>
 ```
 
 ### リンクとして使う
 
-:::raw
-
-<a href="#" class="jumpu-text-button">テキストボタン</a>
-
-:::
-
-```html
+```html preview
 <a href="#" class="jumpu-text-button">テキストボタン</a>
 ```
 
 ### 無効にする
 
-:::raw
-
-<button type="button" disabled class="jumpu-text-button">
-  テキストボタン
-</button>
-
-:::
-
-```html
+```html preview
 <button type="button" disabled class="jumpu-text-button">テキストボタン</button>
 ```
 

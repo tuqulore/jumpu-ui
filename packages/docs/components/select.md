@@ -13,20 +13,7 @@
 
 ### 基本
 
-:::raw
-
-<select class="jumpu-select">
-  <option value="畜産食料品製造業">畜産食料品製造業</option>
-  <option value="水産食料品製造業">水産食料品製造業</option>
-  <option value="調味料製造業">調味料製造業</option>
-  <option value="糖類製造業">糖類製造業</option>
-  <option value="精穀・製粉業">精穀・製粉業</option>
-  <option value="パン・菓子製造業">パン・菓子製造業</option>
-</select>
-
-:::
-
-```html
+```html preview
 <select class="jumpu-select">
   <option value="畜産食料品製造業">畜産食料品製造業</option>
   <option value="水産食料品製造業">水産食料品製造業</option>
@@ -43,20 +30,7 @@
 
 `multiple` を付けると矢印が消え、右側の余白も詰まります。
 
-:::raw
-
-<select class="jumpu-select" multiple>
-  <option value="畜産食料品製造業">畜産食料品製造業</option>
-  <option value="水産食料品製造業">水産食料品製造業</option>
-  <option value="調味料製造業">調味料製造業</option>
-  <option value="糖類製造業">糖類製造業</option>
-  <option value="精穀・製粉業">精穀・製粉業</option>
-  <option value="パン・菓子製造業">パン・菓子製造業</option>
-</select>
-
-:::
-
-```html
+```html preview
 <select class="jumpu-select" multiple>
   <option value="畜産食料品製造業">畜産食料品製造業</option>
   <option value="水産食料品製造業">水産食料品製造業</option>

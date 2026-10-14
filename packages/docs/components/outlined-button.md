@@ -14,39 +14,19 @@
 
 ### 基本
 
-:::raw
-
-<button type="button" class="jumpu-outlined-button">ボタン</button>
-
-:::
-
-```html
+```html preview
 <button type="button" class="jumpu-outlined-button">ボタン</button>
 ```
 
 ### リンクとして使う
 
-:::raw
-
-<a href="#" class="jumpu-outlined-button">リンクボタン</a>
-
-:::
-
-```html
+```html preview
 <a href="#" class="jumpu-outlined-button">リンクボタン</a>
 ```
 
 ### 無効にする
 
-:::raw
-
-<button type="button" disabled class="jumpu-outlined-button">
-  ボタン
-</button>
-
-:::
-
-```html
+```html preview
 <button type="button" disabled class="jumpu-outlined-button">ボタン</button>
 ```
 
