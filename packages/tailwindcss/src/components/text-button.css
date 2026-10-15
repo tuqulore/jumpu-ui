@@ -2,6 +2,7 @@
   display: inline-flex;
   column-gap: calc(var(--spacing-relative) * 2);
   align-items: center;
+  justify-content: center;
   padding-block: calc(var(--spacing-relative) * 2.5);
   padding-inline: calc(var(--spacing-relative) * 5);
   color: var(--color-primary-700);
