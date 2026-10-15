@@ -24,6 +24,17 @@
 <a href="#" class="jumpu-text-button">テキストボタン</a>
 ```
 
+### アイコンと並べる
+
+並び方と間隔は [Button](/components/button#アイコンと並べる) と同じです。
+
+```html preview
+<button type="button" class="jumpu-text-button">
+  <i class="fas fa-arrow-left" aria-hidden="true"></i>
+  戻る
+</button>
+```
+
 ### 無効にする
 
 ```html preview

@@ -10,6 +10,8 @@ import { cdnUrl } from "../src/transforms/v3.0.0/cdn-url.ts";
 import { explicitTailwindcssImport } from "../src/transforms/v3.0.0/explicit-tailwindcss-import.ts";
 import { lineHeightAdopt } from "../src/transforms/v3.1.2/line-height-adopt.ts";
 import { lineHeightCompat } from "../src/transforms/v3.1.2/line-height-compat.ts";
+import { buttonInlineFlexAdopt } from "../src/transforms/v3.2.0/button-inline-flex-adopt.ts";
+import { buttonInlineFlexCompat } from "../src/transforms/v3.2.0/button-inline-flex-compat.ts";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = join(HERE, "fixtures");
@@ -22,6 +24,8 @@ const TRANSFORMS: Record<string, Transform> = {
   "class-prefix": classPrefix,
   "line-height-compat": lineHeightCompat,
   "line-height-adopt": lineHeightAdopt,
+  "button-inline-flex-compat": buttonInlineFlexCompat,
+  "button-inline-flex-adopt": buttonInlineFlexAdopt,
 };
 
 interface Case {

@@ -1,11 +1,14 @@
 import type { Transform } from "../../context.ts";
-import { rewriteClassValues } from "../../utils/class-attrs.ts";
+import {
+  removeToken,
+  rewriteClassValues,
+  tokensOf,
+} from "../../utils/class-attrs.ts";
 import {
   BADGE,
   BADGE_COMPAT,
   ICON_BUTTON,
   TOOLTIP_COMPAT,
-  tokensOf,
 } from "./line-height-compat.ts";
 
 export const lineHeightAdopt: Transform = {
@@ -23,22 +26,12 @@ export const lineHeightAdopt: Transform = {
       (value) => {
         const tokens = tokensOf(value);
         let output = value;
-        if (tokens.includes(BADGE)) output = remove(output, BADGE_COMPAT);
+        if (tokens.includes(BADGE)) output = removeToken(output, BADGE_COMPAT);
         if (tokens.includes(ICON_BUTTON))
-          output = remove(output, TOOLTIP_COMPAT);
+          output = removeToken(output, TOOLTIP_COMPAT);
         return output;
       },
       ctx.options.classFn,
     );
   },
 };
-
-function remove(value: string, token: string): string {
-  const parts = value.split(/(\s+)/);
-  const index = parts.indexOf(token);
-  if (index === -1) return value;
-  // 前の空白ごと消す。先頭のトークンなら後ろの空白を消す
-  if (index > 0) parts.splice(index - 1, 2);
-  else parts.splice(index, 2);
-  return parts.join("");
-}

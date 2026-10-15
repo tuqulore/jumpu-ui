@@ -36,6 +36,25 @@
 <a href="#" class="jumpu-button">リンクボタン</a>
 ```
 
+### アイコンと並べる
+
+ラベルの前後にアイコンを置けます。
+子要素は横一列に並び、上下の中央で揃います。
+間隔は `--spacing-relative` の 2 倍で、文字サイズに追従します。
+
+```html preview="flex flex-wrap items-start gap-4"
+<button type="button" class="jumpu-button">
+  <i class="fas fa-plus" aria-hidden="true"></i>
+  追加する
+</button>
+<a href="#" class="jumpu-button">
+  次へ
+  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+</a>
+```
+
+間隔は Button が付けるため、アイコンとラベルの間に空白文字を入れても広がりません。
+
 ### button / a 以外の要素で使う
 
 WAI-ARIA の button ロールを使います。
@@ -82,7 +101,13 @@ WAI-ARIA の button ロールを使います。
 | ルート | `[role="button"]`                             | 任意 | カーソルが矢印のままになります |
 
 子要素に規約はありません。
-ラベルのテキストをそのまま入れます。
+ラベルのテキストと、必要ならアイコンを入れます。
+
+> [!IMPORTANT]
+>
+> 子要素はそれぞれ横に並ぶ単位になり、単位の間に間隔が入ります。
+> `<button class="jumpu-button">保存<strong>する</strong></button>` のようにラベルの一部を要素で包むと、「保存」と「する」の間が空きます。
+> ラベルの一部を装飾したいときは、ラベル全体を `span` で包んでから、その中で装飾してください。
 
 ## 状態
 
@@ -110,3 +135,6 @@ APG の [Button パターン](https://www.w3.org/WAI/ARIA/apg/patterns/button/)�
 
 無効であることを色だけで伝えないでください。
 `button` 要素なら `disabled` 属性を、それ以外なら `aria-disabled` を併せて指定します。
+
+ラベルと並べたアイコンは、ラベルと同じ意味を重ねて伝えるだけの装飾です。
+`aria-hidden="true"` を付けて、読み上げの対象から外してください。

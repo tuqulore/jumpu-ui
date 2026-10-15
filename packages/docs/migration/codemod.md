@@ -50,15 +50,17 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 
 すべて `--only` / `--skip` / `--adopt` の対象になります。`npx @jumpu-ui/codemod list` で手元でも確認できます。
 
-| id                            | since | kind    | 概要                                                          |
-| ----------------------------- | ----- | ------- | ------------------------------------------------------------- |
-| `class-prefix`                | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム                          |
-| `spacing-rel`                 | 2.0.0 | rewrite | `rel<N>` spacing utility を `--spacing-relative` ベースに移行 |
-| `drop-colors-import`          | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除              |
-| `cdn-url`                     | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与                 |
-| `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入                           |
-| `line-height-compat`          | 3.1.2 | rewrite | Badge と IconButton のツールチップに以前の行の高さを付与      |
-| `line-height-adopt`           | 3.1.2 | rewrite | `line-height-compat` が付与したユーティリティを削除（opt-in） |
+| id                            | since | kind    | 概要                                                                 |
+| ----------------------------- | ----- | ------- | -------------------------------------------------------------------- |
+| `class-prefix`                | 2.0.0 | rewrite | bare クラス名を `jumpu-*` にリネーム                                 |
+| `spacing-rel`                 | 2.0.0 | rewrite | `rel<N>` spacing utility を `--spacing-relative` ベースに移行        |
+| `drop-colors-import`          | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除                     |
+| `cdn-url`                     | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与                        |
+| `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入                                  |
+| `line-height-compat`          | 3.1.2 | rewrite | Badge と IconButton のツールチップに以前の行の高さを付与             |
+| `line-height-adopt`           | 3.1.2 | rewrite | `line-height-compat` が付与したユーティリティを削除（opt-in）        |
+| `button-inline-flex-compat`   | 3.2.0 | rewrite | Button、OutlinedButton、TextButton に以前の `inline-block` を付与    |
+| `button-inline-flex-adopt`    | 3.2.0 | rewrite | `button-inline-flex-compat` が付与したユーティリティを削除（opt-in） |
 
 ## グローバルオプション
 

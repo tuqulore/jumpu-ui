@@ -182,3 +182,31 @@ function mapTokens(value: string, mapToken: TokenMapper): string {
     .map((tok) => (tok && tok.trim() ? mapToken(tok) : tok))
     .join("");
 }
+
+/** class 文字列を空白で区切ったトークンの配列にする */
+export function tokensOf(value: string): string[] {
+  return value.split(/\s+/).filter(Boolean);
+}
+
+/** anchor トークンの直後に token を挿入する。value は anchor を含んでいること */
+export function insertTokenAfter(
+  value: string,
+  anchor: string,
+  token: string,
+): string {
+  const parts = value.split(/(\s+)/);
+  const index = parts.indexOf(anchor);
+  parts.splice(index + 1, 0, " ", token);
+  return parts.join("");
+}
+
+/** token を 1 個取り除く。無ければ value をそのまま返す */
+export function removeToken(value: string, token: string): string {
+  const parts = value.split(/(\s+)/);
+  const index = parts.indexOf(token);
+  if (index === -1) return value;
+  // 前の空白ごと消す。先頭のトークンなら後ろの空白を消す
+  if (index > 0) parts.splice(index - 1, 2);
+  else parts.splice(index, 2);
+  return parts.join("");
+}
