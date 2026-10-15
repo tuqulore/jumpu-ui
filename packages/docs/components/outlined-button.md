@@ -24,6 +24,17 @@
 <a href="#" class="jumpu-outlined-button">リンクボタン</a>
 ```
 
+### アイコンと並べる
+
+並び方と間隔は [Button](/components/button#アイコンと並べる) と同じです。
+
+```html preview
+<button type="button" class="jumpu-outlined-button">
+  <i class="fas fa-save" aria-hidden="true"></i>
+  下書きとして保存
+</button>
+```
+
 ### 無効にする
 
 ```html preview
