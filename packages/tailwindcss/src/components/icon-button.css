@@ -15,7 +15,7 @@
     padding-block: --spacing(1);
     padding-inline: --spacing(2);
     font-size: var(--text-xs);
-    line-height: var(--leading-tight);
+    line-height: var(--text-xs--line-height);
     color: var(--color-white);
     white-space: nowrap;
     background-color: var(--color-gray-500);
