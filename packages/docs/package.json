@@ -1,28 +1,31 @@
 {
   "name": "@jumpu-ui/docs",
+  "version": "3.1.2-alpha.0",
+  "private": true,
   "description": "Documentation of Jumpu UI Design System",
-  "version": "2.0.1-alpha.0",
-  "author": "tuqulore inc.",
+  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "bugs": {
     "url": "https://github.com/tuqulore/jumpu-ui/issues"
   },
-  "devDependencies": {
-    "@jumpu-ui/tailwindcss": "workspace:*",
-    "@tailwindcss/typography": "0.5.16",
-    "@tailwindcss/vite": "4.1.10",
-    "postcss": "8.5.5",
-    "tailwindcss": "4.1.10",
-    "vite": "^6.2.0",
-    "vitepress": "1.6.3",
-    "vue": "3.5.16"
-  },
-  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "license": "MIT",
-  "private": true,
+  "author": "tuqulore inc.",
+  "type": "module",
   "scripts": {
     "build": "vitepress build",
     "dev": "vitepress dev",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "vrt": "playwright test",
+    "vrt:update": "playwright test --update-snapshots=all"
   },
-  "type": "module"
+  "devDependencies": {
+    "@jumpu-ui/tailwindcss": "workspace:*",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.3",
+    "postcss": "8.5.26",
+    "tailwindcss": "4.3.3",
+    "vite": "^8.0.0",
+    "vitepress": "1.6.4",
+    "vue": "3.5.41"
+  }
 }

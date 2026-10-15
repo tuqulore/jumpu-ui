@@ -1,16 +1,72 @@
 name: Release
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      semver:
+        description: next semantic version(s) value
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
 jobs:
   release:
     runs-on: ubuntu-24.04
-    concurrency:
-      group: release
-      cancel-in-progress: true
     steps:
-      - uses: tuqulore/.github/setup@main
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - uses: tuqulore/.github/setup@cc8a49114d24092c90de619edef3518534fb074e # main
+        with:
+          fetch-depth: 0
+
+      - uses: tuqulore/.github/configure-git@cc8a49114d24092c90de619edef3518534fb074e # main
+
+      - name: Find previous release tag
+        id: previous-tag
+        run: |
+          PREVIOUS_TAG=$(git tag -l 'v*' --sort=-v:refname | { grep -v -- '-' || true; } | sed -n '1p')
+          echo "tag=${PREVIOUS_TAG}" >> "$GITHUB_OUTPUT"
+
+      - name: Build changelog URL
+        id: changelog
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: pnpm release --yes
+          PREVIOUS_TAG: ${{ steps.previous-tag.outputs.tag }}
+        run: |
+          if [ -n "${PREVIOUS_TAG}" ]; then
+            URL="https://github.com/${{ github.repository }}/compare/${PREVIOUS_TAG}...release"
+          else
+            URL="https://github.com/${{ github.repository }}/commits/release"
+          fi
+          echo "url=${URL}" >> "$GITHUB_OUTPUT"
+
+      - uses: tuqulore/.github/bump-and-pr@cc8a49114d24092c90de619edef3518534fb074e # main
+        with:
+          branch: release
+          bump-command: pnpm packages:bump-version ${{ inputs.semver }} --yes --no-git-tag-version
+          version-command: jq -r .version lerna.json
+          commit-prefix: chore(release)
+          pr-base: main
+          pr-body: |
+            Release v${VERSION}
+
+            **Full Changelog**: ${{ steps.changelog.outputs.url }}
+          github-token: ${{ github.token }}
+
+      - name: Cleanup on failure or cancellation
+        if: failure() || cancelled()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXISTING_PR=$(gh pr list --base main --head release --json number --jq '.[0].number // empty' 2>/dev/null || true)
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr close "$EXISTING_PR" || true
+          fi
+          git push origin :release || true

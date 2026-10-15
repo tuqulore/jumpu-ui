@@ -1,0 +1,40 @@
+name: VRT update
+on:
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  playwright-version:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - id: version
+        run: echo "version=$(jq -r '.devDependencies["@playwright/test"]' packages/docs/package.json)" >> "$GITHUB_OUTPUT"
+  update:
+    needs: playwright-version
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    container: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
+    steps:
+      - uses: tuqulore/.github/setup@cc8a49114d24092c90de619edef3518534fb074e # main
+      - run: pnpm --filter @jumpu-ui/docs build
+      # NOTE: コンテナ内ではワークスペースの所有者が実行ユーザーと異なり、git が操作を拒否する
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      # NOTE: Playwright は使われなくなった baseline を消さないため、全件消してから撮り直す
+      - run: git rm -r --quiet --ignore-unmatch packages/docs/vrt/__screenshots__
+      - run: pnpm --filter @jumpu-ui/docs vrt:update
+      - uses: tuqulore/.github/configure-git@cc8a49114d24092c90de619edef3518534fb074e # main
+      - name: Commit updated baseline
+        run: |
+          git add packages/docs/vrt/__screenshots__
+          if ! git diff --cached --quiet; then
+            git commit -m "test(docs): VRT の baseline を更新"
+            git push origin "HEAD:${GITHUB_REF}"
+          fi

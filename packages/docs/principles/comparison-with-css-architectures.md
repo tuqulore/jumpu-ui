@@ -12,13 +12,4 @@ Jumpu UI の最大の特徴は、コンポーネントのバリエーション�
 | RSCSS      | `.rscss-component` | `.rscss-component > .elem`                                   | `.rscss-component.-variant`                                                                     |
 | Jumpu UI   | `.jumpu-component` | `.jumpu-component type` / `.jumpu-component [role="button"]` | `.jumpu-component[aria-pressed="true"]` / `.jumpu-component.text-sm` / `.jumpu-other-component` |
 
-> [!NOTE]
->
-> この文書に取り上げている他にも、主要な CSS 設計手法として次にあるものが挙げられます。これらとの比較については加筆が必要です。
->
-> - Atomic CSS
-> - ITCSS
-> - OOCSS
-> - [SMACSS](https://smacss.com/ja/)
-
 重要な点は、クラス名を定義しているのはコンポーネントの粒度のみで、それ以外は要素型セレクター、属性セレクター、Tailwind CSS ユーティリティーで表現されていることです。これによって、Jumpu UI コンポーネントのスタイルを定義しながらも、Jumpu UI は独自のマークアップ構造やバリアントの提供を避けています。

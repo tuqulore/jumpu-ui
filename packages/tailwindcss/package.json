@@ -1,47 +1,46 @@
 {
   "name": "@jumpu-ui/tailwindcss",
+  "version": "3.1.2-alpha.0",
   "description": "A Tailwind CSS plugin of Jumpu UI implementation.",
-  "version": "2.0.1-alpha.0",
-  "author": "tuqulore inc.",
-  "bugs": {
-    "url": "https://github.com/tuqulore/jumpu-ui/issues"
-  },
-  "devDependencies": {
-    "@tailwindcss/cli": "4.1.10",
-    "@tailwindcss/typography": "0.5.16",
-    "@tailwindcss/vite": "4.1.10",
-    "stylelint": "16.20.0",
-    "stylelint-config-recess-order": "6.0.0",
-    "stylelint-config-standard": "38.0.0",
-    "tailwindcss": "4.1.10",
-    "vite": "6.3.5"
-  },
-  "exports": {
-    ".": {
-      "default": "./src/style.css",
-      "browser": "./dist/style.css"
-    },
-    "./*": {
-      "default": "./src/*",
-      "browser": "./dist/*"
-    },
-    "./package.json": "./package.json"
-  },
-  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
   "keywords": [
     "tailwindcss"
   ],
+  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
+  "bugs": {
+    "url": "https://github.com/tuqulore/jumpu-ui/issues"
+  },
+  "repository": "git@github.com:tuqulore/jumpu-ui.git",
   "license": "MIT",
+  "author": "tuqulore inc.",
+  "type": "module",
+  "exports": {
+    ".": "./src/style.css",
+    "./*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "NOTICE.md"
+  ],
+  "scripts": {
+    "lint": "stylelint './**/*.css' --ignore-path .gitignore",
+    "prepublishOnly": "npx @tailwindcss/cli -i ./dist.css -o ./dist/style.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.3",
+    "stylelint": "17.14.1",
+    "stylelint-config-recess-order": "7.8.0",
+    "stylelint-config-standard": "40.0.0",
+    "tailwindcss": "4.3.3",
+    "vite": "8.2.2"
+  },
   "peerDependencies": {
     "tailwindcss": "^4"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "repository": "git@github.com:tuqulore/jumpu-ui.git",
-  "scripts": {
-    "lint": "stylelint './**/*.css' --ignore-path .gitignore",
-    "prepublishOnly": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css"
-  },
-  "type": "module"
+  }
 }

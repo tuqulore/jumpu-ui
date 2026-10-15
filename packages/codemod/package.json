@@ -1,0 +1,55 @@
+{
+  "name": "@jumpu-ui/codemod",
+  "version": "3.1.2-alpha.0",
+  "description": "Experimental codemods for migrating between @jumpu-ui/tailwindcss versions.",
+  "keywords": [
+    "codemod",
+    "migration",
+    "tailwindcss",
+    "jumpu-ui"
+  ],
+  "homepage": "https://github.com/tuqulore/jumpu-ui#readme",
+  "bugs": {
+    "url": "https://github.com/tuqulore/jumpu-ui/issues"
+  },
+  "repository": "git@github.com:tuqulore/jumpu-ui.git",
+  "license": "MIT",
+  "author": "tuqulore inc.",
+  "type": "module",
+  "bin": {
+    "jumpu-ui-codemod": "./dist/cli.js"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "tsc --noEmit && vitest run",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@ast-grep/napi": "^0.45.0",
+    "@jumpu-ui/tailwindcss": "workspace:*",
+    "commander": "^15.0.0",
+    "globby": "^16.0.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "tsup": "^8.3.5",
+    "typescript": "^7.0.0",
+    "vite": "^8.2.2",
+    "vitest": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

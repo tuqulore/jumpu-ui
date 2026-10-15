@@ -1,0 +1,19 @@
+.card {
+  @apply flex;
+  padding: calc(var(--spacing-relative) * 2);
+  gap: calc(var(--spacing-relative) * 1);
+}
+
+.card__title {
+  margin-top: calc(var(--spacing-relative) * 1.5);
+}
+
+.card__body {
+  @apply hover:px-[calc(var(--spacing-relative)*3)];
+  margin-bottom: -1px;
+}
+
+.card__footer {
+  padding-block: 0px;
+  column-gap: calc(var(--spacing-relative) * 2) !important;
+}

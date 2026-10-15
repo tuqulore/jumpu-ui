@@ -26,6 +26,23 @@ export default defineConfig({
       },
     ],
   ],
+  markdown: {
+    // ```html preview="<並べ方のクラス>" のコードブロックを、描画とコードの両方として出力する
+    config(md) {
+      const fence = md.renderer.rules.fence!;
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const match = token.info.match(/^html\s+preview(?:="([^"]*)")?\s*$/);
+        if (!match) return fence(tokens, idx, options, env, self);
+        const [, layout] = match;
+        token.info = "html";
+        const preview = layout
+          ? `<div class="${layout}">\n${token.content}</div>\n`
+          : token.content;
+        return `<div class="vp-raw">\n${preview}</div>\n${fence(tokens, idx, options, env, self)}`;
+      };
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: false,
@@ -39,7 +56,12 @@ export default defineConfig({
     nav: [
       {
         text: `v${pkg.version}`,
-        items: [{ text: "v1", link: "https://jumpu-ui-v1.pages.dev/" }],
+        items: [
+          { text: "Latest (stable)", link: "https://jumpu-ui.pages.dev/" },
+          { text: "Alpha (next)", link: "https://jumpu-ui-alpha.pages.dev/" },
+          { text: "v2", link: "https://jumpu-ui-v2.pages.dev/" },
+          { text: "v1", link: "https://jumpu-ui-v1.pages.dev/" },
+        ],
       },
     ],
 
@@ -56,15 +78,25 @@ export default defineConfig({
             text: "主要な CSS 設計手法との比較",
             link: "/comparison-with-css-architectures",
           },
+          { text: "アクセシビリティ方針", link: "/accessibility" },
         ],
       },
       {
         text: "Tokens",
         base: "/tokens",
+        link: "/",
         items: [
           { text: "Colors", link: "/colors" },
-          { text: "Icons", link: "/icons" },
+          { text: "Typography", link: "/typography" },
+          { text: "Spacing", link: "/spacing" },
+          { text: "Radius", link: "/radius" },
+          { text: "Interaction", link: "/interaction" },
         ],
+      },
+      {
+        text: "Content",
+        base: "/content",
+        items: [{ text: "アイコン", link: "/icons" }],
       },
       {
         text: "Components",
@@ -105,11 +137,20 @@ export default defineConfig({
         text: "Recipes",
         base: "/recipes",
         items: [
-          { text: "Chat", link: "/chat" },
-          { text: "LoadingCard", link: "/loading-card" },
-          { text: "LoginCard", link: "/login-card" },
-          { text: "ProfileCard", link: "/profile-card" },
-          { text: "SignUpCard", link: "/sign-up-card" },
+          { text: "ログイン", link: "/login" },
+          { text: "サインアップ", link: "/sign-up" },
+          { text: "プロフィールの表示", link: "/profile" },
+          { text: "チャット", link: "/chat" },
+          { text: "読み込み中", link: "/loading" },
+        ],
+      },
+      {
+        text: "Migration",
+        base: "/migration",
+        link: "/",
+        items: [
+          { text: "codemod CLI（実験的）", link: "/codemod" },
+          { text: "v2 → v3", link: "/v2-to-v3" },
         ],
       },
     ],
