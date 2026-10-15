@@ -48,13 +48,15 @@ The CLI provides only two commands. To run a single transform, use `upgrade --on
 
 All of them can be passed to `--only`, `--skip` and `--adopt`. Run `npx @jumpu-ui/codemod list` to check them locally.
 
-| id                            | since | kind    | Description                                                     |
-| ----------------------------- | ----- | ------- | --------------------------------------------------------------- |
-| `class-prefix`                | 2.0.0 | rewrite | Prefix bare component class names with `jumpu-`                 |
-| `spacing-rel`                 | 2.0.0 | rewrite | Migrate `rel<N>` spacing utilities to `--spacing-relative`      |
-| `drop-colors-import`          | 2.0.0 | rewrite | Drop `@import "@jumpu-ui/tailwindcss/colors";` (bundled in v2+) |
-| `cdn-url`                     | 3.0.0 | rewrite | Append `/dist/style.css` to esm.sh CDN links                    |
-| `explicit-tailwindcss-import` | 3.0.0 | rewrite | Insert `@import "tailwindcss";` before the `@jumpu-ui` import   |
+| id                            | since | kind    | Description                                                       |
+| ----------------------------- | ----- | ------- | ----------------------------------------------------------------- |
+| `class-prefix`                | 2.0.0 | rewrite | Prefix bare component class names with `jumpu-`                   |
+| `spacing-rel`                 | 2.0.0 | rewrite | Migrate `rel<N>` spacing utilities to `--spacing-relative`        |
+| `drop-colors-import`          | 2.0.0 | rewrite | Drop `@import "@jumpu-ui/tailwindcss/colors";` (bundled in v2+)   |
+| `cdn-url`                     | 3.0.0 | rewrite | Append `/dist/style.css` to esm.sh CDN links                      |
+| `explicit-tailwindcss-import` | 3.0.0 | rewrite | Insert `@import "tailwindcss";` before the `@jumpu-ui` import     |
+| `line-height-compat`          | 3.1.2 | rewrite | Keep the previous line-height of Badge and the IconButton tooltip |
+| `line-height-adopt`           | 3.1.2 | rewrite | Remove the utilities added by `line-height-compat` (opt-in)       |
 
 ## Global options
 

@@ -8,6 +8,8 @@ import { dropColorsImport } from "../src/transforms/v2.0.0/drop-colors-import.ts
 import { spacingRel } from "../src/transforms/v2.0.0/spacing-rel.ts";
 import { cdnUrl } from "../src/transforms/v3.0.0/cdn-url.ts";
 import { explicitTailwindcssImport } from "../src/transforms/v3.0.0/explicit-tailwindcss-import.ts";
+import { lineHeightAdopt } from "../src/transforms/v3.1.2/line-height-adopt.ts";
+import { lineHeightCompat } from "../src/transforms/v3.1.2/line-height-compat.ts";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = join(HERE, "fixtures");
@@ -18,6 +20,8 @@ const TRANSFORMS: Record<string, Transform> = {
   "drop-colors-import": dropColorsImport,
   "spacing-rel": spacingRel,
   "class-prefix": classPrefix,
+  "line-height-compat": lineHeightCompat,
+  "line-height-adopt": lineHeightAdopt,
 };
 
 interface Case {

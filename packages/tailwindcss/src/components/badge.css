@@ -6,6 +6,7 @@
   padding-inline: --spacing(3);
   font-size: var(--text-sm);
   font-weight: bold;
+  line-height: var(--text-sm--line-height);
   text-decoration-line: none;
   border-radius: calc(infinity * 1px);
 }

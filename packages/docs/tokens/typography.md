@@ -10,12 +10,14 @@ Tailwind CSS の `--text-*` をそのまま使います。
 ほとんどのコンポーネントは文字サイズを指定せず、親から継承します。
 明示しているのは次の 4 か所だけです。
 
-| コンポーネント            | 文字サイズ  | 行の高さ                 |
-| :------------------------ | :---------- | :----------------------- |
-| Tag                       | `--text-xs` | `--text-xs--line-height` |
-| FilledTag                 | `--text-xs` | `--text-xs--line-height` |
-| IconButton のツールチップ | `--text-xs` | `--leading-tight`        |
-| Badge                     | `--text-sm` | 指定なし                 |
+| コンポーネント            | 文字サイズ  |
+| :------------------------ | :---------- |
+| Tag                       | `--text-xs` |
+| FilledTag                 | `--text-xs` |
+| IconButton のツールチップ | `--text-xs` |
+| Badge                     | `--text-sm` |
+
+行の高さには、文字サイズに対応する `--text-*--line-height` を合わせて指定しています。
 
 継承するということは、`text-sm` や `text-lg` のようなユーティリティを付ければ、そのまま反映されるということです。
 

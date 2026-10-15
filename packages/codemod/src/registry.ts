@@ -8,6 +8,10 @@ import {
   cdnUrl,
   explicitTailwindcssImport,
 } from "./transforms/v3.0.0/index.ts";
+import {
+  lineHeightAdopt,
+  lineHeightCompat,
+} from "./transforms/v3.1.2/index.ts";
 
 export const TRANSFORMS: Transform[] = [
   classPrefix,
@@ -15,6 +19,8 @@ export const TRANSFORMS: Transform[] = [
   dropColorsImport,
   cdnUrl,
   explicitTailwindcssImport,
+  lineHeightCompat,
+  lineHeightAdopt,
 ];
 
 export function findById(id: string): Transform | undefined {
