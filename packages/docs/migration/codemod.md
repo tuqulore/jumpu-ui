@@ -57,6 +57,8 @@ spacing-rel                      since 2.0.0    rewrite  Replace rel<N> with cal
 | `drop-colors-import`          | 2.0.0 | rewrite | `@import "@jumpu-ui/tailwindcss/colors";` を削除              |
 | `cdn-url`                     | 3.0.0 | rewrite | esm.sh の CDN URL に `/dist/style.css` を付与                 |
 | `explicit-tailwindcss-import` | 3.0.0 | rewrite | `@import "tailwindcss";` を明示挿入                           |
+| `line-height-compat`          | 3.1.2 | rewrite | Badge と IconButton のツールチップに以前の行の高さを付与      |
+| `line-height-adopt`           | 3.1.2 | rewrite | `line-height-compat` が付与したユーティリティを削除（opt-in） |
 
 ## グローバルオプション
 
