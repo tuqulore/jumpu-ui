@@ -12,6 +12,10 @@ import {
   lineHeightAdopt,
   lineHeightCompat,
 } from "./transforms/v3.1.2/index.ts";
+import {
+  buttonInlineFlexAdopt,
+  buttonInlineFlexCompat,
+} from "./transforms/v3.2.0/index.ts";
 
 export const TRANSFORMS: Transform[] = [
   classPrefix,
@@ -21,6 +25,8 @@ export const TRANSFORMS: Transform[] = [
   explicitTailwindcssImport,
   lineHeightCompat,
   lineHeightAdopt,
+  buttonInlineFlexCompat,
+  buttonInlineFlexAdopt,
 ];
 
 export function findById(id: string): Transform | undefined {

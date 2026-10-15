@@ -57,6 +57,8 @@ All of them can be passed to `--only`, `--skip` and `--adopt`. Run `npx @jumpu-u
 | `explicit-tailwindcss-import` | 3.0.0 | rewrite | Insert `@import "tailwindcss";` before the `@jumpu-ui` import     |
 | `line-height-compat`          | 3.1.2 | rewrite | Keep the previous line-height of Badge and the IconButton tooltip |
 | `line-height-adopt`           | 3.1.2 | rewrite | Remove the utilities added by `line-height-compat` (opt-in)       |
+| `button-inline-flex-compat`   | 3.2.0 | rewrite | Keep the previous inline-block layout of the button components    |
+| `button-inline-flex-adopt`    | 3.2.0 | rewrite | Remove the utility added by `button-inline-flex-compat` (opt-in)  |
 
 ## Global options
 
