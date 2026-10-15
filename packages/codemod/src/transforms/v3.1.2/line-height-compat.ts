@@ -1,5 +1,9 @@
 import type { Transform } from "../../context.ts";
-import { rewriteClassValues } from "../../utils/class-attrs.ts";
+import {
+  insertTokenAfter,
+  rewriteClassValues,
+  tokensOf,
+} from "../../utils/class-attrs.ts";
 
 export const BADGE = "jumpu-badge";
 export const ICON_BUTTON = "jumpu-icon-button";
@@ -35,10 +39,10 @@ export const lineHeightCompat: Transform = {
           tokens.includes(BADGE) &&
           !tokens.some((token) => LINE_HEIGHT_UTILITY.test(token))
         ) {
-          output = insertAfter(output, BADGE, BADGE_COMPAT);
+          output = insertTokenAfter(output, BADGE, BADGE_COMPAT);
         }
         if (tokens.includes(ICON_BUTTON) && !tokens.includes(TOOLTIP_COMPAT)) {
-          output = insertAfter(output, ICON_BUTTON, TOOLTIP_COMPAT);
+          output = insertTokenAfter(output, ICON_BUTTON, TOOLTIP_COMPAT);
         }
         return output;
       },
@@ -46,14 +50,3 @@ export const lineHeightCompat: Transform = {
     );
   },
 };
-
-export function tokensOf(value: string): string[] {
-  return value.split(/\s+/).filter(Boolean);
-}
-
-function insertAfter(value: string, anchor: string, token: string): string {
-  const parts = value.split(/(\s+)/);
-  const index = parts.indexOf(anchor);
-  parts.splice(index + 1, 0, " ", token);
-  return parts.join("");
-}
