@@ -106,10 +106,13 @@ baseline は `packages/docs/vrt/__screenshots__/` にあり、ページと見出
 
 ### ローカルで実行する
 
+Docker が必要です。
+
 ```shell
 pnpm --filter @jumpu-ui/docs build
-pnpm --filter @jumpu-ui/docs exec playwright install chromium
 pnpm --filter @jumpu-ui/docs vrt
 ```
 
-ローカルでは CI とフォントなどが異なるため、差分がなくても失敗することがあります。
+ブラウザは CI と同じ Playwright コンテナの中で動くため、CI と同じ結果になります。
+初回はコンテナイメージ（数 GB）を取得するため時間がかかります。
+ローカルでの実行は差分の確認専用で、baseline は書き込みません。`vrt:update` はエラーになります。

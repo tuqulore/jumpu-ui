@@ -6,7 +6,14 @@ const docsRoot = fileURLToPath(new URL("..", import.meta.url));
 
 const pages = globSync("**/*.md", {
   cwd: docsRoot,
-  exclude: (path) => path === "node_modules" || path === ".vitepress",
+  exclude: (path) =>
+    [
+      "node_modules",
+      ".vitepress",
+      // NOTE: VitePress の srcExclude と揃える
+      "playwright-report",
+      "test-results",
+    ].includes(path),
 })
   .map((path) => path.replace(/\.md$/, ""))
   .sort();

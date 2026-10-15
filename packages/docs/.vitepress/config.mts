@@ -6,6 +6,8 @@ export default defineConfig({
   lang: "ja-JP",
   title: "Jumpu UI",
   description: "Jumpu UI Design System Docs",
+  // NOTE: Playwright の出力に含まれる .md をページとして取り込まないようにする。vrt/docs.spec.ts の除外と揃える
+  srcExclude: ["playwright-report/**", "test-results/**"],
   head: [
     [
       "link",
