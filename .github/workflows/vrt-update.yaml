@@ -9,7 +9,7 @@ permissions:
 jobs:
   playwright-version:
     if: github.ref != 'refs/heads/main'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       version: ${{ steps.version.outputs.version }}
     steps:
@@ -18,7 +18,7 @@ jobs:
         run: echo "version=$(jq -r '.devDependencies["@playwright/test"]' packages/docs/package.json)" >> "$GITHUB_OUTPUT"
   update:
     needs: playwright-version
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
     container: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
