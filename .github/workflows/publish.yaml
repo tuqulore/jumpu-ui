@@ -23,7 +23,7 @@ jobs:
         github.event.pull_request.head.repo.full_name == github.repository &&
         startsWith(github.event.pull_request.title, 'chore(release):')
       )
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     outputs:
@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - uses: tuqulore/.github/resolve-target-sha@cc8a49114d24092c90de619edef3518534fb074e # main
+      - uses: tuqulore/.github/resolve-target-sha@44d876858234517f08bae619b27d883c2b37a8a4 # main
         id: target
         with:
           default-branch: main
@@ -52,17 +52,17 @@ jobs:
   publish:
     needs: check
     if: needs.check.outputs.tag-exists == 'false'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
       id-token: write
       pull-requests: write
     steps:
-      - uses: tuqulore/.github/setup@cc8a49114d24092c90de619edef3518534fb074e # main
+      - uses: tuqulore/.github/setup@44d876858234517f08bae619b27d883c2b37a8a4 # main
         with:
           fetch-depth: 0
 
-      - uses: tuqulore/.github/configure-git@cc8a49114d24092c90de619edef3518534fb074e # main
+      - uses: tuqulore/.github/configure-git@44d876858234517f08bae619b27d883c2b37a8a4 # main
 
       # 公開物とタグの指すコミットを一致させるため、check で解決した SHA を detached HEAD で checkout する。
       - name: Checkout target sha for publishing
@@ -106,7 +106,7 @@ jobs:
       - name: Checkout default branch for alpha bump
         run: git checkout -B main origin/main
 
-      - uses: tuqulore/.github/bump-and-pr@cc8a49114d24092c90de619edef3518534fb074e # main
+      - uses: tuqulore/.github/bump-and-pr@44d876858234517f08bae619b27d883c2b37a8a4 # main
         with:
           branch: alpha
           bump-command: pnpm packages:bump-version prerelease --preid alpha --yes --no-git-tag-version
